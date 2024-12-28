@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cx3uplkeyulyg"]
+[gd_scene load_steps=19 format=3 uid="uid://cx3uplkeyulyg"]
 
 [ext_resource type="Texture2D" uid="uid://bkf6oa416lck8" path="res://Assets/Textures/Stage/floor_02.png" id="1_iv0iu"]
 [ext_resource type="PackedScene" uid="uid://sc7a05fqml2v" path="res://Assets/Modules/Decor/Assets/table.tscn" id="2_2arif"]
@@ -12,8 +12,27 @@
 [ext_resource type="PackedScene" uid="uid://c166u1ttsx4ie" path="res://Assets/Modules/Decor/Assets/drink_bar.tscn" id="11_2dytu"]
 [ext_resource type="PackedScene" uid="uid://dvp1ant1s5p6t" path="res://Assets/Modules/Decor/Assets/chair.tscn" id="11_sn3mw"]
 [ext_resource type="PackedScene" uid="uid://hc8xmft6lcol" path="res://Assets/Modules/Decor/Assets/fruits_basket.tscn" id="12_pucgy"]
+[ext_resource type="Script" path="res://Assets/Modules/NPCs/Views/NpcSpawnerView.gd" id="14_hsclb"]
 [ext_resource type="PackedScene" uid="uid://d35ycjrkrpbr1" path="res://Assets/Modules/Decor/Assets/trash_box.tscn" id="15_sj77m"]
 [ext_resource type="PackedScene" uid="uid://okuxx8tg844m" path="res://Assets/Modules/Decor/Assets/apple_fridge.tscn" id="16_vxgkx"]
+
+[sub_resource type="Curve2D" id="Curve2D_2vud6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 144, -104, 0, 0, 0, 0, 144, -40, 0, 0, 0, 0, 120, -8, 0, 0, 0, 0, 96, -8)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_y5f8w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 144, -104, 0, 0, 0, 0, 144, -8, 0, 0, 0, 0, 120, 24, 0, 0, 0, 0, 96, 24)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_eo28r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 144, -104, 0, 0, 0, 0, 144, 24, 0, 0, 0, 0, 120, 56, 0, 0, 0, 0, 96, 56)
+}
+point_count = 4
 
 [node name="WorkshopScene" type="Node2D"]
 y_sort_enabled = true
@@ -128,6 +147,50 @@ position = Vector2(96, 64)
 
 [node name="TrashBox" parent="Decor" instance=ExtResource("15_sj77m")]
 position = Vector2(-192, 104)
+
+[node name="Pathes" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(144, -88)
+rotation = 1.5708
+
+[node name="Path1" type="Path2D" parent="Pathes"]
+position = Vector2(88, 144)
+rotation = -1.5708
+curve = SubResource("Curve2D_2vud6")
+
+[node name="PathFollow1" type="PathFollow2D" parent="Pathes/Path1"]
+position = Vector2(96, -8)
+rotation = 1.5708
+progress = 128.0
+rotates = false
+loop = false
+script = ExtResource("14_hsclb")
+
+[node name="Path2" type="Path2D" parent="Pathes"]
+position = Vector2(88, 144)
+rotation = -1.5708
+curve = SubResource("Curve2D_y5f8w")
+
+[node name="PathFollow2" type="PathFollow2D" parent="Pathes/Path2"]
+position = Vector2(124.832, 17.5579)
+rotation = 1.5708
+progress = 128.0
+rotates = false
+loop = false
+script = ExtResource("14_hsclb")
+
+[node name="Path3" type="Path2D" parent="Pathes"]
+position = Vector2(88, 144)
+rotation = -1.5708
+curve = SubResource("Curve2D_eo28r")
+
+[node name="PathFollow3" type="PathFollow2D" parent="Pathes/Path3"]
+position = Vector2(144, 24)
+rotation = 1.5708
+progress = 128.0
+rotates = false
+loop = false
+script = ExtResource("14_hsclb")
 
 [node name="Player" parent="." instance=ExtResource("2_t2qoh")]
 position = Vector2(32, -8)
