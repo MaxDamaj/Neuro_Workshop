@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIMainPanel.gd" id="1_iwq3x"]
 [ext_resource type="Texture2D" uid="uid://bdvtwhvvmfxa8" path="res://Assets/Textures/UI/Title screen no buttons.png" id="2_hwfkt"]
-[ext_resource type="Theme" uid="uid://dsklx8m7o8m0o" path="res://Assets/Modules/UI/Themes/title_screen_buttons_theme.tres" id="3_7k0jo"]
+[ext_resource type="Theme" uid="uid://dsklx8m7o8m0o" path="res://Assets/Modules/UI/Themes/title_screen_theme.tres" id="3_7k0jo"]
 [ext_resource type="Texture2D" uid="uid://barb0uxkcjpqa" path="res://Assets/Textures/UI/clevil.jpg" id="4_3he72"]
 
 [node name="UI" type="CanvasLayer" node_paths=PackedStringArray("NewGameButton", "ChooseLevelButton", "BackButton", "LevelButtons", "SettingsButton", "EffectsVolumeSlider", "MusicVolumeSlider")]
@@ -160,3 +160,14 @@ offset_bottom = -38.5
 grow_vertical = 2
 theme = ExtResource("3_7k0jo")
 text = "Music Volume"
+
+[node name="GameTitle" type="Label" parent="."]
+offset_left = 253.0
+offset_top = 85.0
+offset_right = 671.0
+offset_bottom = 238.0
+theme = ExtResource("3_7k0jo")
+theme_override_font_sizes/font_size = 62
+text = "ABANDONED
+PUB"
+horizontal_alignment = 2

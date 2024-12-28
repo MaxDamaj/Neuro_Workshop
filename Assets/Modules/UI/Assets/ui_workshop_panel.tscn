@@ -1,14 +1,117 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm7th3b03hpn"]
+[gd_scene load_steps=4 format=3 uid="uid://dm7th3b03hpn"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIWorkshopPanel.gd" id="1_0w577"]
+[ext_resource type="Texture2D" uid="uid://barb0uxkcjpqa" path="res://Assets/Textures/UI/clevil.jpg" id="2_jtvf2"]
+[ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="3_q3eox"]
 
-[node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("BackButton")]
+[node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("SettingsButton", "CloseSettingsButton", "MainMenuButton", "SettingsContainer")]
 script = ExtResource("1_0w577")
-BackButton = NodePath("BackButton")
+SettingsButton = NodePath("SettingsButton")
+CloseSettingsButton = NodePath("SettingsContainer/CloseSettingsButton")
+MainMenuButton = NodePath("SettingsContainer/MainMenuButton")
+SettingsContainer = NodePath("SettingsContainer")
 
-[node name="BackButton" type="Button" parent="."]
-offset_left = 40.0
-offset_top = 32.0
-offset_right = 104.0
-offset_bottom = 63.0
-text = "<- Back"
+[node name="SettingsButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -122.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = 121.0
+grow_horizontal = 0
+icon = ExtResource("2_jtvf2")
+
+[node name="SettingsContainer" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -705.0
+offset_top = 50.0
+offset_right = -155.0
+offset_bottom = 424.0
+grow_horizontal = 0
+theme = ExtResource("3_q3eox")
+
+[node name="EffectsVolumeSlider" type="HSlider" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 120.0
+offset_right = 225.0
+offset_bottom = 136.0
+grow_horizontal = 2
+theme = ExtResource("3_q3eox")
+value = 50.0
+
+[node name="Label" type="Label" parent="SettingsContainer/EffectsVolumeSlider"]
+layout_mode = 1
+offset_top = -40.0
+offset_right = 179.0
+offset_bottom = -10.0
+theme = ExtResource("3_q3eox")
+text = "Effects Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 220.0
+offset_right = 225.0
+offset_bottom = 236.0
+grow_horizontal = 2
+theme = ExtResource("3_q3eox")
+value = 50.0
+
+[node name="Label" type="Label" parent="SettingsContainer/MusicVolumeSlider"]
+layout_mode = 0
+offset_top = -40.0
+offset_right = 165.0
+offset_bottom = -10.0
+theme = ExtResource("3_q3eox")
+text = "Music Volume"
+
+[node name="MainMenuButton" type="Button" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -66.0
+offset_right = 82.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_q3eox")
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.5
+offset_top = 20.0
+offset_right = 63.5
+offset_bottom = 50.0
+grow_horizontal = 2
+theme = ExtResource("3_q3eox")
+text = "SETTINGS"
+
+[node name="CloseSettingsButton" type="Button" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 91.0
+grow_horizontal = 0
+icon = ExtResource("2_jtvf2")
