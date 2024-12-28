@@ -45,7 +45,19 @@ func _try_interact_with_item():
 	if (ItemName == ""):
 		_player.try_place_item(self)
 	else:
+		if (_try_merge_items(_player.itemName)): return
 		_player.try_pickup_item(self)
+
+func _try_merge_items(itemToMerge : String) -> bool:
+	if (itemToMerge == ""): return false
+	var mergeItem : ItemModel = _itemsProvider.allItems[itemToMerge]
+	
+	if (mergeItem.mergeTo.has(ItemName)):
+		add_item(mergeItem.mergeTo[ItemName])
+		_player.remove_item()
+		return true
+	
+	return false
 
 
 func _on_area_2d_body_entered(body : Node2D):

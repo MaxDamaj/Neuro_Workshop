@@ -69,9 +69,13 @@ func try_pickup_item(table : DecorTableView) -> bool:
 func try_place_item(table : DecorTableView) -> bool:
 	if (itemName == ""): return false;
 	table.add_item(itemName)
+	remove_item()
+	return true
+
+func remove_item():
 	itemName = ""
 	itemSprite.texture = null
-	return true
+
 
 func set_animation_idle_frame(_frame):
 	var anim_shift = 7 if _is_crouch else idle_anim 

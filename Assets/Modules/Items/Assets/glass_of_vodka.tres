@@ -7,3 +7,4 @@
 resource_name = "glass_of_vodka"
 script = ExtResource("1_jve6v")
 texture = ExtResource("2_u4jfi")
+mergeTo = {}

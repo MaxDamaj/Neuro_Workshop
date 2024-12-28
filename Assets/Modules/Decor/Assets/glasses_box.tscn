@@ -13,7 +13,7 @@
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
-size = Vector2(24, 16)
+size = Vector2(24, 64)
 
 [node name="GlassesBox" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
 script = ExtResource("1_2q2ox")
@@ -53,6 +53,6 @@ shape = SubResource("RectangleShape2D_c6dd6")
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(0, 8)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_8ysvh")
 debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)
