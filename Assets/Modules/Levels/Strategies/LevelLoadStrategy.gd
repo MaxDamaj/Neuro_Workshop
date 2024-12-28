@@ -1,4 +1,4 @@
-extends Node
+extends BaseProvider
 class_name LevelLoadStrategy
 
 static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
@@ -7,8 +7,11 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 
 @export var levels : Array[PackedScene]
 
+var _allLevelTasks : Dictionary
 var _loadedLevel : Node2D
 
+func _ready() -> void:
+	_add_to_dictionary("res://Assets/Modules/Levels/Assets/Tasks", _allLevelTasks)
 
 func load_level(levelId : int) -> void:
 	var end_func : Callable = func():

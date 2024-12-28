@@ -1,5 +1,5 @@
 extends Node
-class_name DecorManualMachineView
+class_name DecorAutomaticMachineView
 
 @onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
 
@@ -15,7 +15,6 @@ var itemToProduce : String
 
 var _player : PlayerView
 var _time : float
-var _can_process : bool
 
 
 func _ready() -> void:
@@ -24,21 +23,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("action") || HoverButton.button_pressed):
-		if (_time > 0):
-			if (itemName != "" && _player.itemName == ""): _can_process = true
-		else:
-			_try_interact_with_item()
-	else:
-		_can_process = false
-	
-	
-	if (!_can_process): return
+		if (_time <= 0): _try_interact_with_item()
 	
 	if (_time > 0):
 		ProgressSlider.value = ProgressSlider.max_value - _time
 		_time -= delta
 		if (_time <= 0):
-			_processing_done()
+			ItemSprite.texture = _itemsProvider.allItems[itemToProduce].texture
 
 
 func _init_buttons():
@@ -49,6 +40,7 @@ func _init_buttons():
 
 func _try_interact_with_item():
 	if (_player == null): return
+	
 	if (itemName == "" && _player.itemName != ""):
 		var item : ItemModel = _itemsProvider.allItems[_player.itemName]
 		if (!item.usedIn.has(MachineName)): return
@@ -60,6 +52,10 @@ func _try_interact_with_item():
 		ProgressSlider.max_value = newItem.producingTime
 		_time = newItem.producingTime
 		itemToProduce = newItem.resource_name
+		return
+	
+	if (itemName != "" && _player.itemName == ""):
+		_processing_done()
 
 func _add_item(newItemName : String):
 	itemName = newItemName

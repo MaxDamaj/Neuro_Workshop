@@ -12,4 +12,6 @@ mergeTo = {
 "glass_of_vodka": "raw_mix_ermge_vodka",
 "vodka": "raw_mix_ermge_vodka"
 }
-usedIn = {}
+usedIn = {
+"carbonizer": "fannta"
+}

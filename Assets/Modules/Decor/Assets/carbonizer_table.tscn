@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://niy2pgrlk6au"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorAutomaticMachineView.gd" id="1_vgh82"]
+[ext_resource type="Texture2D" uid="uid://cqewojfj7au7x" path="res://Assets/Textures/Stage/carbonizer_table.png" id="2_3w2lf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsks1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd36r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6dd6"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
+size = Vector2(24, 16)
+
+[sub_resource type="ImageTexture" id="ImageTexture_6ohf1"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_1orlt"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_h7q0o"]
+
+[node name="CarbonizerTable" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea", "ProgressSlider")]
+script = ExtResource("1_vgh82")
+ItemSprite = NodePath("ItemSprite")
+HoverButton = NodePath("HoverButton")
+InteractArea = NodePath("InteractArea")
+MachineName = "carbonizer"
+ProgressSlider = NodePath("ProgressSlider")
+
+[node name="DecorSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_3w2lf")
+offset = Vector2(0, -16)
+
+[node name="HoverButton" type="Button" parent="."]
+modulate = Color(2, 2, 2, 1)
+offset_left = -16.0
+offset_top = -52.0
+offset_right = 16.0
+offset_bottom = -4.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sd36r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
+icon = ExtResource("2_3w2lf")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_c6dd6")
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_8ysvh")
+debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)
+
+[node name="ProgressSlider" type="HSlider" parent="."]
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 24.0
+offset_bottom = -40.0
+theme_override_icons/grabber = SubResource("ImageTexture_6ohf1")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_1orlt")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_h7q0o")
+max_value = 1.0
+step = 0.05
