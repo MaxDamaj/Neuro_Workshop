@@ -23,9 +23,10 @@ func _input(event):
 		_try_interact_with_item()
 
 
-func add_item(itemName : String):
+func try_add_item(itemName : String) -> bool:
 	ItemName = itemName
 	ItemSprite.texture = _itemsProvider.allItems[ItemName].texture
+	return true
 
 func remove_item():
 	ItemName = ""
@@ -53,8 +54,8 @@ func _try_merge_items(itemToMerge : String) -> bool:
 	var mergeItem : ItemModel = _itemsProvider.allItems[itemToMerge]
 	
 	if (mergeItem.mergeTo.has(ItemName)):
-		add_item(mergeItem.mergeTo[ItemName])
-		_player.remove_item()
+		if (try_add_item(mergeItem.mergeTo[ItemName])):
+			_player.remove_item()
 		return true
 	
 	return false

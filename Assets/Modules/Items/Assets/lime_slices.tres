@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://x6imes7480ad"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_pbh86"]
+[ext_resource type="Texture2D" uid="uid://xu1on2u1gx0y" path="res://Assets/Textures/Items/item_lime_slices.png" id="2_p8fr7"]
+
+[resource]
+resource_name = "lime_slices"
+script = ExtResource("1_pbh86")
+texture = ExtResource("2_p8fr7")
+producingTime = 3.0
+mergeTo = {
+"mix_gin_tonic": "tony_tonic"
+}
+usedIn = {}

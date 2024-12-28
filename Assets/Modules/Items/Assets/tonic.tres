@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://c8g1yjjtm7wsb"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_wpru8"]
+[ext_resource type="Texture2D" uid="uid://bsfma1h2cgp3y" path="res://Assets/Textures/Items/item_tonic.png" id="2_o01co"]
+
+[resource]
+resource_name = "tonic"
+script = ExtResource("1_wpru8")
+texture = ExtResource("2_o01co")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {}

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dm7bjgjsobv58"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_p2ttq"]
+[ext_resource type="Texture2D" uid="uid://boq0e7rj0miij" path="res://Assets/Textures/Items/item_limed_vodka.png" id="2_8xogs"]
+
+[resource]
+resource_name = "limed_vodka"
+script = ExtResource("1_p2ttq")
+texture = ExtResource("2_8xogs")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {
+"blender": "rising_star"
+}

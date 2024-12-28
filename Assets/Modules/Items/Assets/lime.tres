@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://bbi2p87lltrlr"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_sg33p"]
+[ext_resource type="Texture2D" uid="uid://divi2cmxn3081" path="res://Assets/Textures/Items/item_lime.png" id="2_2yd27"]
+
+[resource]
+resource_name = "lime"
+script = ExtResource("1_sg33p")
+texture = ExtResource("2_2yd27")
+producingTime = 0.0
+mergeTo = {
+"glass_of_ermge_juice": "limed_ermge_juice",
+"glass_of_vodka": "limed_vodka"
+}
+usedIn = {
+"cutting_board": "lime_slices"
+}

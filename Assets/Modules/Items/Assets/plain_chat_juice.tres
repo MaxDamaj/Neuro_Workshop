@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dk2t7c5lqemm2"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_ekkrl"]
+[ext_resource type="Texture2D" uid="uid://bkol14kgxvliy" path="res://Assets/Textures/Items/item_plain_chat_juice.png" id="2_xpmep"]
+
+[resource]
+resource_name = "plain_chat_juice"
+script = ExtResource("1_ekkrl")
+texture = ExtResource("2_xpmep")
+producingTime = 6.0
+mergeTo = {}
+usedIn = {
+"carbonizer": "chat_juice"
+}

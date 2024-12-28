@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://c166u1ttsx4ie"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorCompositeBoxView.gd" id="1_nqo6q"]
+[ext_resource type="Texture2D" uid="uid://d1yuwycvpu7o3" path="res://Assets/Textures/Stage/drink_bar.png" id="2_6cw35"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsks1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd36r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6dd6"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
+size = Vector2(56, 8)
+
+[node name="DrinkBar" type="Node2D" node_paths=PackedStringArray("HoverButton", "InteractArea")]
+script = ExtResource("1_nqo6q")
+HoverButton = NodePath("HoverButton")
+InteractArea = NodePath("InteractArea")
+ItemsList = Array[String](["vodka", "gin", "tonic", "rum"])
+
+[node name="DecorSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_6cw35")
+offset = Vector2(0, -16)
+
+[node name="HoverButton" type="Button" parent="."]
+modulate = Color(2, 2, 2, 1)
+offset_left = -32.0
+offset_top = -52.0
+offset_right = 32.0
+offset_bottom = -4.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sd36r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
+icon = ExtResource("2_6cw35")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_c6dd6")
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_8ysvh")
+debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)

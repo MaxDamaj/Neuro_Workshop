@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://bwkr7bt2sl3x0"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_b7vjh"]
+[ext_resource type="Texture2D" uid="uid://un08nj4rrcgt" path="res://Assets/Textures/Items/item_tomato.png" id="2_avx31"]
+
+[resource]
+resource_name = "tomato"
+script = ExtResource("1_b7vjh")
+texture = ExtResource("2_avx31")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {}

@@ -66,8 +66,8 @@ func try_pickup_item(table : DecorTableView) -> bool:
 
 func try_place_item(table : DecorTableView) -> bool:
 	if (itemName == ""): return false;
-	table.add_item(itemName)
-	remove_item()
+	if (table.try_add_item(itemName)):
+		remove_item()
 	return true
 
 func add_item(newItemName : String):

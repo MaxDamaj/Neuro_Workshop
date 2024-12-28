@@ -6,8 +6,8 @@ class_name DecorGeneratorView
 func _ready() -> void:
 	_init_buttons()
 
-func add_item(itemName : String):
-	pass
+func try_add_item(itemName : String):
+	return true
 
 func remove_item():
 	pass
