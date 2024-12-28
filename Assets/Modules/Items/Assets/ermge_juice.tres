@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://bbup2y18bpren"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_3jih6"]
+[ext_resource type="Texture2D" uid="uid://dn8t3behspq3o" path="res://Assets/Textures/Items/item_ermge_juice.png" id="2_gfpge"]
+
+[resource]
+resource_name = "ermge_juice"
+script = ExtResource("1_3jih6")
+texture = ExtResource("2_gfpge")
+producingTime = 0.0
+mergeTo = {
+"glass": "glass_of_ermge_juice"
+}
+usedIn = {}

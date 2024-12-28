@@ -7,3 +7,6 @@
 resource_name = "lemon_slices"
 script = ExtResource("1_pe2ur")
 texture = ExtResource("2_gbaen")
+producingTime = 3.0
+mergeTo = {}
+usedIn = {}

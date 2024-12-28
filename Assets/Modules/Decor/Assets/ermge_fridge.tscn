@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://tvcxmaw6gnlw"]
+[gd_scene load_steps=8 format=3 uid="uid://dwkyhtlm1fk6v"]
 
-[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorGeneratorView.gd" id="1_41fmk"]
-[ext_resource type="Texture2D" uid="uid://b41k18le2asek" path="res://Assets/Textures/Stage/vodka_bar.png" id="2_0d8oc"]
+[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorGeneratorView.gd" id="1_mudwj"]
+[ext_resource type="Texture2D" uid="uid://chfhbjuo53m11" path="res://Assets/Textures/Stage/ermge_fridge.png" id="2_ml3qn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsks1"]
 
@@ -15,16 +15,16 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
 size = Vector2(32, 24)
 
-[node name="VodkaBar" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
-script = ExtResource("1_41fmk")
+[node name="ErmgeFridge" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
+script = ExtResource("1_mudwj")
 ItemSprite = NodePath("ItemSprite")
 HoverButton = NodePath("HoverButton")
 InteractArea = NodePath("InteractArea")
-ItemName = "vodka"
+ItemName = "ermge_juice"
 
 [node name="DecorSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("2_0d8oc")
+texture = ExtResource("2_ml3qn")
 offset = Vector2(0, -16)
 
 [node name="HoverButton" type="Button" parent="."]
@@ -38,7 +38,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sd36r")
 theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
-icon = ExtResource("2_0d8oc")
+icon = ExtResource("2_ml3qn")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -32)

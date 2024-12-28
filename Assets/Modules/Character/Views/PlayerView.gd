@@ -60,10 +60,8 @@ func _physics_process(_delta):
 
 func try_pickup_item(table : DecorTableView) -> bool:
 	if (itemName != ""): return false;
-	var item : ItemModel = _itemsProvider.allItems[table.ItemName]
+	add_item(table.ItemName)
 	table.remove_item()
-	itemName = item.resource_name
-	itemSprite.texture = item.texture
 	return true
 
 func try_place_item(table : DecorTableView) -> bool:
@@ -71,6 +69,11 @@ func try_place_item(table : DecorTableView) -> bool:
 	table.add_item(itemName)
 	remove_item()
 	return true
+
+func add_item(newItemName : String):
+	var item : ItemModel = _itemsProvider.allItems[newItemName]
+	itemName = item.resource_name
+	itemSprite.texture = item.texture
 
 func remove_item():
 	itemName = ""
