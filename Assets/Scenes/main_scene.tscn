@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=13 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dm7th3b03hpn" path="res://Assets/Modules/UI/Assets/ui_workshop_panel.tscn" id="3_n0mek"]
 [ext_resource type="PackedScene" uid="uid://8n6nj8embvl0" path="res://Assets/Modules/UI/Assets/ui_exit_level_panel.tscn" id="4_852d5"]
 [ext_resource type="PackedScene" uid="uid://bdxkmq74dwkt" path="res://Assets/Modules/UI/Assets/ui_loading_panel.tscn" id="5_wgl24"]
+[ext_resource type="PackedScene" uid="uid://buuhuexwqh6hx" path="res://Assets/Modules/UI/Assets/ui_inventory.tscn" id="6_lanqk"]
 [ext_resource type="PackedScene" uid="uid://cu5d13smon3e8" path="res://Assets/Modules/Levels/Assets/Scenes/level_2.tscn" id="9_wlghq"]
 [ext_resource type="PackedScene" uid="uid://ba4spko2ac3wv" path="res://Assets/Modules/Levels/Assets/Scenes/level_3.tscn" id="10_5dem6"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="11_m5u4n"]
@@ -20,6 +21,7 @@
 script = ExtResource("1_yahvp")
 allPanels = {
 "exit_level_ui": ExtResource("4_852d5"),
+"inventory_ui": ExtResource("6_lanqk"),
 "loading_ui": ExtResource("5_wgl24"),
 "main_ui": ExtResource("2_632w6"),
 "workshop_ui": ExtResource("3_n0mek")
