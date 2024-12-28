@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dgj8cpgw84mot"]
 
-[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorTableView.gd" id="1_cm4pe"]
+[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorBarTableView.gd" id="1_on7fr"]
 [ext_resource type="Texture2D" uid="uid://bv6nynht2jay0" path="res://Assets/Textures/Stage/bar_table.png" id="2_3v77a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsks1"]
@@ -16,7 +16,7 @@ size = Vector2(32, 32)
 size = Vector2(24, 24)
 
 [node name="BarTable" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
-script = ExtResource("1_cm4pe")
+script = ExtResource("1_on7fr")
 ItemSprite = NodePath("ItemSprite")
 HoverButton = NodePath("HoverButton")
 InteractArea = NodePath("InteractArea")
