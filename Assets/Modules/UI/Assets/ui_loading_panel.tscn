@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdxkmq74dwkt"]
+
+[ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UILoadingPanel.gd" id="1_i6uxo"]
+[ext_resource type="Shader" path="res://Assets/Shaders/cut_out_mask.gdshader" id="1_iw4pb"]
+[ext_resource type="Texture2D" uid="uid://cow0tbtkj0oib" path="res://Assets/Textures/UI/hole.png" id="1_mjfk8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ovwiv"]
+shader = ExtResource("1_iw4pb")
+shader_parameter/fill_amount = 0.0
+shader_parameter/mask_rotation = 0.0
+shader_parameter/mask_offset = Vector2(0, 0)
+shader_parameter/mask_size = Vector2(1, 1)
+shader_parameter/mask_rotation_pivot = Vector2(0.5, 0.5)
+shader_parameter/mask_scale_pivot = Vector2(0.5, 0.5)
+shader_parameter/invert_mask = false
+shader_parameter/use_different_texture = true
+shader_parameter/mask_texture = ExtResource("1_mjfk8")
+
+[node name="UILoadingPanel" type="CanvasLayer" node_paths=PackedStringArray("Bg")]
+layer = 99
+script = ExtResource("1_i6uxo")
+Bg = NodePath("Bg")
+
+[node name="Bg" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ovwiv")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1024.0
+offset_top = -1028.0
+offset_right = 1024.0
+offset_bottom = 1020.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

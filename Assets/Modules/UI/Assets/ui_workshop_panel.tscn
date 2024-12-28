@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm7th3b03hpn"]
+
+[ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIWorkshopPanel.gd" id="1_0w577"]
+
+[node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("BackButton")]
+script = ExtResource("1_0w577")
+BackButton = NodePath("BackButton")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 104.0
+offset_bottom = 63.0
+text = "<- Back"

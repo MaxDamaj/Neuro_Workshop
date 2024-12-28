@@ -1,0 +1,34 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcajjydtc33bx"]
+
+[ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
+[ext_resource type="PackedScene" uid="uid://dh2atkaqxtvcv" path="res://Assets/Modules/UI/Assets/ui.tscn" id="2_632w6"]
+[ext_resource type="Script" path="res://Assets/Modules/Items/Providers/ItemsProvider.gd" id="2_c1f50"]
+[ext_resource type="PackedScene" uid="uid://cx3uplkeyulyg" path="res://Assets/Modules/Levels/Assets/level_1.tscn" id="3_6aveg"]
+[ext_resource type="PackedScene" uid="uid://dm7th3b03hpn" path="res://Assets/Modules/UI/Assets/ui_workshop_panel.tscn" id="3_n0mek"]
+[ext_resource type="PackedScene" uid="uid://8n6nj8embvl0" path="res://Assets/Modules/UI/Assets/ui_exit_level_panel.tscn" id="4_852d5"]
+[ext_resource type="PackedScene" uid="uid://bdxkmq74dwkt" path="res://Assets/Modules/UI/Assets/ui_loading_panel.tscn" id="5_wgl24"]
+[ext_resource type="PackedScene" uid="uid://cu5d13smon3e8" path="res://Assets/Modules/Levels/Assets/level_2.tscn" id="9_wlghq"]
+[ext_resource type="PackedScene" uid="uid://ba4spko2ac3wv" path="res://Assets/Modules/Levels/Assets/level_3.tscn" id="10_5dem6"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="_Providers" type="Node" parent="."]
+
+[node name="UIPanelsProvider" type="Node" parent="_Providers"]
+script = ExtResource("1_yahvp")
+allPanels = {
+"exit_level_ui": ExtResource("4_852d5"),
+"loading_ui": ExtResource("5_wgl24"),
+"main_ui": ExtResource("2_632w6"),
+"workshop_ui": ExtResource("3_n0mek")
+}
+
+[node name="ItemsProvider" type="Node" parent="_Providers"]
+script = ExtResource("2_c1f50")
+
+[node name="_Strategies" type="Node" parent="."]
+
+[node name="LevelLoadStrategy" type="Node" parent="_Strategies"]
+script = ExtResource("2_7afnu")
+levels = Array[PackedScene]([ExtResource("3_6aveg"), ExtResource("9_wlghq"), ExtResource("10_5dem6")])

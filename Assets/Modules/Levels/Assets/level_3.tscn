@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba4spko2ac3wv"]
+
+[ext_resource type="Texture2D" uid="uid://bkf6oa416lck8" path="res://Assets/Textures/Stage/floor_02.png" id="1_bmqq4"]
+[ext_resource type="PackedScene" uid="uid://dj40ovayiw7gs" path="res://Assets/Modules/Character/Assets/player.tscn" id="2_w86i8"]
+
+[node name="WorkshopScene" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="Floor1" type="TextureRect" parent="Floor"]
+modulate = Color(1, 0.784314, 0.796078, 1)
+offset_left = -240.0
+offset_top = -104.0
+offset_right = 240.0
+offset_bottom = 120.0
+texture = ExtResource("1_bmqq4")
+stretch_mode = 1
+
+[node name="Wall1" type="TextureRect" parent="Floor"]
+modulate = Color(0.277528, 0.277528, 0.277528, 1)
+offset_left = -240.0
+offset_top = -168.0
+offset_right = 240.0
+offset_bottom = -136.0
+scale = Vector2(1, 2)
+texture = ExtResource("1_bmqq4")
+stretch_mode = 1
+
+[node name="Colliders" type="Node2D" parent="."]
+
+[node name="Borders" type="StaticBody2D" parent="Colliders"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders/Borders"]
+polygon = PackedVector2Array(-240, -104, 240, -104, 240, 120, -240, 120, -240, -96, -272, -96, -272, 152, 272, 152, 272, -144, -272, -144, -272, -104)
+
+[node name="Decor" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_w86i8")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -14)
+zoom = Vector2(4, 4)
