@@ -14,8 +14,6 @@ func _ready() -> void:
 	add_child(_timer)
 	_timer.one_shot = true
 	_timer.timeout.connect(_end_task)
-	
-	_start_task("spawn_npc", 4)
 
 func try_complete_task(itemName : String, tableId : int) -> bool:
 	return true
@@ -24,9 +22,13 @@ func register_spawner(spawner : NpcSpawnerView):
 	_allSpawners.append(spawner)
 
 
-func _start_task(task : String, duration : float):
+func start_task(task : String, duration : float):
 	_nextTask = task
 	_timer.start(duration)
+
+func stop_tasks():
+	_nextTask = ""
+	_timer.stop()
 
 func _end_task():
 	match _nextTask:
