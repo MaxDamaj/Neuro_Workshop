@@ -7,6 +7,9 @@
 resource_name = "vodka"
 script = ExtResource("1_gswdn")
 texture = ExtResource("2_xhisr")
+producingTime = 0.0
 mergeTo = {
-"glass": "glass_of_vodka"
+"glass": "glass_of_vodka",
+"glass_of_ermge_juice": "raw_mix_ermge_vodka"
 }
+usedIn = {}

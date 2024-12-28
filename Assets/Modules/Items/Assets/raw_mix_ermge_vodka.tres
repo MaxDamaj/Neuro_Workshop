@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://c0fi81e7040vp"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_ec43h"]
+[ext_resource type="Texture2D" uid="uid://cs0le3ptbgi4h" path="res://Assets/Textures/Items/item_raw_mix_ermge_vodka.png" id="2_4w7ci"]
+
+[resource]
+resource_name = "raw_mix_ermge_vodka"
+script = ExtResource("1_ec43h")
+texture = ExtResource("2_4w7ci")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {
+"mixer": "mix_ermge_vodka"
+}

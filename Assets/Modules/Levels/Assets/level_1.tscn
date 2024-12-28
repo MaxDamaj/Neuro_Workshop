@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx3uplkeyulyg"]
+[gd_scene load_steps=12 format=3 uid="uid://cx3uplkeyulyg"]
 
 [ext_resource type="Texture2D" uid="uid://bkf6oa416lck8" path="res://Assets/Textures/Stage/floor_02.png" id="1_iv0iu"]
 [ext_resource type="PackedScene" uid="uid://sc7a05fqml2v" path="res://Assets/Modules/Decor/Assets/table.tscn" id="2_2arif"]
+[ext_resource type="PackedScene" uid="uid://dgj8cpgw84mot" path="res://Assets/Modules/Decor/Assets/bar_table.tscn" id="2_o6xgc"]
 [ext_resource type="PackedScene" uid="uid://dj40ovayiw7gs" path="res://Assets/Modules/Character/Assets/player.tscn" id="2_t2qoh"]
 [ext_resource type="PackedScene" uid="uid://1uwfavlo2ko7" path="res://Assets/Modules/Decor/Assets/banana_box.tscn" id="3_mrcol"]
 [ext_resource type="PackedScene" uid="uid://canu51eb72unk" path="res://Assets/Modules/Decor/Assets/lemons_box.tscn" id="4_punq1"]
 [ext_resource type="PackedScene" uid="uid://tgij7igba2b3" path="res://Assets/Modules/Decor/Assets/glasses_box.tscn" id="5_wac8p"]
 [ext_resource type="PackedScene" uid="uid://tvcxmaw6gnlw" path="res://Assets/Modules/Decor/Assets/vodka_bar.tscn" id="6_1vtjw"]
 [ext_resource type="PackedScene" uid="uid://jbr3yj0i2niu" path="res://Assets/Modules/Decor/Assets/cutting_table.tscn" id="6_rix42"]
+[ext_resource type="PackedScene" uid="uid://b1bm8tdi3cpvr" path="res://Assets/Modules/Decor/Assets/mixing_table.tscn" id="7_nt2m7"]
 [ext_resource type="PackedScene" uid="uid://dwkyhtlm1fk6v" path="res://Assets/Modules/Decor/Assets/ermge_fridge.tscn" id="8_agjuk"]
 
 [node name="WorkshopScene" type="Node2D"]
@@ -44,17 +46,32 @@ polygon = PackedVector2Array(-240, -104, 240, -104, 240, 120, -240, 120, -240, -
 z_index = 1
 y_sort_enabled = true
 
+[node name="BarTable" parent="Decor" instance=ExtResource("2_o6xgc")]
+position = Vector2(128, 24)
+
+[node name="BarTable2" parent="Decor" instance=ExtResource("2_o6xgc")]
+position = Vector2(128, -8)
+
+[node name="BarTable3" parent="Decor" instance=ExtResource("2_o6xgc")]
+position = Vector2(128, 56)
+
+[node name="BarTable4" parent="Decor" instance=ExtResource("2_o6xgc")]
+position = Vector2(128, 88)
+
 [node name="Table1" parent="Decor" instance=ExtResource("2_2arif")]
 position = Vector2(-64, 24)
 
 [node name="Table2" parent="Decor" instance=ExtResource("2_2arif")]
 position = Vector2(-96, 24)
 
-[node name="Table3" parent="Decor" instance=ExtResource("2_2arif")]
-position = Vector2(128, 24)
-
 [node name="Table4" parent="Decor" instance=ExtResource("2_2arif")]
-position = Vector2(96, -8)
+position = Vector2(96, -72)
+
+[node name="Table7" parent="Decor" instance=ExtResource("2_2arif")]
+position = Vector2(128, -40)
+
+[node name="Table16" parent="Decor" instance=ExtResource("2_2arif")]
+position = Vector2(128, -72)
 
 [node name="Table5" parent="Decor" instance=ExtResource("2_2arif")]
 position = Vector2(64, -72)
@@ -62,11 +79,11 @@ position = Vector2(64, -72)
 [node name="Table6" parent="Decor" instance=ExtResource("2_2arif")]
 position = Vector2(32, -72)
 
-[node name="Table7" parent="Decor" instance=ExtResource("2_2arif")]
-position = Vector2(-32, -72)
-
 [node name="Table8" parent="Decor" instance=ExtResource("2_2arif")]
 position = Vector2(-32, 24)
+
+[node name="Table17" parent="Decor" instance=ExtResource("2_2arif")]
+position = Vector2(0, 24)
 
 [node name="Table9" parent="Decor" instance=ExtResource("2_2arif")]
 position = Vector2(0, 120)
@@ -103,6 +120,9 @@ position = Vector2(-64, -72)
 
 [node name="CuttingTable2" parent="Decor" instance=ExtResource("6_rix42")]
 position = Vector2(-128, -72)
+
+[node name="MixingTable" parent="Decor" instance=ExtResource("7_nt2m7")]
+position = Vector2(-32, -72)
 
 [node name="VodkaBar" parent="Decor" instance=ExtResource("6_1vtjw")]
 position = Vector2(-224, 24)
