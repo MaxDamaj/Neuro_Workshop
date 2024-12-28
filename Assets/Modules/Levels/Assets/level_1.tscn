@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx3uplkeyulyg"]
+[gd_scene load_steps=8 format=3 uid="uid://cx3uplkeyulyg"]
 
 [ext_resource type="Texture2D" uid="uid://bkf6oa416lck8" path="res://Assets/Textures/Stage/floor_02.png" id="1_iv0iu"]
 [ext_resource type="PackedScene" uid="uid://sc7a05fqml2v" path="res://Assets/Modules/Decor/Assets/table.tscn" id="2_2arif"]
 [ext_resource type="PackedScene" uid="uid://dj40ovayiw7gs" path="res://Assets/Modules/Character/Assets/player.tscn" id="2_t2qoh"]
 [ext_resource type="PackedScene" uid="uid://1uwfavlo2ko7" path="res://Assets/Modules/Decor/Assets/banana_box.tscn" id="3_mrcol"]
+[ext_resource type="PackedScene" uid="uid://canu51eb72unk" path="res://Assets/Modules/Decor/Assets/lemons_box.tscn" id="4_punq1"]
+[ext_resource type="PackedScene" uid="uid://tgij7igba2b3" path="res://Assets/Modules/Decor/Assets/glasses_box.tscn" id="5_wac8p"]
+[ext_resource type="PackedScene" uid="uid://tvcxmaw6gnlw" path="res://Assets/Modules/Decor/Assets/vodka_bar.tscn" id="6_1vtjw"]
 
 [node name="WorkshopScene" type="Node2D"]
 y_sort_enabled = true
@@ -71,10 +74,19 @@ position = Vector2(-96, -72)
 position = Vector2(-128, -72)
 
 [node name="Table11" parent="Decor" instance=ExtResource("2_2arif")]
-position = Vector2(-192, -72)
+position = Vector2(0, -72)
 
 [node name="BananaBox" parent="Decor" instance=ExtResource("3_mrcol")]
 position = Vector2(-160, -72)
+
+[node name="LemonsBox" parent="Decor" instance=ExtResource("4_punq1")]
+position = Vector2(-192, -72)
+
+[node name="GlassesBox" parent="Decor" instance=ExtResource("5_wac8p")]
+position = Vector2(-128, 24)
+
+[node name="VodkaBar" parent="." instance=ExtResource("6_1vtjw")]
+position = Vector2(-224, 24)
 
 [node name="Player" parent="." instance=ExtResource("2_t2qoh")]
 

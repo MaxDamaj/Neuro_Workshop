@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://cmvl5fg6opdyt"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_pe2ur"]
+[ext_resource type="Texture2D" uid="uid://dhvnwhhvn8oai" path="res://Assets/Textures/Items/item_lemon_slices.png" id="2_gbaen"]
+
+[resource]
+resource_name = "lemon_slices"
+script = ExtResource("1_pe2ur")
+texture = ExtResource("2_gbaen")

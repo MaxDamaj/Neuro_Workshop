@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://canu51eb72unk"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorGeneratorView.gd" id="1_8dcfd"]
+[ext_resource type="Texture2D" uid="uid://2oe2irvn3vmt" path="res://Assets/Textures/Stage/lemons_box.png" id="2_2vutf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsks1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd36r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6dd6"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
+size = Vector2(24, 16)
+
+[node name="LemonsBox" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
+script = ExtResource("1_8dcfd")
+ItemSprite = NodePath("ItemSprite")
+HoverButton = NodePath("HoverButton")
+InteractArea = NodePath("InteractArea")
+ItemName = "lemon"
+
+[node name="DecorSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_2vutf")
+offset = Vector2(0, -16)
+
+[node name="HoverButton" type="Button" parent="."]
+modulate = Color(2, 2, 2, 1)
+offset_left = -16.0
+offset_top = -52.0
+offset_right = 16.0
+offset_bottom = -4.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sd36r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
+icon = ExtResource("2_2vutf")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_c6dd6")
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_8ysvh")
+debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)
