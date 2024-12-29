@@ -172,7 +172,6 @@ patch_margin_right = 50
 patch_margin_bottom = 50
 
 [node name="Life1" type="TextureRect" parent="LifesContainer"]
-modulate = Color(0, 0, 0, 0.501961)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -187,7 +186,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Life2" type="TextureRect" parent="LifesContainer"]
-modulate = Color(0, 0, 0, 0.501961)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -202,7 +200,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Life3" type="TextureRect" parent="LifesContainer"]
-modulate = Color(0, 0, 0, 0.501961)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
