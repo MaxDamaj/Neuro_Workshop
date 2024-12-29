@@ -8,6 +8,8 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 
 @export var levels : Array[PackedScene]
 
+var safeCode : int
+
 var _allLevelTasks : Dictionary
 var _loadedLevel : Node2D
 var _loadedLevelId : int = -1
@@ -19,6 +21,7 @@ func _ready() -> void:
 
 func load_level(levelId : int) -> void:
 	_loadedLevelId = levelId
+	safeCode = randi_range(0, 9999)
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _load_level_callback})
 
 func unload_level():
@@ -33,6 +36,7 @@ func restart_level():
 		_uiPanelsProvider.close_panel("lose_ui")
 		_load_level_callback()
 	
+	safeCode = randi_range(0, 9999)
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : end_func})
 
 func _unload_level_callback():
