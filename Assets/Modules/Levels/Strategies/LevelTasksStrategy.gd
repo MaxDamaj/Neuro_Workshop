@@ -14,6 +14,8 @@ var _allSpawners : Array[NpcSpawnerView]
 var _freeSpawners : Array[NpcSpawnerView]
 var _timer : Timer
 var _nextTaskIndex : int = 0
+
+var _taskPassedCount : int
 var _completedTasksCount : int
 var _remainingLoses : int
 
@@ -34,6 +36,7 @@ func register_spawner(spawner : NpcSpawnerView):
 func start_tasks():
 	if (allTasks == null || allTasks.size() == 0): return
 	_remainingLoses = 3
+	_taskPassedCount = 0
 	_completedTasksCount = 0
 	_nextTaskIndex = 0
 	_timer.start(allTasks[_nextTaskIndex].delay)
@@ -44,13 +47,15 @@ func stop_tasks():
 
 func complete_task():
 	_completedTasksCount += 1
+	_taskPassedCount += 1
 	on_task_completed.emit(float(_completedTasksCount) / allTasks.size())
 	
-	if (_completedTasksCount >= allTasks.size()):
+	if (_taskPassedCount >= allTasks.size()):
 		on_all_tasks_completed.emit()
 
 func lose_task():
 	_remainingLoses -= 1
+	_taskPassedCount += 1
 	on_life_lost.emit(3, _remainingLoses)
 	
 	if (_remainingLoses <= 0):

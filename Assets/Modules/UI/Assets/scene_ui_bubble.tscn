@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://mleg04ee1xa1"]
+
+[ext_resource type="Texture2D" uid="uid://ibtkd62g7msi" path="res://Assets/Textures/UI/bubble.png" id="1_1bw64"]
+[ext_resource type="Script" path="res://Assets/Modules/UI/Views/TileBubble.gd" id="1_hxe7s"]
+[ext_resource type="Texture2D" uid="uid://bnd11dh1jhlvu" path="res://Assets/Shaders/gradient_texture_1d.tres" id="2_5w7y7"]
+[ext_resource type="Texture2D" uid="uid://mku0xlg6bchi" path="res://Assets/Textures/Items/item_vodka.png" id="3_adxyq"]
+[ext_resource type="Texture2D" uid="uid://p3gn0qt6tc1b" path="res://Assets/Textures/UI/bubble_progress.png" id="4_4kr5s"]
+
+[node name="UIBubble" type="Control" node_paths=PackedStringArray("OrderIcon", "ProgressSlider")]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 33.0
+offset_top = -260.0
+offset_right = 216.0
+offset_bottom = -85.0
+pivot_offset = Vector2(6, 38)
+script = ExtResource("1_hxe7s")
+OrderIcon = NodePath("OrderIcon")
+ProgressSlider = NodePath("TextureProgressBar")
+ColorGrad = ExtResource("2_5w7y7")
+
+[node name="BubbleTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1bw64")
+stretch_mode = 5
+
+[node name="OrderIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -64.5
+offset_right = 65.5
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_adxyq")
+expand_mode = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 12.0
+offset_right = 171.0
+offset_bottom = 57.0
+value = 92.0
+fill_mode = 5
+texture_progress = ExtResource("4_4kr5s")

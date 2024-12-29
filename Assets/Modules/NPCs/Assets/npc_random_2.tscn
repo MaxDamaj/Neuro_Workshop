@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp2kuqpqelcoo"]
+[gd_scene load_steps=9 format=3 uid="uid://bk24hcasst3qs"]
 
-[ext_resource type="Script" path="res://Assets/Modules/NPCs/Views/NpcView.gd" id="1_d4xfo"]
-[ext_resource type="Texture2D" uid="uid://c8gy7c0roan4a" path="res://Assets/Textures/Characters/npc_vedal.png" id="1_wexrh"]
-[ext_resource type="Texture2D" uid="uid://d1k66o4g3dooe" path="res://Assets/Textures/Characters/shadow.png" id="3_axrer"]
-[ext_resource type="PackedScene" uid="uid://mleg04ee1xa1" path="res://Assets/Modules/UI/Assets/scene_ui_bubble.tscn" id="4_ub46o"]
+[ext_resource type="Script" path="res://Assets/Modules/NPCs/Views/NpcView.gd" id="1_a71i0"]
+[ext_resource type="Texture2D" uid="uid://d1k66o4g3dooe" path="res://Assets/Textures/Characters/shadow.png" id="2_twxef"]
+[ext_resource type="Texture2D" uid="uid://bdbt2qvwe2gux" path="res://Assets/Textures/Characters/npc_random_2.png" id="3_pv6xj"]
+[ext_resource type="PackedScene" uid="uid://mleg04ee1xa1" path="res://Assets/Modules/UI/Assets/scene_ui_bubble.tscn" id="4_wllsu"]
 
 [sub_resource type="Animation" id="Animation_kgjip"]
 resource_name = "Idle"
@@ -62,23 +62,25 @@ _data = {
 "Walk": SubResource("Animation_7o4i7")
 }
 
-[node name="NpcVedal" type="Node2D" node_paths=PackedStringArray("Animator", "Bubble")]
+[node name="NpcRandom" type="Node2D" node_paths=PackedStringArray("Animator", "Bubble")]
 z_index = 1
 y_sort_enabled = true
-script = ExtResource("1_d4xfo")
+script = ExtResource("1_a71i0")
 Animator = NodePath("AnimationPlayer")
 Bubble = NodePath("UIBubble")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 22)
+texture = ExtResource("2_twxef")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, 24)
-texture = ExtResource("1_wexrh")
+texture = ExtResource("3_pv6xj")
 offset = Vector2(0, -104)
 hframes = 4
 frame = 2
-
-[node name="Shadow" type="Sprite2D" parent="."]
-position = Vector2(8, 24)
-texture = ExtResource("3_axrer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
@@ -86,4 +88,4 @@ libraries = {
 "": SubResource("AnimationLibrary_7fl4v")
 }
 
-[node name="UIBubble" parent="." instance=ExtResource("4_ub46o")]
+[node name="UIBubble" parent="." instance=ExtResource("4_wllsu")]

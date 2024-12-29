@@ -4,16 +4,14 @@ class_name NpcView
 @onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
 
 @export var Animator : AnimationPlayer
-
-@export var Bubble : Control
-@export var OrderIcon : TextureRect
-@export var ProgressSlider : Slider
+@export var Bubble : TileBubble
 
 signal on_task_lose
 
 var _tween : Tween
 
 func _ready() -> void:
+	Animator.speed_scale = randf_range(0.8, 1.4)
 	Bubble.visible = false
 
 func _exit_tree() -> void:
@@ -23,7 +21,7 @@ func _exit_tree() -> void:
 func start_task(task : TaskModel):
 	_show_bubble()
 	_start_waiting_time(task.waitingTime)
-	OrderIcon.texture = _itemsProvider.allItems[task.items[0]].texture
+	Bubble.OrderIcon.texture = _itemsProvider.allItems[task.items[0]].texture
 
 func end_task():
 	hide_bubble()
@@ -38,12 +36,12 @@ func _show_bubble() -> void:
 	tween.tween_callback(func(): Bubble.scale = target_scale)
 
 func _start_waiting_time(maxValue : float) -> void:
-	ProgressSlider.max_value = maxValue
-	ProgressSlider.value = maxValue
+	Bubble.ProgressSlider.max_value = maxValue
+	Bubble.ProgressSlider.value = maxValue
 	
 	if (_tween != null): _tween.kill()
 	_tween = create_tween()
-	_tween.tween_property(ProgressSlider, "value", 0, maxValue)
+	_tween.tween_property(Bubble.ProgressSlider, "value", 0, maxValue)
 	_tween.tween_callback(func(): on_task_lose.emit())
 
 func hide_bubble() -> void:
