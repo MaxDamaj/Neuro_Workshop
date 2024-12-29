@@ -1,9 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm7th3b03hpn"]
+[gd_scene load_steps=20 format=3 uid="uid://dm7th3b03hpn"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIWorkshopPanel.gd" id="1_0w577"]
-[ext_resource type="Texture2D" uid="uid://barb0uxkcjpqa" path="res://Assets/Textures/UI/clevil.jpg" id="2_jtvf2"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="3_q3eox"]
-[ext_resource type="Texture2D" uid="uid://bbe0sopjnkbu2" path="res://Assets/Textures/UI/life_heart.png" id="4_kqjy6"]
+[ext_resource type="Texture2D" uid="uid://c5cks2mybv2i2" path="res://Assets/Textures/UI/settings_button.png" id="3_vs5rh"]
+[ext_resource type="Texture2D" uid="uid://xfajackppnj5" path="res://Assets/Textures/Dialogues/vedal.png" id="5_7mslp"]
+[ext_resource type="Texture2D" uid="uid://bnbrm21gqbq55" path="res://Assets/Textures/UI/close_button.png" id="5_mqq5p"]
+[ext_resource type="Texture2D" uid="uid://cv14y4nkv4yom" path="res://Assets/Textures/UI/progress_banner.png" id="6_aahss"]
+[ext_resource type="Texture2D" uid="uid://bbbqo0g07gssu" path="res://Assets/Textures/UI/lost_customer_inactive.png" id="7_dpfrm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yl42s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_efcsa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xkymm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kq0lr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uuevp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cs83h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kk5e2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2e0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0lm61"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnsm0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bcron"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qdf40"]
 
 [node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("SettingsButton", "CloseSettingsButton", "MainMenuButton", "SettingsContainer", "Lifes", "CompletionLabel")]
 script = ExtResource("1_0w577")
@@ -18,21 +45,28 @@ CompletionLabel = NodePath("CompletionLabel")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -122.0
-offset_top = 50.0
-offset_right = -50.0
-offset_bottom = 121.0
+offset_left = -120.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = 104.0
 grow_horizontal = 0
-icon = ExtResource("2_jtvf2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yl42s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_efcsa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xkymm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kq0lr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uuevp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cs83h")
+icon = ExtResource("3_vs5rh")
+expand_icon = true
 
 [node name="SettingsContainer" type="Panel" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -705.0
-offset_top = 50.0
-offset_right = -155.0
-offset_bottom = 424.0
+offset_left = -1464.0
+offset_top = 304.0
+offset_right = -536.0
+offset_bottom = 768.0
 grow_horizontal = 0
 theme = ExtResource("3_q3eox")
 
@@ -41,40 +75,40 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -225.0
-offset_top = 120.0
-offset_right = 225.0
-offset_bottom = 136.0
+offset_left = -72.0
+offset_top = 144.0
+offset_right = 416.0
+offset_bottom = 195.0
 grow_horizontal = 2
 theme = ExtResource("3_q3eox")
 value = 50.0
 
 [node name="Label" type="Label" parent="SettingsContainer/EffectsVolumeSlider"]
 layout_mode = 1
-offset_top = -40.0
-offset_right = 179.0
-offset_bottom = -10.0
+offset_top = -64.0
+offset_right = 301.0
+offset_bottom = -16.0
 theme = ExtResource("3_q3eox")
-text = "Effects Volume"
+text = "FX Volume"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="SettingsContainer"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -225.0
-offset_top = 220.0
-offset_right = 225.0
-offset_bottom = 236.0
+offset_left = -72.0
+offset_top = 272.0
+offset_right = 416.0
+offset_bottom = 323.0
 grow_horizontal = 2
 theme = ExtResource("3_q3eox")
 value = 50.0
 
 [node name="Label" type="Label" parent="SettingsContainer/MusicVolumeSlider"]
 layout_mode = 0
-offset_top = -40.0
-offset_right = 165.0
-offset_bottom = -10.0
+offset_top = -64.0
+offset_right = 280.0
+offset_bottom = -16.0
 theme = ExtResource("3_q3eox")
 text = "Music Volume"
 
@@ -85,49 +119,57 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = -66.0
-offset_right = 82.0
-offset_bottom = -20.0
+offset_left = 40.0
+offset_top = -96.0
+offset_right = 313.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_q3eox")
-text = "Main Menu"
-
-[node name="Label" type="Label" parent="SettingsContainer"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -63.5
-offset_top = 20.0
-offset_right = 63.5
-offset_bottom = 50.0
-grow_horizontal = 2
-theme = ExtResource("3_q3eox")
-text = "SETTINGS"
+text = "To Main Menu"
 
 [node name="CloseSettingsButton" type="Button" parent="SettingsContainer"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -92.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = 91.0
+offset_left = -80.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 80.0
 grow_horizontal = 0
-icon = ExtResource("2_jtvf2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kk5e2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h2e0h")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0lm61")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vnsm0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bcron")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qdf40")
+icon = ExtResource("5_mqq5p")
+icon_alignment = 1
 
-[node name="LifesContainer" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="SettingsContainer"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -56.0
+offset_right = 400.0
+offset_bottom = 461.0
+texture = ExtResource("5_7mslp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LifesContainer" type="NinePatchRect" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -120.0
-offset_right = 120.0
-offset_bottom = 64.0
+offset_left = -240.0
+offset_top = -32.0
+offset_right = 240.0
+offset_bottom = 152.0
 grow_horizontal = 2
-color = Color(0.478431, 0.478431, 0.478431, 1)
+texture = ExtResource("6_aahss")
+patch_margin_left = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
 
 [node name="Life1" type="TextureRect" parent="LifesContainer"]
 modulate = Color(0, 0, 0, 0.501961)
@@ -135,12 +177,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -96.0
-offset_top = 8.0
-offset_right = -32.0
-offset_bottom = 64.0
+offset_left = -88.0
+offset_top = 40.0
+offset_right = -24.0
+offset_bottom = 104.0
 grow_horizontal = 2
-texture = ExtResource("4_kqjy6")
+texture = ExtResource("7_dpfrm")
 expand_mode = 1
 stretch_mode = 5
 
@@ -151,11 +193,11 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -32.0
-offset_top = 8.0
+offset_top = 40.0
 offset_right = 32.0
-offset_bottom = 64.0
+offset_bottom = 104.0
 grow_horizontal = 2
-texture = ExtResource("4_kqjy6")
+texture = ExtResource("7_dpfrm")
 expand_mode = 1
 stretch_mode = 5
 
@@ -165,12 +207,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 32.0
-offset_top = 8.0
-offset_right = 96.0
-offset_bottom = 64.0
+offset_left = 24.0
+offset_top = 40.0
+offset_right = 88.0
+offset_bottom = 104.0
 grow_horizontal = 2
-texture = ExtResource("4_kqjy6")
+texture = ExtResource("7_dpfrm")
 expand_mode = 1
 stretch_mode = 5
 
@@ -178,11 +220,13 @@ stretch_mode = 5
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -120.0
-offset_top = 64.0
-offset_right = 120.0
-offset_bottom = 94.0
+offset_left = -152.0
+offset_top = 80.0
+offset_right = 152.0
+offset_bottom = 109.0
 grow_horizontal = 2
 theme = ExtResource("3_q3eox")
-text = "Progress: 0%"
+theme_override_colors/font_color = Color(0.247059, 0.203922, 0.172549, 1)
+theme_override_font_sizes/font_size = 30
+text = "Clients served: 10/10"
 horizontal_alignment = 1

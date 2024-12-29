@@ -8,3 +8,6 @@ variation_opentype = {
 2003072104: 100,
 2003265652: 500
 }
+spacing_space = 2
+spacing_top = -10
+spacing_bottom = -10
