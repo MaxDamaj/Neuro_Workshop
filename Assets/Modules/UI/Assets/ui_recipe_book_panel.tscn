@@ -1,52 +1,1486 @@
-[gd_scene load_steps=3 format=3 uid="uid://c03xk7ffpobys"]
+[gd_scene load_steps=30 format=3 uid="uid://b4f3n2irlqykv"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIRecipeBookPanel.gd" id="1_fa0hd"]
-[ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_dv07d"]
+[ext_resource type="Theme" uid="uid://8m48li400a3l" path="res://Assets/Modules/UI/Themes/recipe_book_theme.tres" id="2_0jsf8"]
+[ext_resource type="Texture2D" uid="uid://l3cigvqjwthd" path="res://Assets/Textures/UI/book1.png" id="3_56tub"]
+[ext_resource type="Texture2D" uid="uid://d1s8sqqwht8tc" path="res://Assets/Textures/UI/book2.png" id="3_mgd83"]
+[ext_resource type="Texture2D" uid="uid://d075w2fj8nwk0" path="res://Assets/Textures/Items/item_tony_tonic.png" id="4_ax61e"]
+[ext_resource type="Texture2D" uid="uid://cjsttq4cifq4g" path="res://Assets/Textures/Items/item_gin.png" id="5_hp703"]
+[ext_resource type="Texture2D" uid="uid://bsfma1h2cgp3y" path="res://Assets/Textures/Items/item_tonic.png" id="6_5ljnq"]
+[ext_resource type="Texture2D" uid="uid://divi2cmxn3081" path="res://Assets/Textures/Items/item_lime.png" id="7_nei8c"]
+[ext_resource type="Texture2D" uid="uid://cu8y5apk6ym21" path="res://Assets/Textures/Items/item_banana_rum.png" id="8_kplyo"]
+[ext_resource type="Texture2D" uid="uid://kijvdkwjswuc" path="res://Assets/Textures/Items/item_rum.png" id="9_xowx0"]
+[ext_resource type="Texture2D" uid="uid://dsebxijasiue1" path="res://Assets/Textures/Items/item_banana.png" id="10_smst4"]
+[ext_resource type="Texture2D" uid="uid://dn8t3behspq3o" path="res://Assets/Textures/Items/item_ermge_juice.png" id="11_simnb"]
+[ext_resource type="Texture2D" uid="uid://mku0xlg6bchi" path="res://Assets/Textures/Items/item_vodka.png" id="12_joxob"]
+[ext_resource type="Texture2D" uid="uid://c2rpmq7wcvtgp" path="res://Assets/Textures/Items/item_lemon.png" id="13_egp0f"]
+[ext_resource type="Texture2D" uid="uid://bnbrm21gqbq55" path="res://Assets/Textures/UI/close_button.png" id="14_havek"]
+[ext_resource type="Texture2D" uid="uid://bv3oq432r40a7" path="res://Assets/Textures/Items/item_chat_juice.png" id="15_3pita"]
+[ext_resource type="Texture2D" uid="uid://cv4lsirrhnbp6" path="res://Assets/Textures/UI/pointer.png" id="15_7syj1"]
+[ext_resource type="Texture2D" uid="uid://bqegi87uet577" path="res://Assets/Textures/UI/book3.png" id="15_sktu3"]
+[ext_resource type="Texture2D" uid="uid://bkol14kgxvliy" path="res://Assets/Textures/Items/item_plain_chat_juice.png" id="16_dsxat"]
+[ext_resource type="Texture2D" uid="uid://un08nj4rrcgt" path="res://Assets/Textures/Items/item_tomato.png" id="17_aujw8"]
+[ext_resource type="Texture2D" uid="uid://0honhjl7hgwe" path="res://Assets/Textures/Items/item_bloody_cimp.png" id="18_3j0n6"]
+[ext_resource type="Texture2D" uid="uid://dt7hy6b8exqh5" path="res://Assets/Textures/Items/item_rising_star.png" id="20_t377s"]
+[ext_resource type="Texture2D" uid="uid://cubkwvkl1xq5g" path="res://Assets/Textures/Items/item_lava_lamp_cocktail.png" id="21_mw8g8"]
+[ext_resource type="Texture2D" uid="uid://bg88hrvbotaep" path="res://Assets/Textures/Items/item_lava_lamp.png" id="22_vb7ep"]
+[ext_resource type="Texture2D" uid="uid://ccy27kl8htw3l" path="res://Assets/Textures/Items/item_lava_lamp_with_gin.png" id="23_tgcou"]
 
-[node name="UIRecipeBookPanel" type="CanvasLayer" node_paths=PackedStringArray("ReturnButton")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c25q8"]
+texture = ExtResource("3_56tub")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwuqu"]
+texture = ExtResource("3_mgd83")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omux2"]
+texture = ExtResource("15_sktu3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n5krn"]
+texture = ExtResource("3_56tub")
+
+[node name="UIRecipeBookPanel" type="CanvasLayer" node_paths=PackedStringArray("Pages", "ReturnButton", "NextButton", "PrevButton")]
 script = ExtResource("1_fa0hd")
-ReturnButton = NodePath("Panel/ReturnButton")
+Pages = [NodePath("Page1"), NodePath("Page2"), NodePath("Page3"), NodePath("Page4")]
+ReturnButton = NodePath("ReturnButton")
+NextButton = NodePath("NextButton")
+PrevButton = NodePath("PrevButton")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Page1" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -161.5
-offset_top = -123.5
-offset_right = 161.5
-offset_bottom = 123.5
+offset_left = -800.0
+offset_top = -490.0
+offset_right = 800.0
+offset_bottom = 490.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_dv07d")
+theme = ExtResource("2_0jsf8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_c25q8")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="TonyTonic" type="TextureRect" parent="Page1"]
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -556.0
+offset_top = -356.0
+offset_right = -492.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ax61e")
+
+[node name="TonyTonicLabel" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -352.0
+offset_right = -284.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+text = "Tony's Tonic"
+
+[node name="One" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -218.0
+offset_right = -547.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+
+[node name="Mix" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -554.0
+offset_top = -217.0
+offset_right = -476.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Mix"
+
+[node name="Gin" type="TextureRect" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -483.0
+offset_top = -228.0
+offset_right = -419.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_hp703")
+
+[node name="And" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -219.0
+offset_right = -338.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "and"
+
+[node name="Tonic" type="TextureRect" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = -229.0
+offset_right = -253.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_5ljnq")
+
+[node name="Two" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -592.0
+offset_top = -146.0
+offset_right = -552.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+
+[node name="Cut" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -549.0
+offset_top = -145.0
+offset_right = -468.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Cut"
+
+[node name="Lime" type="TextureRect" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -152.0
+offset_right = -421.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_nei8c")
+
+[node name="Three" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -594.0
+offset_top = -61.0
+offset_right = -554.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3."
+
+[node name="Serve" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -552.0
+offset_top = -61.0
+offset_right = -437.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Serve"
+
+[node name="BananaRum" type="TextureRect" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -349.0
+offset_right = 134.0
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_kplyo")
+
+[node name="BananaRumLabel" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 154.0
+offset_top = -340.0
+offset_right = 347.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+text = "Banana Rum"
+
+[node name="One2" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = -222.0
+offset_right = 92.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+
+[node name="Blend" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = -223.0
+offset_right = 166.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Blend
+"
+
+[node name="Rum" type="TextureRect" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 182.0
+offset_top = -234.0
+offset_right = 246.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_xowx0")
+
+[node name="And2" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 264.0
+offset_top = -224.0
+offset_right = 324.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "and"
+
+[node name="Banana" type="TextureRect" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 339.0
+offset_top = -235.0
+offset_right = 403.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_smst4")
+
+[node name="Two2" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = -135.0
+offset_right = 89.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+
+[node name="Serve2" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 85.0
+offset_top = -137.0
+offset_right = 200.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Serve"
+
+[node name="Page2" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -490.0
+offset_right = 800.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_vwuqu")
+
+[node name="FoxOnTheBeach" type="TextureRect" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -556.0
+offset_top = -356.0
+offset_right = -492.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ax61e")
+
+[node name="FoxOnTheBeachLabel" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -348.0
+offset_right = -224.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+text = "Fox on the beach
+"
+
+[node name="One" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -218.0
+offset_right = -547.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+
+[node name="Mix" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -554.0
+offset_top = -217.0
+offset_right = -476.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Mix"
+
+[node name="ErmJuice" type="TextureRect" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -483.0
+offset_top = -228.0
+offset_right = -419.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_simnb")
+
+[node name="And" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -219.0
+offset_right = -338.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "and"
+
+[node name="Vodka" type="TextureRect" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = -229.0
+offset_right = -253.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_joxob")
+
+[node name="Two" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -592.0
+offset_top = -146.0
+offset_right = -552.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+
+[node name="Cut" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -549.0
+offset_top = -145.0
+offset_right = -468.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Cut"
+
+[node name="Lemon" type="TextureRect" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -152.0
+offset_right = -421.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_egp0f")
+
+[node name="Three" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -594.0
+offset_top = -61.0
+offset_right = -554.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3."
+
+[node name="Serve" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -552.0
+offset_top = -61.0
+offset_right = -437.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Serve"
+
+[node name="Fannta" type="TextureRect" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -349.0
+offset_right = 134.0
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_kplyo")
+
+[node name="FanntaLabel" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 154.0
+offset_top = -340.0
+offset_right = 347.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+text = "Fannta"
+
+[node name="One2" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = -222.0
+offset_right = 92.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+
+[node name="Carbonate" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 84.0
+offset_top = -222.0
+offset_right = 235.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Carbonate"
+
+[node name="ErmJuice2" type="TextureRect" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 251.0
+offset_top = -230.0
+offset_right = 315.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_simnb")
+
+[node name="Two2" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = -135.0
+offset_right = 89.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+
+[node name="Serve2" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 77.0
+offset_top = -136.0
+offset_right = 192.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Serve"
+
+[node name="Page3" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -490.0
+offset_right = 800.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_omux2")
+
+[node name="ChatJuice" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -556.0
+offset_top = -356.0
+offset_right = -492.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_3pita")
+
+[node name="ChatJuiceLabel" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -348.0
+offset_right = -224.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+text = "Chat Juice"
+
+[node name="One" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -218.0
+offset_right = -547.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+
+[node name="Blend" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -554.0
+offset_top = -217.0
+offset_right = -476.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Blend"
+
+[node name="ErmJuice" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -228.0
+offset_right = -390.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_simnb")
+
+[node name="And" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -369.0
+offset_top = -219.0
+offset_right = -309.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "and"
+
+[node name="Lime" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -229.0
+offset_right = -224.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_nei8c")
+
+[node name="Two" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -592.0
+offset_top = -146.0
+offset_right = -552.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+
+[node name="Carbonate2" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -559.0
+offset_top = -146.0
+offset_right = -408.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Carbonate
+"
+
+[node name="PlainChatJuice" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -395.0
+offset_top = -152.0
+offset_right = -331.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_dsxat")
+
+[node name="Three" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -76.0
+offset_right = -550.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3."
+
+[node name="Serve" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.0
+offset_top = -75.0
+offset_right = -440.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Serve"
+
+[node name="BloodyCimp" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -335.0
+offset_right = 158.0
+offset_bottom = -271.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_3j0n6")
+
+[node name="BloodyCimpLabel" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 176.0
+offset_top = -327.0
+offset_right = 426.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+text = "Bloody Cimp
+"
+
+[node name="One2" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 63.0
+offset_top = -197.0
+offset_right = 103.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+
+[node name="Blend2" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -196.0
+offset_right = 174.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Blend"
+
+[node name="Tomato" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 196.0
+offset_top = -207.0
+offset_right = 260.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_aujw8")
+
+[node name="And2" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 278.0
+offset_top = -199.0
+offset_right = 338.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "and"
+
+[node name="Vodka" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 359.0
+offset_top = -209.0
+offset_right = 423.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_joxob")
+
+[node name="Two2" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 59.0
+offset_top = -113.0
+offset_right = 99.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+
+[node name="Cut" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -112.0
+offset_right = 183.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Cut"
+
+[node name="Lime2" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 166.0
+offset_top = -119.0
+offset_right = 230.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_nei8c")
+
+[node name="Three2" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -40.0
+offset_right = 96.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3."
+
+[node name="Serve2" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 98.0
+offset_top = -40.0
+offset_right = 213.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Serve"
+
+[node name="Page4" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -490.0
+offset_right = 800.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_n5krn")
+
+[node name="RisingStar" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -556.0
+offset_top = -356.0
+offset_right = -492.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_t377s")
+
+[node name="RisingStarLabel" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -348.0
+offset_right = -224.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+text = "Rising Star"
+
+[node name="One" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -218.0
+offset_right = -547.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+
+[node name="Blend" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -556.0
+offset_top = -220.0
+offset_right = -470.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Blend"
+
+[node name="Vodka2" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -228.0
+offset_right = -390.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_joxob")
+
+[node name="And" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -369.0
+offset_top = -219.0
+offset_right = -309.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "and"
+
+[node name="Lime" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -229.0
+offset_right = -224.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_nei8c")
+
+[node name="Two" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -588.0
+offset_top = -139.0
+offset_right = -548.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+
+[node name="Serve" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -141.0
+offset_right = -443.0
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Serve"
+
+[node name="LavaLamp" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -335.0
+offset_right = 158.0
+offset_bottom = -271.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_mw8g8")
+
+[node name="LavaLampLabel" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 176.0
+offset_top = -326.0
+offset_right = 455.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0jsf8")
+text = "Lava Lamp Cocktail
+"
+
+[node name="One2" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 63.0
+offset_top = -197.0
+offset_right = 103.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+
+[node name="Pour" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 98.0
+offset_top = -199.0
+offset_right = 184.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Pour
+"
+
+[node name="Gin2" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 196.0
+offset_top = -210.0
+offset_right = 260.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_hp703")
+
+[node name="Into" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 284.0
+offset_top = -202.0
+offset_right = 344.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "into
+"
+
+[node name="Lavalamp" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 360.0
+offset_top = -210.0
+offset_right = 424.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_vb7ep")
+
+[node name="Two2" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 59.0
+offset_top = -113.0
+offset_right = 99.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+
+[node name="Blend2" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 97.0
+offset_top = -113.0
+offset_right = 183.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Blend"
+
+[node name="Tomato" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = -124.0
+offset_right = 265.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_aujw8")
+
+[node name="And2" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 283.0
+offset_top = -116.0
+offset_right = 343.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "and"
+
+[node name="LavaLampWithGin" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 364.0
+offset_top = -126.0
+offset_right = 428.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_tgcou")
+
+[node name="Three2" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = -33.0
+offset_right = 94.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3."
+
+[node name="Serve2" type="Label" parent="Page4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 98.0
+offset_top = -32.0
+offset_right = 213.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Serve"
+
+[node name="ReturnButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -392.0
+offset_top = 144.0
+offset_right = -348.0
+offset_bottom = 185.0
+grow_horizontal = 0
+theme = ExtResource("2_0jsf8")
+icon = ExtResource("14_havek")
+
+[node name="NextButton" type="Button" parent="."]
+offset_left = 1531.0
+offset_top = 865.0
+offset_right = 1589.0
+offset_bottom = 923.0
+theme = ExtResource("2_0jsf8")
+icon = ExtResource("15_7syj1")
+icon_alignment = 1
+
+[node name="PrevButton" type="Button" parent="."]
+offset_left = 388.0
+offset_top = 942.0
+offset_right = 446.0
+offset_bottom = 1000.0
+rotation = 3.14159
+theme = ExtResource("2_0jsf8")
+icon = ExtResource("15_7syj1")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -64.0
-offset_top = 33.0
-offset_right = 64.0
-offset_bottom = 56.0
+offset_left = -70.0
+offset_top = 44.0
+offset_right = 74.0
+offset_bottom = 74.0
 grow_horizontal = 2
-theme = ExtResource("2_dv07d")
+theme = ExtResource("2_0jsf8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Recipe book"
 horizontal_alignment = 1
-
-[node name="ReturnButton" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -60.0
-offset_top = -77.0
-offset_right = 60.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_dv07d")
-text = "Close"

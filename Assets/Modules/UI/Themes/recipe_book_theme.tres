@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://8m48li400a3l"]
+
+[ext_resource type="FontFile" uid="uid://cff5cj4carep4" path="res://Assets/Modules/UI/Themes/Saira-VariableFont_wdth,wght.ttf" id="1_70noe"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_70noe")
