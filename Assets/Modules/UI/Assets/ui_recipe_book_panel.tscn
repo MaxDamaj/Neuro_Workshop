@@ -44,7 +44,7 @@ texture = ExtResource("15_sktu3")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n5krn"]
 texture = ExtResource("3_56tub")
 
-[node name="UIRecipeBookPanel" type="CanvasLayer" node_paths=PackedStringArray("Pages", "ReturnButton", "NextButton", "PrevButton", "PageCounter1", "PageCounter2")]
+[node name="UIRecipeBookPanel" type="CanvasLayer" node_paths=PackedStringArray("Pages", "ReturnButton", "NextButton", "PrevButton", "PageCounter1", "PageCounter2", "SafeCode")]
 script = ExtResource("1_fa0hd")
 Pages = [NodePath("Page1"), NodePath("Page2"), NodePath("Page3"), NodePath("Page4")]
 ReturnButton = NodePath("ReturnButton")
@@ -52,6 +52,7 @@ NextButton = NodePath("NextButton")
 PrevButton = NodePath("PrevButton")
 PageCounter1 = NodePath("PageCounter1")
 PageCounter2 = NodePath("PageCounter2")
+SafeCode = NodePath("SafeCode")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -1537,4 +1538,20 @@ theme = ExtResource("2_0jsf8")
 theme_override_fonts/font = ExtResource("30_8j16a")
 theme_override_font_sizes/font_size = 40
 text = "Page 1/6"
+horizontal_alignment = 1
+
+[node name="SafeCode" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 424.0
+offset_top = 776.0
+offset_right = 672.0
+offset_bottom = 824.0
+grow_horizontal = 2
+rotation = -0.45204
+theme = ExtResource("2_0jsf8")
+theme_override_fonts/font = ExtResource("30_8j16a")
+theme_override_font_sizes/font_size = 40
+text = "****"
 horizontal_alignment = 1

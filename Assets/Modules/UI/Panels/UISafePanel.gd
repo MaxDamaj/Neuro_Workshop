@@ -2,6 +2,7 @@ extends Node
 class_name UISafePanel
 
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
+@onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 
 @export var NumberDisplay : Label
 @export var NumberButtons : Array[Button]
@@ -11,7 +12,6 @@ class_name UISafePanel
 @export var ReturnButton : Button
 
 var currentPosition = 0
-var code = 345
 
 func _ready() -> void:
 	NumberDisplay.text = "* * * *"
@@ -45,7 +45,7 @@ func _get_number_button(number: int) -> Callable:
 
 
 func _take_item():
-	if (int(NumberDisplay.text) == code && currentPosition == 4):
+	if (int(NumberDisplay.text) == _levelLoadStartegy.safeCode && currentPosition == 4):
 		var player : PlayerView = get_tree().get_nodes_in_group("Player")[0]
 		player.add_item("lava_lamp")
 		_uiPanelsProvider.close_panel("safe_ui")

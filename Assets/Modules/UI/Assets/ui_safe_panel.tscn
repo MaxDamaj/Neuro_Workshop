@@ -54,7 +54,7 @@ offset_bottom = -97.155
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_0n33n")
-text = "Take item"
+text = "Submit"
 
 [node name="ReturnButton" type="Button" parent="Panel"]
 layout_mode = 1
