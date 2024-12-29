@@ -1,9 +1,29 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dsklx8m7o8m0o"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dsklx8m7o8m0o"]
 
-[ext_resource type="FontFile" uid="uid://crfjg1q150181" path="res://Assets/Modules/UI/Themes/0768eur.ttf" id="1_o2p8e"]
-[ext_resource type="Texture2D" uid="uid://barb0uxkcjpqa" path="res://Assets/Textures/UI/clevil.jpg" id="2_6qa7p"]
+[ext_resource type="FontVariation" uid="uid://da7ecfm2gk5xr" path="res://Assets/Modules/UI/Themes/Saira-Medium.tres" id="1_vlmv3"]
+[ext_resource type="Texture2D" uid="uid://d1wbmv837b8fb" path="res://Assets/Textures/UI/menu_button_bg.png" id="2_qdxtr"]
+[ext_resource type="Texture2D" uid="uid://cwh6in1v288e2" path="res://Assets/Textures/UI/slider_grabber.png" id="3_qh4ug"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_642s7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdri4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_os88j"]
+texture = ExtResource("2_qdxtr")
+texture_margin_top = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 100.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfu3u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqspu"]
+texture = ExtResource("2_qdxtr")
+texture_margin_top = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 100.0
+modulate_color = Color(1, 1, 1, 0.694118)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ackq"]
 bg_color = Color(1, 1, 1, 0.498039)
@@ -30,15 +50,21 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [resource]
+default_font = ExtResource("1_vlmv3")
+default_font_size = 36
 Button/constants/align_to_largest_stylebox = 1
-Button/font_sizes/font_size = 48
-Button/fonts/font = ExtResource("1_o2p8e")
+Button/constants/h_separation = 15
+Button/font_sizes/font_size = 60
+Button/fonts/font = ExtResource("1_vlmv3")
+Button/styles/disabled = SubResource("StyleBoxFlat_642s7")
+Button/styles/focus = SubResource("StyleBoxFlat_wdri4")
+Button/styles/hover = SubResource("StyleBoxTexture_os88j")
 Button/styles/normal = SubResource("StyleBoxEmpty_bfu3u")
+Button/styles/pressed = SubResource("StyleBoxTexture_iqspu")
 HSlider/constants/center_grabber = 1
-HSlider/icons/grabber = ExtResource("2_6qa7p")
-HSlider/icons/grabber_highlight = ExtResource("2_6qa7p")
+HSlider/icons/grabber = ExtResource("3_qh4ug")
+HSlider/icons/grabber_highlight = ExtResource("3_qh4ug")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_5ackq")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_t1q6o")
 HSlider/styles/slider = SubResource("StyleBoxFlat_68kr8")
-Label/font_sizes/font_size = 36
-Label/fonts/font = ExtResource("1_o2p8e")
+Label/font_sizes/font_size = 43

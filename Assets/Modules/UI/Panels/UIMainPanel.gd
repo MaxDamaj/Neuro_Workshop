@@ -15,13 +15,13 @@ var BUTTON_HIDDEN_X = -400
 var BUTTON_SHOWN_X = 100
 var SLIDER_HIDDEN_X = -700
 var SLIDER_SHOWN_X = 100
+var BACK_BUTTON_SHOWN_X = 50
 
 var currentMenu : String
 
 func _ready() -> void:
 	for i in range(LevelButtons.size()):
-		var index : int = i + 1
-		LevelButtons[i].button_down.connect(func(): _load_level(index))
+		LevelButtons[i].button_down.connect(func(): _load_level(i))
 		
 	NewGameButton.button_down.connect(func(): _load_level(1))
 	ChooseLevelButton.button_down.connect(_show_level_buttons)
@@ -55,7 +55,15 @@ func _hide_button(ButtonElement:Button) -> void:
 func _show_button(ButtonElement:Button) -> void:
 	_move_button(ButtonElement, BUTTON_SHOWN_X, ButtonElement.position.y)
 	ButtonElement.process_mode = Node.PROCESS_MODE_INHERIT
-
+	
+func _hide_back_button() -> void:
+	_move_button(BackButton, BUTTON_HIDDEN_X, BackButton.position.y)
+	BackButton.process_mode = Node.PROCESS_MODE_DISABLED
+	
+func _show_back_button() -> void:
+	_move_button(BackButton, BACK_BUTTON_SHOWN_X, BackButton.position.y)
+	BackButton.process_mode = Node.PROCESS_MODE_INHERIT
+	
 func _move_slider(SliderElement:HSlider, x:int, y:int) -> void:
 	var tween = create_tween()
 	var target_pos = Vector2 (x,y)
@@ -80,7 +88,7 @@ func _show_main_buttons() -> void:
 	_show_button(ChooseLevelButton)
 	_show_button(NewGameButton)
 	_show_button(SettingsButton)
-	_hide_button(BackButton)
+	_hide_back_button()
 	if (currentMenu == 'levels'):
 		_hide_level_buttons()
 	if (currentMenu == 'settings'):
@@ -94,7 +102,7 @@ func _hide_level_buttons() -> void:
 func _show_level_buttons() -> void:
 	for i in range(LevelButtons.size()):
 		_show_button(LevelButtons[i])
-	_show_button(BackButton)
+	_show_back_button()
 	_hide_main_buttons()
 	currentMenu = 'levels'
 
@@ -105,6 +113,6 @@ func _hide_settings_buttons() -> void:
 func _show_settings_buttons() -> void:
 	_show_slider(EffectsVolumeSlider)
 	_show_slider(MusicVolumeSlider)
-	_show_button(BackButton)
+	_show_back_button()
 	_hide_main_buttons()
 	currentMenu = 'settings'
