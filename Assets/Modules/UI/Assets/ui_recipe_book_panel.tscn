@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c03xk7ffpobys"]
+
+[ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIRecipeBookPanel.gd" id="1_fa0hd"]
+[ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_dv07d"]
+
+[node name="UIRecipeBookPanel" type="CanvasLayer" node_paths=PackedStringArray("ReturnButton")]
+script = ExtResource("1_fa0hd")
+ReturnButton = NodePath("Panel/ReturnButton")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -123.5
+offset_right = 161.5
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dv07d")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 33.0
+offset_right = 64.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme = ExtResource("2_dv07d")
+text = "Recipe book"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -77.0
+offset_right = 60.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_dv07d")
+text = "Close"
