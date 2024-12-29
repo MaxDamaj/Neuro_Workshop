@@ -11,19 +11,22 @@ class_name NpcView
 
 signal on_task_lose
 
+var _tween : Tween
 
 func _ready() -> void:
 	Bubble.visible = false
 
+func _exit_tree() -> void:
+	if (_tween != null): _tween.kill()
+
 
 func start_task(task : TaskModel):
 	_show_bubble()
+	_start_waiting_time(task.waitingTime)
 	OrderIcon.texture = _itemsProvider.allItems[task.items[0]].texture
-	ProgressSlider.max_value = task.waitingTime
-	ProgressSlider.value = task.waitingTime
 
 func end_task():
-	_hide_bubble()
+	hide_bubble()
 
 func _show_bubble() -> void:
 	Bubble.visible = true
@@ -34,7 +37,16 @@ func _show_bubble() -> void:
 	tween.tween_property(Bubble, "scale", target_scale, 0.5)
 	tween.tween_callback(func(): Bubble.scale = target_scale)
 
-func _hide_bubble() -> void:
+func _start_waiting_time(maxValue : float) -> void:
+	ProgressSlider.max_value = maxValue
+	ProgressSlider.value = maxValue
+	
+	if (_tween != null): _tween.kill()
+	_tween = create_tween()
+	_tween.tween_property(ProgressSlider, "value", 0, maxValue)
+	_tween.tween_callback(func(): on_task_lose.emit())
+
+func hide_bubble() -> void:
 	Bubble.visible = true
 	Bubble.scale = Vector2.ONE
 	

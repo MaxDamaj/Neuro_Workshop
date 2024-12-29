@@ -32,5 +32,5 @@ func _update_completion_value(progress : float):
 
 func _update_lose_value(totalLifes : int, currentLifes : int):
 	for i in range(Lifes.size()):
-		if (totalLifes - currentLifes <= i + 1):
+		if (totalLifes - currentLifes >= i + 1):
 			Lifes[i].modulate = Color.RED

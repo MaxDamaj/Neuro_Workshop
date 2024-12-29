@@ -33,6 +33,7 @@ func register_spawner(spawner : NpcSpawnerView):
 
 func start_tasks():
 	if (allTasks == null || allTasks.size() == 0): return
+	_remainingLoses = 3
 	_completedTasksCount = 0
 	_nextTaskIndex = 0
 	_timer.start(allTasks[_nextTaskIndex].delay)
@@ -60,6 +61,7 @@ func free_spawner(spawner : NpcSpawnerView):
 	_freeSpawners.append(spawner)
 
 func _end_task():
+	if (_remainingLoses == 0): return
 	if (_freeSpawners.size() == 0):
 		_timer.start(2)
 		return

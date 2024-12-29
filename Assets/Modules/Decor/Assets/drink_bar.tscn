@@ -13,7 +13,7 @@
 size = Vector2(64, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
-size = Vector2(56, 8)
+size = Vector2(52, 8)
 
 [node name="DrinkBar" type="Node2D" node_paths=PackedStringArray("HoverButton", "InteractArea")]
 script = ExtResource("1_nqo6q")
@@ -52,6 +52,6 @@ shape = SubResource("RectangleShape2D_c6dd6")
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(0, 4)
+position = Vector2(-6, 4)
 shape = SubResource("RectangleShape2D_8ysvh")
 debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)

@@ -20,6 +20,8 @@ func start_task(task : TaskModel):
 	add_child(_npc)
 	_npc.rotation_degrees = -90
 	_move_npc(0, 1, 5, _end_moving)
+	_npc.on_task_lose.connect(_task_failed)
+	
 	BarTable.taskItem = task.items[0]
 
 func _item_recieved():
@@ -28,11 +30,17 @@ func _item_recieved():
 	_levelTasksStrategy.complete_task()
 	_move_npc(1, 0, 4, _complete_task)
 
+func _task_failed():
+	_npc.hide_bubble()
+	_levelTasksStrategy.lose_task()
+	_move_npc(1, 0, 4, _complete_task)
+
 func _end_moving():
 	_npc.Animator.play("Idle")
 	_npc.start_task(_task)
 
 func _complete_task():
+	_npc.on_task_lose.disconnect(_task_failed)
 	_npc.queue_free()
 	_levelTasksStrategy.free_spawner(self)
 

@@ -13,14 +13,14 @@
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
-size = Vector2(24, 8)
+size = Vector2(8, 8)
 
 [node name="AppleFridge" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
 script = ExtResource("1_7h8ev")
+baseItem = "apple_juice"
 ItemSprite = NodePath("ItemSprite")
 HoverButton = NodePath("HoverButton")
 InteractArea = NodePath("InteractArea")
-ItemName = "apple_juice"
 
 [node name="DecorSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
