@@ -1,10 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dm7th3b03hpn"]
+[gd_scene load_steps=12 format=3 uid="uid://dm7th3b03hpn"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIWorkshopPanel.gd" id="1_0w577"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="3_q3eox"]
 [ext_resource type="Texture2D" uid="uid://c5cks2mybv2i2" path="res://Assets/Textures/UI/settings_button.png" id="3_vs5rh"]
-[ext_resource type="Texture2D" uid="uid://xfajackppnj5" path="res://Assets/Textures/Dialogues/vedal.png" id="5_7mslp"]
-[ext_resource type="Texture2D" uid="uid://bnbrm21gqbq55" path="res://Assets/Textures/UI/close_button.png" id="5_mqq5p"]
 [ext_resource type="Texture2D" uid="uid://cv14y4nkv4yom" path="res://Assets/Textures/UI/progress_banner.png" id="6_aahss"]
 [ext_resource type="Texture2D" uid="uid://bbbqo0g07gssu" path="res://Assets/Textures/UI/lost_customer_inactive.png" id="7_dpfrm"]
 
@@ -20,24 +18,9 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cs83h"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kk5e2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2e0h"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0lm61"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnsm0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bcron"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qdf40"]
-
-[node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("SettingsButton", "CloseSettingsButton", "MainMenuButton", "SettingsContainer", "Lifes", "CompletionLabel")]
+[node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("SettingsButton", "Lifes", "CompletionLabel")]
 script = ExtResource("1_0w577")
 SettingsButton = NodePath("SettingsButton")
-CloseSettingsButton = NodePath("SettingsContainer/CloseSettingsButton")
-MainMenuButton = NodePath("SettingsContainer/MainMenuButton")
-SettingsContainer = NodePath("SettingsContainer")
 Lifes = [NodePath("LifesContainer/Life1"), NodePath("LifesContainer/Life2"), NodePath("LifesContainer/Life3")]
 CompletionLabel = NodePath("CompletionLabel")
 
@@ -58,104 +41,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_uuevp")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cs83h")
 icon = ExtResource("3_vs5rh")
 expand_icon = true
-
-[node name="SettingsContainer" type="Panel" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1464.0
-offset_top = 304.0
-offset_right = -536.0
-offset_bottom = 768.0
-grow_horizontal = 0
-theme = ExtResource("3_q3eox")
-
-[node name="EffectsVolumeSlider" type="HSlider" parent="SettingsContainer"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -72.0
-offset_top = 144.0
-offset_right = 416.0
-offset_bottom = 195.0
-grow_horizontal = 2
-theme = ExtResource("3_q3eox")
-value = 50.0
-
-[node name="Label" type="Label" parent="SettingsContainer/EffectsVolumeSlider"]
-layout_mode = 1
-offset_top = -64.0
-offset_right = 301.0
-offset_bottom = -16.0
-theme = ExtResource("3_q3eox")
-text = "FX Volume"
-
-[node name="MusicVolumeSlider" type="HSlider" parent="SettingsContainer"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -72.0
-offset_top = 272.0
-offset_right = 416.0
-offset_bottom = 323.0
-grow_horizontal = 2
-theme = ExtResource("3_q3eox")
-value = 50.0
-
-[node name="Label" type="Label" parent="SettingsContainer/MusicVolumeSlider"]
-layout_mode = 0
-offset_top = -64.0
-offset_right = 280.0
-offset_bottom = -16.0
-theme = ExtResource("3_q3eox")
-text = "Music Volume"
-
-[node name="MainMenuButton" type="Button" parent="SettingsContainer"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = -96.0
-offset_right = 313.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("3_q3eox")
-text = "To Main Menu"
-
-[node name="CloseSettingsButton" type="Button" parent="SettingsContainer"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -80.0
-offset_top = 24.0
-offset_right = -24.0
-offset_bottom = 80.0
-grow_horizontal = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_kk5e2")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_h2e0h")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0lm61")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_vnsm0")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_bcron")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qdf40")
-icon = ExtResource("5_mqq5p")
-icon_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="SettingsContainer"]
-layout_mode = 0
-offset_left = -32.0
-offset_top = -56.0
-offset_right = 400.0
-offset_bottom = 461.0
-texture = ExtResource("5_7mslp")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="LifesContainer" type="NinePatchRect" parent="."]
 anchors_preset = 5

@@ -11,9 +11,12 @@ class_name UIExitLevelPanel
 
 func _ready() -> void:
 	ExitButton.button_down.connect(_exit_level)
-	ReturnButton.button_down.connect(func(): _uiPanelsProvider.close_panel("exit_level_ui"))
+	ReturnButton.button_down.connect(_return_back)
 	CloseButton.button_down.connect(func(): _uiPanelsProvider.close_panel("exit_level_ui"))
 
+func _return_back():
+	_uiPanelsProvider.open_panel("settings_ui")
+	_uiPanelsProvider.close_panel("exit_level_ui")
 
 func _exit_level():
 	_levelLoadStartegy.unload_level()
