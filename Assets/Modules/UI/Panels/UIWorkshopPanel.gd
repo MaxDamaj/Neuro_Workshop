@@ -7,6 +7,7 @@ class_name UIWorkshopPanel
 @export var CloseSettingsButton : Button
 @export var MainMenuButton : Button
 @export var SettingsContainer : Control
+@export var Lifes : Array[TextureRect]
 
 func _ready() -> void:
 	SettingsContainer.visible = false

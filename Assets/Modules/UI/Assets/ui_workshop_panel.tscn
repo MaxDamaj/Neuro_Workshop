@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm7th3b03hpn"]
+[gd_scene load_steps=5 format=3 uid="uid://dm7th3b03hpn"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIWorkshopPanel.gd" id="1_0w577"]
 [ext_resource type="Texture2D" uid="uid://barb0uxkcjpqa" path="res://Assets/Textures/UI/clevil.jpg" id="2_jtvf2"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="3_q3eox"]
+[ext_resource type="Texture2D" uid="uid://bbe0sopjnkbu2" path="res://Assets/Textures/UI/life_heart.png" id="4_kqjy6"]
 
-[node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("SettingsButton", "CloseSettingsButton", "MainMenuButton", "SettingsContainer")]
+[node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("SettingsButton", "CloseSettingsButton", "MainMenuButton", "SettingsContainer", "Lifes")]
 script = ExtResource("1_0w577")
 SettingsButton = NodePath("SettingsButton")
 CloseSettingsButton = NodePath("SettingsContainer/CloseSettingsButton")
 MainMenuButton = NodePath("SettingsContainer/MainMenuButton")
 SettingsContainer = NodePath("SettingsContainer")
+Lifes = [NodePath("LifesContainer/Life1"), NodePath("LifesContainer/Life2"), NodePath("LifesContainer/Life3")]
 
 [node name="SettingsButton" type="Button" parent="."]
 anchors_preset = 1
@@ -115,3 +117,58 @@ offset_right = -20.0
 offset_bottom = 91.0
 grow_horizontal = 0
 icon = ExtResource("2_jtvf2")
+
+[node name="LifesContainer" type="ColorRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_right = 120.0
+offset_bottom = 64.0
+grow_horizontal = 2
+color = Color(0.478431, 0.478431, 0.478431, 1)
+
+[node name="Life1" type="TextureRect" parent="LifesContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 8.0
+offset_right = -32.0
+offset_bottom = 64.0
+grow_horizontal = 2
+texture = ExtResource("4_kqjy6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life2" type="TextureRect" parent="LifesContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 64.0
+grow_horizontal = 2
+texture = ExtResource("4_kqjy6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life3" type="TextureRect" parent="LifesContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 96.0
+offset_bottom = 64.0
+grow_horizontal = 2
+texture = ExtResource("4_kqjy6")
+expand_mode = 1
+stretch_mode = 5
