@@ -7,6 +7,7 @@ class_name PlayerView
 @export var animator : AnimationPlayer
 
 @export var itemSprite : Sprite2D
+@export var itemInfo : Control
 
 enum State {IDLE, RUN, IDLE_BACKWARD, RUN_BACKWARD, DEFEAT}
 
@@ -14,7 +15,13 @@ var id : int
 var speed : float = 384
 var can_move : bool = true
 var state : PlayerView.State = PlayerView.State.IDLE
-var itemName : String
+
+var itemName : String:
+	set(value):
+		itemInfo.tooltip_text = value.replace("_", " ")
+		itemName = value
+	get:
+		return itemName
 
 
 func _ready():

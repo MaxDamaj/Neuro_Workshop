@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://cd77mfwxkq2n5"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_7y6bo"]
+[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_rvdod"]
+
+[resource]
+resource_name = "plain_forsen_drink"
+script = ExtResource("1_7y6bo")
+texture = ExtResource("2_rvdod")
+producingTime = 6.0
+mergeTo = {}
+usedIn = {
+"carbonizer": "forsen_drink"
+}

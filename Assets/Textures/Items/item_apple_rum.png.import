@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcaqfox3omqob"
-path="res://.godot/imported/item_mix_ermge_vodka.png-beb23643cf368608f1c66afc713f0615.ctex"
+uid="uid://dhcj45sm8cqh5"
+path="res://.godot/imported/item_apple_rum.png-07e4fe210cc64d05046f45b9969facc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Items/item_mix_ermge_vodka.png"
-dest_files=["res://.godot/imported/item_mix_ermge_vodka.png-beb23643cf368608f1c66afc713f0615.ctex"]
+source_file="res://Assets/Textures/Items/item_apple_rum.png"
+dest_files=["res://.godot/imported/item_apple_rum.png-07e4fe210cc64d05046f45b9969facc3.ctex"]
 
 [params]
 

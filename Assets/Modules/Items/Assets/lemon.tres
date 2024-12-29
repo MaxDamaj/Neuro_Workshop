@@ -8,7 +8,9 @@ resource_name = "lemon"
 script = ExtResource("1_xhl6o")
 texture = ExtResource("2_gecpk")
 producingTime = 0.0
-mergeTo = {}
+mergeTo = {
+"lime": "lemon_and_lime"
+}
 usedIn = {
 "cutting_board": "lemon_slices"
 }

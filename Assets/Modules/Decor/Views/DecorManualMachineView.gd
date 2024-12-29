@@ -10,8 +10,14 @@ class_name DecorManualMachineView
 @export var MachineName : String
 @export var ProgressSlider : Slider
 
-var itemName : String
 var itemToProduce : String
+var itemName : String:
+	set(value):
+		if (HoverButton != null):
+			HoverButton.tooltip_text = value.replace("_", " ")
+		itemName = value
+	get:
+		return itemName
 
 var _player : PlayerView
 var _time : float

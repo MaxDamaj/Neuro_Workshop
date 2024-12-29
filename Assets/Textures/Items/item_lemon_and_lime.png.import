@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqt5ggi5r1v66"
-path="res://.godot/imported/item_vodka_cocktail.png-7371ee842e946576ee63ce0ab2dc3b19.ctex"
+uid="uid://mi7i7vl5r5wc"
+path="res://.godot/imported/item_lemon_and_lime.png-604d3c511b0ca2355436ea92de41b9e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Items/item_vodka_cocktail.png"
-dest_files=["res://.godot/imported/item_vodka_cocktail.png-7371ee842e946576ee63ce0ab2dc3b19.ctex"]
+source_file="res://Assets/Textures/Items/item_lemon_and_lime.png"
+dest_files=["res://.godot/imported/item_lemon_and_lime.png-604d3c511b0ca2355436ea92de41b9e9.ctex"]
 
 [params]
 

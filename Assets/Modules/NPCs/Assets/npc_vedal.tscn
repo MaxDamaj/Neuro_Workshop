@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cp2kuqpqelcoo"]
+[gd_scene load_steps=12 format=3 uid="uid://cp2kuqpqelcoo"]
 
 [ext_resource type="Script" path="res://Assets/Modules/NPCs/Views/NpcView.gd" id="1_d4xfo"]
 [ext_resource type="Texture2D" uid="uid://c8gy7c0roan4a" path="res://Assets/Textures/Characters/npc_vedal.png" id="1_wexrh"]
+[ext_resource type="Texture2D" uid="uid://d1k66o4g3dooe" path="res://Assets/Textures/Characters/shadow.png" id="3_axrer"]
 [ext_resource type="Texture2D" uid="uid://ibtkd62g7msi" path="res://Assets/Textures/UI/bubble.png" id="3_icekp"]
 
 [sub_resource type="Animation" id="Animation_kgjip"]
@@ -89,6 +90,10 @@ root_node = NodePath("../Sprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_7fl4v")
 }
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(8, 24)
+texture = ExtResource("3_axrer")
 
 [node name="Bubble" type="Control" parent="."]
 z_index = 2
