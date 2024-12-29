@@ -15,4 +15,4 @@ func _ready() -> void:
 func _take_item():
 	var player : PlayerView = get_tree().get_nodes_in_group("Player")[0]
 	player.add_item("lava_lamp")
-	_uiPanelsProvider.close_panel("exit_level_ui")
+	_uiPanelsProvider.close_panel("safe_ui")

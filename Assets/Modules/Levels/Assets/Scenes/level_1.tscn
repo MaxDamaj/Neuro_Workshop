@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cx3uplkeyulyg"]
+[gd_scene load_steps=21 format=3 uid="uid://cx3uplkeyulyg"]
 
 [ext_resource type="Texture2D" uid="uid://bv1rqo5ynywwe" path="res://Assets/Textures/Stage/bar_bg.png" id="1_lbfl7"]
 [ext_resource type="PackedScene" uid="uid://sc7a05fqml2v" path="res://Assets/Modules/Decor/Assets/table.tscn" id="2_2arif"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://b23lgswlw3pf6" path="res://Assets/Modules/Decor/Assets/blender_table.tscn" id="10_kexiw"]
 [ext_resource type="PackedScene" uid="uid://c166u1ttsx4ie" path="res://Assets/Modules/Decor/Assets/drink_bar.tscn" id="11_2dytu"]
 [ext_resource type="PackedScene" uid="uid://dvp1ant1s5p6t" path="res://Assets/Modules/Decor/Assets/chair.tscn" id="11_sn3mw"]
+[ext_resource type="PackedScene" uid="uid://cuixbpasw8noj" path="res://Assets/Modules/Decor/Assets/recipe_book.tscn" id="12_hb01h"]
 [ext_resource type="PackedScene" uid="uid://hc8xmft6lcol" path="res://Assets/Modules/Decor/Assets/fruits_basket.tscn" id="12_pucgy"]
+[ext_resource type="PackedScene" uid="uid://dvx65gj4snp7s" path="res://Assets/Modules/Decor/Assets/safe_table.tscn" id="13_4m40a"]
 [ext_resource type="Script" path="res://Assets/Modules/NPCs/Views/NpcSpawnerView.gd" id="14_hsclb"]
 [ext_resource type="PackedScene" uid="uid://d35ycjrkrpbr1" path="res://Assets/Modules/Decor/Assets/trash_box.tscn" id="15_sj77m"]
 [ext_resource type="PackedScene" uid="uid://okuxx8tg844m" path="res://Assets/Modules/Decor/Assets/apple_fridge.tscn" id="16_vxgkx"]
@@ -73,10 +75,6 @@ barTableId = 2
 position = Vector2(-512, 400)
 scale = Vector2(4, 4)
 
-[node name="Table2" parent="Decor" instance=ExtResource("2_2arif")]
-position = Vector2(-896, 144)
-scale = Vector2(4, 4)
-
 [node name="Table4" parent="Decor" instance=ExtResource("2_2arif")]
 position = Vector2(0, -104)
 scale = Vector2(4, 4)
@@ -87,10 +85,6 @@ scale = Vector2(4, 4)
 
 [node name="Table18" parent="Decor" instance=ExtResource("2_2arif")]
 position = Vector2(296, -104)
-scale = Vector2(4, 4)
-
-[node name="Table17" parent="Decor" instance=ExtResource("2_2arif")]
-position = Vector2(-384, 272)
 scale = Vector2(4, 4)
 
 [node name="Table9" parent="Decor" instance=ExtResource("2_2arif")]
@@ -145,6 +139,14 @@ scale = Vector2(4, 4)
 position = Vector2(-832, -104)
 scale = Vector2(4, 4)
 
+[node name="RecipeBook" parent="Decor" instance=ExtResource("12_hb01h")]
+position = Vector2(-384, 272)
+scale = Vector2(4, 4)
+
+[node name="SafeTable" parent="Decor" instance=ExtResource("13_4m40a")]
+position = Vector2(-896, 144)
+scale = Vector2(4, 4)
+
 [node name="Chair" parent="Decor" instance=ExtResource("11_sn3mw")]
 position = Vector2(456, 272)
 scale = Vector2(4, 4)
@@ -185,7 +187,7 @@ rotation = -1.5708
 curve = SubResource("Curve2D_y5f8w")
 
 [node name="PathFollow2" type="PathFollow2D" parent="Pathes/Path2"]
-position = Vector2(122.855, -432.033)
+position = Vector2(122.854, -432.033)
 rotation = 1.5708
 progress = 128.0
 rotates = false

@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnq3257us3rin"]
+[gd_scene load_steps=8 format=3 uid="uid://dvx65gj4snp7s"]
 
-[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorGeneratorView.gd" id="1_5rmkk"]
-[ext_resource type="Texture2D" uid="uid://g4qdow8v1ad6" path="res://Assets/Textures/Stage/tomato_box.png" id="2_432dj"]
+[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorOpenUIView.gd" id="1_mha2d"]
+[ext_resource type="Texture2D" uid="uid://0tho7n6qhe6t" path="res://Assets/Textures/Stage/safe_table.png" id="2_dqk0w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsks1"]
 
@@ -13,18 +13,17 @@
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
-size = Vector2(24, 16)
+size = Vector2(8, 16)
 
-[node name="TomatoBox" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
-script = ExtResource("1_5rmkk")
-ItemSprite = NodePath("ItemSprite")
+[node name="SafeTable" type="Node2D" node_paths=PackedStringArray("HoverButton", "InteractArea")]
+script = ExtResource("1_mha2d")
+PanelId = "safe_ui"
 HoverButton = NodePath("HoverButton")
 InteractArea = NodePath("InteractArea")
-ItemName = "tomato"
 
 [node name="DecorSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("2_432dj")
+texture = ExtResource("2_dqk0w")
 offset = Vector2(0, -16)
 
 [node name="HoverButton" type="Button" parent="."]
@@ -38,7 +37,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sd36r")
 theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
-icon = ExtResource("2_432dj")
+icon = ExtResource("2_dqk0w")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -32)
@@ -53,6 +52,6 @@ shape = SubResource("RectangleShape2D_c6dd6")
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(0, 8)
+position = Vector2(20, -16)
 shape = SubResource("RectangleShape2D_8ysvh")
 debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)

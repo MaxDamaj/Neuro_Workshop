@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://chfixkkie3ndo"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_mrlr3"]
+[ext_resource type="Texture2D" uid="uid://8q4n3drfmvvl" path="res://Assets/Textures/Items/item_raw_mix_lava_lamp.png" id="2_2g51d"]
+
+[resource]
+resource_name = "raw_mix_lava_lamp"
+script = ExtResource("1_mrlr3")
+texture = ExtResource("2_2g51d")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {
+"blender": "lava_lamp_cocktail"
+}
