@@ -9,6 +9,8 @@ script = ExtResource("1_pe2ur")
 texture = ExtResource("2_gbaen")
 producingTime = 3.0
 mergeTo = {
-"mix_ermge_vodka": "fox_in_the_beach"
+"mix_ermge_vodka": "fox_on_the_beach",
+"mix_gin_tonic": "donowall_drink",
+"raw_bloody_cimp": "bloody_cimp"
 }
 usedIn = {}

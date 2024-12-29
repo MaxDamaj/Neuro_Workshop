@@ -10,6 +10,7 @@ texture = ExtResource("2_hunfr")
 producingTime = 0.0
 mergeTo = {
 "apple_juice": "raw_mix_rum_and_apple_juice",
-"banana": "raw_mix_banana_rum"
+"banana": "raw_mix_banana_rum",
+"lime": "limed_rum"
 }
 usedIn = {}

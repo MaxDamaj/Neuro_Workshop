@@ -1,26 +1,29 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=25 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
 [ext_resource type="PackedScene" uid="uid://dh2atkaqxtvcv" path="res://Assets/Modules/UI/Assets/ui.tscn" id="2_632w6"]
 [ext_resource type="Script" path="res://Assets/Modules/Items/Providers/ItemsProvider.gd" id="2_c1f50"]
-[ext_resource type="PackedScene" uid="uid://cx3uplkeyulyg" path="res://Assets/Modules/Levels/Assets/Scenes/level_1.tscn" id="3_6aveg"]
+[ext_resource type="PackedScene" uid="uid://cx3uplkeyulyg" path="res://Assets/Modules/Levels/Assets/Scenes/level_base.tscn" id="3_6aveg"]
 [ext_resource type="PackedScene" uid="uid://dm7th3b03hpn" path="res://Assets/Modules/UI/Assets/ui_workshop_panel.tscn" id="3_n0mek"]
 [ext_resource type="PackedScene" uid="uid://8n6nj8embvl0" path="res://Assets/Modules/UI/Assets/ui_exit_level_panel.tscn" id="4_852d5"]
 [ext_resource type="PackedScene" uid="uid://bdxkmq74dwkt" path="res://Assets/Modules/UI/Assets/ui_loading_panel.tscn" id="5_wgl24"]
-[ext_resource type="PackedScene" uid="uid://buuhuexwqh6hx" path="res://Assets/Modules/UI/Assets/ui_inventory.tscn" id="6_lanqk"]
-[ext_resource type="PackedScene" uid="uid://igso1ovvq3y0" path="res://Assets/Modules/UI/Assets/ui_lose_level_panel.tscn" id="7_p4fru"]
-[ext_resource type="PackedScene" uid="uid://c03xk7ffpobys" path="res://Assets/Modules/UI/Assets/ui_recipe_book_panel.tscn" id="8_u7v06"]
+[ext_resource type="PackedScene" uid="uid://ceeb11q2nmeu4" path="res://Assets/Modules/UI/Assets/ui_inventory.tscn" id="6_lanqk"]
+[ext_resource type="PackedScene" uid="uid://bfyt5hlaqb2oe" path="res://Assets/Modules/UI/Assets/ui_lose_level_panel.tscn" id="7_p4fru"]
+[ext_resource type="PackedScene" uid="uid://b4f3n2irlqykv" path="res://Assets/Modules/UI/Assets/ui_recipe_book_panel.tscn" id="8_u7v06"]
 [ext_resource type="Script" path="res://Assets/Modules/NPCs/Providers/NpcsProvider.gd" id="8_x13n3"]
 [ext_resource type="PackedScene" uid="uid://bqqp7epoca200" path="res://Assets/Modules/UI/Assets/ui_safe_panel.tscn" id="9_usnlb"]
 [ext_resource type="PackedScene" uid="uid://cp2kuqpqelcoo" path="res://Assets/Modules/NPCs/Assets/npc_vedal.tscn" id="9_vkmdw"]
-[ext_resource type="PackedScene" uid="uid://ba4spko2ac3wv" path="res://Assets/Modules/Levels/Assets/Scenes/level_3.tscn" id="10_5dem6"]
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIDialogPanel.gd" id="10_avh5g"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="11_m5u4n"]
 [ext_resource type="PackedScene" uid="uid://dx7cx75j8h066" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
 [ext_resource type="PackedScene" uid="uid://bk24hcasst3qs" path="res://Assets/Modules/NPCs/Assets/npc_random_2.tscn" id="15_qkonw"]
 [ext_resource type="PackedScene" uid="uid://cjgcx386rfmp1" path="res://Assets/Modules/NPCs/Assets/npc_random_3.tscn" id="16_ysyip"]
 [ext_resource type="PackedScene" uid="uid://bd434568ntuls" path="res://Assets/Modules/NPCs/Assets/npc_random_4.tscn" id="17_3laa0"]
+[ext_resource type="PackedScene" uid="uid://baf42jqcecalo" path="res://Assets/Modules/NPCs/Assets/npc_random_5.tscn" id="18_52p0n"]
+[ext_resource type="PackedScene" uid="uid://b827mg7rdwful" path="res://Assets/Modules/NPCs/Assets/npc_random_6.tscn" id="19_kbcyg"]
+[ext_resource type="PackedScene" uid="uid://bh72ulbaflp4b" path="res://Assets/Modules/NPCs/Assets/npc_random_7.tscn" id="20_eb0re"]
+[ext_resource type="PackedScene" uid="uid://cvhussewy4kf1" path="res://Assets/Modules/NPCs/Assets/npc_random_8.tscn" id="21_53scp"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -50,6 +53,10 @@ allNpcs = {
 "random_2": ExtResource("15_qkonw"),
 "random_3": ExtResource("16_ysyip"),
 "random_4": ExtResource("17_3laa0"),
+"random_5": ExtResource("18_52p0n"),
+"random_6": ExtResource("19_kbcyg"),
+"random_7": ExtResource("20_eb0re"),
+"random_8": ExtResource("21_53scp"),
 "vedal": ExtResource("9_vkmdw")
 }
 
@@ -57,7 +64,7 @@ allNpcs = {
 
 [node name="LevelLoadStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("2_7afnu")
-levels = Array[PackedScene]([ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("10_5dem6")])
+levels = Array[PackedScene]([ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("3_6aveg")])
 
 [node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("11_m5u4n")

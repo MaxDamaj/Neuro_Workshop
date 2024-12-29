@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://d3j215xt0dg8s"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_ahjkh"]
+[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_bdcws"]
+
+[resource]
+resource_name = "mix_limed_vodka"
+script = ExtResource("1_ahjkh")
+texture = ExtResource("2_bdcws")
+producingTime = 3.0
+mergeTo = {
+"gin": "raw_mix_gin_limed_vodka"
+}
+usedIn = {}

@@ -9,7 +9,8 @@ script = ExtResource("1_xhl6o")
 texture = ExtResource("2_gecpk")
 producingTime = 0.0
 mergeTo = {
-"lime": "lemon_and_lime"
+"lime": "lemon_and_lime",
+"vodka": "lemon_vodka"
 }
 usedIn = {
 "cutting_board": "lemon_slices"

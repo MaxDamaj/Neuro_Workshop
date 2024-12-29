@@ -8,6 +8,8 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 
 @export var levels : Array[PackedScene]
 
+var safeCode : int
+
 var _allLevelTasks : Dictionary
 var _loadedLevel : Node2D
 var _loadedLevelId : int = -1
@@ -19,6 +21,7 @@ func _ready() -> void:
 
 func load_level(levelId : int) -> void:
 	_loadedLevelId = levelId
+	safeCode = randi_range(0, 9999)
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _load_level_callback})
 
 func unload_level():
@@ -33,6 +36,7 @@ func restart_level():
 		_uiPanelsProvider.close_panel("lose_ui")
 		_load_level_callback()
 	
+	safeCode = randi_range(0, 9999)
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : end_func})
 
 func _unload_level_callback():
@@ -44,7 +48,7 @@ func _unload_level_callback():
 	_uiPanelsProvider.close_panel("lose_ui")
 
 func _load_level_callback():
-	_loadedLevel = levels[_loadedLevelId - 1].instantiate()
+	_loadedLevel = levels[_loadedLevelId].instantiate()
 	get_node("/root/MainScene").add_child.call_deferred(_loadedLevel)
 	
 	_levelTasksStrategy.allTasks = _allLevelTasks["level_" + str(_loadedLevelId)].Tasks
@@ -53,7 +57,12 @@ func _load_level_callback():
 	_uiPanelsProvider.close_panel("main_ui")
 
 func _win_game():
-	unload_level()
+	if (_loadedLevelId + 1 >= levels.size()):
+		unload_level()
+		return
+	
+	_loadedLevelId += 1
+	restart_level()
 
 func _lose_game():
 	_uiPanelsProvider.open_panel("lose_ui")

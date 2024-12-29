@@ -23,7 +23,7 @@ func _ready() -> void:
 	for i in range(LevelButtons.size()):
 		LevelButtons[i].button_down.connect(func(): _load_level(i))
 		
-	NewGameButton.button_down.connect(func(): _load_level(1))
+	NewGameButton.button_down.connect(func(): _load_level(0))
 	ChooseLevelButton.button_down.connect(_show_level_buttons)
 	BackButton.button_down.connect(_show_main_buttons)
 	SettingsButton.button_down.connect(_show_settings_buttons)
