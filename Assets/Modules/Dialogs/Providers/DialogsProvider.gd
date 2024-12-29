@@ -1,0 +1,2 @@
+extends BaseProvider
+class_name DialogsProvider
