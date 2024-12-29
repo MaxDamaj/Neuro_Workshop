@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://buuhuexwqh6hx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIInventoryPanel.gd" id="1_q40pb"]
-[ext_resource type="PackedScene" uid="uid://cgeawmj7ruiqa" path="res://Assets/Modules/UI/Assets/tile_inventory.tscn" id="2_n62bp"]
+[ext_resource type="PackedScene" uid="uid://bhr6uus4pfba5" path="res://Assets/Modules/UI/Assets/tile_inventory.tscn" id="2_n62bp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k85ik"]
 

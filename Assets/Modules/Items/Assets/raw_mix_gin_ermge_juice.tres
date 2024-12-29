@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://de4ogmc6bdklx"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_xb5qe"]
+[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_se8b6"]
+
+[resource]
+resource_name = "raw_mix_gin_ermge_juice"
+script = ExtResource("1_xb5qe")
+texture = ExtResource("2_se8b6")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {
+"mixer": "monkey_gland"
+}

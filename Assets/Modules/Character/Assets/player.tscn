@@ -121,10 +121,10 @@ position = Vector2(0, -240)
 [node name="ItemInfo" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -24.0
-offset_top = -240.0
-offset_right = 24.0
-offset_bottom = -192.0
+offset_left = -32.0
+offset_top = -120.0
+offset_right = 32.0
+offset_bottom = -72.0
 mouse_filter = 1
 
 [node name="Root" type="Node2D" parent="."]

@@ -9,7 +9,9 @@ script = ExtResource("1_gswdn")
 texture = ExtResource("2_xhisr")
 producingTime = 0.0
 mergeTo = {
+"ermapple_juice": "raw_mix_backslash_problem",
 "ermge_juice": "raw_mix_ermge_vodka",
+"lemon": "lemon_vodka",
 "lime": "limed_vodka",
 "tomato": "tomated_vodka"
 }

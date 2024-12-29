@@ -10,5 +10,5 @@ texture = ExtResource("2_pxo11")
 producingTime = 0.0
 mergeTo = {}
 usedIn = {
-"blender": "rising_star"
+"blender": "mix_limed_vodka"
 }

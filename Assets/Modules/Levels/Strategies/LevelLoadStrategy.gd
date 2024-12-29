@@ -44,7 +44,7 @@ func _unload_level_callback():
 	_uiPanelsProvider.close_panel("lose_ui")
 
 func _load_level_callback():
-	_loadedLevel = levels[_loadedLevelId - 1].instantiate()
+	_loadedLevel = levels[_loadedLevelId].instantiate()
 	get_node("/root/MainScene").add_child.call_deferred(_loadedLevel)
 	
 	_levelTasksStrategy.allTasks = _allLevelTasks["level_" + str(_loadedLevelId)].Tasks
@@ -53,7 +53,12 @@ func _load_level_callback():
 	_uiPanelsProvider.close_panel("main_ui")
 
 func _win_game():
-	unload_level()
+	if (_loadedLevelId + 1 >= levels.size()):
+		unload_level()
+		return
+	
+	_loadedLevelId += 1
+	restart_level()
 
 func _lose_game():
 	_uiPanelsProvider.open_panel("lose_ui")

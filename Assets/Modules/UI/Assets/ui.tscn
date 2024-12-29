@@ -91,7 +91,6 @@ offset_top = -52.0
 offset_bottom = 60.0
 grow_vertical = 2
 theme = ExtResource("3_7k0jo")
-disabled = true
 text = "Day 0
 "
 alignment = 0
@@ -132,7 +131,6 @@ offset_top = 260.0
 offset_bottom = 372.0
 grow_vertical = 2
 theme = ExtResource("3_7k0jo")
-disabled = true
 text = "Day 3"
 alignment = 0
 script = ExtResource("4_n8r61")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://bpsi1r4xnm11s"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_p21bl"]
+[ext_resource type="Texture2D" uid="uid://cdyku8g6rw1ug" path="res://Assets/Textures/Items/item_the_universal_mind.png" id="2_bd34u"]
+
+[resource]
+resource_name = "the_universal_mind"
+script = ExtResource("1_p21bl")
+texture = ExtResource("2_bd34u")
+producingTime = 5.0
+mergeTo = {}
+usedIn = {}

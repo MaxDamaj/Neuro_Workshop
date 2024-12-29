@@ -11,6 +11,7 @@ producingTime = 0.0
 mergeTo = {
 "ermge_juice": "limed_ermge_juice",
 "lemon": "lemon_and_lime",
+"rum": "limed_rum",
 "vodka": "limed_vodka"
 }
 usedIn = {

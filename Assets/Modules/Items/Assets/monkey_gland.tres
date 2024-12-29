@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://0xxxgwovkvs7"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_xaqcm"]
+[ext_resource type="Texture2D" uid="uid://cs8byhxljtfxm" path="res://Assets/Textures/Items/item_monkey_gland.png" id="2_yi0d6"]
+
+[resource]
+resource_name = "monkey_gland"
+script = ExtResource("1_xaqcm")
+texture = ExtResource("2_yi0d6")
+producingTime = 4.0
+mergeTo = {}
+usedIn = {}

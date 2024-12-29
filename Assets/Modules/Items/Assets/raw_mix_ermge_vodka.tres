@@ -10,5 +10,6 @@ texture = ExtResource("2_2v3es")
 producingTime = 0.0
 mergeTo = {}
 usedIn = {
+"apple_juice": "raw_mix_backslash_problem",
 "mixer": "mix_ermge_vodka"
 }
