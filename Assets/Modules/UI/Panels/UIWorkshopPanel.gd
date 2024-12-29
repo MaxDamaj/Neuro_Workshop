@@ -20,6 +20,8 @@ func _ready() -> void:
 	
 	_levelTasksStrategy.on_task_completed.connect(_update_completion_value)
 	_levelTasksStrategy.on_life_lost.connect(_update_lose_value)
+	
+	_update_completion_value(_levelTasksStrategy.allTasks.size(), _levelTasksStrategy.completedTasksCount)
 
 func _switch_settings_panel():
 	SettingsContainer.visible = !SettingsContainer.visible
@@ -28,8 +30,8 @@ func _try_close_level():
 	SettingsContainer.visible = false
 	_uiPanelsProvider.open_panel("exit_level_ui")
 
-func _update_completion_value(progress : float):
-	CompletionLabel.text = "Progress: " + str(roundi(progress * 100)) + "%"
+func _update_completion_value(totalProgress : int, currentProgress : int):
+	CompletionLabel.text = "Clients served: " + str(currentProgress) + "/" + str(totalProgress)
 
 func _update_lose_value(totalLifes : int, currentLifes : int):
 	for i in range(Lifes.size()):

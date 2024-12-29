@@ -3,20 +3,20 @@ class_name LevelTasksStrategy
 
 static var path : NodePath = "/root/MainScene/_Strategies/LevelTasksStrategy"
 
-signal on_task_completed(progress : float)
+signal on_task_completed(totalProgress : int, currentProgress : int)
 signal on_life_lost(totalLifes : int, remainingLifes : int)
 signal on_all_tasks_completed
 signal on_all_lifes_losed
 
 var allTasks : Array[TaskModel]
 
+var completedTasksCount : int
+
 var _allSpawners : Array[NpcSpawnerView]
 var _freeSpawners : Array[NpcSpawnerView]
 var _timer : Timer
 var _nextTaskIndex : int = 0
-
 var _taskPassedCount : int
-var _completedTasksCount : int
 var _remainingLoses : int
 
 func _ready() -> void:
@@ -35,9 +35,9 @@ func register_spawner(spawner : NpcSpawnerView):
 
 func start_tasks():
 	if (allTasks == null || allTasks.size() == 0): return
+	completedTasksCount = 0
 	_remainingLoses = 3
 	_taskPassedCount = 0
-	_completedTasksCount = 0
 	_nextTaskIndex = 0
 	_timer.start(allTasks[_nextTaskIndex].delay)
 
@@ -46,9 +46,9 @@ func stop_tasks():
 	_timer.stop()
 
 func complete_task():
-	_completedTasksCount += 1
+	completedTasksCount += 1
 	_taskPassedCount += 1
-	on_task_completed.emit(float(_completedTasksCount) / allTasks.size())
+	on_task_completed.emit(allTasks.size(), completedTasksCount)
 	
 	if (_taskPassedCount >= allTasks.size()):
 		on_all_tasks_completed.emit()
@@ -61,6 +61,10 @@ func lose_task():
 	if (_remainingLoses <= 0):
 		on_all_lifes_losed.emit()
 		stop_tasks()
+		return
+	
+	if (_taskPassedCount >= allTasks.size()):
+		on_all_tasks_completed.emit()
 
 func free_spawner(spawner : NpcSpawnerView):
 	_freeSpawners.append(spawner)

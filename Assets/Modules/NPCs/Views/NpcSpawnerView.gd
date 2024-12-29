@@ -32,6 +32,7 @@ func _item_recieved():
 
 func _task_failed():
 	_npc.hide_bubble()
+	BarTable.taskItem = ""
 	_levelTasksStrategy.lose_task()
 	_move_npc(1, 0, 4, _complete_task)
 

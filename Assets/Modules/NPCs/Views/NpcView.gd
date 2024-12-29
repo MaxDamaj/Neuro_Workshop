@@ -25,6 +25,7 @@ func start_task(task : TaskModel):
 
 func end_task():
 	hide_bubble()
+	if (_tween != null): _tween.kill()
 
 func _show_bubble() -> void:
 	Bubble.visible = true

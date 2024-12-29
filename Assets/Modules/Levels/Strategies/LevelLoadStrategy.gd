@@ -9,6 +9,7 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 @export var levels : Array[PackedScene]
 
 var safeCode : int
+var lastUnlockedLevel : int = 0
 
 var _allLevelTasks : Dictionary
 var _loadedLevel : Node2D
@@ -62,6 +63,7 @@ func _win_game():
 		return
 	
 	_loadedLevelId += 1
+	if (lastUnlockedLevel < _loadedLevelId): lastUnlockedLevel = _loadedLevelId
 	restart_level()
 
 func _lose_game():
