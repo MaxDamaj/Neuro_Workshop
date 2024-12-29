@@ -7,7 +7,8 @@ class_name UIRecipeBookPanel
 @export var ReturnButton : Button
 @export var NextButton : Button
 @export var PrevButton : Button
-@export var PageCounter : Label
+@export var PageCounter1 : Label
+@export var PageCounter2 : Label
 
 static var currentPage : int = 1
 
@@ -53,7 +54,8 @@ func _prev_page()->void:
 	_show_page(currentPage)
 
 func _show_page(pageNumber: int) -> void:
-	PageCounter.text = str(pageNumber)
+	PageCounter1.text = "Pages "+str(pageNumber*2-1)+"/"+str(Pages.size()*2)
+	PageCounter2.text = "Pages "+str(pageNumber*2)+"/"+str(Pages.size()*2)
 	for i in range(Pages.size()):
 		Pages[i].visible = false
 	Pages[pageNumber-1].visible = true

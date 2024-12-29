@@ -1,8 +1,47 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://8m48li400a3l"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://8m48li400a3l"]
 
-[ext_resource type="FontFile" uid="uid://cff5cj4carep4" path="res://Assets/Modules/UI/Themes/Saira-VariableFont_wdth,wght.ttf" id="1_70noe"]
+[ext_resource type="FontFile" uid="uid://b1nn320mhnn4" path="res://Assets/Modules/UI/Themes/segoeprint.ttf" id="1_fq0qe"]
+[ext_resource type="FontVariation" uid="uid://da7ecfm2gk5xr" path="res://Assets/Modules/UI/Themes/Saira-Medium.tres" id="1_iciar"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p4yo8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6fft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnjud"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01058"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbks4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mevoi"]
+bg_color = Color(0.247059, 0.203922, 0.172549, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r4rsu"]
 
 [resource]
-Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 32
-Label/fonts/font = ExtResource("1_70noe")
+default_font = ExtResource("1_fq0qe")
+Button/styles/disabled = SubResource("StyleBoxEmpty_p4yo8")
+Button/styles/focus = SubResource("StyleBoxEmpty_e6fft")
+Button/styles/hover = SubResource("StyleBoxEmpty_rnjud")
+Button/styles/normal = SubResource("StyleBoxEmpty_01058")
+Button/styles/pressed = SubResource("StyleBoxEmpty_lbks4")
+Label/colors/font_color = Color(0.243137, 0.2, 0.168627, 1)
+Label/font_sizes/font_size = 48
+TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
+TooltipLabel/font_sizes/font_size = 24
+TooltipLabel/fonts/font = ExtResource("1_iciar")
+TooltipLabel/styles/normal = SubResource("StyleBoxFlat_mevoi")
+TooltipPanel/styles/panel = SubResource("StyleBoxEmpty_r4rsu")

@@ -1,69 +1,123 @@
-[gd_scene load_steps=3 format=3 uid="uid://8n6nj8embvl0"]
+[gd_scene load_steps=11 format=3 uid="uid://8n6nj8embvl0"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIExitLevelPanel.gd" id="1_w86n1"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_ki52v"]
+[ext_resource type="Texture2D" uid="uid://bnbrm21gqbq55" path="res://Assets/Textures/UI/close_button.png" id="4_i27d1"]
+[ext_resource type="Texture2D" uid="uid://bu8vun5lho4jj" path="res://Assets/Textures/Dialogues/eliv.png" id="4_m6xt5"]
 
-[node name="UIExitLevelPanel" type="CanvasLayer" node_paths=PackedStringArray("ExitButton", "ReturnButton")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ix75g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhg3m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcrqa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0w2g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fh1ir"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6qao"]
+
+[node name="UIExitLevelPanel" type="CanvasLayer" node_paths=PackedStringArray("CloseButton", "ExitButton", "ReturnButton")]
 script = ExtResource("1_w86n1")
-ExitButton = NodePath("Panel/ExitButton")
-ReturnButton = NodePath("Panel/ReturnButton")
+CloseButton = NodePath("ExitMenuContainer/CloseButton")
+ExitButton = NodePath("ExitMenuContainer/ExitButton")
+ReturnButton = NodePath("ExitMenuContainer/ReturnButton")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ExitMenuContainer" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -161.5
-offset_top = -123.5
-offset_right = 161.5
-offset_bottom = 123.5
+offset_left = -512.0
+offset_top = -236.0
+offset_right = 424.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_ki52v")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Title" type="Label" parent="ExitMenuContainer"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -64.0
-offset_top = 33.0
-offset_right = 64.0
-offset_bottom = 56.0
-grow_horizontal = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -472.0
+offset_top = 64.0
+offset_right = -120.0
+offset_bottom = 208.0
+grow_horizontal = 0
 theme = ExtResource("2_ki52v")
-text = "Exit from level?"
+text = "Are you sure you
+want to quit?"
 horizontal_alignment = 1
 
-[node name="ExitButton" type="Button" parent="Panel"]
+[node name="SubTitle" type="Label" parent="ExitMenuContainer"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -60.0
-offset_top = -144.0
-offset_right = 60.0
-offset_bottom = -92.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_ki52v")
-text = "Exit"
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -488.0
+offset_top = 184.0
+offset_right = -94.0
+offset_bottom = 212.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Your unsaved progress will be lost."
 
-[node name="ReturnButton" type="Button" parent="Panel"]
+[node name="ExitButton" type="Button" parent="ExitMenuContainer"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -105.0
-offset_top = -72.0
-offset_right = 105.0
-offset_bottom = -20.0
+offset_left = 28.0
+offset_top = -200.0
+offset_right = 316.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_ki52v")
-text = "Back to game"
+text = "To Main Menu
+"
+
+[node name="ReturnButton" type="Button" parent="ExitMenuContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -104.0
+offset_right = 316.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_ki52v")
+text = "Go Back"
+
+[node name="CloseButton" type="Button" parent="ExitMenuContainer"]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 24.0
+offset_right = 908.0
+offset_bottom = 80.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ix75g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nhg3m")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wcrqa")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m0w2g")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fh1ir")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x6qao")
+icon = ExtResource("4_i27d1")
+icon_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ExitMenuContainer"]
+offset_left = -91.0
+offset_top = -96.0
+offset_right = 433.0
+offset_bottom = 483.0
+texture = ExtResource("4_m6xt5")
+expand_mode = 1
+stretch_mode = 5

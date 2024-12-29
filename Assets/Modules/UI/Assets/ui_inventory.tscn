@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://buuhuexwqh6hx"]
+[gd_scene load_steps=4 format=3 uid="uid://ceeb11q2nmeu4"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIInventoryPanel.gd" id="1_q40pb"]
 [ext_resource type="PackedScene" uid="uid://bhr6uus4pfba5" path="res://Assets/Modules/UI/Assets/tile_inventory.tscn" id="2_n62bp"]

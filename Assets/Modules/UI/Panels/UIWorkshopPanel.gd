@@ -25,6 +25,7 @@ func _switch_settings_panel():
 	SettingsContainer.visible = !SettingsContainer.visible
 
 func _try_close_level():
+	SettingsContainer.visible = false
 	_uiPanelsProvider.open_panel("exit_level_ui")
 
 func _update_completion_value(progress : float):
@@ -33,4 +34,4 @@ func _update_completion_value(progress : float):
 func _update_lose_value(totalLifes : int, currentLifes : int):
 	for i in range(Lifes.size()):
 		if (totalLifes - currentLifes >= i + 1):
-			Lifes[i].modulate = Color.RED
+			Lifes[i].texture = ResourceLoader.load("res://Assets/Textures/UI/lost_customer_active.png")
