@@ -10,5 +10,5 @@ texture = ExtResource("2_22rh2")
 producingTime = 0.0
 mergeTo = {}
 usedIn = {
-"blender": "bloody_cimp"
+"blender": "raw_bloody_cimp"
 }

@@ -51,7 +51,7 @@ texture = ExtResource("1_lbfl7")
 [node name="Borders" type="StaticBody2D" parent="Colliders"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders/Borders"]
-polygon = PackedVector2Array(-960, -104, 224, -104, 224, 24, 368, 24, 368, -168, 960, -168, 960, 528, 360, 528, 360, 408, 80, 408, 80, 528, -960, 528, -960, 320, -832, 320, -832, 144, -960, 144, -960, -88, -1088, -384, -1088, 576, 1024, 576, 1024, -640, -1088, -640, -1088, -408)
+polygon = PackedVector2Array(-960, -104, 232, -104, 232, 24, 368, 24, 368, -168, 960, -168, 960, 528, 360, 528, 360, 408, 80, 408, 80, 528, -960, 528, -960, 400, -832, 400, -832, 144, -960, 144, -960, -88, -1088, -384, -1088, 576, 1024, 576, 1024, -640, -1088, -640, -1088, -408)
 
 [node name="Decor" type="Node2D" parent="."]
 z_index = 1

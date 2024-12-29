@@ -13,7 +13,7 @@
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
-size = Vector2(24, 8)
+size = Vector2(8, 8)
 
 [node name="FruitsBasket" type="Node2D" node_paths=PackedStringArray("HoverButton", "InteractArea")]
 script = ExtResource("1_uuotd")

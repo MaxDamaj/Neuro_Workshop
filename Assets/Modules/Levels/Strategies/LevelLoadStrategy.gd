@@ -15,21 +15,11 @@ var _loadedLevelId : int = -1
 func _ready() -> void:
 	_add_to_dictionary("res://Assets/Modules/Levels/Assets/Tasks", _allLevelTasks)
 	_levelTasksStrategy.on_all_tasks_completed.connect(_win_game)
+	_levelTasksStrategy.on_all_lifes_losed.connect(_lose_game)
 
 func load_level(levelId : int) -> void:
 	_loadedLevelId = levelId
-	var end_func : Callable = func():
-		if (_loadedLevel != null): unload_level()
-		
-		_loadedLevel = levels[levelId - 1].instantiate()
-		get_node("/root/MainScene").add_child.call_deferred(_loadedLevel)
-		
-		_levelTasksStrategy.allTasks = _allLevelTasks["level_" + str(levelId)].Tasks
-		_levelTasksStrategy.start_tasks()
-		_uiPanelsProvider.open_panel("workshop_ui")
-		_uiPanelsProvider.close_panel("main_ui")
-	
-	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : end_func})
+	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _load_level_callback})
 
 func unload_level():
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _unload_level_callback})
@@ -37,8 +27,11 @@ func unload_level():
 
 func restart_level():
 	var end_func : Callable = func():
-		_unload_level_callback()
-		load_level(_loadedLevelId)
+		_loadedLevel.queue_free()
+		_levelTasksStrategy.stop_tasks()
+		_uiPanelsProvider.close_panel("workshop_ui")
+		_uiPanelsProvider.close_panel("lose_ui")
+		_load_level_callback()
 	
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : end_func})
 
@@ -48,6 +41,19 @@ func _unload_level_callback():
 	_uiPanelsProvider.open_panel("main_ui")
 	_uiPanelsProvider.close_panel("workshop_ui")
 	_uiPanelsProvider.close_panel("exit_level_ui")
+	_uiPanelsProvider.close_panel("lose_ui")
+
+func _load_level_callback():
+	_loadedLevel = levels[_loadedLevelId - 1].instantiate()
+	get_node("/root/MainScene").add_child.call_deferred(_loadedLevel)
+	
+	_levelTasksStrategy.allTasks = _allLevelTasks["level_" + str(_loadedLevelId)].Tasks
+	_levelTasksStrategy.start_tasks()
+	_uiPanelsProvider.open_panel("workshop_ui")
+	_uiPanelsProvider.close_panel("main_ui")
 
 func _win_game():
 	unload_level()
+
+func _lose_game():
+	_uiPanelsProvider.open_panel("lose_ui")

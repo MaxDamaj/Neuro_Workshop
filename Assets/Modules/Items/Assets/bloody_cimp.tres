@@ -7,6 +7,6 @@
 resource_name = "bloody_cimp"
 script = ExtResource("1_4f7tm")
 texture = ExtResource("2_drbuq")
-producingTime = 7.0
+producingTime = 0.0
 mergeTo = {}
 usedIn = {}

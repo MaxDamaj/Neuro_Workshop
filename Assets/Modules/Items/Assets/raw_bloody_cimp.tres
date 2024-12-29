@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://ewnchx7p8drc"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_vfwd1"]
+[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_putvi"]
+
+[resource]
+resource_name = "raw_bloody_cimp"
+script = ExtResource("1_vfwd1")
+texture = ExtResource("2_putvi")
+producingTime = 7.0
+mergeTo = {
+"lime_slices": "bloody_cimp"
+}
+usedIn = {}
