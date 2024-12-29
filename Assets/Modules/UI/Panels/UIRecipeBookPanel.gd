@@ -2,6 +2,7 @@ extends Node
 class_name UIRecipeBookPanel
 
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
+@onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 
 @export var Pages : Array[Panel]
 @export var ReturnButton : Button
@@ -9,10 +10,18 @@ class_name UIRecipeBookPanel
 @export var PrevButton : Button
 @export var PageCounter1 : Label
 @export var PageCounter2 : Label
+@export var SafeCode : Label
 
 static var currentPage : int = 1
+static var codePage : int = 0
 
 func _ready() -> void:
+	SafeCode.visible = false
+	SafeCode.text = str(_levelLoadStartegy.safeCode).pad_zeros(4)
+	
+	if(codePage == 0):
+		codePage = randi_range(1, Pages.size())
+		
 	_show_page(currentPage)
 	
 	if (currentPage == Pages.size()):
@@ -30,7 +39,7 @@ func _ready() -> void:
 		
 	ReturnButton.button_down.connect(_close_recipe_book)
 	NextButton.button_down.connect(_next_page)
-	PrevButton.button_down.connect(_prev_page)
+	PrevButton.button_down.connect(_prev_page)	
 
 func _close_recipe_book() -> void:
 	_uiPanelsProvider.close_panel("recipe_book_ui")
@@ -59,3 +68,7 @@ func _show_page(pageNumber: int) -> void:
 	for i in range(Pages.size()):
 		Pages[i].visible = false
 	Pages[pageNumber-1].visible = true
+	if (currentPage == codePage):
+		SafeCode.visible = true
+	else:
+		SafeCode.visible = false

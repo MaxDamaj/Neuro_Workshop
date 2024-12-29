@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=3 uid="uid://cb28c7bhv1osw"]
+
+[ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UISettingsPanel.gd" id="1_o5x4i"]
+[ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_qx0rx"]
+[ext_resource type="Texture2D" uid="uid://bnbrm21gqbq55" path="res://Assets/Textures/UI/close_button.png" id="3_udfjp"]
+[ext_resource type="Texture2D" uid="uid://xfajackppnj5" path="res://Assets/Textures/Dialogues/vedal.png" id="4_n8cfb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aoe0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1r03"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_113cc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12nys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gh8qs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1m1o"]
+
+[node name="UISettingsPanel" type="CanvasLayer" node_paths=PackedStringArray("CloseSettingsButton", "MainMenuButton")]
+script = ExtResource("1_o5x4i")
+CloseSettingsButton = NodePath("SettingsContainer/CloseSettingsButton")
+MainMenuButton = NodePath("SettingsContainer/MainMenuButton")
+
+[node name="SettingsContainer" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1464.0
+offset_top = 304.0
+offset_right = -536.0
+offset_bottom = 768.0
+grow_horizontal = 0
+theme = ExtResource("2_qx0rx")
+
+[node name="EffectsVolumeSlider" type="HSlider" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 144.0
+offset_right = 416.0
+offset_bottom = 195.0
+grow_horizontal = 2
+theme = ExtResource("2_qx0rx")
+value = 50.0
+
+[node name="Label" type="Label" parent="SettingsContainer/EffectsVolumeSlider"]
+layout_mode = 1
+offset_top = -64.0
+offset_right = 301.0
+offset_bottom = -16.0
+theme = ExtResource("2_qx0rx")
+text = "FX Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 272.0
+offset_right = 416.0
+offset_bottom = 323.0
+grow_horizontal = 2
+theme = ExtResource("2_qx0rx")
+value = 50.0
+
+[node name="Label" type="Label" parent="SettingsContainer/MusicVolumeSlider"]
+layout_mode = 0
+offset_top = -64.0
+offset_right = 280.0
+offset_bottom = -16.0
+theme = ExtResource("2_qx0rx")
+text = "Music Volume"
+
+[node name="MainMenuButton" type="Button" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -96.0
+offset_right = 313.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_qx0rx")
+text = "To Main Menu"
+
+[node name="CloseSettingsButton" type="Button" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aoe0t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a1r03")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_113cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_12nys")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gh8qs")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t1m1o")
+icon = ExtResource("3_udfjp")
+icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SettingsContainer"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -56.0
+offset_right = 400.0
+offset_bottom = 461.0
+texture = ExtResource("4_n8cfb")
+expand_mode = 1
+stretch_mode = 5
