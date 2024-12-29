@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://bxr32faiie28y"]
-
-[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_fi3oh"]
-[ext_resource type="Texture2D" uid="uid://rxryw5j3jhuf" path="res://Assets/Textures/Items/item_glass_of_vodka_banana.png" id="2_07aci"]
-
-[resource]
-resource_name = "glass_of_vodka_banana"
-script = ExtResource("1_fi3oh")
-texture = ExtResource("2_07aci")

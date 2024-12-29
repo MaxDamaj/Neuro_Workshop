@@ -21,7 +21,8 @@ func load_level(levelId : int) -> void:
 		_loadedLevel = levels[levelId - 1].instantiate()
 		get_node("/root/MainScene").add_child.call_deferred(_loadedLevel)
 		
-		_levelTasksStrategy.start_task("spawn_npc", 4)
+		_levelTasksStrategy.allTasks = _allLevelTasks["level_" + str(levelId)].Tasks
+		_levelTasksStrategy.start_tasks()
 		_uiPanelsProvider.open_panel("workshop_ui")
 		_uiPanelsProvider.close_panel("main_ui")
 	

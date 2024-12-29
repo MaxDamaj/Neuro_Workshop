@@ -1,57 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://dj40ovayiw7gs"]
+[gd_scene load_steps=11 format=3 uid="uid://dj40ovayiw7gs"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Character/Views/PlayerView.gd" id="1_ji1ke"]
 [ext_resource type="Texture2D" uid="uid://d1k66o4g3dooe" path="res://Assets/Textures/Characters/shadow.png" id="1_xbik4"]
-[ext_resource type="Texture2D" uid="uid://h0mnoqsjxjau" path="res://Assets/Textures/Characters/character.png" id="2_i81g8"]
-[ext_resource type="Texture2D" uid="uid://d3nkljwqoauj6" path="res://Assets/Textures/Characters/legs.png" id="3_ddk3a"]
-[ext_resource type="Texture2D" uid="uid://bs45r1v4nn61l" path="res://Assets/Textures/Characters/chest.png" id="4_1ntlc"]
-[ext_resource type="Texture2D" uid="uid://dmxcf5lq65u7i" path="res://Assets/Textures/Characters/hair_f_1.png" id="5_40x55"]
+[ext_resource type="Texture2D" uid="uid://ce2285hwqub7p" path="res://Assets/Textures/Characters/player_neuro.png" id="3_wx4xs"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uapob"]
-radius = 4.0
-
-[sub_resource type="Animation" id="Animation_70v3d"]
-resource_name = "Death"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Root/Body:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Death"]
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfdf1"]
+size = Vector2(80, 32)
 
 [sub_resource type="Animation" id="Animation_hy04p"]
 resource_name = "Idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Root/HairSprite:position")
+tracks/0/path = NodePath("Root/Body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [0],
-"method": &"set_animation_idle_frame"
-}]
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_sn4pi"]
@@ -59,90 +28,78 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Root/Body:animation")
+tracks/0/path = NodePath("Root/Body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Root/HairSprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_ftulm"]
 resource_name = "Run"
-length = 0.7
+length = 0.8
 loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Root/HairSprite:position")
-tracks/0/interp = 0
+tracks/0/path = NodePath("Root/Body:frame")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(1, 0), Vector2(2, -1), Vector2(2, 0), Vector2(2, 1), Vector2(1, 0), Vector2(1, -1), Vector2(1, 0), Vector2(2, 1)]
+"values": [0, 1, 2, 3]
 }
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"values": [{
-"args": [0],
-"method": &"set_animation_run_frame"
-}, {
-"args": [1],
-"method": &"set_animation_run_frame"
-}, {
-"args": [2],
-"method": &"set_animation_run_frame"
-}, {
-"args": [3],
-"method": &"set_animation_run_frame"
-}, {
-"args": [4],
-"method": &"set_animation_run_frame"
-}, {
-"args": [5],
-"method": &"set_animation_run_frame"
-}, {
-"args": [6],
-"method": &"set_animation_run_frame"
-}, {
-"args": [7],
-"method": &"set_animation_run_frame"
-}]
+
+[sub_resource type="Animation" id="Animation_1wxfa"]
+resource_name = "IdleBack"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_rylj1"]
+resource_name = "RunBack"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1a0nt"]
 _data = {
-"Death": SubResource("Animation_70v3d"),
 "Idle": SubResource("Animation_hy04p"),
+"IdleBack": SubResource("Animation_1wxfa"),
 "RESET": SubResource("Animation_sn4pi"),
-"Run": SubResource("Animation_ftulm")
+"Run": SubResource("Animation_ftulm"),
+"RunBack": SubResource("Animation_rylj1")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("root", "animator", "bodySprite", "hairSprite", "chestSprite", "legsSprite", "itemSprite") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("root", "animator", "itemSprite") groups=["Player"]]
 z_index = 1
 y_sort_enabled = true
 collision_mask = 3
@@ -150,47 +107,31 @@ motion_mode = 1
 script = ExtResource("1_ji1ke")
 root = NodePath("Root")
 animator = NodePath("Root/AnimationPlayer")
-bodySprite = NodePath("Root/Body")
-hairSprite = NodePath("Root/HairSprite")
-chestSprite = NodePath("Root/ChestSprite")
-legsSprite = NodePath("Root/LegsSprite")
-itemSprite = NodePath("Root/ItemSprite")
+itemSprite = NodePath("ItemSprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_uapob")
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_lfdf1")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -216)
 
 [node name="Root" type="Node2D" parent="."]
 
 [node name="Shadow" type="Sprite2D" parent="Root"]
-position = Vector2(0, -1)
+position = Vector2(8, -8)
+scale = Vector2(5, 5)
 texture = ExtResource("1_xbik4")
 
 [node name="Body" type="Sprite2D" parent="Root"]
-texture = ExtResource("2_i81g8")
-offset = Vector2(0, -20)
-region_enabled = true
+position = Vector2(0, -48)
+texture = ExtResource("3_wx4xs")
+offset = Vector2(0, -64)
+hframes = 4
+vframes = 3
+frame = 8
 region_rect = Rect2(0, 0, 43, 40)
-
-[node name="LegsSprite" type="Sprite2D" parent="Root"]
-texture = ExtResource("3_ddk3a")
-offset = Vector2(0, -20)
-region_enabled = true
-region_rect = Rect2(0, 0, 43, 40)
-
-[node name="ChestSprite" type="Sprite2D" parent="Root"]
-texture = ExtResource("4_1ntlc")
-offset = Vector2(0, -20)
-region_enabled = true
-region_rect = Rect2(0, 0, 43, 40)
-
-[node name="HairSprite" type="Sprite2D" parent="Root"]
-texture = ExtResource("5_40x55")
-offset = Vector2(0, -20)
-
-[node name="ItemSprite" type="Sprite2D" parent="Root"]
-position = Vector2(8, -16)
-scale = Vector2(0.25, 0.25)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Root"]
 root_node = NodePath("../..")
