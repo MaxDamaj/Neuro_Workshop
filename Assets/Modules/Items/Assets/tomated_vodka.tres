@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dmvxskqw6nsa3"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_peube"]
-[ext_resource type="Texture2D" uid="uid://do5iisapqj5my" path="res://Assets/Textures/Items/item_tomated_vodka.png" id="2_r13jd"]
+[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_22rh2"]
 
 [resource]
 resource_name = "tomated_vodka"
 script = ExtResource("1_peube")
-texture = ExtResource("2_r13jd")
+texture = ExtResource("2_22rh2")
 producingTime = 0.0
 mergeTo = {}
 usedIn = {

@@ -40,8 +40,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
 icon = ExtResource("2_3v77a")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
-scale = Vector2(0.5, 0.5)
+position = Vector2(0, -40)
+scale = Vector2(0.25, 0.25)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

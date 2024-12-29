@@ -99,7 +99,7 @@ _data = {
 "RunBack": SubResource("Animation_rylj1")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("root", "animator", "itemSprite") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("root", "animator", "itemSprite", "itemInfo") groups=["Player"]]
 z_index = 1
 y_sort_enabled = true
 collision_mask = 3
@@ -108,6 +108,7 @@ script = ExtResource("1_ji1ke")
 root = NodePath("Root")
 animator = NodePath("Root/AnimationPlayer")
 itemSprite = NodePath("ItemSprite")
+itemInfo = NodePath("ItemInfo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
@@ -115,13 +116,20 @@ shape = SubResource("RectangleShape2D_lfdf1")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(0, -216)
+position = Vector2(0, -240)
+
+[node name="ItemInfo" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -24.0
+offset_top = -240.0
+offset_right = 24.0
+offset_bottom = -192.0
 
 [node name="Root" type="Node2D" parent="."]
 
 [node name="Shadow" type="Sprite2D" parent="Root"]
 position = Vector2(8, -8)
-scale = Vector2(5, 5)
 texture = ExtResource("1_xbik4")
 
 [node name="Body" type="Sprite2D" parent="Root"]

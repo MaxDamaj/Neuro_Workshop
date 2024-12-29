@@ -7,3 +7,6 @@
 resource_name = "glass"
 script = ExtResource("1_a6e4k")
 texture = ExtResource("2_wv5ot")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {}

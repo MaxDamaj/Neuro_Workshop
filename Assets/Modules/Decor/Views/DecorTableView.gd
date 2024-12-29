@@ -7,7 +7,13 @@ class_name DecorTableView
 @export var HoverButton : Button
 @export var InteractArea : Area2D
 
-@export var ItemName : String
+var ItemName : String:
+	set(value):
+		if (HoverButton != null):
+			HoverButton.tooltip_text = value.replace("_", " ")
+		ItemName = value
+	get:
+		return ItemName
 
 var _player : PlayerView
 

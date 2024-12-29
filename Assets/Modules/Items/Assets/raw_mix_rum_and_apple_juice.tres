@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://s3c2e3t5aqro"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_q6e4p"]
+[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_8teoj"]
+
+[resource]
+resource_name = "raw_mix_rum_and_apple_juice"
+script = ExtResource("1_q6e4p")
+texture = ExtResource("2_8teoj")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {
+"mixer": "apple_rum"
+}

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkol14kgxvliy"
-path="res://.godot/imported/item_plain_chat_juice.png-0795d833ea9e27f300ca6981890226a9.ctex"
+uid="uid://bcarnid3hvr4p"
+path="res://.godot/imported/item_forsen_drink.png-e3676ae4415e6bc18f90955a51aa4492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Items/item_plain_chat_juice.png"
-dest_files=["res://.godot/imported/item_plain_chat_juice.png-0795d833ea9e27f300ca6981890226a9.ctex"]
+source_file="res://Assets/Textures/Items/item_forsen_drink.png"
+dest_files=["res://.godot/imported/item_forsen_drink.png-e3676ae4415e6bc18f90955a51aa4492.ctex"]
 
 [params]
 

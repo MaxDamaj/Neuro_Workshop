@@ -8,7 +8,7 @@ resource_name = "banana"
 script = ExtResource("1_48hap")
 texture = ExtResource("2_yc43y")
 producingTime = 0.0
-mergeTo = {}
-usedIn = {
-"cutting_board": "clean_banana"
+mergeTo = {
+"rum": "raw_mix_banana_rum"
 }
+usedIn = {}
