@@ -7,3 +7,8 @@
 resource_name = "clean_banana"
 script = ExtResource("1_ibhxr")
 texture = ExtResource("2_m608o")
+producingTime = 1.0
+mergeTo = {
+"rum": "raw_mix_banana_rum"
+}
+usedIn = {}

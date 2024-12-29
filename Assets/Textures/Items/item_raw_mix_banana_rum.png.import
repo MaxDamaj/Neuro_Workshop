@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1lccvtunei06"
-path="res://.godot/imported/item_glass_of_ermge_juice.png-c90741776e553eea4807dd77c0cdaa8d.ctex"
+uid="uid://dvejeawshvwah"
+path="res://.godot/imported/item_raw_mix_banana_rum.png-44c65b1436895fedc1e910c5f36830a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Items/item_glass_of_ermge_juice.png"
-dest_files=["res://.godot/imported/item_glass_of_ermge_juice.png-c90741776e553eea4807dd77c0cdaa8d.ctex"]
+source_file="res://Assets/Textures/Items/item_raw_mix_banana_rum.png"
+dest_files=["res://.godot/imported/item_raw_mix_banana_rum.png-44c65b1436895fedc1e910c5f36830a2.ctex"]
 
 [params]
 

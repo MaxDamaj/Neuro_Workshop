@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca52ro63wonr6"
-path="res://.godot/imported/item_glass_of_tonic.png-63547577e5a2480e46d59c710c745478.ctex"
+uid="uid://0honhjl7hgwe"
+path="res://.godot/imported/item_bloody_cimp.png-bbad7323c3e6b0c5f0b0008b998a1558.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Items/item_glass_of_tonic.png"
-dest_files=["res://.godot/imported/item_glass_of_tonic.png-63547577e5a2480e46d59c710c745478.ctex"]
+source_file="res://Assets/Textures/Items/item_bloody_cimp.png"
+dest_files=["res://.godot/imported/item_bloody_cimp.png-bbad7323c3e6b0c5f0b0008b998a1558.ctex"]
 
 [params]
 

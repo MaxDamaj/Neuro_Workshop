@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dx8364od703o2"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_4f7tm"]
+[ext_resource type="Texture2D" uid="uid://0honhjl7hgwe" path="res://Assets/Textures/Items/item_bloody_cimp.png" id="2_drbuq"]
+
+[resource]
+resource_name = "bloody_cimp"
+script = ExtResource("1_4f7tm")
+texture = ExtResource("2_drbuq")
+producingTime = 7.0
+mergeTo = {}
+usedIn = {}

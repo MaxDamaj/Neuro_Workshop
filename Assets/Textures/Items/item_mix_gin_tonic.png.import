@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4h2w1aforo2i"
-path="res://.godot/imported/item_glass_of_vodka.png-0915db9ff14bbb65fb05d0516fa16d20.ctex"
+uid="uid://dsk5r1cygemvh"
+path="res://.godot/imported/item_mix_gin_tonic.png-6f739298f7210aa69c194b8829dd335c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Items/item_glass_of_vodka.png"
-dest_files=["res://.godot/imported/item_glass_of_vodka.png-0915db9ff14bbb65fb05d0516fa16d20.ctex"]
+source_file="res://Assets/Textures/Items/item_mix_gin_tonic.png"
+dest_files=["res://.godot/imported/item_mix_gin_tonic.png-6f739298f7210aa69c194b8829dd335c.ctex"]
 
 [params]
 

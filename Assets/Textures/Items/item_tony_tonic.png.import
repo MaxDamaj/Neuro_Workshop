@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckgfwyn7vvwm1"
-path="res://.godot/imported/item_glass_of_apple_juice.png-5fb4cca0788cf45376a770767f95eae8.ctex"
+uid="uid://d075w2fj8nwk0"
+path="res://.godot/imported/item_tony_tonic.png-6b447a04a895aa3ce3034080cd5a06aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Items/item_glass_of_apple_juice.png"
-dest_files=["res://.godot/imported/item_glass_of_apple_juice.png-5fb4cca0788cf45376a770767f95eae8.ctex"]
+source_file="res://Assets/Textures/Items/item_tony_tonic.png"
+dest_files=["res://.godot/imported/item_tony_tonic.png-6b447a04a895aa3ce3034080cd5a06aa.ctex"]
 
 [params]
 

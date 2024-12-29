@@ -8,5 +8,7 @@ resource_name = "tonic"
 script = ExtResource("1_wpru8")
 texture = ExtResource("2_o01co")
 producingTime = 0.0
-mergeTo = {}
+mergeTo = {
+"gin": "raw_mix_gin_tonic"
+}
 usedIn = {}
