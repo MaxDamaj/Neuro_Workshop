@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqqp7epoca200"]
+[gd_scene load_steps=3 format=3 uid="uid://dohx4lpiray63"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UISafePanel.gd" id="1_kvryn"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_0n33n"]
 
-[node name="UISafePanel" type="CanvasLayer" node_paths=PackedStringArray("TakeButton", "ReturnButton")]
+[node name="UISafePanel" type="CanvasLayer" node_paths=PackedStringArray("NumberDisplay", "NumberButtons", "DeleteButton", "ClearButton", "TakeButton", "ReturnButton")]
 script = ExtResource("1_kvryn")
+NumberDisplay = NodePath("Panel/ColorRect/NumberDisplay")
+NumberButtons = [NodePath("Panel/Control/Button0"), NodePath("Panel/Control/Button1"), NodePath("Panel/Control/Button2"), NodePath("Panel/Control/Button3"), NodePath("Panel/Control/Button4"), NodePath("Panel/Control/Button5"), NodePath("Panel/Control/Button6"), NodePath("Panel/Control/Button7"), NodePath("Panel/Control/Button8"), NodePath("Panel/Control/Button9")]
+DeleteButton = NodePath("Panel/Control/ButtonDelete")
+ClearButton = NodePath("Panel/Control/ButtonClear")
 TakeButton = NodePath("Panel/TakeButton")
 ReturnButton = NodePath("Panel/ReturnButton")
 
@@ -14,10 +18,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -161.5
-offset_top = -123.5
-offset_right = 161.5
-offset_bottom = 123.5
+offset_left = -256.0
+offset_top = -308.0
+offset_right = 257.0
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_0n33n")
@@ -27,10 +31,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -64.0
-offset_top = 33.0
-offset_right = 64.0
-offset_bottom = 56.0
+offset_left = -64.5
+offset_top = 16.0
+offset_right = 63.5
+offset_bottom = 55.0
 grow_horizontal = 2
 theme = ExtResource("2_0n33n")
 text = "Safe"
@@ -67,3 +71,182 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_0n33n")
 text = "Close"
+
+[node name="Control" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = -124.0
+offset_right = 127.5
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button1" type="Button" parent="Panel/Control"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 45.0
+text = "1"
+
+[node name="Button2" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 10.0
+grow_horizontal = 0
+text = "3"
+
+[node name="Button4" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = -15.0
+grow_vertical = 2
+text = "4"
+
+[node name="Button5" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -60.0
+offset_right = 20.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+
+[node name="Button6" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -60.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "6"
+
+[node name="Button7" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_right = 40.0
+offset_bottom = -75.0
+grow_vertical = 0
+text = "7"
+
+[node name="Button8" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -120.0
+offset_right = 20.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "8"
+
+[node name="Button9" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -120.0
+offset_bottom = -75.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "9"
+
+[node name="Button0" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -45.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
+
+[node name="ButtonDelete" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 48.0
+grow_vertical = 0
+text = "←"
+
+[node name="ButtonClear" type="Button" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "C"
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 96.0
+offset_right = 384.0
+offset_bottom = 160.0
+
+[node name="NumberDisplay" type="Label" parent="Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -19.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "* * * *"
+horizontal_alignment = 1
