@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=22 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
@@ -14,10 +14,13 @@
 [ext_resource type="Script" path="res://Assets/Modules/NPCs/Providers/NpcsProvider.gd" id="8_x13n3"]
 [ext_resource type="PackedScene" uid="uid://bqqp7epoca200" path="res://Assets/Modules/UI/Assets/ui_safe_panel.tscn" id="9_usnlb"]
 [ext_resource type="PackedScene" uid="uid://cp2kuqpqelcoo" path="res://Assets/Modules/NPCs/Assets/npc_vedal.tscn" id="9_vkmdw"]
-[ext_resource type="PackedScene" uid="uid://cu5d13smon3e8" path="res://Assets/Modules/Levels/Assets/Scenes/level_2.tscn" id="9_wlghq"]
 [ext_resource type="PackedScene" uid="uid://ba4spko2ac3wv" path="res://Assets/Modules/Levels/Assets/Scenes/level_3.tscn" id="10_5dem6"]
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIDialogPanel.gd" id="10_avh5g"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="11_m5u4n"]
+[ext_resource type="PackedScene" uid="uid://dx7cx75j8h066" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
+[ext_resource type="PackedScene" uid="uid://bk24hcasst3qs" path="res://Assets/Modules/NPCs/Assets/npc_random_2.tscn" id="15_qkonw"]
+[ext_resource type="PackedScene" uid="uid://cjgcx386rfmp1" path="res://Assets/Modules/NPCs/Assets/npc_random_3.tscn" id="16_ysyip"]
+[ext_resource type="PackedScene" uid="uid://bd434568ntuls" path="res://Assets/Modules/NPCs/Assets/npc_random_4.tscn" id="17_3laa0"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -43,6 +46,10 @@ script = ExtResource("2_c1f50")
 [node name="NpcsProvider" type="Node" parent="_Providers"]
 script = ExtResource("8_x13n3")
 allNpcs = {
+"random_1": ExtResource("14_gsjwi"),
+"random_2": ExtResource("15_qkonw"),
+"random_3": ExtResource("16_ysyip"),
+"random_4": ExtResource("17_3laa0"),
 "vedal": ExtResource("9_vkmdw")
 }
 
@@ -50,7 +57,7 @@ allNpcs = {
 
 [node name="LevelLoadStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("2_7afnu")
-levels = Array[PackedScene]([ExtResource("3_6aveg"), ExtResource("9_wlghq"), ExtResource("10_5dem6")])
+levels = Array[PackedScene]([ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("10_5dem6")])
 
 [node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("11_m5u4n")

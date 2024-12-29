@@ -36,10 +36,12 @@ func _task_failed():
 	_move_npc(1, 0, 4, _complete_task)
 
 func _end_moving():
+	if (_npc == null): return
 	_npc.Animator.play("Idle")
 	_npc.start_task(_task)
 
 func _complete_task():
+	if (_npc == null): return
 	_npc.on_task_lose.disconnect(_task_failed)
 	_npc.queue_free()
 	_levelTasksStrategy.free_spawner(self)

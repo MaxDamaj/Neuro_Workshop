@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://mleg04ee1xa1"]
+
+[ext_resource type="Texture2D" uid="uid://ibtkd62g7msi" path="res://Assets/Textures/UI/bubble.png" id="1_1bw64"]
+[ext_resource type="Script" path="res://Assets/Modules/UI/Tiles/TileBubble.gd" id="1_hxe7s"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_cjakv"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_gemii"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_02tih"]
+
+[node name="UIBubble" type="Control" node_paths=PackedStringArray("OrderIcon", "ProgressSlider")]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 33.0
+offset_top = -260.0
+offset_right = 173.0
+offset_bottom = -138.0
+pivot_offset = Vector2(6, 38)
+script = ExtResource("1_hxe7s")
+OrderIcon = NodePath("OrderIcon")
+ProgressSlider = NodePath("ProgressSlider")
+
+[node name="BubbleTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1bw64")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="OrderIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -41.0
+offset_right = 28.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="ProgressSlider" type="HSlider" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_top = 7.0
+offset_right = 68.0
+offset_bottom = 22.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_icons/grabber = SubResource("ImageTexture_cjakv")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_gemii")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_02tih")
+step = 0.05

@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=10 format=3 uid="uid://tp3t88f101l0"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_m0c4c"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="2_bvcte"]
+
+[sub_resource type="Resource" id="Resource_xu04w"]
+script = ExtResource("1_m0c4c")
+npcName = "random"
+delay = 2.0
+items = Array[String](["vodka"])
+waitingTime = 30.0
+chillingTime = 5.0
+rarity = 0
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_ndp14"]
+script = ExtResource("1_m0c4c")
+npcName = "random"
+delay = 2.0
+items = Array[String](["gin"])
+waitingTime = 30.0
+chillingTime = 5.0
+rarity = 0
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_lgvmk"]
+script = ExtResource("1_m0c4c")
+npcName = "random"
+delay = 2.0
+items = Array[String](["apple_rum"])
+waitingTime = 45.0
+chillingTime = 5.0
+rarity = 0
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_rv3pi"]
+script = ExtResource("1_m0c4c")
+npcName = "random"
+delay = 5.0
+items = Array[String](["rum"])
+waitingTime = 30.0
+chillingTime = 5.0
+rarity = 0
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_asfhf"]
+script = ExtResource("1_m0c4c")
+npcName = "random"
+delay = 10.0
+items = Array[String](["forsen_drink"])
+waitingTime = 120.0
+chillingTime = 5.0
+rarity = 0
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_uva7u"]
+script = ExtResource("1_m0c4c")
+npcName = "random"
+delay = 10.0
+items = Array[String](["lava_lamp_cocktail"])
+waitingTime = 45.0
+chillingTime = 5.0
+rarity = 0
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_0edub"]
+script = ExtResource("1_m0c4c")
+npcName = "random"
+delay = 12.0
+items = Array[String](["tony_tonic"])
+waitingTime = 120.0
+chillingTime = 5.0
+rarity = 2
+dialogId = "level_2_end"
+
+[resource]
+resource_name = "level_2"
+script = ExtResource("2_bvcte")
+StartDialog = "level_2_start"
+Tasks = Array[ExtResource("1_m0c4c")]([SubResource("Resource_xu04w"), SubResource("Resource_ndp14"), SubResource("Resource_lgvmk"), SubResource("Resource_rv3pi"), SubResource("Resource_asfhf"), SubResource("Resource_uva7u"), SubResource("Resource_0edub")])
