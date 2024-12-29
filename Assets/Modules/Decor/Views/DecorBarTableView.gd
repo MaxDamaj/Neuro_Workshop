@@ -1,18 +1,22 @@
 extends DecorTableView
 class_name DecorBarTableView
 
-@onready var _levelTasksStrategy : LevelTasksStrategy = get_node(LevelTasksStrategy.path)
+signal on_item_recieved
 
-@export var barTableId : int
-
+var taskItem : String
 
 func try_add_item(itemName : String) -> bool:
 	if (ItemName != ""): return false
-	if (_levelTasksStrategy.try_complete_task(itemName, barTableId)):
+	if (itemName == taskItem):
 		ItemName = itemName
 		ItemSprite.texture = _itemsProvider.allItems[ItemName].texture
+		on_item_recieved.emit()
 		return true
 	return false
+
+func remove_item():
+	ItemSprite.texture = null
+	ItemName = ""
 
 
 func _try_interact_with_item():

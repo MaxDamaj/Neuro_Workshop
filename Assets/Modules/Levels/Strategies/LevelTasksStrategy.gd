@@ -3,6 +3,8 @@ class_name LevelTasksStrategy
 
 static var path : NodePath = "/root/MainScene/_Strategies/LevelTasksStrategy"
 
+signal on_task_completed(progress : float)
+signal on_life_lost(totalLifes : int, remainingLifes : int)
 signal on_all_tasks_completed
 signal on_all_lifes_losed
 
@@ -41,12 +43,15 @@ func stop_tasks():
 
 func complete_task():
 	_completedTasksCount += 1
+	on_task_completed.emit(float(_completedTasksCount) / allTasks.size())
 	
 	if (_completedTasksCount >= allTasks.size()):
 		on_all_tasks_completed.emit()
 
 func lose_task():
 	_remainingLoses -= 1
+	on_life_lost.emit(3, _remainingLoses)
+	
 	if (_remainingLoses <= 0):
 		on_all_lifes_losed.emit()
 		stop_tasks()

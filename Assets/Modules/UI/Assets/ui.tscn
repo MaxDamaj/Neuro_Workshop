@@ -48,6 +48,7 @@ offset_right = -220.0
 offset_bottom = 33.5
 grow_vertical = 2
 theme = ExtResource("3_7k0jo")
+disabled = true
 text = "Level 2"
 alignment = 0
 
@@ -61,6 +62,7 @@ offset_right = -220.0
 offset_bottom = 133.5
 grow_vertical = 2
 theme = ExtResource("3_7k0jo")
+disabled = true
 text = "Level 3"
 alignment = 0
 

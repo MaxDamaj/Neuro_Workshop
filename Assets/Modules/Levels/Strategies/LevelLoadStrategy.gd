@@ -14,6 +14,7 @@ var _loadedLevelId : int = -1
 
 func _ready() -> void:
 	_add_to_dictionary("res://Assets/Modules/Levels/Assets/Tasks", _allLevelTasks)
+	_levelTasksStrategy.on_all_tasks_completed.connect(_win_game)
 
 func load_level(levelId : int) -> void:
 	_loadedLevelId = levelId
@@ -47,3 +48,6 @@ func _unload_level_callback():
 	_uiPanelsProvider.open_panel("main_ui")
 	_uiPanelsProvider.close_panel("workshop_ui")
 	_uiPanelsProvider.close_panel("exit_level_ui")
+
+func _win_game():
+	unload_level()

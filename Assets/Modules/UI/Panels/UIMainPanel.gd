@@ -36,6 +36,8 @@ func _load_level(levelId : int):
 	_levelLoadStartegy.load_level(levelId)
 	
 func _move_button(ButtonElement:Button, x:int, y:int) -> void:
+	var disableState : bool = ButtonElement.disabled
+	
 	ButtonElement.disabled = true
 	var tween = create_tween()
 	var target_pos = Vector2 (x,y)
@@ -43,15 +45,16 @@ func _move_button(ButtonElement:Button, x:int, y:int) -> void:
 	tween.tween_callback(
 	func():
 		ButtonElement.position = target_pos
-		ButtonElement.disabled = false
+		ButtonElement.disabled = disableState
 	)	
 	
 func _hide_button(ButtonElement:Button) -> void:
 	_move_button(ButtonElement, BUTTON_HIDDEN_X, ButtonElement.position.y)
-	ButtonElement.disabled = true
+	ButtonElement.process_mode = Node.PROCESS_MODE_DISABLED
 	
 func _show_button(ButtonElement:Button) -> void:
 	_move_button(ButtonElement, BUTTON_SHOWN_X, ButtonElement.position.y)
+	ButtonElement.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _move_slider(SliderElement:HSlider, x:int, y:int) -> void:
 	var tween = create_tween()

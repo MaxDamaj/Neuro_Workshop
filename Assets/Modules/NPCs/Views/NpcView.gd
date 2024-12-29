@@ -17,12 +17,15 @@ func _ready() -> void:
 
 
 func start_task(task : TaskModel):
-	show_bubble()
+	_show_bubble()
 	OrderIcon.texture = _itemsProvider.allItems[task.items[0]].texture
 	ProgressSlider.max_value = task.waitingTime
 	ProgressSlider.value = task.waitingTime
 
-func show_bubble() -> void:
+func end_task():
+	_hide_bubble()
+
+func _show_bubble() -> void:
 	Bubble.visible = true
 	Bubble.scale = Vector2.ZERO
 	
@@ -30,6 +33,18 @@ func show_bubble() -> void:
 	var target_scale = Vector2.ONE
 	tween.tween_property(Bubble, "scale", target_scale, 0.5)
 	tween.tween_callback(func(): Bubble.scale = target_scale)
+
+func _hide_bubble() -> void:
+	Bubble.visible = true
+	Bubble.scale = Vector2.ONE
+	
+	var tween = create_tween()
+	var target_scale = Vector2.ZERO
+	tween.tween_property(Bubble, "scale", target_scale, 0.5)
+	tween.tween_callback(func(): 
+		Bubble.scale = target_scale
+		Bubble.visible = false
+	)
 
 func _lose_task():
 	on_task_lose.emit()
