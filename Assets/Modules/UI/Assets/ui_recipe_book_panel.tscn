@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b4f3n2irlqykv"]
+[gd_scene load_steps=48 format=3 uid="uid://b4f3n2irlqykv"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIRecipeBookPanel.gd" id="1_fa0hd"]
 [ext_resource type="Theme" uid="uid://8m48li400a3l" path="res://Assets/Modules/UI/Themes/recipe_book_theme.tres" id="2_0jsf8"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://tysipsbvr13m" path="res://Assets/Textures/BookItems/book_donowall_drink.png" id="30_dpxp5"]
 [ext_resource type="Texture2D" uid="uid://d1kq7ig75xi84" path="res://Assets/Textures/BookItems/book_backslash_problem.png" id="31_0opkf"]
 [ext_resource type="Texture2D" uid="uid://saedoyikfqrx" path="res://Assets/Textures/BookItems/book_the_universal_mind.png" id="32_p1xol"]
+[ext_resource type="Texture2D" uid="uid://c3ppmgm1ygifs" path="res://Assets/Textures/Items/item_tuab.png" id="34_t2bc8"]
 [ext_resource type="Texture2D" uid="uid://c3c3vm76va31e" path="res://Assets/Textures/UI/sticker.png" id="39_h461b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0c6e"]
@@ -2597,7 +2598,7 @@ grow_vertical = 2
 theme = ExtResource("2_0jsf8")
 theme_override_styles/panel = SubResource("StyleBoxTexture_frito")
 
-[node name="TheUniversalMind" type="TextureRect" parent="Page8"]
+[node name="TUAB" type="TextureRect" parent="Page8"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2610,9 +2611,9 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("32_p1xol")
+texture = ExtResource("34_t2bc8")
 
-[node name="TheUniversalMindLabel" type="Label" parent="Page8"]
+[node name="TUABLabel" type="Label" parent="Page8"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
