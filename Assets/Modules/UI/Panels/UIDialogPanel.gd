@@ -73,7 +73,7 @@ func _show_sprite(index:int)->void:
 	var target_pos : Vector2
 	if (index==0):
 		target_pos = Vector2(SPEAKER_LEFT_SHOWN_X, Speakers[index].position.y)
-	if (index==1):
+	elif (index==1):
 		target_pos = Vector2(SPEAKER_RIGHT_SHOWN_X, Speakers[index].position.y)
 	else:
 		return
