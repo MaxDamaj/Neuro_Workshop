@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://r5rgngruqomd"]
+[gd_scene load_steps=13 format=3 uid="uid://cb28c7bhv1osw"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UISettingsPanel.gd" id="1_o5x4i"]
 [ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_htd5w"]

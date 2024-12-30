@@ -16,7 +16,7 @@ static var currentPage : int = 1
 static var codePage : int = 0
 
 func _ready() -> void:
-	SafeCode.visible = false
+	SafeCode.get_parent().visible = false
 	SafeCode.text = str(_levelLoadStartegy.safeCode).pad_zeros(4)
 	
 	if(codePage == 0):
@@ -69,6 +69,6 @@ func _show_page(pageNumber: int) -> void:
 		Pages[i].visible = false
 	Pages[pageNumber-1].visible = true
 	if (currentPage == codePage):
-		SafeCode.visible = true
+		SafeCode.get_parent().visible = true
 	else:
-		SafeCode.visible = false
+		SafeCode.get_parent().visible = false
