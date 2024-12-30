@@ -67,6 +67,7 @@ theme = ExtResource("2_xbsfp")
 text = "Close"
 
 [node name="SpeakerLeft" type="TextureRect" parent="Root"]
+layout_mode = 0
 offset_left = -64.0
 offset_top = 56.0
 offset_right = 960.0

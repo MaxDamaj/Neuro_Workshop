@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hc8xmft6lcol"]
+[gd_scene load_steps=7 format=3 uid="uid://hc8xmft6lcol"]
 
 [ext_resource type="Texture2D" uid="uid://bjweacneeru4q" path="res://Assets/Textures/Stage/fruits_basket.png" id="1_bulq8"]
 [ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorCompositeBoxView.gd" id="1_uuotd"]
@@ -9,29 +9,30 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglkp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6dd6"]
-size = Vector2(32, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
-size = Vector2(8, 8)
+size = Vector2(32, 160)
 
 [node name="FruitsBasket" type="Node2D" node_paths=PackedStringArray("HoverButton", "InteractArea")]
 script = ExtResource("1_uuotd")
-HoverButton = NodePath("HoverButton")
+HoverButton = NodePath("DecorSprite/HoverButton")
 InteractArea = NodePath("InteractArea")
 ItemsList = Array[String](["banana", "lemon", "lime", "tomato"])
 
 [node name="DecorSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
 texture = ExtResource("1_bulq8")
-offset = Vector2(0, -16)
+offset = Vector2(0, -48)
 
-[node name="HoverButton" type="Button" parent="."]
+[node name="HoverButton" type="Button" parent="DecorSprite"]
 modulate = Color(2, 2, 2, 1)
-offset_left = -16.0
-offset_top = -52.0
-offset_right = 48.0
-offset_bottom = -4.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -85.25
+offset_top = -146.5
+offset_right = -85.25
+offset_bottom = -146.5
+grow_horizontal = 2
+grow_vertical = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
@@ -43,15 +44,9 @@ icon = ExtResource("1_bulq8")
 position = Vector2(0, -32)
 scale = Vector2(0.5, 0.5)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -16)
-shape = SubResource("RectangleShape2D_c6dd6")
-
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(0, 4)
+position = Vector2(0, 80)
 shape = SubResource("RectangleShape2D_8ysvh")
 debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)

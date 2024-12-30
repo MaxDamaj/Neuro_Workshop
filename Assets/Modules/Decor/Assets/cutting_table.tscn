@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://jbr3yj0i2niu"]
+[gd_scene load_steps=10 format=3 uid="uid://jbr3yj0i2niu"]
 
 [ext_resource type="Texture2D" uid="uid://c1wvk7xaxetvu" path="res://Assets/Textures/Stage/cutting_table.png" id="1_fvow4"]
 [ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorManualMachineView.gd" id="1_uuo01"]
@@ -9,11 +9,8 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglkp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6dd6"]
-size = Vector2(32, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
-size = Vector2(8, 8)
+size = Vector2(32, 128)
 
 [sub_resource type="ImageTexture" id="ImageTexture_6ohf1"]
 
@@ -24,22 +21,26 @@ size = Vector2(8, 8)
 [node name="CuttingTable" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea", "ProgressSlider")]
 script = ExtResource("1_uuo01")
 ItemSprite = NodePath("ItemSprite")
-HoverButton = NodePath("HoverButton")
+HoverButton = NodePath("DecorSprite/HoverButton")
 InteractArea = NodePath("InteractArea")
 MachineName = "cutting_board"
 ProgressSlider = NodePath("ProgressSlider")
 
 [node name="DecorSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
 texture = ExtResource("1_fvow4")
-offset = Vector2(0, -16)
+offset = Vector2(0, -32)
 
-[node name="HoverButton" type="Button" parent="."]
+[node name="HoverButton" type="Button" parent="DecorSprite"]
 modulate = Color(2, 2, 2, 1)
-offset_left = -16.0
-offset_top = -52.0
-offset_right = 16.0
-offset_bottom = -4.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -63.695
+offset_top = -84.0
+offset_right = -63.695
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
@@ -51,25 +52,19 @@ icon = ExtResource("1_fvow4")
 position = Vector2(0, -40)
 scale = Vector2(0.25, 0.25)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -16)
-shape = SubResource("RectangleShape2D_c6dd6")
-
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(0, 4)
+position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_8ysvh")
 debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)
 
 [node name="ProgressSlider" type="HSlider" parent="."]
 z_index = 1
-offset_left = -24.0
-offset_top = -56.0
-offset_right = 24.0
-offset_bottom = -40.0
+offset_left = -72.0
+offset_top = -104.0
+offset_right = 72.0
+offset_bottom = -88.0
 mouse_filter = 2
 theme_override_icons/grabber = SubResource("ImageTexture_6ohf1")
 theme_override_icons/grabber_highlight = SubResource("ImageTexture_1orlt")
