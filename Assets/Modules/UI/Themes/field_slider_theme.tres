@@ -1,0 +1,33 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d3ht3ymqa0arj"]
+
+[ext_resource type="Texture2D" uid="uid://cpsqr16blwg8h" path="res://Assets/Textures/UI/progressbar_fill.png" id="1_buc5d"]
+[ext_resource type="Texture2D" uid="uid://8ihr7dygbnjy" path="res://Assets/Textures/UI/progressbar.png" id="2_b5aii"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_gara3"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_k4sjo"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_blq2v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc50g"]
+texture = ExtResource("1_buc5d")
+texture_margin_left = 15.0
+texture_margin_right = 15.0
+expand_margin_top = 11.0
+expand_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bd43y"]
+texture = ExtResource("2_b5aii")
+texture_margin_left = 18.0
+texture_margin_right = 18.0
+expand_margin_left = 8.0
+expand_margin_top = 14.0
+expand_margin_right = 9.0
+expand_margin_bottom = 22.0
+
+[resource]
+HSlider/icons/grabber = SubResource("ImageTexture_gara3")
+HSlider/icons/grabber_disabled = SubResource("ImageTexture_k4sjo")
+HSlider/icons/grabber_highlight = SubResource("ImageTexture_blq2v")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_nc50g")
+HSlider/styles/slider = SubResource("StyleBoxTexture_bd43y")

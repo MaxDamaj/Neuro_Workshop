@@ -28,8 +28,7 @@ func _ready() -> void:
 	add_child(_timer)
 	_timer.one_shot = true
 	_timer.timeout.connect(_end_task)
-	
-	
+
 
 func register_spawner(spawner : NpcSpawnerView):
 	_allSpawners.append(spawner)
@@ -82,7 +81,7 @@ func _end_task():
 		return
 	
 	var task : TaskModel = allTasks[_nextTaskIndex]
-	var spawner : NpcSpawnerView = _freeSpawners.pick_random()
+	var spawner : NpcSpawnerView = _freeSpawners.pick_random() if allTasks.size() > 1 else _freeSpawners[1]
 	_freeSpawners.erase(spawner)
 	spawner.start_task(task)
 	

@@ -189,7 +189,7 @@ script = ExtResource("14_hsclb")
 BarTable = NodePath("../../../Decor/BarTable3")
 
 [node name="Player" parent="." instance=ExtResource("2_t2qoh")]
-position = Vector2(-488, 96)
+position = Vector2(-217, 497)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -14)

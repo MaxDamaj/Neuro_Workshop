@@ -11,7 +11,7 @@ delay = 0.0
 item = "banana_rum"
 waitingTime = 300.0
 chillingTime = 5.0
-rarity = 1
+rarity = 0
 nextTask = ExtResource("2_sjpc1")
 dialogId = "level_0_middle"
 

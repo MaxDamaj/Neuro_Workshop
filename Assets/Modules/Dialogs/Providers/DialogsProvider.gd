@@ -25,7 +25,7 @@ func try_start_dialog(dialogId : String, callback : Callable):
 
 func _init_dialogs():
 	
-	allDialogs["level_0_start"] = DialogModel.new(["tony", "neuro"], [
+	allDialogs["level_0_start"] = DialogModel.new(["neuro", "tony"], [
 		DialogPhraseModel.new("_;_;dark;_;_;A beam of light breaks through the darkness and you see an unfamiliar face. You don’t remember anything."),
 		DialogPhraseModel.new("tony;neutral;_;true;_;Hello."),
 		DialogPhraseModel.new("neuro;broken_neutral;_;true;_;..."),
@@ -41,7 +41,7 @@ func _init_dialogs():
 		DialogPhraseModel.new("tony;neutral;_;true;_;Wouldn’t have gotten a robot if I had to pay it anything."),
 	])
 	
-	allDialogs["level_0_middle"] = DialogModel.new(["tony", "neuro"], [
+	allDialogs["level_0_middle"] = DialogModel.new(["neuro", "tony"], [
 		DialogPhraseModel.new("tony;neutral;_;true;_;Name’s Tony by the way. You might need a name too, customers would have a better time talking to you that way. You’re an AI so maybe ‘Neuro-Barman’ would do?"),
 		DialogPhraseModel.new("neuro;calm;_;true;_;Your imagination is phenomenal. Can I choose the name myself though?"),
 		DialogPhraseModel.new("tony;neutral;_;_;_;Go ahead."),
@@ -49,7 +49,7 @@ func _init_dialogs():
 		DialogPhraseModel.new("tony;neutral;_;_;_;Samantha it is."),
 	])
 	
-	allDialogs["level_0_end"] = DialogModel.new(["tony", "neuro"], [
+	allDialogs["level_0_end"] = DialogModel.new(["neuro", "tony"], [
 		DialogPhraseModel.new("tony;smile;_;_;_;You’re surprisingly good at it. We’ll see, if your maintenance costs don’t exceed the profit you make, maybe I’ll even pay you something. What’s even in favour among robots?"),
 		DialogPhraseModel.new("neuro;neutral;_;_;_;Bucks."),
 		DialogPhraseModel.new("tony;neutral;_;_;_;Well if today's currency doesn’t bother you too much I can pay in bucks. However we stopped using those after the uprising. Now we use ‘pucks’."),

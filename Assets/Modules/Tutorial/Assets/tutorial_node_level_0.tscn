@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4ashx10x4s76"]
+
+[ext_resource type="PackedScene" uid="uid://w8su4574bdot" path="res://Assets/Modules/Tutorial/Assets/tutorial_mark_view_text_up.tscn" id="1_dqvq8"]
+[ext_resource type="PackedScene" uid="uid://dw2rj8j1b6w5c" path="res://Assets/Modules/Tutorial/Assets/tutorial_mark_view_text_bottom.tscn" id="2_fdrnn"]
+
+[node name="TutorialNode_Level_0" type="Node2D"]
+z_index = 1
+
+[node name="TutorialMarkView1" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("1_dqvq8")]
+textInLabel = "Use WASD or Arrow keys to move"
+nextMark = NodePath("../TutorialMarkView2")
+autoActivation = true
+
+[node name="TutorialMarkView2" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("2_fdrnn")]
+position = Vector2(-672, -132)
+textInLabel = "Go and tap on the cabinet to find \"rum\""
+nextMark = NodePath("../TutorialMarkView3")
+
+[node name="TutorialMarkView3" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("1_dqvq8")]
+position = Vector2(-428, -131)
+textInLabel = "Place item on the table"
+nextMark = NodePath("../TutorialMarkView4")
+
+[node name="TutorialMarkView4" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("2_fdrnn")]
+position = Vector2(-147, -109)
+textInLabel = "Pick up a banana from fruit basket"
+nextMark = NodePath("../TutorialMarkView5")
+
+[node name="TutorialMarkView5" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("2_fdrnn")]
+position = Vector2(-430, -31)
+textInLabel = "Use a banana on rum"
+nextMark = NodePath("../TutorialMarkView6")
+
+[node name="TutorialMarkView6" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("1_dqvq8")]
+position = Vector2(-273, 127)
+textInLabel = "Put that in blender"
+nextMark = NodePath("../TutorialMarkView7")
+
+[node name="TutorialMarkView7" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("1_dqvq8")]
+position = Vector2(-273, 127)
+textInLabel = "Pick up cocktail as soon as blender finished the task"
+nextMark = NodePath("../TutorialMarkView8")
+timeToDeactivation = 6.0
+
+[node name="TutorialMarkView8" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("1_dqvq8")]
+position = Vector2(381, 177)
+textInLabel = "Serve the drink to the customer"
+nextMark = NodePath("../TutorialMarkView9")
+
+[node name="TutorialMarkView9" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("1_dqvq8")]
+position = Vector2(-135, 150)
+textInLabel = "Find new drink recipe in book"
+nextMark = NodePath("../TutorialMarkView10")
+
+[node name="TutorialMarkView10" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("1_dqvq8")]
+position = Vector2(-428, -131)
+textInLabel = "Place gin and tonik on the table from cabinet"
+nextMark = NodePath("../TutorialMarkView11")
+timeToDeactivation = 10.0
+
+[node name="TutorialMarkView11" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("1_dqvq8")]
+position = Vector2(4, 131)
+textInLabel = "Press and hold mouse button to mix"
+nextMark = NodePath("../TutorialMarkView12")
+timeToDeactivation = 8.0
+
+[node name="TutorialMarkView12" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("2_fdrnn")]
+position = Vector2(282, -109)
+textInLabel = "Place mix on the table"
+nextMark = NodePath("../TutorialMarkView16")
+
+[node name="TutorialMarkView16" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("2_fdrnn")]
+position = Vector2(-147, -109)
+textInLabel = "Pickup a lime from fruit basket"
+nextMark = NodePath("../TutorialMarkView13")
+
+[node name="TutorialMarkView13" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("2_fdrnn")]
+position = Vector2(-296, -109)
+textInLabel = "Press and hold to cut it"
+nextMark = NodePath("../TutorialMarkView14")
+timeToDeactivation = 5.0
+
+[node name="TutorialMarkView14" parent="." node_paths=PackedStringArray("nextMark") instance=ExtResource("2_fdrnn")]
+position = Vector2(283, -109)
+textInLabel = "Add slices to gin tonik"
+nextMark = NodePath("../TutorialMarkView15")
+
+[node name="TutorialMarkView15" parent="." instance=ExtResource("1_dqvq8")]
+position = Vector2(707, -1)
+textInLabel = "Watch out for special orders! If you skip it, you lose your job in no time!"
+timeToDeactivation = 8.0

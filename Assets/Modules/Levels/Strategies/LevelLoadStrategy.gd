@@ -5,6 +5,7 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 
 @onready var _dialogsProvider : DialogsProvider = get_node(DialogsProvider.path)
 @onready var _levelTasksStrategy : LevelTasksStrategy = get_node(LevelTasksStrategy.path)
+@onready var _tutorialFactory : TutorialFactory = get_node(TutorialFactory.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
 @export var levels : Array[PackedScene]
@@ -27,6 +28,7 @@ func load_level(levelId : int) -> void:
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _load_level_callback})
 
 func unload_level():
+	_tutorialFactory.unload_tutorial()
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _unload_level_callback})
 	_loadedLevelId = -1
 
@@ -34,6 +36,7 @@ func restart_level():
 	var end_func : Callable = func():
 		_loadedLevel.queue_free()
 		_levelTasksStrategy.stop_tasks()
+		_tutorialFactory.unload_tutorial()
 		_uiPanelsProvider.close_panel("workshop_ui")
 		_uiPanelsProvider.close_panel("lose_ui")
 		_load_level_callback()
@@ -57,6 +60,8 @@ func _load_level_callback():
 	_levelTasksStrategy.allTasks = levelModel.Tasks
 	_levelTasksStrategy.tasksCount = levelModel.TasksCount
 	_dialogsProvider.try_start_dialog(levelModel.StartDialog, func(): pass)
+	_tutorialFactory.spawn_tutorial(_loadedLevelId)
+	
 	_levelTasksStrategy.start_tasks()
 	_uiPanelsProvider.open_panel("workshop_ui")
 	_uiPanelsProvider.close_panel("main_ui")
