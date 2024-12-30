@@ -1,51 +1,79 @@
-[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=7 format=3 uid="uid://bho30mu72i5bx"]
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=10 format=3 uid="uid://bho30mu72i5bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_root3"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="2_fwwyp"]
+[ext_resource type="Resource" uid="uid://1msa75kr458e" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_1_ct_1.tres" id="2_m2fol"]
 
 [sub_resource type="Resource" id="Resource_xu04w"]
 script = ExtResource("1_root3")
 npcName = "random"
 delay = 2.0
 item = "fannta"
-waitingTime = 90.0
+waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
+entranceDialogId = ""
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_ndp14"]
 script = ExtResource("1_root3")
 npcName = "random"
-delay = 20.0
-item = "rising_star"
-waitingTime = 60.0
+delay = 10.0
+item = "banana_rum"
+waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
-dialogId = "level_1_info"
+entranceDialogId = ""
+dialogId = ""
 
 [sub_resource type="Resource" id="Resource_lgvmk"]
 script = ExtResource("1_root3")
 npcName = "random"
-delay = 20.0
-item = "chat_juice"
-waitingTime = 60.0
+delay = 10.0
+item = "fannta"
+waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
+entranceDialogId = ""
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_rv3pi"]
 script = ExtResource("1_root3")
-npcName = "vedal"
-delay = 25.0
-item = "fox_on_the_beach"
+npcName = "random"
+delay = 10.0
+item = "tonic"
 waitingTime = 90.0
-chillingTime = 10.0
-rarity = 2
-dialogId = "level_1_end"
+chillingTime = 5.0
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_v1dh0"]
+script = ExtResource("1_root3")
+npcName = "random"
+delay = 15.0
+item = "rising_star"
+waitingTime = 150.0
+chillingTime = 5.0
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_ewfkd"]
+script = ExtResource("1_root3")
+npcName = "cami"
+delay = 10.0
+item = "apple_rum"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 1
+nextTask = ExtResource("2_m2fol")
+entranceDialogId = "level_1_entrance"
+dialogId = "level_1_middle"
 
 [resource]
 resource_name = "level_1"
 script = ExtResource("2_fwwyp")
-TasksCount = 4
-StartDialog = "level_1_start"
-Tasks = Array[ExtResource("1_root3")]([SubResource("Resource_xu04w"), SubResource("Resource_ndp14"), SubResource("Resource_lgvmk"), SubResource("Resource_rv3pi")])
+TasksCount = 7
+StartDialog = ""
+Tasks = Array[ExtResource("1_root3")]([SubResource("Resource_xu04w"), SubResource("Resource_ndp14"), SubResource("Resource_lgvmk"), SubResource("Resource_rv3pi"), SubResource("Resource_v1dh0"), SubResource("Resource_ewfkd")])

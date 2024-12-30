@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=2 format=3 uid="uid://cjvitfdnslpf5"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_fo1j6"]
+
+[resource]
+script = ExtResource("1_fo1j6")
+npcName = "evil"
+delay = 0.0
+item = "lava_lamp_cocktail"
+waitingTime = 180.0
+chillingTime = 0.0
+rarity = 1
+entranceDialogId = ""
+dialogId = "level_3_end"

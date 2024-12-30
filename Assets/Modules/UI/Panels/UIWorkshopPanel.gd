@@ -21,7 +21,7 @@ func _open_settings_panel():
 	_uiPanelsProvider.open_panel("settings_ui")
 
 func _update_completion_value(totalProgress : int, currentProgress : int):
-	CompletionLabel.text = "Clients served: " + str(currentProgress) + "/" + str(totalProgress)
+	CompletionLabel.text = "Drinks served: " + str(currentProgress) + "/" + str(totalProgress)
 
 func _update_lose_value(totalLifes : int, currentLifes : int):
 	for i in range(Lifes.size()):

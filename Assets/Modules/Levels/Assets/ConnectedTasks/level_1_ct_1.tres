@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=2 format=3 uid="uid://1msa75kr458e"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_yy7pc"]
+
+[resource]
+script = ExtResource("1_yy7pc")
+npcName = "cami"
+delay = 0.0
+item = "monkey_gland"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 1
+entranceDialogId = ""
+dialogId = "level_1_end"

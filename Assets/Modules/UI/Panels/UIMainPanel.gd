@@ -12,7 +12,7 @@ class_name UIMainPanel
 @export var EffectsVolumeSlider : HSlider
 @export var MusicVolumeSlider: HSlider
 
-var BUTTON_HIDDEN_X = -400
+var BUTTON_HIDDEN_X = -550
 var BUTTON_SHOWN_X = 100
 var SLIDER_HIDDEN_X = -700
 var SLIDER_SHOWN_X = 100

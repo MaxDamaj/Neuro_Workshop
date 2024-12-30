@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=2 format=3 uid="uid://b8g7c3hu5jps2"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_20jjh"]
+
+[resource]
+script = ExtResource("1_20jjh")
+npcName = "anny"
+delay = 0.0
+item = "fox_on_the_beach"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 1
+entranceDialogId = ""
+dialogId = "level_2_end"

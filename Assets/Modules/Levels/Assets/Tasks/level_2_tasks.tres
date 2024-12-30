@@ -1,81 +1,101 @@
-[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=10 format=3 uid="uid://tp3t88f101l0"]
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=12 format=3 uid="uid://tp3t88f101l0"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_m0c4c"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="2_bvcte"]
+[ext_resource type="Resource" uid="uid://b8g7c3hu5jps2" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_2_ct_1.tres" id="2_v3sqy"]
 
 [sub_resource type="Resource" id="Resource_xu04w"]
 script = ExtResource("1_m0c4c")
 npcName = "random"
 delay = 2.0
-item = "vodka"
-waitingTime = 30.0
+item = "gin"
+waitingTime = 90.0
 chillingTime = 5.0
 rarity = 0
+entranceDialogId = ""
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_ndp14"]
 script = ExtResource("1_m0c4c")
 npcName = "random"
 delay = 2.0
-item = "gin"
-waitingTime = 30.0
+item = "apple_rum"
+waitingTime = 120.0
 chillingTime = 5.0
 rarity = 0
+entranceDialogId = ""
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_lgvmk"]
 script = ExtResource("1_m0c4c")
 npcName = "random"
 delay = 2.0
-item = "apple_rum"
-waitingTime = 45.0
+item = "ermge_juice"
+waitingTime = 90.0
 chillingTime = 5.0
 rarity = 0
+entranceDialogId = ""
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_rv3pi"]
 script = ExtResource("1_m0c4c")
 npcName = "random"
-delay = 15.0
-item = "rum"
-waitingTime = 30.0
+delay = 10.0
+item = "fannta"
+waitingTime = 90.0
 chillingTime = 5.0
 rarity = 0
+entranceDialogId = ""
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_asfhf"]
 script = ExtResource("1_m0c4c")
 npcName = "random"
-delay = 20.0
-item = "forsen_drink"
+delay = 10.0
+item = "banana_rum"
 waitingTime = 120.0
 chillingTime = 5.0
 rarity = 0
+entranceDialogId = ""
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_uva7u"]
 script = ExtResource("1_m0c4c")
 npcName = "random"
-delay = 20.0
-item = "lava_lamp_cocktail"
-waitingTime = 45.0
+delay = 15.0
+item = "vodka"
+waitingTime = 90.0
 chillingTime = 5.0
 rarity = 0
+entranceDialogId = ""
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_0edub"]
 script = ExtResource("1_m0c4c")
 npcName = "random"
-delay = 25.0
-item = "tony_tonic"
-waitingTime = 120.0
+delay = 15.0
+item = "fannta"
+waitingTime = 90.0
 chillingTime = 5.0
-rarity = 2
-dialogId = "level_2_end"
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_lji74"]
+script = ExtResource("1_m0c4c")
+npcName = "anny"
+delay = 10.0
+item = "chat_juice"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 1
+nextTask = ExtResource("2_v3sqy")
+entranceDialogId = "level_2_entrance"
+dialogId = "level_2_middle"
 
 [resource]
 resource_name = "level_2"
 script = ExtResource("2_bvcte")
-TasksCount = 7
-StartDialog = "level_2_start"
-Tasks = Array[ExtResource("1_m0c4c")]([SubResource("Resource_xu04w"), SubResource("Resource_ndp14"), SubResource("Resource_lgvmk"), SubResource("Resource_rv3pi"), SubResource("Resource_asfhf"), SubResource("Resource_uva7u"), SubResource("Resource_0edub")])
+TasksCount = 9
+StartDialog = ""
+Tasks = Array[ExtResource("1_m0c4c")]([SubResource("Resource_xu04w"), SubResource("Resource_ndp14"), SubResource("Resource_lgvmk"), SubResource("Resource_rv3pi"), SubResource("Resource_asfhf"), SubResource("Resource_uva7u"), SubResource("Resource_0edub"), SubResource("Resource_lji74")])
