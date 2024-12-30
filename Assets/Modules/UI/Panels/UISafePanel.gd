@@ -1,6 +1,7 @@
 extends Node
 class_name UISafePanel
 
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 @onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 
@@ -48,4 +49,5 @@ func _take_item():
 	if (int(NumberDisplay.text) == _levelLoadStartegy.safeCode && currentPosition == 4):
 		var player : PlayerView = get_tree().get_nodes_in_group("Player")[0]
 		player.add_item("lava_lamp")
+		_soundProvider.play_sound("open_safe")
 		_uiPanelsProvider.close_panel("safe_ui")

@@ -1,6 +1,7 @@
 extends Node
 class_name UIRecipeBookPanel
 
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 @onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 
@@ -63,6 +64,8 @@ func _prev_page()->void:
 	_show_page(currentPage)
 
 func _show_page(pageNumber: int) -> void:
+	_soundProvider.play_sound("book_pages")
+	
 	PageCounter1.text = "Pages "+str(pageNumber*2-1)+"/"+str(Pages.size()*2)
 	PageCounter2.text = "Pages "+str(pageNumber*2)+"/"+str(Pages.size()*2)
 	for i in range(Pages.size()):

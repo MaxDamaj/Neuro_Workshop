@@ -2,6 +2,7 @@ extends CanvasLayer
 class_name UIMainPanel
 
 @onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 
 @export var NewGameButton : Button
 @export var ChooseLevelButton : Button
@@ -28,9 +29,17 @@ func _ready() -> void:
 	ChooseLevelButton.button_down.connect(_show_level_buttons)
 	BackButton.button_down.connect(_show_main_buttons)
 	SettingsButton.button_down.connect(_show_settings_buttons)
+	
+	EffectsVolumeSlider.value = _soundProvider.soundVolume
+	MusicVolumeSlider.value = _soundProvider.musicVolume
+	EffectsVolumeSlider.value_changed.connect(func(value : float): _soundProvider.soundVolume = value)
+	MusicVolumeSlider.value_changed.connect(func(value : float): _soundProvider.musicVolume = value)
+	
 	currentMenu = 'main'
 	_hide_level_buttons()
 	_show_main_buttons()
+	
+	_soundProvider.play_music("main_theme")
 
 
 func _load_level(levelId : int):

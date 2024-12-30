@@ -29,6 +29,7 @@ folder_colors={
 "res://Assets/Modules/UI/": "purple",
 "res://Assets/Scenes/": "gray",
 "res://Assets/Shaders/": "gray",
+"res://Assets/Sounds/": "gray",
 "res://Assets/Textures/": "gray"
 }
 

@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name PlayerView
 
 @onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 
 @export var root : Node2D
 @export var animator : AnimationPlayer
@@ -60,6 +61,7 @@ func try_pickup_item(table : DecorTableView) -> bool:
 	if (itemName != ""): return false;
 	add_item(table.ItemName)
 	table.remove_item()
+	_soundProvider.play_sound("pick_up")
 	return true
 
 func try_place_item(table : DecorTableView) -> bool:

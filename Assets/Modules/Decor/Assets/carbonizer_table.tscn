@@ -46,8 +46,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
 icon = ExtResource("2_3w2lf")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
-position = Vector2(-28, -11)
-offset = Vector2(0, -48)
+position = Vector2(-27, 6)
+scale = Vector2(0.796875, 0.796875)
+offset = Vector2(0, -64)
 
 [node name="InteractArea" type="Area2D" parent="."]
 

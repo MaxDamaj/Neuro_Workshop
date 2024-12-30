@@ -2,6 +2,7 @@ extends CanvasLayer
 class_name UIDialogPanel
 
 @onready var _dialogsProvider : DialogsProvider = get_node(DialogsProvider.path)
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
 @export var Root : Control
@@ -68,6 +69,8 @@ func _proceed_dialog():
 	SpeakerNameLabel.get_parent().visible = phrase.speaker != "_"
 	SpeakerNameLabel.text = "???" if phrase.isNameHidden else _dialogsProvider.allNames[phrase.speaker]
 	
+	if (phrase.music != "_"): _soundProvider.play_music(phrase.music)
+	
 	for speakerId in _speakersTextures:
 		if (speakerId == phrase.speaker):
 			_speakersTextures[speakerId].modulate = Color.WHITE
@@ -87,6 +90,7 @@ func _close_panel():
 	tween.tween_property(Root, "modulate", target_color, 0.5)
 	tween.tween_callback(func():
 		get_tree().paused = false
+		if (_dialog.endMusic != ""): _soundProvider.play_music(_dialog.endMusic)
 		if(_callback != null): _callback.call()
 		_uiPanelsProvider.close_panel("dialog_ui")
 	)
