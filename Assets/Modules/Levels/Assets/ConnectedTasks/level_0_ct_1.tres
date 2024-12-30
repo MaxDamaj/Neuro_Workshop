@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=2 format=3 uid="uid://dkmi233q0eh4q"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_o5u6u"]
+
+[resource]
+script = ExtResource("1_o5u6u")
+npcName = "tony"
+delay = 0.0
+item = "tony_tonic"
+waitingTime = 300.0
+chillingTime = 0.0
+rarity = 1
+dialogId = "level_0_end"

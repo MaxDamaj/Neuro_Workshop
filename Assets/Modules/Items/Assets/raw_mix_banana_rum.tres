@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://fumym8ufvusm"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_ryxff"]
-[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_8yvpe"]
+[ext_resource type="Texture2D" uid="uid://b27om5s5bfwnh" path="res://Assets/Textures/Items/item_glass.png" id="2_tk1un"]
 
 [resource]
 resource_name = "raw_mix_banana_rum"
 script = ExtResource("1_ryxff")
-texture = ExtResource("2_8yvpe")
+texture = ExtResource("2_tk1un")
 producingTime = 0.0
 mergeTo = {}
 usedIn = {

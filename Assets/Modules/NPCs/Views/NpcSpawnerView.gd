@@ -22,13 +22,19 @@ func start_task(task : TaskModel):
 	_move_npc(0, 1, 5, _end_moving)
 	_npc.on_task_lose.connect(_task_failed)
 	
-	BarTable.taskItem = task.items[0]
+	BarTable.taskItem = task.item
 
 func _item_recieved():
-	_npc.end_task()
 	BarTable.remove_item()
-	_levelTasksStrategy.complete_task()
-	_move_npc(1, 0, 4, _complete_task)
+	_levelTasksStrategy.complete_task(_task)
+	
+	if (_task.nextTask != null):
+		_task = _task.nextTask
+		BarTable.taskItem = _task.item
+		_npc.start_task(_task)
+	else:
+		_npc.end_task()
+		_move_npc(1, 0, 4, _complete_task)
 
 func _task_failed():
 	_npc.hide_bubble()

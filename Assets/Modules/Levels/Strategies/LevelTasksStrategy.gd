@@ -3,12 +3,16 @@ class_name LevelTasksStrategy
 
 static var path : NodePath = "/root/MainScene/_Strategies/LevelTasksStrategy"
 
+@onready var _dialogsProvider : DialogsProvider = get_node(DialogsProvider.path)
+@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
+
 signal on_task_completed(totalProgress : int, currentProgress : int)
 signal on_life_lost(totalLifes : int, remainingLifes : int)
 signal on_all_tasks_completed
 signal on_all_lifes_losed
 
 var allTasks : Array[TaskModel]
+var tasksCount : int
 
 var completedTasksCount : int
 
@@ -24,9 +28,8 @@ func _ready() -> void:
 	add_child(_timer)
 	_timer.one_shot = true
 	_timer.timeout.connect(_end_task)
-
-func try_complete_task(itemName : String, tableId : int) -> bool:
-	return true
+	
+	
 
 func register_spawner(spawner : NpcSpawnerView):
 	_allSpawners.append(spawner)
@@ -45,13 +48,16 @@ func stop_tasks():
 	_freeSpawners.clear()
 	_timer.stop()
 
-func complete_task():
+func complete_task(task : TaskModel):
 	completedTasksCount += 1
 	_taskPassedCount += 1
-	on_task_completed.emit(allTasks.size(), completedTasksCount)
+	on_task_completed.emit(tasksCount, completedTasksCount)
 	
-	if (_taskPassedCount >= allTasks.size()):
-		on_all_tasks_completed.emit()
+	if (task.dialogId != ""):
+		_dialogsProvider.try_start_dialog(task.dialogId, func():
+			if (_taskPassedCount >= tasksCount):
+				on_all_tasks_completed.emit()
+			)
 
 func lose_task(task : TaskModel):
 	_remainingLoses -= 1 if task.rarity == 0 else 3
@@ -63,7 +69,7 @@ func lose_task(task : TaskModel):
 		stop_tasks()
 		return
 	
-	if (_taskPassedCount >= allTasks.size()):
+	if (_taskPassedCount >= tasksCount):
 		on_all_tasks_completed.emit()
 
 func free_spawner(spawner : NpcSpawnerView):
@@ -79,6 +85,7 @@ func _end_task():
 	var spawner : NpcSpawnerView = _freeSpawners.pick_random()
 	_freeSpawners.erase(spawner)
 	spawner.start_task(task)
+	
 	_nextTaskIndex += 1
 	
 	if (_nextTaskIndex >= allTasks.size()): return

@@ -7,6 +7,6 @@
 resource_name = "fannta"
 script = ExtResource("1_q1w33")
 texture = ExtResource("2_tpqdn")
-producingTime = 10.0
+producingTime = 5.0
 mergeTo = {}
 usedIn = {}

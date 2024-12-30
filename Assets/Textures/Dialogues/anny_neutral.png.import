@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fphrs4fnddhp"
-path="res://.godot/imported/anny.png-73bb576c38ebc288f00a0022c8439228.ctex"
+uid="uid://bqxry10cq45hc"
+path="res://.godot/imported/anny_neutral.png-21108b8cb1ac8de4a88eec7432cfcbd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Dialogues/anny.png"
-dest_files=["res://.godot/imported/anny.png-73bb576c38ebc288f00a0022c8439228.ctex"]
+source_file="res://Assets/Textures/Dialogues/anny_neutral.png"
+dest_files=["res://.godot/imported/anny_neutral.png-21108b8cb1ac8de4a88eec7432cfcbd5.ctex"]
 
 [params]
 

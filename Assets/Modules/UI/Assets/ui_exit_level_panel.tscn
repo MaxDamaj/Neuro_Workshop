@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://8n6nj8embvl0"]
+[gd_scene load_steps=13 format=3 uid="uid://8n6nj8embvl0"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIExitLevelPanel.gd" id="1_w86n1"]
+[ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_fb2a2"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_ki52v"]
 [ext_resource type="Texture2D" uid="uid://bnbrm21gqbq55" path="res://Assets/Textures/UI/close_button.png" id="4_i27d1"]
-[ext_resource type="Texture2D" uid="uid://bu8vun5lho4jj" path="res://Assets/Textures/Dialogues/eliv.png" id="4_m6xt5"]
+[ext_resource type="Texture2D" uid="uid://bi3xuj3mk05h" path="res://Assets/Textures/Dialogues/evil_happy.png" id="5_em4f4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3h31"]
+shader = ExtResource("2_fb2a2")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ix75g"]
 
@@ -23,6 +27,14 @@ script = ExtResource("1_w86n1")
 CloseButton = NodePath("ExitMenuContainer/CloseButton")
 ExitButton = NodePath("ExitMenuContainer/ExitButton")
 ReturnButton = NodePath("ExitMenuContainer/ReturnButton")
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_u3h31")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ExitMenuContainer" type="Panel" parent="."]
 anchors_preset = 8
@@ -119,7 +131,7 @@ layout_mode = 0
 offset_left = -91.0
 offset_top = -96.0
 offset_right = 433.0
-offset_bottom = 483.0
-texture = ExtResource("4_m6xt5")
+offset_bottom = 494.0
+texture = ExtResource("5_em4f4")
 expand_mode = 1
 stretch_mode = 5

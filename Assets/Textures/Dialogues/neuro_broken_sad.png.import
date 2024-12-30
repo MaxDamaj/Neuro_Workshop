@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl5x78rqm514q"
-path="res://.godot/imported/cami.png-ac1f9295f5a8a91556e754034ba9d9d2.ctex"
+uid="uid://dgp045g3mro5k"
+path="res://.godot/imported/neuro_broken_sad.png-9d0efc16fe79c2647529b05528d18784.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Dialogues/cami.png"
-dest_files=["res://.godot/imported/cami.png-ac1f9295f5a8a91556e754034ba9d9d2.ctex"]
+source_file="res://Assets/Textures/Dialogues/neuro_broken_sad.png"
+dest_files=["res://.godot/imported/neuro_broken_sad.png-9d0efc16fe79c2647529b05528d18784.ctex"]
 
 [params]
 

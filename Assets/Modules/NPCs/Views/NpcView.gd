@@ -22,7 +22,7 @@ func _exit_tree() -> void:
 func start_task(task : TaskModel):
 	_show_bubble()
 	_start_waiting_time(task.waitingTime)
-	var item : ItemModel = _itemsProvider.allItems[task.items[0]]
+	var item : ItemModel = _itemsProvider.allItems[task.item]
 	Bubble.OrderIcon.texture = item.texture
 	Bubble.CrownIcon.visible = task.rarity > 0
 	Bubble.OrderIcon.tooltip_text = item.resource_name.replace('_', ' ')
@@ -38,7 +38,10 @@ func _show_bubble() -> void:
 	var tween = create_tween()
 	var target_scale = Vector2.ONE
 	tween.tween_property(Bubble, "scale", target_scale, 0.5)
-	tween.tween_callback(func(): Bubble.scale = target_scale)
+	tween.tween_callback(func():
+		Bubble.scale = target_scale
+		Bubble.visible = true
+	)
 
 func _start_waiting_time(maxValue : float) -> void:
 	Bubble.ProgressSlider.max_value = maxValue

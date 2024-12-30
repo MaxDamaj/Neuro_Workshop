@@ -7,8 +7,8 @@
 script = ExtResource("1_ttu16")
 npcName = "random"
 delay = 6.0
-items = Array[String](["three_underscores_and_backslash"])
-waitingTime = 300.0
+item = "three_underscores_and_backslash"
+waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
 dialogId = "level_3_end"
@@ -16,5 +16,6 @@ dialogId = "level_3_end"
 [resource]
 resource_name = "level_3"
 script = ExtResource("2_u6u4u")
+TasksCount = 1
 StartDialog = "level_3_start"
 Tasks = Array[ExtResource("1_ttu16")]([SubResource("Resource_xu04w")])

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu8vun5lho4jj"
-path="res://.godot/imported/eliv.png-8cf5a7362745b4eccabda064df852f6e.ctex"
+uid="uid://cms3menhd6bs2"
+path="res://.godot/imported/tony_neutral.png-c0e5187b42722dddde2c2ac1dd64e443.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Dialogues/eliv.png"
-dest_files=["res://.godot/imported/eliv.png-8cf5a7362745b4eccabda064df852f6e.ctex"]
+source_file="res://Assets/Textures/Dialogues/tony_neutral.png"
+dest_files=["res://.godot/imported/tony_neutral.png-c0e5187b42722dddde2c2ac1dd64e443.ctex"]
 
 [params]
 

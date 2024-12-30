@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dmcoxx83lja2r"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_ib3o2"]
-[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_avr6e"]
+[ext_resource type="Texture2D" uid="uid://b27om5s5bfwnh" path="res://Assets/Textures/Items/item_glass.png" id="2_t8xnr"]
 
 [resource]
 resource_name = "lava_lamp_with_gin"
 script = ExtResource("1_ib3o2")
-texture = ExtResource("2_avr6e")
+texture = ExtResource("2_t8xnr")
 producingTime = 0.0
 mergeTo = {
 "tomato": "raw_mix_lava_lamp"

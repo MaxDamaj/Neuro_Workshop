@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://b4f3n2irlqykv"]
+[gd_scene load_steps=36 format=3 uid="uid://b4f3n2irlqykv"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIRecipeBookPanel.gd" id="1_fa0hd"]
 [ext_resource type="Theme" uid="uid://8m48li400a3l" path="res://Assets/Modules/UI/Themes/recipe_book_theme.tres" id="2_0jsf8"]
+[ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_da7tg"]
 [ext_resource type="Texture2D" uid="uid://l3cigvqjwthd" path="res://Assets/Textures/UI/book1.png" id="3_56tub"]
 [ext_resource type="Texture2D" uid="uid://d1s8sqqwht8tc" path="res://Assets/Textures/UI/book2.png" id="3_mgd83"]
 [ext_resource type="Texture2D" uid="uid://d075w2fj8nwk0" path="res://Assets/Textures/Items/item_tony_tonic.png" id="4_ax61e"]
@@ -30,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://cqdm7savbnn4k" path="res://Assets/Textures/UI/arrow_left_book.png" id="29_leaen"]
 [ext_resource type="FontVariation" uid="uid://da7ecfm2gk5xr" path="res://Assets/Modules/UI/Themes/Saira-Medium.tres" id="30_8j16a"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0c6e"]
+shader = ExtResource("2_da7tg")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c25q8"]
 texture = ExtResource("3_56tub")
 axis_stretch_horizontal = 2
@@ -53,6 +57,14 @@ PrevButton = NodePath("PrevButton")
 PageCounter1 = NodePath("PageCounter1")
 PageCounter2 = NodePath("PageCounter2")
 SafeCode = NodePath("SafeCode")
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_k0c6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

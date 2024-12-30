@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=45 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
 [ext_resource type="PackedScene" uid="uid://dh2atkaqxtvcv" path="res://Assets/Modules/UI/Assets/ui.tscn" id="2_632w6"]
 [ext_resource type="Script" path="res://Assets/Modules/Items/Providers/ItemsProvider.gd" id="2_c1f50"]
+[ext_resource type="PackedScene" uid="uid://b7r3rrga5w2bb" path="res://Assets/Modules/UI/Assets/ui_dialog_panel.tscn" id="2_nchc3"]
 [ext_resource type="PackedScene" uid="uid://cx3uplkeyulyg" path="res://Assets/Modules/Levels/Assets/Scenes/level_base.tscn" id="3_6aveg"]
 [ext_resource type="PackedScene" uid="uid://dm7th3b03hpn" path="res://Assets/Modules/UI/Assets/ui_workshop_panel.tscn" id="3_n0mek"]
 [ext_resource type="PackedScene" uid="uid://8n6nj8embvl0" path="res://Assets/Modules/UI/Assets/ui_exit_level_panel.tscn" id="4_852d5"]
@@ -14,7 +15,6 @@
 [ext_resource type="Script" path="res://Assets/Modules/NPCs/Providers/NpcsProvider.gd" id="8_x13n3"]
 [ext_resource type="PackedScene" uid="uid://bqqp7epoca200" path="res://Assets/Modules/UI/Assets/ui_safe_panel.tscn" id="9_usnlb"]
 [ext_resource type="PackedScene" uid="uid://cp2kuqpqelcoo" path="res://Assets/Modules/NPCs/Assets/npc_vedal.tscn" id="9_vkmdw"]
-[ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIDialogPanel.gd" id="10_avh5g"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="11_m5u4n"]
 [ext_resource type="PackedScene" uid="uid://r5rgngruqomd" path="res://Assets/Modules/UI/Assets/ui_settings_panel.tscn" id="11_upqfx"]
 [ext_resource type="PackedScene" uid="uid://dx7cx75j8h066" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
@@ -32,6 +32,18 @@
 [ext_resource type="PackedScene" uid="uid://coftsruupobqk" path="res://Assets/Modules/NPCs/Assets/npc_anny.tscn" id="27_nt3q7"]
 [ext_resource type="PackedScene" uid="uid://cv6bex4m14tht" path="res://Assets/Modules/NPCs/Assets/npc_cami.tscn" id="28_w8kul"]
 [ext_resource type="PackedScene" uid="uid://dk2arvfbym25t" path="res://Assets/Modules/NPCs/Assets/npc_evil.tscn" id="29_brvg7"]
+[ext_resource type="PackedScene" uid="uid://dg2g2loxw31xa" path="res://Assets/Modules/NPCs/Assets/npc_tony.tscn" id="30_k6m5f"]
+[ext_resource type="Script" path="res://Assets/Modules/Dialogs/Providers/DialogsProvider.gd" id="30_usgox"]
+[ext_resource type="Texture2D" uid="uid://bvkujcht12r6c" path="res://Assets/Textures/Dialogues/neuro_broken_neutral.png" id="31_nr3s2"]
+[ext_resource type="Texture2D" uid="uid://dgp045g3mro5k" path="res://Assets/Textures/Dialogues/neuro_broken_sad.png" id="32_yfjd6"]
+[ext_resource type="Texture2D" uid="uid://ds25eablix45u" path="res://Assets/Textures/Dialogues/neuro_broken_happy.png" id="33_ywsn4"]
+[ext_resource type="Texture2D" uid="uid://lirhmrad3s7y" path="res://Assets/Textures/Dialogues/neuro_calm.png" id="34_cwocc"]
+[ext_resource type="Texture2D" uid="uid://cms3menhd6bs2" path="res://Assets/Textures/Dialogues/tony_neutral.png" id="34_fsrqe"]
+[ext_resource type="Texture2D" uid="uid://dyq8vxrjgchx" path="res://Assets/Textures/Dialogues/neuro_neutral.png" id="35_ofjuo"]
+[ext_resource type="Texture2D" uid="uid://sbaqehyc1qjh" path="res://Assets/Textures/Dialogues/tony_nuetral_hand_out.png" id="35_sgnxa"]
+[ext_resource type="Texture2D" uid="uid://c0xqgs24gxui1" path="res://Assets/Textures/Dialogues/neuro_sigh.png" id="36_8i1j8"]
+[ext_resource type="Texture2D" uid="uid://bm2ifws45m6th" path="res://Assets/Textures/Dialogues/neuro_talk.png" id="37_g8dse"]
+[ext_resource type="Texture2D" uid="uid://ckfuwibjwpf2i" path="res://Assets/Textures/Bgs/dark.png" id="40_u4rcu"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -40,7 +52,7 @@
 [node name="UIPanelsProvider" type="Node" parent="_Providers"]
 script = ExtResource("1_yahvp")
 allPanels = {
-"dialog_ui": ExtResource("10_avh5g"),
+"dialog_ui": ExtResource("2_nchc3"),
 "exit_level_ui": ExtResource("4_852d5"),
 "inventory_ui": ExtResource("6_lanqk"),
 "loading_ui": ExtResource("5_wgl24"),
@@ -73,7 +85,34 @@ allNpcs = {
 "random_7": ExtResource("20_eb0re"),
 "random_8": ExtResource("21_53scp"),
 "random_9": ExtResource("23_0vt66"),
+"tony": ExtResource("30_k6m5f"),
 "vedal": ExtResource("9_vkmdw")
+}
+
+[node name="DialogsProvider" type="Node" parent="_Providers"]
+script = ExtResource("30_usgox")
+allCharacters = {
+"neuro": {
+"broken_happy": ExtResource("33_ywsn4"),
+"broken_neutral": ExtResource("31_nr3s2"),
+"broken_sad": ExtResource("32_yfjd6"),
+"calm": ExtResource("34_cwocc"),
+"neutral": ExtResource("35_ofjuo"),
+"sigh": ExtResource("36_8i1j8"),
+"talk": ExtResource("37_g8dse")
+},
+"tony": {
+"neutral": ExtResource("34_fsrqe"),
+"smile": ExtResource("35_sgnxa")
+}
+}
+allNames = {
+"_": "",
+"neuro": "Samantha",
+"tony": "Tony"
+}
+allBgs = {
+"dark": ExtResource("40_u4rcu")
 }
 
 [node name="_Strategies" type="Node" parent="."]

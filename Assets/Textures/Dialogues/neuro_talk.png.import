@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rxabpb2qgt2h"
-path="res://.godot/imported/bar owner2.png-9a8644937205bbd2a71b1eb768a0ef47.ctex"
+uid="uid://bm2ifws45m6th"
+path="res://.godot/imported/neuro_talk.png-9484e59d54ac2599f4bfcc5b9ce6d11a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Dialogues/bar owner2.png"
-dest_files=["res://.godot/imported/bar owner2.png-9a8644937205bbd2a71b1eb768a0ef47.ctex"]
+source_file="res://Assets/Textures/Dialogues/neuro_talk.png"
+dest_files=["res://.godot/imported/neuro_talk.png-9484e59d54ac2599f4bfcc5b9ce6d11a.ctex"]
 
 [params]
 

@@ -10,6 +10,6 @@ texture = ExtResource("2_yqpan")
 producingTime = 5.0
 mergeTo = {
 "lemon_slices": "donowall_drink",
-"lime_slices": "fox_on_the_beach"
+"lime_slices": "tony_tonic"
 }
 usedIn = {}

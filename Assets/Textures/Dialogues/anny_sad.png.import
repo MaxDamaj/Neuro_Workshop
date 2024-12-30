@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2mhx2dnnbewc"
-path="res://.godot/imported/bar owner3.png-54facb6744cd945e097c662114214f74.ctex"
+uid="uid://daj4p05v3oqno"
+path="res://.godot/imported/anny_sad.png-70fb5fe47500e1101b8f72dd3bbbce4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Dialogues/bar owner3.png"
-dest_files=["res://.godot/imported/bar owner3.png-54facb6744cd945e097c662114214f74.ctex"]
+source_file="res://Assets/Textures/Dialogues/anny_sad.png"
+dest_files=["res://.godot/imported/anny_sad.png-70fb5fe47500e1101b8f72dd3bbbce4a.ctex"]
 
 [params]
 

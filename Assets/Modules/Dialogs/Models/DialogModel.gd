@@ -1,5 +1,8 @@
-extends Resource
 class_name DialogModel
 
-@export var speakers : Array[String]
-@export var phrases : Array[DialogPhraseModel]
+var speakers : Array[String]
+var phrases : Array[DialogPhraseModel]
+
+func _init(newSpeakers : Array[String], newPhrases : Array[DialogPhraseModel]) -> void:
+	speakers = newSpeakers
+	phrases = newPhrases

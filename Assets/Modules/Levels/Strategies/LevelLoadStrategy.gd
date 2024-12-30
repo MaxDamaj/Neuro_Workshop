@@ -3,6 +3,7 @@ class_name LevelLoadStrategy
 
 static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 
+@onready var _dialogsProvider : DialogsProvider = get_node(DialogsProvider.path)
 @onready var _levelTasksStrategy : LevelTasksStrategy = get_node(LevelTasksStrategy.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
@@ -52,7 +53,10 @@ func _load_level_callback():
 	_loadedLevel = levels[_loadedLevelId].instantiate()
 	get_node("/root/MainScene").add_child.call_deferred(_loadedLevel)
 	
-	_levelTasksStrategy.allTasks = _allLevelTasks["level_" + str(_loadedLevelId)].Tasks
+	var levelModel : LevelTasksModel = _allLevelTasks["level_" + str(_loadedLevelId)]
+	_levelTasksStrategy.allTasks = levelModel.Tasks
+	_levelTasksStrategy.tasksCount = levelModel.TasksCount
+	_dialogsProvider.try_start_dialog(levelModel.StartDialog, func(): pass)
 	_levelTasksStrategy.start_tasks()
 	_uiPanelsProvider.open_panel("workshop_ui")
 	_uiPanelsProvider.close_panel("main_ui")

@@ -17,6 +17,7 @@ shader_parameter/use_different_texture = true
 shader_parameter/mask_texture = ExtResource("1_mjfk8")
 
 [node name="UILoadingPanel" type="CanvasLayer" node_paths=PackedStringArray("Bg")]
+process_mode = 3
 layer = 99
 script = ExtResource("1_i6uxo")
 Bg = NodePath("Bg")
