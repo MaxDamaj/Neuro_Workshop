@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b4f3n2irlqykv"]
+[gd_scene load_steps=49 format=3 uid="uid://b4f3n2irlqykv"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIRecipeBookPanel.gd" id="1_fa0hd"]
 [ext_resource type="Theme" uid="uid://8m48li400a3l" path="res://Assets/Modules/UI/Themes/recipe_book_theme.tres" id="2_0jsf8"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://tysipsbvr13m" path="res://Assets/Textures/BookItems/book_donowall_drink.png" id="30_dpxp5"]
 [ext_resource type="Texture2D" uid="uid://d1kq7ig75xi84" path="res://Assets/Textures/BookItems/book_backslash_problem.png" id="31_0opkf"]
 [ext_resource type="Texture2D" uid="uid://saedoyikfqrx" path="res://Assets/Textures/BookItems/book_the_universal_mind.png" id="32_p1xol"]
+[ext_resource type="Texture2D" uid="uid://cs8byhxljtfxm" path="res://Assets/Textures/Items/item_monkey_gland.png" id="33_qamyo"]
 [ext_resource type="Texture2D" uid="uid://c3ppmgm1ygifs" path="res://Assets/Textures/Items/item_tuab.png" id="34_t2bc8"]
 [ext_resource type="Texture2D" uid="uid://c3c3vm76va31e" path="res://Assets/Textures/UI/sticker.png" id="39_h461b"]
 
@@ -1510,6 +1511,7 @@ grow_vertical = 2
 text = "Serve"
 
 [node name="Page5" type="Panel" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1840,6 +1842,7 @@ grow_vertical = 2
 text = "Serve"
 
 [node name="Page6" type="Panel" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2219,6 +2222,7 @@ grow_vertical = 2
 text = "Serve"
 
 [node name="Page7" type="Panel" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2440,7 +2444,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Serve"
 
-[node name="BloodyCimp" type="TextureRect" parent="Page7"]
+[node name="MonkeyGland" type="TextureRect" parent="Page7"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2453,9 +2457,9 @@ offset_right = 320.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("22_ty8ch")
+texture = ExtResource("33_qamyo")
 
-[node name="BloodyCimpLabel" type="Label" parent="Page7"]
+[node name="MonkeyGlandLabel" type="Label" parent="Page7"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2584,6 +2588,7 @@ grow_vertical = 2
 text = "Serve"
 
 [node name="Page8" type="Panel" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -14,14 +14,11 @@ class_name UIRecipeBookPanel
 @export var SafeCode : Label
 
 static var currentPage : int = 1
-static var codePage : int = 0
+static var codePage : int = 4
 
 func _ready() -> void:
 	SafeCode.get_parent().visible = false
 	SafeCode.text = str(_levelLoadStartegy.safeCode).pad_zeros(4)
-	
-	if(codePage == 0):
-		codePage = randi_range(1, Pages.size())
 		
 	_show_page(currentPage)
 	
