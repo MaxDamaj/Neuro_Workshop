@@ -1,12 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://b7r3rrga5w2bb"]
+[gd_scene load_steps=24 format=3 uid="uid://b4wwadhty302i"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIDialogPanel.gd" id="1_p4jy3"]
 [ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_pxog1"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_xbsfp"]
-[ext_resource type="FontVariation" path="res://Assets/Modules/UI/Themes/Saira-Light.tres" id="4_i55cq"]
+[ext_resource type="FontVariation" uid="uid://b5jurqd4s78qi" path="res://Assets/Modules/UI/Themes/Saira-Light.tres" id="4_i55cq"]
 [ext_resource type="Texture2D" uid="uid://jef7j4ju46ou" path="res://Assets/Textures/UI/continue_visual_novel.png" id="5_3l7me"]
 [ext_resource type="Texture2D" uid="uid://0qbxgwfsf2b1" path="res://Assets/Textures/UI/nametag_visual_novel.png" id="6_a0yqe"]
-[ext_resource type="FontVariation" path="res://Assets/Modules/UI/Themes/Saira-Bold.tres" id="7_3bkl2"]
+[ext_resource type="FontVariation" uid="uid://dj1pidfyt7e3q" path="res://Assets/Modules/UI/Themes/Saira-Bold.tres" id="7_3bkl2"]
 [ext_resource type="Texture2D" uid="uid://c5cks2mybv2i2" path="res://Assets/Textures/UI/settings_button.png" id="8_os4ps"]
 [ext_resource type="Texture2D" uid="uid://cv4lsirrhnbp6" path="res://Assets/Textures/UI/pointer.png" id="9_10uf8"]
 
