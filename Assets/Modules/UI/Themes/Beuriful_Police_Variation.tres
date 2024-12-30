@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bwqujtxos7yc7"]
+
+[ext_resource type="FontFile" uid="uid://bxiub8u5ui7y4" path="res://Assets/Modules/UI/Themes/BeautifulPoliceOfficer-rvv8x.ttf" id="1_mt6xx"]
+
+[resource]
+base_font = ExtResource("1_mt6xx")
+spacing_space = 18
