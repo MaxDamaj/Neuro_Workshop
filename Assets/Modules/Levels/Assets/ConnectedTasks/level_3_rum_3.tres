@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=3 format=3 uid="uid://t8b16hvajtie"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_ekhdb"]
+[ext_resource type="Resource" uid="uid://cjvitfdnslpf5" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_3_lamp.tres" id="1_rf7ne"]
+
+[resource]
+script = ExtResource("1_ekhdb")
+npcName = "evil"
+delay = 0.0
+item = "banana_rum"
+waitingTime = 80.0
+chillingTime = 0.0
+rarity = 1
+nextTask = ExtResource("1_rf7ne")
+entranceDialogId = ""
+dialogId = "level_3_middle"

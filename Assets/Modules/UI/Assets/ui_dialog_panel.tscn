@@ -221,6 +221,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SkipButton" type="Button" parent="Root"]
+visible = false
 layout_mode = 1
 offset_left = 56.0
 offset_top = 40.0

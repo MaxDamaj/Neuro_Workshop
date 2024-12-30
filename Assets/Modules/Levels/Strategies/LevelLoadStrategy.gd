@@ -11,7 +11,7 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 @export var levels : Array[PackedScene]
 
 var safeCode : int
-var lastUnlockedLevel : int = 0
+var lastUnlockedLevel : int
 
 var _allLevelTasks : Dictionary
 var _loadedLevel : Node2D

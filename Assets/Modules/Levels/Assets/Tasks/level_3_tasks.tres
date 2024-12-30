@@ -1,21 +1,101 @@
-[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=4 format=3 uid="uid://ch43f5848etbe"]
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=12 format=3 uid="uid://ch43f5848etbe"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_ttu16"]
+[ext_resource type="Resource" uid="uid://3qch3vu36ma5" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_3_rum_2.tres" id="2_p7a8x"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="2_u6u4u"]
 
 [sub_resource type="Resource" id="Resource_xu04w"]
 script = ExtResource("1_ttu16")
 npcName = "random"
-delay = 6.0
-item = "three_underscores_and_backslash"
+delay = 2.0
+item = "rising_star"
+waitingTime = 120.0
+chillingTime = 5.0
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_t0r2l"]
+script = ExtResource("1_ttu16")
+npcName = "random"
+delay = 3.0
+item = "apple_juice"
+waitingTime = 60.0
+chillingTime = 5.0
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_6b3j7"]
+script = ExtResource("1_ttu16")
+npcName = "random"
+delay = 3.0
+item = "forsen_drink"
+waitingTime = 120.0
+chillingTime = 5.0
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_6txxb"]
+script = ExtResource("1_ttu16")
+npcName = "random"
+delay = 10.0
+item = "fannta"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_omcoy"]
+script = ExtResource("1_ttu16")
+npcName = "random"
+delay = 10.0
+item = "rum"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_dplti"]
+script = ExtResource("1_ttu16")
+npcName = "random"
+delay = 5.0
+item = "apple_rum"
+waitingTime = 120.0
+chillingTime = 5.0
+rarity = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_db8qp"]
+script = ExtResource("1_ttu16")
+npcName = "random"
+delay = 5.0
+item = "chat_juice"
 waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
-dialogId = "level_3_end"
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_4b0yf"]
+script = ExtResource("1_ttu16")
+npcName = "evil"
+delay = 10.0
+item = "banana_rum"
+waitingTime = 100.0
+chillingTime = 1.0
+rarity = 1
+nextTask = ExtResource("2_p7a8x")
+entranceDialogId = "level_3_entrance"
+dialogId = ""
 
 [resource]
 resource_name = "level_3"
 script = ExtResource("2_u6u4u")
-TasksCount = 1
-StartDialog = "level_3_start"
-Tasks = Array[ExtResource("1_ttu16")]([SubResource("Resource_xu04w")])
+TasksCount = 11
+StartDialog = ""
+Tasks = Array[ExtResource("1_ttu16")]([SubResource("Resource_xu04w"), SubResource("Resource_t0r2l"), SubResource("Resource_6b3j7"), SubResource("Resource_6txxb"), SubResource("Resource_omcoy"), SubResource("Resource_dplti"), SubResource("Resource_db8qp"), SubResource("Resource_4b0yf")])

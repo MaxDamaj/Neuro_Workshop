@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=72 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
@@ -44,18 +44,29 @@
 [ext_resource type="Texture2D" uid="uid://c0xqgs24gxui1" path="res://Assets/Textures/Dialogues/neuro_sigh.png" id="36_8i1j8"]
 [ext_resource type="Texture2D" uid="uid://bm2ifws45m6th" path="res://Assets/Textures/Dialogues/neuro_talk.png" id="37_g8dse"]
 [ext_resource type="Texture2D" uid="uid://ckfuwibjwpf2i" path="res://Assets/Textures/Bgs/dark.png" id="40_u4rcu"]
+[ext_resource type="Texture2D" uid="uid://bal65j5acdra8" path="res://Assets/Textures/Dialogues/camila_neutral.png" id="41_uxmgl"]
+[ext_resource type="Texture2D" uid="uid://b5hj3g3lvkm0g" path="res://Assets/Textures/Dialogues/camila_happy.png" id="42_k2gxl"]
 [ext_resource type="Script" path="res://Assets/Modules/Base/SoundProvider.gd" id="42_s274o"]
 [ext_resource type="AudioStream" uid="uid://cwyeu2edhfs2i" path="res://Assets/Sounds/Music/main_theme.mp3" id="43_giiq8"]
+[ext_resource type="Texture2D" uid="uid://dqdanwg28xv16" path="res://Assets/Textures/Dialogues/camila_sad.png" id="43_y0qic"]
+[ext_resource type="Texture2D" uid="uid://bqxry10cq45hc" path="res://Assets/Textures/Dialogues/anny_neutral.png" id="44_ojaf7"]
 [ext_resource type="AudioStream" uid="uid://iek08lkytpt1" path="res://Assets/Sounds/Music/tony_theme.mp3" id="44_vpaao"]
+[ext_resource type="Texture2D" uid="uid://csqltjvfucbht" path="res://Assets/Textures/Dialogues/anny_happy.png" id="45_acaj6"]
 [ext_resource type="Script" path="res://Assets/Modules/Tutorial/Factories/TutorialFactory.gd" id="45_sa410"]
 [ext_resource type="AudioStream" uid="uid://co2gcymyj3ugo" path="res://Assets/Sounds/Music/faster_theme.mp3" id="45_w7fgq"]
 [ext_resource type="PackedScene" uid="uid://d4ashx10x4s76" path="res://Assets/Modules/Tutorial/Assets/tutorial_node_level_0.tscn" id="46_gdw71"]
 [ext_resource type="AudioStream" uid="uid://d1pbv6g220alv" path="res://Assets/Sounds/SFX/door_bell1.MP3" id="46_jpqjm"]
+[ext_resource type="Texture2D" uid="uid://daj4p05v3oqno" path="res://Assets/Textures/Dialogues/anny_sad.png" id="46_ywk6h"]
+[ext_resource type="Texture2D" uid="uid://xfajackppnj5" path="res://Assets/Textures/Dialogues/vedal.png" id="47_dwas2"]
 [ext_resource type="AudioStream" uid="uid://dr35bj4howcuu" path="res://Assets/Sounds/SFX/door_bell2.MP3" id="47_wvedh"]
 [ext_resource type="AudioStream" uid="uid://bqtu5woxfslcp" path="res://Assets/Sounds/SFX/door_bell3.MP3" id="48_h167j"]
+[ext_resource type="Texture2D" uid="uid://b24tst75cundh" path="res://Assets/Textures/Dialogues/vedal_drunk_talking.png" id="48_hva3b"]
 [ext_resource type="AudioStream" uid="uid://b5g1axscgns1s" path="res://Assets/Sounds/SFX/door_bell4.MP3" id="49_7ebd7"]
+[ext_resource type="Texture2D" uid="uid://nubo87n4hyd0" path="res://Assets/Textures/Dialogues/vedal_drunk.png" id="49_ywpk5"]
 [ext_resource type="AudioStream" uid="uid://dhvf4y3vfgjwi" path="res://Assets/Sounds/SFX/book_pages.mp3" id="50_qiyr8"]
+[ext_resource type="Texture2D" uid="uid://b67r2gb2fu1c4" path="res://Assets/Textures/Dialogues/vedal_semidrunk.png" id="50_yatf7"]
 [ext_resource type="AudioStream" uid="uid://b1rg56x8tkcw1" path="res://Assets/Sounds/SFX/drink_to_customer.mp3" id="51_dfjj5"]
+[ext_resource type="Texture2D" uid="uid://bi3xuj3mk05h" path="res://Assets/Textures/Dialogues/evil_happy.png" id="51_molpv"]
 [ext_resource type="AudioStream" uid="uid://1vty0si5cb7d" path="res://Assets/Sounds/SFX/safe_opens.wav" id="52_isdob"]
 [ext_resource type="AudioStream" uid="uid://o7dfmwx43fhh" path="res://Assets/Sounds/SFX/cant_interract.mp3" id="53_qgqw7"]
 [ext_resource type="AudioStream" uid="uid://cueyals6nrh3q" path="res://Assets/Sounds/SFX/pick_up.mp3" id="54_qoimn"]
@@ -113,6 +124,19 @@ allNpcs = {
 [node name="DialogsProvider" type="Node" parent="_Providers"]
 script = ExtResource("30_usgox")
 allCharacters = {
+"anny": {
+"happy": ExtResource("45_acaj6"),
+"neutral": ExtResource("44_ojaf7"),
+"sad": ExtResource("46_ywk6h")
+},
+"camimi": {
+"happy": ExtResource("42_k2gxl"),
+"neutral": ExtResource("41_uxmgl"),
+"sad": ExtResource("43_y0qic")
+},
+"evil": {
+"happy": ExtResource("51_molpv")
+},
 "neuro": {
 "broken_happy": ExtResource("33_ywsn4"),
 "broken_neutral": ExtResource("31_nr3s2"),
@@ -125,12 +149,22 @@ allCharacters = {
 "tony": {
 "neutral": ExtResource("34_fsrqe"),
 "smile": ExtResource("35_sgnxa")
+},
+"vedal": {
+"drunk": ExtResource("49_ywpk5"),
+"neutral": ExtResource("47_dwas2"),
+"semidrunk": ExtResource("50_yatf7"),
+"talk": ExtResource("48_hva3b")
 }
 }
 allNames = {
 "_": "",
+"anny": "Fox",
+"camimi": "Imp",
+"evil": "Kayori",
 "neuro": "Samantha",
-"tony": "Tony"
+"tony": "Tony",
+"vedal": "Tutel"
 }
 allBgs = {
 "dark": ExtResource("40_u4rcu")
