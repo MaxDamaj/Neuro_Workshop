@@ -26,9 +26,7 @@ func _ready() -> void:
 func load_level(levelId : int) -> void:
 	_loadedLevelId = levelId
 	safeCode = randi_range(0, 9999)
-	if(levelId==4):
-		_soundProvider.play_music("faster_theme")
-	elif(levelId!=0):
+	if(levelId!=0 && levelId!=4 && levelId!=5):
 		_soundProvider.play_music("default_theme")
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _load_level_callback})
 

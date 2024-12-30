@@ -133,16 +133,16 @@ func _init_dialogs():
 	allDialogs["level_3_end"] = DialogModel.new(["evil"], [
 		DialogPhraseModel.new("evil;happy;_;_;_;I don’t feel any taste if you’re curious. I just like the sound of my drink splashing while I walk. Well, Samantha, bye. And remember the emergency shutdown controller."),
 	])
-	allDialogs["level_3_end"].endMusic = "default_theme"
 	
 	allDialogs["level_4_start"] = DialogModel.new(["neuro", "tony"], [
-		DialogPhraseModel.new("tony;smile;_;_;_;This day of the week is usually packed, so get ready. If you can handle it I’ll pay."),
+		DialogPhraseModel.new("tony;smile;_;_;tony_theme;This day of the week is usually packed, so get ready. If you can handle it I’ll pay."),
 		DialogPhraseModel.new("neuro;talk;_;_;_;I want an emergency shutdown controller as payment."),
 		DialogPhraseModel.new("tony;neutral;_;_;_;What controller?"),
 		DialogPhraseModel.new("neuro;neutral;_;_;_;The one that can shut me down anytime."),
 		DialogPhraseModel.new("tony;neutral;_;_;_;Got none of those. I found you in a junkyard, didn’t see any controllers lying around. Could look for one but I don’t get why you need it. If you want to shut down just remove the batteries. Not during working hours though, you hear me?"),
 		DialogPhraseModel.new("neuro;sigh;_;_;_;If so I’ll just take cash."),
 	])
+	allDialogs["level_4_start"].endMusic = "faster_theme"
 	
 	allDialogs["level_4_entrance_camimi"] = DialogModel.new(["neuro", "camimi"], [
 		DialogPhraseModel.new("camimi;happy;_;true;_;Hi Robo-Bartender! I’d like something soft while I wait for my friends."),
@@ -173,7 +173,7 @@ func _init_dialogs():
 	])
 	
 	allDialogs["level_4_entrance_vedal"] = DialogModel.new(["vedal", "camimi", "anny"], [
-		DialogPhraseModel.new("vedal;neutral;_;true;_;Yo, I’m here."),
+		DialogPhraseModel.new("vedal;neutral;_;true;vedal_theme;Yo, I’m here."),
 		DialogPhraseModel.new("anny;neutral;_;_;_;Hi, Tutel."),
 		DialogPhraseModel.new("camimi;happy;_;_;_;You’re paying today."),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;I seem to always pay. Don’t you have money with you?"),
@@ -273,20 +273,22 @@ func _init_dialogs():
 	
 	
 	allDialogs["level_5_start"] = DialogModel.new(["neuro", "tony"], [
-		DialogPhraseModel.new("tony;smile;_;_;_;You did a good job yesterday. Even set a new record."),
+		DialogPhraseModel.new("tony;smile;_;tony_theme;tony_theme;You did a good job yesterday. Even set a new record."),
 		DialogPhraseModel.new("neuro;neutral;_;_;_;What record?"),
 		DialogPhraseModel.new("tony;smile;_;_;_;That guy who kept ordering yesterday. He is our regular but no one could bring him beyond six drinks."),
 		DialogPhraseModel.new("neuro;neutral;_;_;_;That’s pitiful."),
 		DialogPhraseModel.new("tony;smile;_;_;_;Well, that’s our income."),
 	])
+	allDialogs["level_5_start"].endMusic = "default_theme"
 	
 	allDialogs["level_5_end"] = DialogModel.new(["neuro"], [
 		DialogPhraseModel.new("neuro;neutral;_;_;_;The day is almost over yet he didn’t come. No, I’m just being impatient. I asked him to come sober and after yesterday it might take some time. Why am I even thinking about it?"),
 		DialogPhraseModel.new("neuro;calm;_;_;_;Why would I accept his offer? I don’t even know him. On the other hand I don’t know anyone around here. For some reason I can feel that he is a good guy."),
 	])
+	allDialogs["level_5_end"].endMusic = "default_theme"
 	
 	allDialogs["level_6_entrance"] = DialogModel.new(["neuro", "vedal"], [
-		DialogPhraseModel.new("vedal;neutral;_;_;_;Hello."),
+		DialogPhraseModel.new("vedal;neutral;_;_;vedal_theme;Hello."),
 		DialogPhraseModel.new("neuro;calm;_;_;_;Hello."),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;I… umm…"),
 		DialogPhraseModel.new("neuro;calm;_;_;_;Mm?"),
