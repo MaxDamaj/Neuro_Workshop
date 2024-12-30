@@ -26,7 +26,7 @@ func try_start_dialog(dialogId : String, callback : Callable):
 func _init_dialogs():
 	
 	allDialogs["level_0_start"] = DialogModel.new(["neuro", "tony"], [
-		DialogPhraseModel.new("_;_;dark;_;_;A beam of light breaks through the darkness and you see an unfamiliar face. You don’t remember anything."),
+		DialogPhraseModel.new("_;_;dark;_;tony_theme;A beam of light breaks through the darkness and you see an unfamiliar face. You don’t remember anything."),
 		DialogPhraseModel.new("tony;neutral;_;true;_;Hello."),
 		DialogPhraseModel.new("neuro;broken_neutral;_;true;_;..."),
 		DialogPhraseModel.new("tony;neutral;_;true;_;Say something, I need to see whether you’re functioning or not."),
@@ -40,6 +40,7 @@ func _init_dialogs():
 		DialogPhraseModel.new("neuro;broken_sad;_;true;_;That’s lame. Any paychecks included?"),
 		DialogPhraseModel.new("tony;neutral;_;true;_;Wouldn’t have gotten a robot if I had to pay it anything."),
 	])
+	allDialogs["level_0_start"].endMusic = "faster_theme"
 	
 	allDialogs["level_0_middle"] = DialogModel.new(["neuro", "tony"], [
 		DialogPhraseModel.new("tony;neutral;_;true;_;Name’s Tony by the way. You might need a name too, customers would have a better time talking to you that way. You’re an AI so maybe ‘Neuro-Barman’ would do?"),

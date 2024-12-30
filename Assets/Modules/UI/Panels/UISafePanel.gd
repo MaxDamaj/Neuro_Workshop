@@ -1,6 +1,7 @@
 extends Node
 class_name UISafePanel
 
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 @onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 
@@ -25,19 +26,19 @@ func _ready() -> void:
 	_timer = 0
 	_isError = false
 	_isSuccess = false
-	
+
 	NumberDisplay.text = displayText
 	NumberDisplay.label_settings.font_color = WHITE_COLOR
-	
+
 	TakeButton.button_down.connect(_submit)
 	ReturnButton.button_down.connect(func(): _uiPanelsProvider.close_panel("safe_ui"))
 	DeleteButton.button_down.connect(_delete_button)
 	ClearButton.button_down.connect(_clear_button)
 	for i in range(NumberButtons.size()):
 		NumberButtons[i].button_down.connect(_get_number_button(i))
-		
+
 	_toggle_buttons(true)
-	
+
 func _clear_button() -> void:
 	displayText = "_ _ _ _"
 	NumberDisplay.text = displayText
@@ -61,7 +62,7 @@ func _get_number_button(number: int) -> Callable:
 	var number_button: Callable = func():
 		_input_number(number)
 	return number_button
-	
+
 
 func _toggle_buttons(state:bool)->void:
 	for i in range(NumberButtons.size()):
@@ -81,11 +82,12 @@ func _submit():
 		_isError = true
 		NumberDisplay.text = "ERROR"
 		NumberDisplay.label_settings.font_color = RED_COLOR
-		
+
 
 func _take_item():
 	var player : PlayerView = get_tree().get_nodes_in_group("Player")[0]
 	player.add_item("lava_lamp")
+	_soundProvider.play_sound("open_safe")
 	_uiPanelsProvider.close_panel("safe_ui")
 
 func _process(delta)->void:

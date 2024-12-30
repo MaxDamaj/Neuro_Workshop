@@ -2,6 +2,7 @@ extends PathFollow2D
 class_name NpcSpawnerView
 
 @onready var _levelTasksStrategy : LevelTasksStrategy = get_node(LevelTasksStrategy.path)
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 @onready var _npcsProvider : NpcsProvider = get_node(NpcsProvider.path)
 
 @export var BarTable : DecorBarTableView
@@ -23,6 +24,7 @@ func start_task(task : TaskModel):
 	_npc.on_task_lose.connect(_task_failed)
 	
 	BarTable.taskItem = task.item
+	_soundProvider.play_sound("door_bell")
 
 func _item_recieved():
 	BarTable.remove_item()

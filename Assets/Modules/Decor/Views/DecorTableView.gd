@@ -2,6 +2,7 @@ extends Node
 class_name DecorTableView
 
 @onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 
 @export var ItemSprite : Sprite2D
 @export var HoverButton : Button
@@ -64,6 +65,7 @@ func _try_merge_items(itemToMerge : String) -> bool:
 			_player.remove_item()
 		return true
 	
+	_soundProvider.play_sound("wrong")
 	return false
 
 

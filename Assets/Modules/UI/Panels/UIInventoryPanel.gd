@@ -2,6 +2,7 @@ extends Node
 class_name UIInventoryPanel
 
 @onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
 @export var CellsContainer : Control
@@ -36,4 +37,5 @@ func _add_item(itemName : String):
 			_player.remove_item()
 	else:
 		_player.add_item(itemName)
+		_soundProvider.play_sound("pick_up")
 		_uiPanelsProvider.close_panel("inventory_ui")

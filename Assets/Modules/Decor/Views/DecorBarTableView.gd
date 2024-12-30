@@ -11,6 +11,7 @@ func try_add_item(itemName : String) -> bool:
 		ItemName = itemName
 		ItemSprite.texture = _itemsProvider.allItems[ItemName].texture
 		on_item_recieved.emit()
+		_soundProvider.play_sound("serve")
 		return true
 	return false
 

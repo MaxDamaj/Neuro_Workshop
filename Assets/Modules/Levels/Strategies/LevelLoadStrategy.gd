@@ -28,7 +28,6 @@ func load_level(levelId : int) -> void:
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _load_level_callback})
 
 func unload_level():
-	_tutorialFactory.unload_tutorial()
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _unload_level_callback})
 	_loadedLevelId = -1
 
@@ -47,8 +46,10 @@ func restart_level():
 func _unload_level_callback():
 	_loadedLevel.queue_free()
 	_levelTasksStrategy.stop_tasks()
+	_tutorialFactory.unload_tutorial()
 	_uiPanelsProvider.open_panel("main_ui")
 	_uiPanelsProvider.close_panel("workshop_ui")
+	_uiPanelsProvider.close_panel("dialog_ui")
 	_uiPanelsProvider.close_panel("exit_level_ui")
 	_uiPanelsProvider.close_panel("lose_ui")
 

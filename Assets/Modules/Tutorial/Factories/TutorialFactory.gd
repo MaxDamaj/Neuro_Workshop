@@ -11,9 +11,9 @@ var _activeTutorial : Node2D
 func spawn_tutorial(levelId : int):
 	if (tutorials.has(levelId)):
 		unload_tutorial()
-		var tutorial : Node2D = tutorials[levelId].instantiate()
+		_activeTutorial = tutorials[levelId].instantiate()
 		var root = get_node("/root/MainScene")
-		root.add_child.call_deferred(tutorial)
+		root.add_child.call_deferred(_activeTutorial)
 
 func unload_tutorial():
 	if (_activeTutorial != null):

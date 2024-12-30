@@ -1,43 +1,41 @@
-[gd_scene load_steps=49 format=3 uid="uid://b4f3n2irlqykv"]
+[gd_scene load_steps=47 format=3 uid="uid://b4f3n2irlqykv"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIRecipeBookPanel.gd" id="1_fa0hd"]
 [ext_resource type="Theme" uid="uid://8m48li400a3l" path="res://Assets/Modules/UI/Themes/recipe_book_theme.tres" id="2_0jsf8"]
 [ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_da7tg"]
 [ext_resource type="Texture2D" uid="uid://l3cigvqjwthd" path="res://Assets/Textures/UI/book1.png" id="3_56tub"]
 [ext_resource type="Texture2D" uid="uid://d1s8sqqwht8tc" path="res://Assets/Textures/UI/book2.png" id="3_mgd83"]
-[ext_resource type="Texture2D" uid="uid://d075w2fj8nwk0" path="res://Assets/Textures/Items/item_tony_tonic.png" id="4_ax61e"]
+[ext_resource type="Texture2D" uid="uid://cqb1s50cglrsl" path="res://Assets/Textures/BookItems/book_tony_tonic.png" id="5_4hteg"]
 [ext_resource type="Texture2D" uid="uid://cjsttq4cifq4g" path="res://Assets/Textures/Items/item_gin.png" id="5_hp703"]
 [ext_resource type="Texture2D" uid="uid://bsfma1h2cgp3y" path="res://Assets/Textures/Items/item_tonic.png" id="6_5ljnq"]
 [ext_resource type="FontFile" uid="uid://bujdtixkbmpih" path="res://Assets/Modules/UI/Themes/segoeprint_bold.ttf" id="6_ejbsl"]
 [ext_resource type="Texture2D" uid="uid://divi2cmxn3081" path="res://Assets/Textures/Items/item_lime.png" id="7_nei8c"]
-[ext_resource type="Texture2D" uid="uid://cu8y5apk6ym21" path="res://Assets/Textures/Items/item_banana_rum.png" id="8_kplyo"]
 [ext_resource type="Texture2D" uid="uid://kijvdkwjswuc" path="res://Assets/Textures/Items/item_rum.png" id="9_xowx0"]
+[ext_resource type="Texture2D" uid="uid://75b6jucdn4q3" path="res://Assets/Textures/BookItems/book_banana_rum.png" id="10_8qoxu"]
 [ext_resource type="Texture2D" uid="uid://dsebxijasiue1" path="res://Assets/Textures/Items/item_banana.png" id="10_smst4"]
 [ext_resource type="Texture2D" uid="uid://dn8t3behspq3o" path="res://Assets/Textures/Items/item_ermge_juice.png" id="11_simnb"]
 [ext_resource type="Texture2D" uid="uid://mku0xlg6bchi" path="res://Assets/Textures/Items/item_vodka.png" id="12_joxob"]
 [ext_resource type="Texture2D" uid="uid://c2rpmq7wcvtgp" path="res://Assets/Textures/Items/item_lemon.png" id="13_egp0f"]
-[ext_resource type="Texture2D" uid="uid://cyktyg0cwe3jy" path="res://Assets/Textures/Items/item_fox_in_the_beach.png" id="14_qcwm6"]
-[ext_resource type="Texture2D" uid="uid://bv3oq432r40a7" path="res://Assets/Textures/Items/item_chat_juice.png" id="15_3pita"]
+[ext_resource type="Texture2D" uid="uid://dlf0mpwjw6qcj" path="res://Assets/Textures/BookItems/book_fox_in_the_beach.png" id="14_wc2li"]
 [ext_resource type="FontVariation" uid="uid://pq37akjmt330" path="res://Assets/Modules/UI/Themes/Segoe-Print-Bold.tres" id="15_rnr6r"]
 [ext_resource type="Texture2D" uid="uid://bqegi87uet577" path="res://Assets/Textures/UI/book3.png" id="15_sktu3"]
 [ext_resource type="Texture2D" uid="uid://un08nj4rrcgt" path="res://Assets/Textures/Items/item_tomato.png" id="17_aujw8"]
-[ext_resource type="Texture2D" uid="uid://0honhjl7hgwe" path="res://Assets/Textures/Items/item_bloody_cimp.png" id="18_3j0n6"]
-[ext_resource type="Texture2D" uid="uid://brarx427c8axv" path="res://Assets/Textures/Items/item_fannta.png" id="19_tinii"]
-[ext_resource type="Texture2D" uid="uid://dt7hy6b8exqh5" path="res://Assets/Textures/Items/item_rising_star.png" id="20_t377s"]
-[ext_resource type="Texture2D" uid="uid://cubkwvkl1xq5g" path="res://Assets/Textures/Items/item_lava_lamp_cocktail.png" id="21_mw8g8"]
+[ext_resource type="Texture2D" uid="uid://32rf7m1af0j5" path="res://Assets/Textures/BookItems/book_fannta.png" id="19_8emw8"]
+[ext_resource type="Texture2D" uid="uid://cnfq1mr0is1qx" path="res://Assets/Textures/BookItems/book_chat_juice.png" id="21_ta7ph"]
+[ext_resource type="Texture2D" uid="uid://ce085as6ruq3i" path="res://Assets/Textures/BookItems/book_bloody_cimp.png" id="22_ty8ch"]
 [ext_resource type="Texture2D" uid="uid://bg88hrvbotaep" path="res://Assets/Textures/Items/item_lava_lamp.png" id="22_vb7ep"]
+[ext_resource type="Texture2D" uid="uid://bvanjecsbnjfd" path="res://Assets/Textures/BookItems/book_rising_star.png" id="24_rn08l"]
+[ext_resource type="Texture2D" uid="uid://dy6ebibupvtv4" path="res://Assets/Textures/BookItems/book_lava_lamp_cocktail.png" id="25_n14hw"]
 [ext_resource type="Texture2D" uid="uid://doacfb2sdy70m" path="res://Assets/Textures/UI/close_button_book.png" id="27_1t5dn"]
-[ext_resource type="Texture2D" uid="uid://bcarnid3hvr4p" path="res://Assets/Textures/Items/item_forsen_drink.png" id="27_5mumc"]
+[ext_resource type="Texture2D" uid="uid://crosmq75oh6nn" path="res://Assets/Textures/BookItems/book_forsen_drink.png" id="27_qcs1q"]
 [ext_resource type="Texture2D" uid="uid://bletqcp26g82h" path="res://Assets/Textures/UI/arrow_right_book.png" id="28_0qwnk"]
-[ext_resource type="Texture2D" uid="uid://dhcj45sm8cqh5" path="res://Assets/Textures/Items/item_apple_rum.png" id="28_hno48"]
+[ext_resource type="Texture2D" uid="uid://cq0lbukg1gqe7" path="res://Assets/Textures/BookItems/book_apple_rum.png" id="28_l5mja"]
 [ext_resource type="Texture2D" uid="uid://cqdm7savbnn4k" path="res://Assets/Textures/UI/arrow_left_book.png" id="29_leaen"]
 [ext_resource type="Texture2D" uid="uid://dvskv76kltfco" path="res://Assets/Textures/Items/item_apple_juice.png" id="29_xs8e0"]
 [ext_resource type="FontVariation" uid="uid://da7ecfm2gk5xr" path="res://Assets/Modules/UI/Themes/Saira-Medium.tres" id="30_8j16a"]
-[ext_resource type="Texture2D" uid="uid://ct1dkhn7cixht" path="res://Assets/Textures/Items/item_donowall_drink.png" id="30_hgxi8"]
-[ext_resource type="Texture2D" uid="uid://bwye6ldnn1773" path="res://Assets/Textures/Items/item_backslash_problem.png" id="31_q8077"]
-[ext_resource type="Texture2D" uid="uid://cdyku8g6rw1ug" path="res://Assets/Textures/Items/item_the_universal_mind.png" id="32_4i2m3"]
-[ext_resource type="Texture2D" uid="uid://cs8byhxljtfxm" path="res://Assets/Textures/Items/item_monkey_gland.png" id="33_qamyo"]
-[ext_resource type="Texture2D" uid="uid://c3ppmgm1ygifs" path="res://Assets/Textures/Items/item_tuab.png" id="34_t2bc8"]
+[ext_resource type="Texture2D" uid="uid://tysipsbvr13m" path="res://Assets/Textures/BookItems/book_donowall_drink.png" id="30_dpxp5"]
+[ext_resource type="Texture2D" uid="uid://d1kq7ig75xi84" path="res://Assets/Textures/BookItems/book_backslash_problem.png" id="31_0opkf"]
+[ext_resource type="Texture2D" uid="uid://saedoyikfqrx" path="res://Assets/Textures/BookItems/book_the_universal_mind.png" id="32_p1xol"]
 [ext_resource type="Texture2D" uid="uid://c3c3vm76va31e" path="res://Assets/Textures/UI/sticker.png" id="39_h461b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0c6e"]
@@ -123,7 +121,7 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_ax61e")
+texture = ExtResource("5_4hteg")
 
 [node name="TonyTonicLabel" type="Label" parent="Page1"]
 layout_mode = 1
@@ -311,7 +309,7 @@ offset_right = 304.0
 offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_kplyo")
+texture = ExtResource("10_8qoxu")
 
 [node name="BananaRumLabel" type="Label" parent="Page1"]
 layout_mode = 1
@@ -468,7 +466,7 @@ offset_right = -480.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("14_qcwm6")
+texture = ExtResource("14_wc2li")
 
 [node name="FoxOnTheBeachLabel" type="Label" parent="Page2"]
 layout_mode = 1
@@ -658,7 +656,7 @@ offset_right = 288.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("19_tinii")
+texture = ExtResource("19_8emw8")
 
 [node name="FanntaLabel" type="Label" parent="Page2"]
 layout_mode = 1
@@ -783,7 +781,7 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("15_3pita")
+texture = ExtResource("21_ta7ph")
 
 [node name="ChatJuiceLabel" type="Label" parent="Page3"]
 layout_mode = 1
@@ -972,7 +970,7 @@ offset_right = 320.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("18_3j0n6")
+texture = ExtResource("22_ty8ch")
 
 [node name="BloodyCimpLabel" type="Label" parent="Page3"]
 layout_mode = 1
@@ -1176,7 +1174,7 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("20_t377s")
+texture = ExtResource("24_rn08l")
 
 [node name="RisingStarLabel" type="Label" parent="Page4"]
 layout_mode = 1
@@ -1317,7 +1315,7 @@ offset_right = 312.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("21_mw8g8")
+texture = ExtResource("25_n14hw")
 
 [node name="LavaLampLabel" type="Label" parent="Page4"]
 layout_mode = 1
@@ -1538,7 +1536,7 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("27_5mumc")
+texture = ExtResource("27_qcs1q")
 
 [node name="ForsenDrinkLabel" type="Label" parent="Page5"]
 layout_mode = 1
@@ -1710,7 +1708,7 @@ offset_right = 312.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("28_hno48")
+texture = ExtResource("28_l5mja")
 
 [node name="AppleRumLabel" type="Label" parent="Page5"]
 layout_mode = 1
@@ -1868,7 +1866,7 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("30_hgxi8")
+texture = ExtResource("30_dpxp5")
 
 [node name="DonowallDrinkLabel" type="Label" parent="Page6"]
 layout_mode = 1
@@ -2057,7 +2055,7 @@ offset_right = 312.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("31_q8077")
+texture = ExtResource("31_0opkf")
 
 [node name="BackslashProblemLabel" type="Label" parent="Page6"]
 layout_mode = 1
@@ -2247,7 +2245,7 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("32_4i2m3")
+texture = ExtResource("32_p1xol")
 
 [node name="TheUniversalMindLabel" type="Label" parent="Page7"]
 layout_mode = 1
@@ -2454,7 +2452,7 @@ offset_right = 320.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("33_qamyo")
+texture = ExtResource("22_ty8ch")
 
 [node name="BloodyCimpLabel" type="Label" parent="Page7"]
 layout_mode = 1
@@ -2612,7 +2610,7 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("34_t2bc8")
+texture = ExtResource("32_p1xol")
 
 [node name="TheUniversalMindLabel" type="Label" parent="Page8"]
 layout_mode = 1
