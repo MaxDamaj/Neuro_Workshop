@@ -48,8 +48,8 @@ func _ready() -> void:
 		_loadedTextures[_dialog.speakers[i]] = ""
 		_speakersID[_dialog.speakers[i]] = i
 		
-	Speakers[0].position = Vector2(SPEAKER_LEFT_HIDDEN_X, Speakers[0].position.y)
-	Speakers[1].position = Vector2(SPEAKER_RIGHT_HIDDEN_X, Speakers[1].position.y)
+	#Speakers[0].position = Vector2(SPEAKER_LEFT_HIDDEN_X, Speakers[0].position.y)
+	#Speakers[1].position = Vector2(SPEAKER_RIGHT_HIDDEN_X, Speakers[1].position.y)
 	
 	Root.modulate = Color(1, 1, 1, 0)
 	var tween = create_tween()
@@ -99,14 +99,19 @@ func _proceed_dialog():
 	for speakerId in _speakersTextures:
 		if (speakerId == phrase.speaker):
 			_speakersTextures[speakerId].modulate = Color.WHITE
+			_speakersTextures[speakerId].z_index = 1
 			var charMood : String = phrase.speaker + "_" + phrase.mood
 			if (_loadedTextures[speakerId] != charMood):
-				if(_loadedTextures[speakerId] == ""):
-					_show_sprite(_speakersID[speakerId])
+				#if(_loadedTextures[speakerId] == ""):
+				#	_show_sprite(_speakersID[speakerId])
 				_speakersTextures[speakerId].texture = _dialogsProvider.allCharacters[phrase.speaker][phrase.mood]
 				_loadedTextures[speakerId] = phrase.speaker + "_" + phrase.mood
 		else:
 			_speakersTextures[speakerId].modulate = Color.DIM_GRAY
+			_speakersTextures[speakerId].z_index = 0
+	
+	for speaker : TextureRect in Speakers:
+		speaker.visible = phrase.bgImage == "_"
 	
 	DialogPicture.texture = null if phrase.bgImage == "_" else _dialogsProvider.allBgs[phrase.bgImage]
 	DialogLabel.text = phrase.text

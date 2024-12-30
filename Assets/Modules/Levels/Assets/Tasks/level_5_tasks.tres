@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=9 format=3 uid="uid://11sapv2ftm68"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_u56c7"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="5_moymk"]
+
+[sub_resource type="Resource" id="Resource_xu04w"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 2.0
+item = "tony_tomic"
+waitingTime = 120.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_t0r2l"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "banana_rum"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_6b3j7"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "fox_on_the_beach"
+waitingTime = 150.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_6txxb"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "fannta"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_omcoy"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "chat_juice"
+waitingTime = 120.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_0h3ry"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "bloody_cimp"
+waitingTime = 150.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = "level_5_end"
+
+[resource]
+resource_name = "level_5"
+script = ExtResource("5_moymk")
+TasksCount = 5
+StartDialog = "level_5_start"
+Tasks = Array[ExtResource("1_u56c7")]([SubResource("Resource_xu04w"), SubResource("Resource_t0r2l"), SubResource("Resource_6b3j7"), SubResource("Resource_6txxb"), SubResource("Resource_omcoy"), SubResource("Resource_0h3ry")])

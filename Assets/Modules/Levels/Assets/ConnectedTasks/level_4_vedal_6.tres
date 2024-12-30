@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=3 format=3 uid="uid://wxrmy1vaihat"]
+
+[ext_resource type="Resource" uid="uid://c8h0ogsu38ft" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_4_vedal_7.tres" id="1_f3fu3"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_nj3qd"]
+
+[resource]
+script = ExtResource("1_nj3qd")
+npcName = "vedal"
+delay = 0.0
+item = "three_underscores_and_backslash"
+waitingTime = 210.0
+chillingTime = 0.0
+rarity = 1
+nextTask = ExtResource("1_f3fu3")
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = "level_4_middle_8"

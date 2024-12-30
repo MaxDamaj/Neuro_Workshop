@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=2 format=3 uid="uid://ce8n4ggua4kx5"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="2_vd4fp"]
+
+[resource]
+script = ExtResource("2_vd4fp")
+npcName = "cami"
+delay = 0.0
+item = "tonic"
+waitingTime = 120.0
+chillingTime = 0.0
+rarity = 1
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""

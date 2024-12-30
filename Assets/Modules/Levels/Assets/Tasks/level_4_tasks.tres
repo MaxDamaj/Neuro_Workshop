@@ -1,0 +1,173 @@
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=19 format=3 uid="uid://ds7ode6j1uoq0"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_54ebt"]
+[ext_resource type="Resource" uid="uid://q02vovi1bpsa" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_4_vedal_1.tres" id="2_pcwrw"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="3_4d7j8"]
+[ext_resource type="Resource" uid="uid://ce8n4ggua4kx5" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_4_cami_1.tres" id="3_4jqrx"]
+[ext_resource type="Resource" uid="uid://fsq1oynkfdyg" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_4_anny_1.tres" id="4_r8fkg"]
+
+[sub_resource type="Resource" id="Resource_xu04w"]
+script = ExtResource("1_54ebt")
+npcName = "random"
+delay = 2.0
+item = "rum"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_t0r2l"]
+script = ExtResource("1_54ebt")
+npcName = "random"
+delay = 2.0
+item = "backslash_problem"
+waitingTime = 180.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_6b3j7"]
+script = ExtResource("1_54ebt")
+npcName = "random"
+delay = 3.0
+item = "monkey_gland"
+waitingTime = 150.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_6txxb"]
+script = ExtResource("1_54ebt")
+npcName = "random"
+delay = 10.0
+item = "fannta"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_omcoy"]
+script = ExtResource("1_54ebt")
+npcName = "random"
+delay = 10.0
+item = "apple_rum"
+waitingTime = 120.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_dplti"]
+script = ExtResource("1_54ebt")
+npcName = "cami"
+delay = 5.0
+item = "forsen_drink"
+waitingTime = 150.0
+chillingTime = 5.0
+rarity = 1
+completedTasksCount = 0
+entranceDialogId = "level_4_entrance_camimi"
+dialogId = "level_4_middle_1"
+
+[sub_resource type="Resource" id="Resource_db8qp"]
+script = ExtResource("1_54ebt")
+npcName = "anny"
+delay = 5.0
+item = "donowall_drink"
+waitingTime = 180.0
+chillingTime = 5.0
+rarity = 1
+completedTasksCount = 6
+entranceDialogId = "level_4_entrance_anny"
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_4b0yf"]
+script = ExtResource("1_54ebt")
+npcName = "random"
+delay = 2.0
+item = "vodka"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_oahfy"]
+script = ExtResource("1_54ebt")
+npcName = "random"
+delay = 2.0
+item = "ermge_juice"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_er0pb"]
+script = ExtResource("1_54ebt")
+npcName = "random"
+delay = 2.0
+item = "tonic"
+waitingTime = 90.0
+chillingTime = 5.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_c2ieu"]
+script = ExtResource("1_54ebt")
+npcName = "vedal"
+delay = 10.0
+item = "bloody_cimp"
+waitingTime = 180.0
+chillingTime = 5.0
+rarity = 1
+nextTask = ExtResource("2_pcwrw")
+completedTasksCount = 0
+entranceDialogId = "level_4_entrance_vedal"
+dialogId = "level_4_middle_2"
+
+[sub_resource type="Resource" id="Resource_lq1s4"]
+script = ExtResource("1_54ebt")
+npcName = "cami"
+delay = 1.0
+item = "tony_tonic"
+waitingTime = 180.0
+chillingTime = 0.0
+rarity = 1
+nextTask = ExtResource("3_4jqrx")
+completedTasksCount = 11
+entranceDialogId = ""
+dialogId = "level_4_middle_3"
+
+[sub_resource type="Resource" id="Resource_a8w55"]
+script = ExtResource("1_54ebt")
+npcName = "anny"
+delay = 1.0
+item = "fannta"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 1
+nextTask = ExtResource("4_r8fkg")
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[resource]
+resource_name = "level_4"
+script = ExtResource("3_4d7j8")
+TasksCount = 22
+StartDialog = "level_4_start"
+Tasks = Array[ExtResource("1_54ebt")]([SubResource("Resource_xu04w"), SubResource("Resource_t0r2l"), SubResource("Resource_6b3j7"), SubResource("Resource_6txxb"), SubResource("Resource_omcoy"), SubResource("Resource_dplti"), SubResource("Resource_db8qp"), SubResource("Resource_4b0yf"), SubResource("Resource_oahfy"), SubResource("Resource_er0pb"), SubResource("Resource_c2ieu"), SubResource("Resource_lq1s4"), SubResource("Resource_a8w55")])

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=3 format=3 uid="uid://sjvcsmfqvv8b"]
+
+[ext_resource type="Resource" uid="uid://no64ukd02ymj" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_4_vedal_3.tres" id="1_itlih"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_l2txv"]
+
+[resource]
+script = ExtResource("1_l2txv")
+npcName = "vedal"
+delay = 0.0
+item = "apple_rum"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 1
+nextTask = ExtResource("1_itlih")
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""

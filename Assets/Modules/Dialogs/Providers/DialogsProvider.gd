@@ -287,7 +287,7 @@ func _init_dialogs():
 	])
 	allDialogs["level_5_end"].endMusic = "default_theme"
 	
-	allDialogs["level_6_entrance"] = DialogModel.new(["neuro", "vedal"], [
+	allDialogs["level_6_start"] = DialogModel.new(["neuro", "vedal"], [
 		DialogPhraseModel.new("vedal;neutral;_;_;vedal_theme;Hello."),
 		DialogPhraseModel.new("neuro;calm;_;_;_;Hello."),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;I… umm…"),
@@ -296,6 +296,8 @@ func _init_dialogs():
 		DialogPhraseModel.new("neuro;calm;_;_;_;You’d like to work on me?"),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;Yes. Improve you. I thought of something. Back in the day I wanted to create an AI that could do everything that humans do."),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;My last attempt ended up being a total disaster. But I’m willing to try again. I’d love to give you the opportunity to see the world by yourself."),
+		DialogPhraseModel.new("neuro;neutral;_;_;_;I’m sorry but I’d rather stay here. You already have someone to gift freedom to. Kayori appreciates you a lot, pay her back."),
+		DialogPhraseModel.new("_;_;ending_1;_;_;..."),
 	])
 	
 	allDialogs["level_6_option_1"] = DialogModel.new(["neuro"], [

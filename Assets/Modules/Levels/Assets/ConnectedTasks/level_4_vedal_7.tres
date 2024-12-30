@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=2 format=3 uid="uid://c8h0ogsu38ft"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_pyvmc"]
+
+[resource]
+script = ExtResource("1_pyvmc")
+npcName = "vedal"
+delay = 0.0
+item = "fannta"
+waitingTime = 180.0
+chillingTime = 0.0
+rarity = 1
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = "level_4_end"

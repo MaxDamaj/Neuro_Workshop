@@ -4,6 +4,7 @@ class_name LevelTasksStrategy
 static var path : NodePath = "/root/MainScene/_Strategies/LevelTasksStrategy"
 
 @onready var _dialogsProvider : DialogsProvider = get_node(DialogsProvider.path)
+@onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
 signal on_task_completed(totalProgress : int, currentProgress : int)
@@ -36,7 +37,13 @@ func register_spawner(spawner : NpcSpawnerView):
 
 
 func start_tasks():
-	if (allTasks == null || allTasks.size() == 0): return
+	if (tasksCount == 0):
+		await get_tree().create_timer(0.2).timeout
+		_levelLoadStartegy._win_game()
+		return
+	
+	if (allTasks == null): return
+	
 	completedTasksCount = 0
 	_remainingLoses = 3
 	_taskPassedCount = 0
@@ -81,6 +88,10 @@ func _end_task():
 		return
 	
 	var task : TaskModel = allTasks[_nextTaskIndex]
+	if (task.completedTasksCount > completedTasksCount):
+		_timer.start(2)
+		return
+	
 	var spawner : NpcSpawnerView = _freeSpawners.pick_random() if allTasks.size() > 1 else _freeSpawners[1]
 	_freeSpawners.erase(spawner)
 	spawner.start_task(task)

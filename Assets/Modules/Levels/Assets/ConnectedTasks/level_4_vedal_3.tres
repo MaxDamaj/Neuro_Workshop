@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TaskModel" load_steps=3 format=3 uid="uid://no64ukd02ymj"]
+
+[ext_resource type="Resource" uid="uid://btkxk3meq33w0" path="res://Assets/Modules/Levels/Assets/ConnectedTasks/level_4_vedal_4.tres" id="1_h3ci7"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_xr4sq"]
+
+[resource]
+script = ExtResource("1_xr4sq")
+npcName = "vedal"
+delay = 0.0
+item = "tonic"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 1
+nextTask = ExtResource("1_h3ci7")
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = "level_4_middle_5"

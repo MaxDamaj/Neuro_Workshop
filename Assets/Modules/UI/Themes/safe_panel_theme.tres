@@ -1,6 +1,6 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bsyp7h4vm6uop"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://b056w7mbmkbo2"]
 
-[ext_resource type="FontVariation" uid="uid://dj1pidfyt7e3q" path="res://Assets/Modules/UI/Themes/Saira-Bold.tres" id="1_qmovv"]
+[ext_resource type="FontVariation" uid="uid://d20wqxgdv76xk" path="res://Assets/Modules/UI/Themes/Saira-Bold.tres" id="1_qmovv"]
 [ext_resource type="Texture2D" uid="uid://lsb875c6tof8" path="res://Assets/Textures/UI/safe_button_notpressed.png" id="2_jtsvi"]
 [ext_resource type="Texture2D" uid="uid://u5xb7xs44f4m" path="res://Assets/Textures/UI/safe_bg.png" id="3_7tp2s"]
 [ext_resource type="Texture2D" uid="uid://d1r8p01wcqqb4" path="res://Assets/Textures/UI/safe_button_pressed.png" id="3_fsn0e"]
