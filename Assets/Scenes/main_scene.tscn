@@ -1,5 +1,6 @@
-[gd_scene load_steps=80 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=81 format=3 uid="uid://dcajjydtc33bx"]
 
+[ext_resource type="Script" path="res://Assets/Modules/SaveLoad/SaveDataProvider.gd" id="1_ff4wv"]
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
 [ext_resource type="PackedScene" uid="uid://dh2atkaqxtvcv" path="res://Assets/Modules/UI/Assets/ui.tscn" id="2_632w6"]
@@ -88,6 +89,9 @@ point_count = 3
 [node name="MainScene" type="Node2D"]
 
 [node name="_Providers" type="Node" parent="."]
+
+[node name="SaveDataProvider" type="Node" parent="_Providers"]
+script = ExtResource("1_ff4wv")
 
 [node name="UIPanelsProvider" type="Node" parent="_Providers"]
 script = ExtResource("1_yahvp")

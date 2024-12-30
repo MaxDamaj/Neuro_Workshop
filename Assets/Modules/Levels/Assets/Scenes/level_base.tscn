@@ -1,12 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://cx3uplkeyulyg"]
+[gd_scene load_steps=28 format=3 uid="uid://cx3uplkeyulyg"]
 
 [ext_resource type="Texture2D" uid="uid://bv1rqo5ynywwe" path="res://Assets/Textures/Stage/bar_bg.png" id="1_lbfl7"]
 [ext_resource type="PackedScene" uid="uid://sc7a05fqml2v" path="res://Assets/Modules/Decor/Assets/table.tscn" id="2_2arif"]
-[ext_resource type="PackedScene" uid="uid://dgj8cpgw84mot" path="res://Assets/Modules/Decor/Assets/bar_table.tscn" id="2_o6xgc"]
+[ext_resource type="PackedScene" uid="uid://dgj8cpgw84mot" path="res://Assets/Modules/Decor/Assets/bar_table_1.tscn" id="2_o6xgc"]
 [ext_resource type="PackedScene" uid="uid://dj40ovayiw7gs" path="res://Assets/Modules/Character/Assets/player.tscn" id="2_t2qoh"]
 [ext_resource type="PackedScene" uid="uid://vetm76i3gabb" path="res://Assets/Modules/Decor/Assets/table_2.tscn" id="3_o46ro"]
+[ext_resource type="PackedScene" uid="uid://rwykpbf5e0h1" path="res://Assets/Modules/Decor/Assets/bar_table_2.tscn" id="3_waw66"]
 [ext_resource type="PackedScene" uid="uid://1s5lb214um8w" path="res://Assets/Modules/Decor/Assets/table_4.tscn" id="4_kicut"]
 [ext_resource type="PackedScene" uid="uid://b1k6aawlgctpw" path="res://Assets/Modules/Decor/Assets/table_3.tscn" id="4_n0pis"]
+[ext_resource type="PackedScene" uid="uid://d2cvdx2fgnnrh" path="res://Assets/Modules/Decor/Assets/bar_table_3.tscn" id="4_qinif"]
 [ext_resource type="PackedScene" uid="uid://jbr3yj0i2niu" path="res://Assets/Modules/Decor/Assets/cutting_table.tscn" id="6_rix42"]
 [ext_resource type="PackedScene" uid="uid://b1bm8tdi3cpvr" path="res://Assets/Modules/Decor/Assets/mixing_table.tscn" id="7_nt2m7"]
 [ext_resource type="PackedScene" uid="uid://dwkyhtlm1fk6v" path="res://Assets/Modules/Decor/Assets/ermge_fridge.tscn" id="8_agjuk"]
@@ -70,13 +72,13 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="BarTable1" parent="Decor" instance=ExtResource("2_o6xgc")]
-position = Vector2(445, 40)
+position = Vector2(453, 30)
 
-[node name="BarTable2" parent="Decor" instance=ExtResource("2_o6xgc")]
-position = Vector2(446, 177)
+[node name="BarTable2" parent="Decor" instance=ExtResource("3_waw66")]
+position = Vector2(452, 185)
 
-[node name="BarTable3" parent="Decor" instance=ExtResource("2_o6xgc")]
-position = Vector2(446, 304)
+[node name="BarTable3" parent="Decor" instance=ExtResource("4_qinif")]
+position = Vector2(454, 338)
 
 [node name="Table" parent="Decor" instance=ExtResource("3_o46ro")]
 position = Vector2(-285, 297)

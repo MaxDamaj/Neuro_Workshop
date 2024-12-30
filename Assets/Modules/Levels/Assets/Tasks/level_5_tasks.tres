@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=9 format=3 uid="uid://11sapv2ftm68"]
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=18 format=3 uid="uid://11sapv2ftm68"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_u56c7"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="5_moymk"]
@@ -7,7 +7,7 @@
 script = ExtResource("1_u56c7")
 npcName = "random"
 delay = 2.0
-item = "tony_tomic"
+item = "tony_tonic"
 waitingTime = 120.0
 chillingTime = 5.0
 rarity = 0
@@ -73,11 +73,119 @@ chillingTime = 5.0
 rarity = 0
 completedTasksCount = 0
 entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_2uj6b"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "rising_star"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_781t6"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "lava_lamp_cocktail"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_miial"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "forsen_drink"
+waitingTime = 120.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_vcwkn"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "apple_rum"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_0lhti"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "donowall_drink"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_cloy2"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "backslash_problem"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_c6h65"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "the_universal_mind"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_fqfuw"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "monkey_gland"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_4isef"]
+script = ExtResource("1_u56c7")
+npcName = "random"
+delay = 10.0
+item = "three_underscores_and_backslash"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
 dialogId = "level_5_end"
 
 [resource]
 resource_name = "level_5"
 script = ExtResource("5_moymk")
-TasksCount = 5
+TasksCount = 15
 StartDialog = "level_5_start"
-Tasks = Array[ExtResource("1_u56c7")]([SubResource("Resource_xu04w"), SubResource("Resource_t0r2l"), SubResource("Resource_6b3j7"), SubResource("Resource_6txxb"), SubResource("Resource_omcoy"), SubResource("Resource_0h3ry")])
+Tasks = Array[ExtResource("1_u56c7")]([SubResource("Resource_xu04w"), SubResource("Resource_t0r2l"), SubResource("Resource_6b3j7"), SubResource("Resource_6txxb"), SubResource("Resource_omcoy"), SubResource("Resource_0h3ry"), SubResource("Resource_2uj6b"), SubResource("Resource_781t6"), SubResource("Resource_miial"), SubResource("Resource_vcwkn"), SubResource("Resource_0lhti"), SubResource("Resource_cloy2"), SubResource("Resource_c6h65"), SubResource("Resource_fqfuw"), SubResource("Resource_4isef")])

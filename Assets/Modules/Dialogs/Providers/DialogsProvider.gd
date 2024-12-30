@@ -196,7 +196,7 @@ func _init_dialogs():
 	])
 	
 	allDialogs["level_4_middle_3"] = DialogModel.new(["neuro", "vedal", "camimi", "anny"], [
-		DialogPhraseModel.new("neuro;talk;_;_;_;By the way, I have already met your robot. Kayoriyori recently came by to buy drinks for you. She looks like a free spirit but still seems to care about her creator."),
+		DialogPhraseModel.new("neuro;talk;_;_;_;By the way, I have already met your robot. Kayori recently came by to buy drinks for you. She looks like a free spirit but still seems to care about her creator."),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;She’s got no choice. I’m the one keeping her activated."),
 		DialogPhraseModel.new("anny;happy;_;_;_;So cynical. Just admit that you actually love her."),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;Meh. I value her existence, nothing more to it."),

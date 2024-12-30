@@ -1,8 +1,7 @@
-[gd_scene load_steps=49 format=3 uid="uid://b4f3n2irlqykv"]
+[gd_scene load_steps=47 format=3 uid="uid://b4f3n2irlqykv"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIRecipeBookPanel.gd" id="1_fa0hd"]
 [ext_resource type="Theme" uid="uid://8m48li400a3l" path="res://Assets/Modules/UI/Themes/recipe_book_theme.tres" id="2_0jsf8"]
-[ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_da7tg"]
 [ext_resource type="Texture2D" uid="uid://l3cigvqjwthd" path="res://Assets/Textures/UI/book1.png" id="3_56tub"]
 [ext_resource type="Texture2D" uid="uid://d1s8sqqwht8tc" path="res://Assets/Textures/UI/book2.png" id="3_mgd83"]
 [ext_resource type="Texture2D" uid="uid://cqb1s50cglrsl" path="res://Assets/Textures/BookItems/book_tony_tonic.png" id="5_4hteg"]
@@ -36,12 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://tysipsbvr13m" path="res://Assets/Textures/BookItems/book_donowall_drink.png" id="30_dpxp5"]
 [ext_resource type="Texture2D" uid="uid://d1kq7ig75xi84" path="res://Assets/Textures/BookItems/book_backslash_problem.png" id="31_0opkf"]
 [ext_resource type="Texture2D" uid="uid://saedoyikfqrx" path="res://Assets/Textures/BookItems/book_the_universal_mind.png" id="32_p1xol"]
-[ext_resource type="Texture2D" uid="uid://cs8byhxljtfxm" path="res://Assets/Textures/Items/item_monkey_gland.png" id="33_qamyo"]
-[ext_resource type="Texture2D" uid="uid://c3ppmgm1ygifs" path="res://Assets/Textures/Items/item_tuab.png" id="34_t2bc8"]
+[ext_resource type="Texture2D" uid="uid://c55p03w1gq2m0" path="res://Assets/Textures/BookItems/book_monkey_gland.png" id="32_s0vch"]
+[ext_resource type="Texture2D" uid="uid://mfcnxo5gfeip" path="res://Assets/Textures/BookItems/book_tuab.png" id="33_o421x"]
 [ext_resource type="Texture2D" uid="uid://c3c3vm76va31e" path="res://Assets/Textures/UI/sticker.png" id="39_h461b"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0c6e"]
-shader = ExtResource("2_da7tg")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c25q8"]
 texture = ExtResource("3_56tub")
@@ -80,12 +76,12 @@ PageCounter2 = NodePath("PageCounter2")
 SafeCode = NodePath("TextureRect/SafeCode")
 
 [node name="Blur" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_k0c6e")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.752941)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -2457,7 +2453,7 @@ offset_right = 320.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("33_qamyo")
+texture = ExtResource("32_s0vch")
 
 [node name="MonkeyGlandLabel" type="Label" parent="Page7"]
 layout_mode = 1
@@ -2616,7 +2612,7 @@ offset_right = -464.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("34_t2bc8")
+texture = ExtResource("33_o421x")
 
 [node name="TUABLabel" type="Label" parent="Page8"]
 layout_mode = 1

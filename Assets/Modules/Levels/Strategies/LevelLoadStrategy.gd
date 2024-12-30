@@ -8,17 +8,24 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 @onready var _tutorialFactory : TutorialFactory = get_node(TutorialFactory.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
+@onready var _saveLoadProvider : SaveDataProvider = get_node(SaveDataProvider.path)
 
 @export var levels : Array[PackedScene]
 
 var safeCode : int
-var lastUnlockedLevel : int
+var lastUnlockedLevel : int:
+	set(value):
+		_saveLoadProvider.set_saved_value("last_Unlocked_Level", value)
+		lastUnlockedLevel = value
+	get:
+		return lastUnlockedLevel
 
 var _allLevelTasks : Dictionary
 var _loadedLevel : Node2D
 var _loadedLevelId : int = -1
 
 func _ready() -> void:
+	lastUnlockedLevel = _saveLoadProvider.get_saved_value("last_Unlocked_Level", 0)
 	_add_to_dictionary("res://Assets/Modules/Levels/Assets/Tasks", _allLevelTasks)
 	_levelTasksStrategy.on_all_tasks_completed.connect(_win_game)
 	_levelTasksStrategy.on_all_lifes_losed.connect(_lose_game)

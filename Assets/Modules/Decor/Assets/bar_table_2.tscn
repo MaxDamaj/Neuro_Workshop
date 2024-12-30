@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://rwykpbf5e0h1"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorBarTableView.gd" id="1_uxm0x"]
+[ext_resource type="Texture2D" uid="uid://cddrvd2ws8pkw" path="res://Assets/Textures/Stage/bar_table_2.png" id="2_hf3xk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsks1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd36r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
+size = Vector2(96, 96)
+
+[node name="BarTable" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
+script = ExtResource("1_uxm0x")
+ItemSprite = NodePath("ItemSprite")
+HoverButton = NodePath("HoverButton")
+InteractArea = NodePath("InteractArea")
+
+[node name="HoverButton" type="Button" parent="."]
+modulate = Color(2, 2, 2, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -35.0
+offset_right = 38.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sd36r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
+icon = ExtResource("2_hf3xk")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+offset = Vector2(0, -48)
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(-64, 0)
+shape = SubResource("RectangleShape2D_8ysvh")
+debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)

@@ -1,12 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfyt5hlaqb2oe"]
+[gd_scene load_steps=5 format=3 uid="uid://bfyt5hlaqb2oe"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UILosePanel.gd" id="1_stff0"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_k8ojs"]
-[ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_xwx2m"]
 [ext_resource type="Texture2D" uid="uid://cms3menhd6bs2" path="res://Assets/Textures/Dialogues/tony_neutral.png" id="4_xic5m"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpr2s"]
-shader = ExtResource("2_xwx2m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_jwdaa"]
 line_spacing = 12.0
@@ -20,12 +16,12 @@ ExitButton = NodePath("LossMenuContainer/ExitButton")
 RestartButton = NodePath("LossMenuContainer/RestartButton")
 
 [node name="Blur" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_tpr2s")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.752941)
 
 [node name="LossMenuContainer" type="Panel" parent="."]
 anchors_preset = 8

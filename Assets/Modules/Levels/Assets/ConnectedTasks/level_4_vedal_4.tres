@@ -7,7 +7,7 @@
 script = ExtResource("1_7b5w7")
 npcName = "vedal"
 delay = 0.0
-item = "lava_lamp"
+item = "lava_lamp_cocktail"
 waitingTime = 210.0
 chillingTime = 0.0
 rarity = 1

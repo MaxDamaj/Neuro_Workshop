@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgj8cpgw84mot"]
+[gd_scene load_steps=7 format=3 uid="uid://d2cvdx2fgnnrh"]
 
-[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorBarTableView.gd" id="1_on7fr"]
-[ext_resource type="Texture2D" uid="uid://bv6nynht2jay0" path="res://Assets/Textures/Stage/bar_table.png" id="2_3v77a"]
+[ext_resource type="Script" path="res://Assets/Modules/Decor/Views/DecorBarTableView.gd" id="1_f75mv"]
+[ext_resource type="Texture2D" uid="uid://4kf6v11fxsrx" path="res://Assets/Textures/Stage/bar_table_3.png" id="2_5txgi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsks1"]
 
@@ -13,7 +13,7 @@
 size = Vector2(96, 96)
 
 [node name="BarTable" type="Node2D" node_paths=PackedStringArray("ItemSprite", "HoverButton", "InteractArea")]
-script = ExtResource("1_on7fr")
+script = ExtResource("1_f75mv")
 ItemSprite = NodePath("ItemSprite")
 HoverButton = NodePath("HoverButton")
 InteractArea = NodePath("InteractArea")
@@ -36,7 +36,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_wsks1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sd36r")
 theme_override_styles/normal = SubResource("StyleBoxTexture_gglkp")
-icon = ExtResource("2_3v77a")
+icon = ExtResource("2_5txgi")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
 offset = Vector2(0, -48)
@@ -44,6 +44,6 @@ offset = Vector2(0, -48)
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(-64, 0)
+position = Vector2(-80, -24)
 shape = SubResource("RectangleShape2D_8ysvh")
 debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)
