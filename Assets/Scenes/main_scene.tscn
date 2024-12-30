@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=47 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
@@ -44,6 +44,8 @@
 [ext_resource type="Texture2D" uid="uid://c0xqgs24gxui1" path="res://Assets/Textures/Dialogues/neuro_sigh.png" id="36_8i1j8"]
 [ext_resource type="Texture2D" uid="uid://bm2ifws45m6th" path="res://Assets/Textures/Dialogues/neuro_talk.png" id="37_g8dse"]
 [ext_resource type="Texture2D" uid="uid://ckfuwibjwpf2i" path="res://Assets/Textures/Bgs/dark.png" id="40_u4rcu"]
+[ext_resource type="Script" path="res://Assets/Modules/Tutorial/Factories/TutorialFactory.gd" id="45_sa410"]
+[ext_resource type="PackedScene" uid="uid://d4ashx10x4s76" path="res://Assets/Modules/Tutorial/Assets/tutorial_node_level_0.tscn" id="46_gdw71"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -123,3 +125,11 @@ levels = Array[PackedScene]([ExtResource("3_6aveg"), ExtResource("3_6aveg"), Ext
 
 [node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("11_m5u4n")
+
+[node name="_Factories" type="Node" parent="."]
+
+[node name="TutorialFactory" type="Node" parent="_Factories"]
+script = ExtResource("45_sa410")
+tutorials = {
+0: ExtResource("46_gdw71")
+}
