@@ -18,6 +18,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6qao"]
 
 [node name="UIExitLevelPanel" type="CanvasLayer" node_paths=PackedStringArray("CloseButton", "ExitButton", "ReturnButton")]
+process_mode = 3
 script = ExtResource("1_w86n1")
 CloseButton = NodePath("ExitMenuContainer/CloseButton")
 ExitButton = NodePath("ExitMenuContainer/ExitButton")
@@ -114,6 +115,7 @@ icon = ExtResource("4_i27d1")
 icon_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="ExitMenuContainer"]
+layout_mode = 0
 offset_left = -91.0
 offset_top = -96.0
 offset_right = 433.0

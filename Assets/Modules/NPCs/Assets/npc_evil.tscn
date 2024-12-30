@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3hxvlerxmrup"]
+[gd_scene load_steps=9 format=3 uid="uid://dk2arvfbym25t"]
 
-[ext_resource type="Script" path="res://Assets/Modules/NPCs/Views/NpcView.gd" id="1_6xr7j"]
-[ext_resource type="Texture2D" uid="uid://d1k66o4g3dooe" path="res://Assets/Textures/Characters/shadow.png" id="2_ptg10"]
-[ext_resource type="Texture2D" uid="uid://dmhsel4xds1ro" path="res://Assets/Textures/Characters/npc_random_11.png" id="3_cpnlx"]
-[ext_resource type="PackedScene" uid="uid://mleg04ee1xa1" path="res://Assets/Modules/UI/Assets/scene_ui_bubble.tscn" id="4_duxuq"]
+[ext_resource type="Script" path="res://Assets/Modules/NPCs/Views/NpcView.gd" id="1_dxmnl"]
+[ext_resource type="Texture2D" uid="uid://buofluvylxewh" path="res://Assets/Textures/Characters/npc_evil.png" id="2_wujvo"]
+[ext_resource type="Texture2D" uid="uid://d1k66o4g3dooe" path="res://Assets/Textures/Characters/shadow.png" id="3_u5qgh"]
+[ext_resource type="PackedScene" uid="uid://mleg04ee1xa1" path="res://Assets/Modules/UI/Assets/scene_ui_bubble.tscn" id="4_bbw4m"]
 
 [sub_resource type="Animation" id="Animation_kgjip"]
 resource_name = "Idle"
@@ -62,28 +62,26 @@ _data = {
 "Walk": SubResource("Animation_7o4i7")
 }
 
-[node name="NpcRandom" type="Node2D" node_paths=PackedStringArray("Root", "Animator", "Bubble")]
+[node name="NpcEvil" type="Node2D" node_paths=PackedStringArray("Root", "Animator", "Bubble")]
 z_index = 1
 y_sort_enabled = true
-script = ExtResource("1_6xr7j")
+script = ExtResource("1_dxmnl")
 Root = NodePath("Root")
 Animator = NodePath("AnimationPlayer")
 Bubble = NodePath("UIBubble")
 
 [node name="Root" type="Node2D" parent="."]
 
-[node name="Shadow" type="Sprite2D" parent="Root"]
-y_sort_enabled = true
-position = Vector2(0, 22)
-texture = ExtResource("2_ptg10")
-
 [node name="Sprite2D" type="Sprite2D" parent="Root"]
-y_sort_enabled = true
 position = Vector2(0, 24)
-texture = ExtResource("3_cpnlx")
+texture = ExtResource("2_wujvo")
 offset = Vector2(0, -104)
 hframes = 4
 frame = 2
+
+[node name="Shadow" type="Sprite2D" parent="Root"]
+position = Vector2(8, 24)
+texture = ExtResource("3_u5qgh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Root/Sprite2D")
@@ -91,4 +89,4 @@ libraries = {
 "": SubResource("AnimationLibrary_7fl4v")
 }
 
-[node name="UIBubble" parent="." instance=ExtResource("4_duxuq")]
+[node name="UIBubble" parent="." instance=ExtResource("4_bbw4m")]

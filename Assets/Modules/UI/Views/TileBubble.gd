@@ -3,6 +3,7 @@ class_name TileBubble
 
 @export var OrderIcon : TextureRect
 @export var ProgressSlider : TextureProgressBar
+@export var CrownIcon : Control
 @export var ColorGrad : GradientTexture1D
 
 

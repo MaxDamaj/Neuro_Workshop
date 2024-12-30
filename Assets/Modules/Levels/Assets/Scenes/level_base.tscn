@@ -20,19 +20,19 @@
 
 [sub_resource type="Curve2D" id="Curve2D_2vud6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 120, -560, 0, 0, 0, 0, 120, -111.999, 0, 0, 0, 0, 88.0003, -15.9995, 0, 0, 0, 0, 0.000305176, 16.0005)
+"points": PackedVector2Array(0, 0, 0, 0, 656, 56.0005, 0, 0, 0, 0, 216, 24.0005, 0, 0, 0, 0, 96.0003, 16.0005, 0, 0, 0, 0, 0.000305176, 16.0005)
 }
 point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_y5f8w"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 120, -560, 0, 0, 0, 0, 132, -21.9995, 0, 0, 0, 0, 136, 128.001, 0, 0, 0, 0, 96.0003, 208.001, 0, 0, 0, 0, -7.99969, 232.001)
+"points": PackedVector2Array(0, 0, 0, 0, 656, 120.001, 0, 0, 0, 0, 200, 208.001, 0, 0, 0, 0, -7.99969, 232.001)
 }
-point_count = 5
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_eo28r"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 120, -560, 0, 0, 0, 0, 160, 176.001, 0, 0, 0, 0, 144, 288.001, 0, 0, 0, 0, 88.0003, 376.001, 0, 0, 0, 0, -7.99969, 392.001)
+"points": PackedVector2Array(0, 0, 0, 0, 656, 184.001, 0, 0, 0, 0, 360, 280.001, 0, 0, 0, 0, 216, 336.001, 0, 0, 0, 0, 88.0003, 376.001, 0, 0, 0, 0, -7.99969, 392.001)
 }
 point_count = 5
 
@@ -152,7 +152,7 @@ rotation = -1.5708
 curve = SubResource("Curve2D_2vud6")
 
 [node name="PathFollow1" type="PathFollow2D" parent="Pathes/Path1" node_paths=PackedStringArray("BarTable")]
-position = Vector2(120, -432.003)
+position = Vector2(528.343, 46.7163)
 rotation = 1.5708
 progress = 128.0
 rotates = false
@@ -166,7 +166,7 @@ rotation = -1.5708
 curve = SubResource("Curve2D_y5f8w")
 
 [node name="PathFollow2" type="PathFollow2D" parent="Pathes/Path2" node_paths=PackedStringArray("BarTable")]
-position = Vector2(122.854, -432.033)
+position = Vector2(530.323, 144.254)
 rotation = 1.5708
 progress = 128.0
 rotates = false
@@ -180,7 +180,7 @@ rotation = -1.5708
 curve = SubResource("Curve2D_eo28r")
 
 [node name="PathFollow3" type="PathFollow2D" parent="Pathes/Path3" node_paths=PackedStringArray("BarTable")]
-position = Vector2(126.946, -432.19)
+position = Vector2(534.245, 223.489)
 rotation = 1.5708
 progress = 128.0
 rotates = false

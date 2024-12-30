@@ -19,4 +19,5 @@ func _return_back():
 	_uiPanelsProvider.close_panel("exit_level_ui")
 
 func _exit_level():
+	get_tree().paused = false
 	_levelLoadStartegy.unload_level()

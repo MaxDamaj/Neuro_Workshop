@@ -13,7 +13,7 @@
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ysvh"]
-size = Vector2(36, 48)
+size = Vector2(28, 48)
 
 [sub_resource type="ImageTexture" id="ImageTexture_6ohf1"]
 
@@ -60,7 +60,7 @@ shape = SubResource("RectangleShape2D_c6dd6")
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(-6, -16)
+position = Vector2(-10, -16)
 shape = SubResource("RectangleShape2D_8ysvh")
 debug_color = Color(0.515554, 0.576144, 3.85046e-07, 0.42)
 

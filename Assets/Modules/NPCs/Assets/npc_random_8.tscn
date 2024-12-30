@@ -62,19 +62,22 @@ _data = {
 "Walk": SubResource("Animation_7o4i7")
 }
 
-[node name="NpcRandom" type="Node2D" node_paths=PackedStringArray("Animator", "Bubble")]
+[node name="NpcRandom" type="Node2D" node_paths=PackedStringArray("Root", "Animator", "Bubble")]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_gktae")
+Root = NodePath("Root")
 Animator = NodePath("AnimationPlayer")
 Bubble = NodePath("UIBubble")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Root" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Root"]
 y_sort_enabled = true
 position = Vector2(0, 22)
 texture = ExtResource("2_ftt2w")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Root"]
 y_sort_enabled = true
 position = Vector2(0, 24)
 texture = ExtResource("3_pg8xf")
@@ -83,7 +86,7 @@ hframes = 4
 frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Sprite2D")
+root_node = NodePath("../Root/Sprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_7fl4v")
 }

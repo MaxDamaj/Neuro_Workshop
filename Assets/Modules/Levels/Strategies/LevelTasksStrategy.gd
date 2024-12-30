@@ -53,8 +53,8 @@ func complete_task():
 	if (_taskPassedCount >= allTasks.size()):
 		on_all_tasks_completed.emit()
 
-func lose_task():
-	_remainingLoses -= 1
+func lose_task(task : TaskModel):
+	_remainingLoses -= 1 if task.rarity == 0 else 3
 	_taskPassedCount += 1
 	on_life_lost.emit(3, _remainingLoses)
 	

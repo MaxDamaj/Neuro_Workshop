@@ -3,6 +3,7 @@ class_name NpcView
 
 @onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
 
+@export var Root : Node2D
 @export var Animator : AnimationPlayer
 @export var Bubble : TileBubble
 
@@ -21,7 +22,10 @@ func _exit_tree() -> void:
 func start_task(task : TaskModel):
 	_show_bubble()
 	_start_waiting_time(task.waitingTime)
-	Bubble.OrderIcon.texture = _itemsProvider.allItems[task.items[0]].texture
+	var item : ItemModel = _itemsProvider.allItems[task.items[0]]
+	Bubble.OrderIcon.texture = item.texture
+	Bubble.CrownIcon.visible = task.rarity > 0
+	Bubble.OrderIcon.tooltip_text = item.resource_name.replace('_', ' ')
 
 func end_task():
 	hide_bubble()

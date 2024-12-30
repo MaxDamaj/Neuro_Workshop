@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=33 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cp2kuqpqelcoo" path="res://Assets/Modules/NPCs/Assets/npc_vedal.tscn" id="9_vkmdw"]
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIDialogPanel.gd" id="10_avh5g"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="11_m5u4n"]
-[ext_resource type="PackedScene" path="res://Assets/Modules/UI/Assets/ui_settings_panel.tscn" id="11_upqfx"]
+[ext_resource type="PackedScene" uid="uid://r5rgngruqomd" path="res://Assets/Modules/UI/Assets/ui_settings_panel.tscn" id="11_upqfx"]
 [ext_resource type="PackedScene" uid="uid://dx7cx75j8h066" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
 [ext_resource type="PackedScene" uid="uid://bk24hcasst3qs" path="res://Assets/Modules/NPCs/Assets/npc_random_2.tscn" id="15_qkonw"]
 [ext_resource type="PackedScene" uid="uid://cjgcx386rfmp1" path="res://Assets/Modules/NPCs/Assets/npc_random_3.tscn" id="16_ysyip"]
@@ -29,6 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://magavaqqqci0" path="res://Assets/Modules/NPCs/Assets/npc_random_10.tscn" id="24_6bdnl"]
 [ext_resource type="PackedScene" uid="uid://b3hxvlerxmrup" path="res://Assets/Modules/NPCs/Assets/npc_random_11.tscn" id="25_qwjd2"]
 [ext_resource type="PackedScene" uid="uid://dsgf16sdqt30y" path="res://Assets/Modules/NPCs/Assets/npc_random_12.tscn" id="26_d5a5n"]
+[ext_resource type="PackedScene" uid="uid://coftsruupobqk" path="res://Assets/Modules/NPCs/Assets/npc_anny.tscn" id="27_nt3q7"]
+[ext_resource type="PackedScene" uid="uid://cv6bex4m14tht" path="res://Assets/Modules/NPCs/Assets/npc_cami.tscn" id="28_w8kul"]
+[ext_resource type="PackedScene" uid="uid://dk2arvfbym25t" path="res://Assets/Modules/NPCs/Assets/npc_evil.tscn" id="29_brvg7"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -55,6 +58,9 @@ script = ExtResource("2_c1f50")
 [node name="NpcsProvider" type="Node" parent="_Providers"]
 script = ExtResource("8_x13n3")
 allNpcs = {
+"anny": ExtResource("27_nt3q7"),
+"cami": ExtResource("28_w8kul"),
+"evil": ExtResource("29_brvg7"),
 "random_1": ExtResource("14_gsjwi"),
 "random_10": ExtResource("24_6bdnl"),
 "random_11": ExtResource("25_qwjd2"),

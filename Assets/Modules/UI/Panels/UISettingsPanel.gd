@@ -6,11 +6,16 @@ class_name UISettingsPanel
 @export var CloseSettingsButton : Button
 @export var MainMenuButton : Button
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	CloseSettingsButton.button_down.connect(func(): _uiPanelsProvider.close_panel("settings_ui"))
+	get_tree().paused = true
+	CloseSettingsButton.button_down.connect(_close_panel)
 	MainMenuButton.button_down.connect(_try_close_level)
 
 func _try_close_level():
 	_uiPanelsProvider.open_panel("exit_level_ui")
+	_uiPanelsProvider.close_panel("settings_ui")
+
+func _close_panel():
+	get_tree().paused = false
 	_uiPanelsProvider.close_panel("settings_ui")

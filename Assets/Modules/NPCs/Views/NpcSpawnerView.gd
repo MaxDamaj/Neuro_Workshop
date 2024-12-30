@@ -33,7 +33,7 @@ func _item_recieved():
 func _task_failed():
 	_npc.hide_bubble()
 	BarTable.taskItem = ""
-	_levelTasksStrategy.lose_task()
+	_levelTasksStrategy.lose_task(_task)
 	_move_npc(1, 0, 4, _complete_task)
 
 func _end_moving():
@@ -50,6 +50,12 @@ func _complete_task():
 
 func _move_npc(startRatio : float, targetRatio : float, time : float, callback : Callable):
 	var tween = create_tween()
+	if (startRatio == 1):
+		if (_npc.Root != null):
+			_npc.Root.scale = Vector2(-1, 1)
+		else:
+			_npc.scale = Vector2(-1, 1)
+	
 	progress_ratio = startRatio
 	tween.tween_property(self, "progress_ratio", targetRatio, time)
 	tween.tween_callback(callback)
