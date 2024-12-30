@@ -17,11 +17,17 @@ class_name UIDialogPanel
 @export var DialogLabel : Label
 @export var DialogueLine : Panel
 
+var SPEAKER_LEFT_HIDDEN_X = -1064
+var SPEAKER_LEFT_SHOWN_X = -64
+var SPEAKER_RIGHT_HIDDEN_X = 3000
+var SPEAKER_RIGHT_SHOWN_X = 1984
+
 var _callback : Callable
 var _dialogId : String
 var _dialog : DialogModel
 var _currentStep : int = -1
 
+var _speakersID := Dictionary()
 var _speakersTextures := Dictionary()
 var _loadedTextures := Dictionary()
 
@@ -40,6 +46,10 @@ func _ready() -> void:
 	for i in range(_dialog.speakers.size()):
 		_speakersTextures[_dialog.speakers[i]] = Speakers[i]
 		_loadedTextures[_dialog.speakers[i]] = ""
+		_speakersID[_dialog.speakers[i]] = i
+		
+	Speakers[0].position = Vector2(SPEAKER_LEFT_HIDDEN_X, Speakers[0].position.y)
+	Speakers[1].position = Vector2(SPEAKER_RIGHT_HIDDEN_X, Speakers[1].position.y)
 	
 	Root.modulate = Color(1, 1, 1, 0)
 	var tween = create_tween()
@@ -57,6 +67,19 @@ func init_args(args : Dictionary):
 	if args.has("callback"):
 		_callback = args["callback"]
 
+
+func _show_sprite(index:int)->void:
+	var tween = create_tween()
+	var target_pos : Vector2
+	if (index==0):
+		target_pos = Vector2(SPEAKER_LEFT_SHOWN_X, Speakers[index].position.y)
+	if (index==1):
+		target_pos = Vector2(SPEAKER_RIGHT_SHOWN_X, Speakers[index].position.y)
+	tween.tween_property(Speakers[index], "position", target_pos, 0.5)
+	tween.tween_callback(
+	func():
+		Speakers[index].position = target_pos
+	)	
 
 func _proceed_dialog():
 	_currentStep += 1
@@ -76,6 +99,8 @@ func _proceed_dialog():
 			_speakersTextures[speakerId].modulate = Color.WHITE
 			var charMood : String = phrase.speaker + "_" + phrase.mood
 			if (_loadedTextures[speakerId] != charMood):
+				if(_loadedTextures[speakerId] == ""):
+					_show_sprite(_speakersID[speakerId])
 				_speakersTextures[speakerId].texture = _dialogsProvider.allCharacters[phrase.speaker][phrase.mood]
 				_loadedTextures[speakerId] = phrase.speaker + "_" + phrase.mood
 		else:
