@@ -23,7 +23,7 @@ var currentMenu : String
 func _ready() -> void:
 	for i in range(LevelButtons.size()):
 		LevelButtons[i].button_down.connect(func(): _load_level(i))
-		LevelButtons[i].disabled = i > _levelLoadStartegy.lastUnlockedLevel
+		LevelButtons[i].disabled = false ## i > _levelLoadStartegy.lastUnlockedLevel
 	
 	NewGameButton.button_down.connect(func(): _load_level(0))
 	ChooseLevelButton.button_down.connect(_show_level_buttons)

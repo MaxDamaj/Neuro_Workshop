@@ -7,6 +7,7 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 @onready var _levelTasksStrategy : LevelTasksStrategy = get_node(LevelTasksStrategy.path)
 @onready var _tutorialFactory : TutorialFactory = get_node(TutorialFactory.path)
 @onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
+@onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 
 @export var levels : Array[PackedScene]
 
@@ -25,6 +26,10 @@ func _ready() -> void:
 func load_level(levelId : int) -> void:
 	_loadedLevelId = levelId
 	safeCode = randi_range(0, 9999)
+	if(levelId==4):
+		_soundProvider.play_music("faster_theme")
+	elif(levelId!=0):
+		_soundProvider.play_music("default_theme")
 	_uiPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _load_level_callback})
 
 func unload_level():

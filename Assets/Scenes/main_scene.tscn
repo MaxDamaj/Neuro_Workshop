@@ -1,11 +1,11 @@
-[gd_scene load_steps=72 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=78 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
 [ext_resource type="PackedScene" uid="uid://dh2atkaqxtvcv" path="res://Assets/Modules/UI/Assets/ui.tscn" id="2_632w6"]
 [ext_resource type="Script" path="res://Assets/Modules/Items/Providers/ItemsProvider.gd" id="2_c1f50"]
-[ext_resource type="PackedScene" uid="uid://b7r3rrga5w2bb" path="res://Assets/Modules/UI/Assets/ui_dialog_panel.tscn" id="2_nchc3"]
-[ext_resource type="PackedScene" uid="uid://cx3uplkeyulyg" path="res://Assets/Modules/Levels/Assets/Scenes/level_base.tscn" id="3_6aveg"]
+[ext_resource type="PackedScene" uid="uid://b4wwadhty302i" path="res://Assets/Modules/UI/Assets/ui_dialog_panel.tscn" id="2_nchc3"]
+[ext_resource type="PackedScene" uid="uid://cb47a0yffyw66" path="res://Assets/Modules/Levels/Assets/Scenes/level_base.tscn" id="3_6aveg"]
 [ext_resource type="PackedScene" uid="uid://dm7th3b03hpn" path="res://Assets/Modules/UI/Assets/ui_workshop_panel.tscn" id="3_n0mek"]
 [ext_resource type="PackedScene" uid="uid://8n6nj8embvl0" path="res://Assets/Modules/UI/Assets/ui_exit_level_panel.tscn" id="4_852d5"]
 [ext_resource type="PackedScene" uid="uid://bdxkmq74dwkt" path="res://Assets/Modules/UI/Assets/ui_loading_panel.tscn" id="5_wgl24"]
@@ -13,26 +13,26 @@
 [ext_resource type="PackedScene" uid="uid://bfyt5hlaqb2oe" path="res://Assets/Modules/UI/Assets/ui_lose_level_panel.tscn" id="7_p4fru"]
 [ext_resource type="PackedScene" uid="uid://b4f3n2irlqykv" path="res://Assets/Modules/UI/Assets/ui_recipe_book_panel.tscn" id="8_u7v06"]
 [ext_resource type="Script" path="res://Assets/Modules/NPCs/Providers/NpcsProvider.gd" id="8_x13n3"]
-[ext_resource type="PackedScene" uid="uid://bqqp7epoca200" path="res://Assets/Modules/UI/Assets/ui_safe_panel.tscn" id="9_usnlb"]
+[ext_resource type="PackedScene" uid="uid://dohx4lpiray63" path="res://Assets/Modules/UI/Assets/ui_safe_panel.tscn" id="9_usnlb"]
 [ext_resource type="PackedScene" uid="uid://cp2kuqpqelcoo" path="res://Assets/Modules/NPCs/Assets/npc_vedal.tscn" id="9_vkmdw"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="11_m5u4n"]
-[ext_resource type="PackedScene" uid="uid://r5rgngruqomd" path="res://Assets/Modules/UI/Assets/ui_settings_panel.tscn" id="11_upqfx"]
-[ext_resource type="PackedScene" uid="uid://dx7cx75j8h066" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
-[ext_resource type="PackedScene" uid="uid://bk24hcasst3qs" path="res://Assets/Modules/NPCs/Assets/npc_random_2.tscn" id="15_qkonw"]
-[ext_resource type="PackedScene" uid="uid://cjgcx386rfmp1" path="res://Assets/Modules/NPCs/Assets/npc_random_3.tscn" id="16_ysyip"]
-[ext_resource type="PackedScene" uid="uid://bd434568ntuls" path="res://Assets/Modules/NPCs/Assets/npc_random_4.tscn" id="17_3laa0"]
-[ext_resource type="PackedScene" uid="uid://baf42jqcecalo" path="res://Assets/Modules/NPCs/Assets/npc_random_5.tscn" id="18_52p0n"]
-[ext_resource type="PackedScene" uid="uid://b827mg7rdwful" path="res://Assets/Modules/NPCs/Assets/npc_random_6.tscn" id="19_kbcyg"]
-[ext_resource type="PackedScene" uid="uid://bh72ulbaflp4b" path="res://Assets/Modules/NPCs/Assets/npc_random_7.tscn" id="20_eb0re"]
-[ext_resource type="PackedScene" uid="uid://cvhussewy4kf1" path="res://Assets/Modules/NPCs/Assets/npc_random_8.tscn" id="21_53scp"]
-[ext_resource type="PackedScene" uid="uid://dcqemgrx07vy3" path="res://Assets/Modules/NPCs/Assets/npc_random_9.tscn" id="23_0vt66"]
-[ext_resource type="PackedScene" uid="uid://magavaqqqci0" path="res://Assets/Modules/NPCs/Assets/npc_random_10.tscn" id="24_6bdnl"]
-[ext_resource type="PackedScene" uid="uid://b3hxvlerxmrup" path="res://Assets/Modules/NPCs/Assets/npc_random_11.tscn" id="25_qwjd2"]
-[ext_resource type="PackedScene" uid="uid://dsgf16sdqt30y" path="res://Assets/Modules/NPCs/Assets/npc_random_12.tscn" id="26_d5a5n"]
-[ext_resource type="PackedScene" uid="uid://coftsruupobqk" path="res://Assets/Modules/NPCs/Assets/npc_anny.tscn" id="27_nt3q7"]
-[ext_resource type="PackedScene" uid="uid://cv6bex4m14tht" path="res://Assets/Modules/NPCs/Assets/npc_cami.tscn" id="28_w8kul"]
-[ext_resource type="PackedScene" uid="uid://dk2arvfbym25t" path="res://Assets/Modules/NPCs/Assets/npc_evil.tscn" id="29_brvg7"]
-[ext_resource type="PackedScene" uid="uid://dg2g2loxw31xa" path="res://Assets/Modules/NPCs/Assets/npc_tony.tscn" id="30_k6m5f"]
+[ext_resource type="PackedScene" uid="uid://cb28c7bhv1osw" path="res://Assets/Modules/UI/Assets/ui_settings_panel.tscn" id="11_upqfx"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_2.tscn" id="15_qkonw"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_3.tscn" id="16_ysyip"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_4.tscn" id="17_3laa0"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_5.tscn" id="18_52p0n"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_6.tscn" id="19_kbcyg"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_7.tscn" id="20_eb0re"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_8.tscn" id="21_53scp"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_9.tscn" id="23_0vt66"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_10.tscn" id="24_6bdnl"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_11.tscn" id="25_qwjd2"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_random_12.tscn" id="26_d5a5n"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_anny.tscn" id="27_nt3q7"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_cami.tscn" id="28_w8kul"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_evil.tscn" id="29_brvg7"]
+[ext_resource type="PackedScene" path="res://Assets/Modules/NPCs/Assets/npc_tony.tscn" id="30_k6m5f"]
 [ext_resource type="Script" path="res://Assets/Modules/Dialogs/Providers/DialogsProvider.gd" id="30_usgox"]
 [ext_resource type="Texture2D" uid="uid://bvkujcht12r6c" path="res://Assets/Textures/Dialogues/neuro_broken_neutral.png" id="31_nr3s2"]
 [ext_resource type="Texture2D" uid="uid://dgp045g3mro5k" path="res://Assets/Textures/Dialogues/neuro_broken_sad.png" id="32_yfjd6"]
@@ -70,6 +70,12 @@
 [ext_resource type="AudioStream" uid="uid://1vty0si5cb7d" path="res://Assets/Sounds/SFX/safe_opens.wav" id="52_isdob"]
 [ext_resource type="AudioStream" uid="uid://o7dfmwx43fhh" path="res://Assets/Sounds/SFX/cant_interract.mp3" id="53_qgqw7"]
 [ext_resource type="AudioStream" uid="uid://cueyals6nrh3q" path="res://Assets/Sounds/SFX/pick_up.mp3" id="54_qoimn"]
+[ext_resource type="AudioStream" uid="uid://di27nxsij8qxe" path="res://Assets/Sounds/Music/anny_theme.mp3" id="57_fp15q"]
+[ext_resource type="AudioStream" uid="uid://cbrhnuvay85b0" path="res://Assets/Sounds/Music/camila_theme.mp3" id="58_kupi7"]
+[ext_resource type="AudioStream" uid="uid://c0m304pvo8imt" path="res://Assets/Sounds/Music/evil_theme.mp3" id="59_g3y7y"]
+[ext_resource type="AudioStream" uid="uid://c2qqqtosjtxvt" path="res://Assets/Sounds/Music/neuro_theme.mp3" id="60_uim8f"]
+[ext_resource type="AudioStream" uid="uid://bvatlkfuby4ws" path="res://Assets/Sounds/Music/vedal_theme.mp3" id="61_fq4c4"]
+[ext_resource type="AudioStream" uid="uid://sp5evb2u5hvr" path="res://Assets/Sounds/Music/so_thats_my_task.mp3" id="62_o06jx"]
 
 [sub_resource type="Curve" id="Curve_awebk"]
 min_value = -80.0
@@ -175,9 +181,15 @@ process_mode = 3
 script = ExtResource("42_s274o")
 dbCurve = SubResource("Curve_awebk")
 allMusics = {
+"anny_theme": ExtResource("57_fp15q"),
+"camila_theme": ExtResource("58_kupi7"),
+"default_theme": ExtResource("62_o06jx"),
+"evil_theme": ExtResource("59_g3y7y"),
 "faster_theme": ExtResource("45_w7fgq"),
 "main_theme": ExtResource("43_giiq8"),
-"tony_theme": ExtResource("44_vpaao")
+"neuro_theme": ExtResource("60_uim8f"),
+"tony_theme": ExtResource("44_vpaao"),
+"vedal_theme": ExtResource("61_fq4c4")
 }
 allSounds = {
 "book_pages": [ExtResource("50_qiyr8")],

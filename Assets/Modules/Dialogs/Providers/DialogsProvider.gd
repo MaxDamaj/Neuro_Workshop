@@ -40,7 +40,7 @@ func _init_dialogs():
 		DialogPhraseModel.new("neuro;broken_sad;_;true;_;That’s lame. Any paychecks included?"),
 		DialogPhraseModel.new("tony;neutral;_;true;_;Wouldn’t have gotten a robot if I had to pay it anything."),
 	])
-	allDialogs["level_0_start"].endMusic = "faster_theme"
+	allDialogs["level_0_start"].endMusic = "default_theme"
 	
 	allDialogs["level_0_middle"] = DialogModel.new(["neuro", "tony"], [
 		DialogPhraseModel.new("tony;neutral;_;true;_;Name’s Tony by the way. You might need a name too, customers would have a better time talking to you that way. You’re an AI so maybe ‘Neuro-Barman’ would do?"),
@@ -57,7 +57,7 @@ func _init_dialogs():
 	])
 	
 	allDialogs["level_1_entrance"] = DialogModel.new(["neuro", "camimi"], [
-		DialogPhraseModel.new("camimi;happy;_;true;_;Hello! Oh, a new bartender again? A robot this time, huh. Well previous ones weren’t too talkative as well."),
+		DialogPhraseModel.new("camimi;happy;_;true;camila_theme;Hello! Oh, a new bartender again? A robot this time, huh. Well previous ones weren’t too talkative as well."),
 		DialogPhraseModel.new("neuro;neutral;_;_;_;Hello, would you like to order something?"),
 	])
 	
@@ -76,9 +76,10 @@ func _init_dialogs():
 	allDialogs["level_1_end"] = DialogModel.new(["camimi"], [
 		DialogPhraseModel.new("camimi;happy;_;true;_;I was actually hoping to meet my friend here. He is a regular at this bar and we often drink together. He’s not here today though. Well, I’ll be going then. Good luck, rookie."),
 	])
+	allDialogs["level_1_end"].endMusic = "default_theme"
 	
 	allDialogs["level_2_entrance"] = DialogModel.new(["neuro", "anny"], [
-		DialogPhraseModel.new("anny;neutral;_;true;_;It’s actually a robot. I’ve been told about you."),
+		DialogPhraseModel.new("anny;neutral;_;true;anny_theme;It’s actually a robot. I’ve been told about you."),
 		DialogPhraseModel.new("neuro;calm;_;_;_;Hello, what would you like to order?"),
 	])
 	
@@ -99,9 +100,10 @@ func _init_dialogs():
 	allDialogs["level_2_end"] = DialogModel.new(["anny"], [
 		DialogPhraseModel.new("anny;neutral;_;_;_;Looks like I’ve overdone it again *hic*. I’ll go home."),
 	])
+	allDialogs["level_2_end"].endMusic = "default_theme"
 	
 	allDialogs["level_3_entrance"] = DialogModel.new(["neuro", "evil"], [
-		DialogPhraseModel.new("neuro;neutral;_;_;_;Hello, what would you like to order?"),
+		DialogPhraseModel.new("neuro;neutral;_;_;evil_theme;Hello, what would you like to order?"),
 		DialogPhraseModel.new("evil;happy;_;true;_;Hi, three Banana Rums."),
 	])
 	
@@ -131,6 +133,7 @@ func _init_dialogs():
 	allDialogs["level_3_end"] = DialogModel.new(["evil"], [
 		DialogPhraseModel.new("evil;happy;_;_;_;I don’t feel any taste if you’re curious. I just like the sound of my drink splashing while I walk. Well, Samantha, bye. And remember the emergency shutdown controller."),
 	])
+	allDialogs["level_3_end"].endMusic = "default_theme"
 	
 	allDialogs["level_4_start"] = DialogModel.new(["neuro", "tony"], [
 		DialogPhraseModel.new("tony;smile;_;_;_;This day of the week is usually packed, so get ready. If you can handle it I’ll pay."),
