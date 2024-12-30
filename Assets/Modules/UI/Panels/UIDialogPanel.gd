@@ -75,6 +75,8 @@ func _show_sprite(index:int)->void:
 		target_pos = Vector2(SPEAKER_LEFT_SHOWN_X, Speakers[index].position.y)
 	if (index==1):
 		target_pos = Vector2(SPEAKER_RIGHT_SHOWN_X, Speakers[index].position.y)
+	else:
+		return
 	tween.tween_property(Speakers[index], "position", target_pos, 0.5)
 	tween.tween_callback(
 	func():
