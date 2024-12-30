@@ -23,6 +23,7 @@ shader = ExtResource("2_htd5w")
 
 [node name="UISettingsPanel" type="CanvasLayer" node_paths=PackedStringArray("CloseSettingsButton", "MainMenuButton")]
 process_mode = 3
+layer = 11
 script = ExtResource("1_o5x4i")
 CloseSettingsButton = NodePath("SettingsContainer/CloseSettingsButton")
 MainMenuButton = NodePath("SettingsContainer/MainMenuButton")

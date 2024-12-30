@@ -6,11 +6,15 @@ class_name UIDialogPanel
 
 @export var Root : Control
 @export var SkipButton : Button
+@export var SettingsButton :Button
 @export var NextStepButton : Button
+@export var HideButton : Button
+@export var ShowButton : Button
 @export var DialogPicture : TextureRect
 @export var Speakers : Array[TextureRect]
 @export var SpeakerNameLabel : Label
 @export var DialogLabel : Label
+@export var DialogueLine : Panel
 
 var _callback : Callable
 var _dialogId : String
@@ -22,8 +26,14 @@ var _loadedTextures := Dictionary()
 
 func _ready() -> void:
 	get_tree().paused = true
+	
+	ShowButton.visible = false
+	
 	NextStepButton.button_down.connect(_proceed_dialog)
 	SkipButton.button_down.connect(_close_panel)
+	SettingsButton.button_down.connect(_open_settings_panel)
+	HideButton.button_down.connect(_hide_dialogue)
+	ShowButton.button_down.connect(_show_dialogue)
 	_dialog = _dialogsProvider.allDialogs[_dialogId]
 	
 	for i in range(_dialog.speakers.size()):
@@ -55,7 +65,7 @@ func _proceed_dialog():
 		return
 	
 	var phrase : DialogPhraseModel = _dialog.phrases[_currentStep]
-	SpeakerNameLabel.visible = phrase.speaker != "_"
+	SpeakerNameLabel.get_parent().visible = phrase.speaker != "_"
 	SpeakerNameLabel.text = "???" if phrase.isNameHidden else _dialogsProvider.allNames[phrase.speaker]
 	
 	for speakerId in _speakersTextures:
@@ -80,3 +90,18 @@ func _close_panel():
 		if(_callback != null): _callback.call()
 		_uiPanelsProvider.close_panel("dialog_ui")
 	)
+	
+func _open_settings_panel():
+	_uiPanelsProvider.open_panel("settings_ui")
+	
+func _hide_dialogue():
+	HideButton.visible = false
+	ShowButton.visible = true
+	DialogueLine.visible = false
+	NextStepButton.disabled = true
+	
+func _show_dialogue():
+	ShowButton.visible = false
+	HideButton.visible = true
+	DialogueLine.visible = true
+	NextStepButton.disabled = false

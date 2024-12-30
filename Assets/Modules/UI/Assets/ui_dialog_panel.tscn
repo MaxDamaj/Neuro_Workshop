@@ -1,23 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7r3rrga5w2bb"]
+[gd_scene load_steps=24 format=3 uid="uid://b4wwadhty302i"]
 
 [ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIDialogPanel.gd" id="1_p4jy3"]
 [ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_pxog1"]
 [ext_resource type="Theme" uid="uid://b7w2njqwy08yh" path="res://Assets/Modules/UI/Themes/ingame_menu_theme.tres" id="2_xbsfp"]
+[ext_resource type="FontVariation" uid="uid://b5jurqd4s78qi" path="res://Assets/Modules/UI/Themes/Saira-Light.tres" id="4_i55cq"]
+[ext_resource type="Texture2D" uid="uid://jef7j4ju46ou" path="res://Assets/Textures/UI/continue_visual_novel.png" id="5_3l7me"]
+[ext_resource type="Texture2D" uid="uid://0qbxgwfsf2b1" path="res://Assets/Textures/UI/nametag_visual_novel.png" id="6_a0yqe"]
+[ext_resource type="FontVariation" uid="uid://dj1pidfyt7e3q" path="res://Assets/Modules/UI/Themes/Saira-Bold.tres" id="7_3bkl2"]
+[ext_resource type="Texture2D" uid="uid://c5cks2mybv2i2" path="res://Assets/Textures/UI/settings_button.png" id="8_os4ps"]
+[ext_resource type="Texture2D" uid="uid://cv4lsirrhnbp6" path="res://Assets/Textures/UI/pointer.png" id="9_10uf8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lxg88"]
 shader = ExtResource("2_pxog1")
 
-[node name="UIDialogPanel" type="CanvasLayer" node_paths=PackedStringArray("Root", "SkipButton", "NextStepButton", "DialogPicture", "Speakers", "SpeakerNameLabel", "DialogLabel")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ldr2"]
+texture = ExtResource("6_a0yqe")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clm4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ptlem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsxgq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opbkg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svxuj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgxi1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukkcy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xaci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_76t3q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyagj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a4iny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_spdm7"]
+
+[node name="UIDialogPanel" type="CanvasLayer" node_paths=PackedStringArray("Root", "SkipButton", "SettingsButton", "NextStepButton", "HideButton", "ShowButton", "DialogPicture", "Speakers", "SpeakerNameLabel", "DialogLabel", "DialogueLine")]
 process_mode = 3
 layer = 10
 script = ExtResource("1_p4jy3")
 Root = NodePath("Root")
-SkipButton = NodePath("Root/SettingsButton")
-NextStepButton = NodePath("Root/DialogLine/NextStepButton")
+SkipButton = NodePath("Root/SkipButton")
+SettingsButton = NodePath("Root/SettingsButton")
+NextStepButton = NodePath("Root/NextStepButton")
+HideButton = NodePath("Root/HideButton")
+ShowButton = NodePath("Root/ShowButton")
 DialogPicture = NodePath("Root/DialogPicture")
 Speakers = [NodePath("Root/SpeakerLeft"), NodePath("Root/SpeakerRight")]
-SpeakerNameLabel = NodePath("Root/DialogLine/NameLabel")
+SpeakerNameLabel = NodePath("Root/DialogLine/Panel/NameLabel")
 DialogLabel = NodePath("Root/DialogLine/DialogLabel")
+DialogueLine = NodePath("Root/DialogLine")
 
 [node name="Root" type="Control" parent="."]
 layout_mode = 3
@@ -53,25 +94,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SettingsButton" type="Button" parent="Root"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -152.0
-offset_top = 32.0
-offset_right = -32.0
-offset_bottom = 84.0
-grow_horizontal = 0
-theme = ExtResource("2_xbsfp")
-text = "Close"
-
 [node name="SpeakerLeft" type="TextureRect" parent="Root"]
 layout_mode = 0
 offset_left = -64.0
 offset_top = 56.0
 offset_right = 960.0
 offset_bottom = 1080.0
+mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
@@ -86,38 +115,103 @@ offset_right = 1088.0
 offset_bottom = 1080.0
 grow_horizontal = 0
 scale = Vector2(-1, 1)
+mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="DialogLine" type="ColorRect" parent="Root"]
+[node name="DialogLine" type="Panel" parent="Root"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -248.0
+offset_top = -280.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0, 0, 0, 0.501961)
+theme = ExtResource("2_xbsfp")
 
 [node name="DialogLabel" type="Label" parent="Root/DialogLine"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 128.0
-offset_top = -60.0
-offset_right = 1728.0
-offset_bottom = 69.0
+offset_left = 104.0
+offset_top = -104.0
+offset_right = 1704.0
+offset_bottom = 133.0
 grow_vertical = 2
 theme = ExtResource("2_xbsfp")
-theme_override_font_sizes/font_size = 36
+theme_override_fonts/font = ExtResource("4_i55cq")
+theme_override_font_sizes/font_size = 39
 text = "Very very long text from characters. Very very long text from characters. Very very long text from characters. Very very long text from characters
 
 Very very long text from characters. Very very long text from characters"
 autowrap_mode = 2
 
-[node name="NextStepButton" type="Button" parent="Root/DialogLine"]
+[node name="Instruction" type="Label" parent="Root/DialogLine"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -440.0
+offset_top = -112.0
+offset_right = -74.0
+offset_bottom = -79.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_i55cq")
+theme_override_font_sizes/font_size = 30
+text = "click anywhere to continue"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Root/DialogLine"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -112.0
+offset_right = -24.0
+offset_bottom = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_3l7me")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="Root/DialogLine"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = -48.0
+offset_right = 448.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2ldr2")
+
+[node name="NameLabel" type="Label" parent="Root/DialogLine/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -48.0
+offset_right = 176.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_3bkl2")
+theme_override_font_sizes/font_size = 48
+text = "Name left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextStepButton" type="Button" parent="Root"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -126,13 +220,78 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NameLabel" type="Label" parent="Root/DialogLine"]
-layout_mode = 0
-offset_left = 128.0
-offset_top = -32.0
-offset_right = 384.0
-offset_bottom = 32.0
-theme_override_font_sizes/font_size = 26
-text = "Name left"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="SkipButton" type="Button" parent="Root"]
+layout_mode = 1
+offset_left = 56.0
+offset_top = 40.0
+offset_right = 176.0
+offset_bottom = 92.0
+theme = ExtResource("2_xbsfp")
+text = "Skip"
+
+[node name="SettingsButton" type="Button" parent="Root"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 112.0
+grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_clm4r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ptlem")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_dsxgq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_opbkg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_svxuj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qgxi1")
+icon = ExtResource("8_os4ps")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HideButton" type="Button" parent="Root"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -280.0
+offset_right = 32.0
+offset_bottom = -216.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.5708
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ukkcy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5xaci")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_76t3q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jyagj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a4iny")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_spdm7")
+icon = ExtResource("9_10uf8")
+icon_alignment = 1
+
+[node name="ShowButton" type="Button" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -8.0
+offset_right = -32.0
+offset_bottom = 56.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -1.5708
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ukkcy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5xaci")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_76t3q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jyagj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a4iny")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_spdm7")
+icon = ExtResource("9_10uf8")
+icon_alignment = 1

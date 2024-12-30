@@ -23,6 +23,7 @@ shader = ExtResource("2_fb2a2")
 
 [node name="UIExitLevelPanel" type="CanvasLayer" node_paths=PackedStringArray("CloseButton", "ExitButton", "ReturnButton")]
 process_mode = 3
+layer = 12
 script = ExtResource("1_w86n1")
 CloseButton = NodePath("ExitMenuContainer/CloseButton")
 ExitButton = NodePath("ExitMenuContainer/ExitButton")

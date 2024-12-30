@@ -14,6 +14,7 @@ font_size = 24
 
 [node name="UILoseLevelPanel" type="CanvasLayer" node_paths=PackedStringArray("ExitButton", "RestartButton")]
 process_mode = 3
+layer = 13
 script = ExtResource("1_stff0")
 ExitButton = NodePath("LossMenuContainer/ExitButton")
 RestartButton = NodePath("LossMenuContainer/RestartButton")

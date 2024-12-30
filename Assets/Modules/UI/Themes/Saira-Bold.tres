@@ -1,0 +1,10 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dj1pidfyt7e3q"]
+
+[ext_resource type="FontFile" uid="uid://cff5cj4carep4" path="res://Assets/Modules/UI/Themes/Saira-VariableFont_wdth,wght.ttf" id="1_ymtvt"]
+
+[resource]
+base_font = ExtResource("1_ymtvt")
+variation_opentype = {
+2003072104: 100,
+2003265652: 700
+}

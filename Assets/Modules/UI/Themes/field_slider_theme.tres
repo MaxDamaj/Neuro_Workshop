@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d3ht3ymqa0arj"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dq1bx3m4vjumh"]
 
 [ext_resource type="Texture2D" uid="uid://cpsqr16blwg8h" path="res://Assets/Textures/UI/progressbar_fill.png" id="1_buc5d"]
 [ext_resource type="Texture2D" uid="uid://8ihr7dygbnjy" path="res://Assets/Textures/UI/progressbar.png" id="2_b5aii"]
