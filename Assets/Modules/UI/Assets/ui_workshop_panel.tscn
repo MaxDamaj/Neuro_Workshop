@@ -19,6 +19,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cs83h"]
 
 [node name="UIWorkshopPanel" type="CanvasLayer" node_paths=PackedStringArray("SettingsButton", "Lifes", "CompletionLabel")]
+process_mode = 3
 script = ExtResource("1_0w577")
 SettingsButton = NodePath("SettingsButton")
 Lifes = [NodePath("LifesContainer/Life1"), NodePath("LifesContainer/Life2"), NodePath("LifesContainer/Life3")]

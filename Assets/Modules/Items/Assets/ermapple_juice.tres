@@ -11,6 +11,4 @@ producingTime = 0.0
 mergeTo = {
 "vodka": "raw_mix_backslash_problem"
 }
-usedIn = {
-"carbonizer": "fannta"
-}
+usedIn = {}

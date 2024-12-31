@@ -15,6 +15,7 @@ func _ready() -> void:
 	CloseButton.button_down.connect(func(): _uiPanelsProvider.close_panel("exit_level_ui"))
 
 func _return_back():
+	get_tree().paused = false
 	_uiPanelsProvider.open_panel("settings_ui")
 	_uiPanelsProvider.close_panel("exit_level_ui")
 
