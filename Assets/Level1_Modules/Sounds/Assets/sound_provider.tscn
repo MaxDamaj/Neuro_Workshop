@@ -1,0 +1,57 @@
+[gd_scene load_steps=21 format=3 uid="uid://37ruv10rwlyg"]
+
+[ext_resource type="Script" path="res://Assets/Level1_Modules/Sounds/Providers/SoundProvider.gd" id="1_mmnj2"]
+[ext_resource type="AudioStream" uid="uid://di27nxsij8qxe" path="res://Assets/Sounds/Music/anny_theme.mp3" id="2_5528q"]
+[ext_resource type="AudioStream" uid="uid://cbrhnuvay85b0" path="res://Assets/Sounds/Music/camila_theme.mp3" id="3_umjnw"]
+[ext_resource type="AudioStream" uid="uid://sp5evb2u5hvr" path="res://Assets/Sounds/Music/so_thats_my_task.mp3" id="4_mn6uu"]
+[ext_resource type="AudioStream" uid="uid://c0m304pvo8imt" path="res://Assets/Sounds/Music/evil_theme.mp3" id="5_cxep3"]
+[ext_resource type="AudioStream" uid="uid://co2gcymyj3ugo" path="res://Assets/Sounds/Music/faster_theme.mp3" id="6_j0p45"]
+[ext_resource type="AudioStream" uid="uid://cwyeu2edhfs2i" path="res://Assets/Sounds/Music/main_theme.mp3" id="7_jjw3m"]
+[ext_resource type="AudioStream" uid="uid://c2qqqtosjtxvt" path="res://Assets/Sounds/Music/neuro_theme.mp3" id="8_8tq5l"]
+[ext_resource type="AudioStream" uid="uid://iek08lkytpt1" path="res://Assets/Sounds/Music/tony_theme.mp3" id="9_367d5"]
+[ext_resource type="AudioStream" uid="uid://bvatlkfuby4ws" path="res://Assets/Sounds/Music/vedal_theme.mp3" id="10_we4is"]
+[ext_resource type="AudioStream" uid="uid://dhvf4y3vfgjwi" path="res://Assets/Sounds/SFX/book_pages.mp3" id="11_jpwg5"]
+[ext_resource type="AudioStream" uid="uid://d1pbv6g220alv" path="res://Assets/Sounds/SFX/door_bell1.MP3" id="12_hm7hu"]
+[ext_resource type="AudioStream" uid="uid://dr35bj4howcuu" path="res://Assets/Sounds/SFX/door_bell2.MP3" id="13_o40xi"]
+[ext_resource type="AudioStream" uid="uid://bqtu5woxfslcp" path="res://Assets/Sounds/SFX/door_bell3.MP3" id="14_ungcg"]
+[ext_resource type="AudioStream" uid="uid://b5g1axscgns1s" path="res://Assets/Sounds/SFX/door_bell4.MP3" id="15_i66wk"]
+[ext_resource type="AudioStream" uid="uid://1vty0si5cb7d" path="res://Assets/Sounds/SFX/safe_opens.wav" id="16_2x4b2"]
+[ext_resource type="AudioStream" uid="uid://cueyals6nrh3q" path="res://Assets/Sounds/SFX/pick_up.mp3" id="17_7laa2"]
+[ext_resource type="AudioStream" uid="uid://b1rg56x8tkcw1" path="res://Assets/Sounds/SFX/drink_to_customer.mp3" id="18_blcnr"]
+[ext_resource type="AudioStream" uid="uid://o7dfmwx43fhh" path="res://Assets/Sounds/SFX/cant_interract.mp3" id="19_ys8se"]
+
+[sub_resource type="Curve" id="Curve_awebk"]
+min_value = -80.0
+max_value = 12.0
+_data = [Vector2(0, -80), 0.0, 303.42, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(1, 12), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="SoundProvider" type="Node" node_paths=PackedStringArray("musicTrack", "soundTrack")]
+process_mode = 3
+script = ExtResource("1_mmnj2")
+dbCurve = SubResource("Curve_awebk")
+allMusics = {
+"anny_theme": ExtResource("2_5528q"),
+"camila_theme": ExtResource("3_umjnw"),
+"default_theme": ExtResource("4_mn6uu"),
+"evil_theme": ExtResource("5_cxep3"),
+"faster_theme": ExtResource("6_j0p45"),
+"main_theme": ExtResource("7_jjw3m"),
+"neuro_theme": ExtResource("8_8tq5l"),
+"tony_theme": ExtResource("9_367d5"),
+"vedal_theme": ExtResource("10_we4is")
+}
+allSounds = {
+"book_pages": [ExtResource("11_jpwg5")],
+"door_bell": [ExtResource("12_hm7hu"), ExtResource("13_o40xi"), ExtResource("14_ungcg"), ExtResource("15_i66wk")],
+"open_safe": [ExtResource("16_2x4b2")],
+"pick_up": [ExtResource("17_7laa2")],
+"serve": [ExtResource("18_blcnr")],
+"wrong": [ExtResource("19_ys8se")]
+}
+musicTrack = NodePath("MusicStreamPlayer")
+soundTrack = NodePath("SoundStreamPlayer")
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -80,7 +80,7 @@ position = Vector2(452, 185)
 [node name="BarTable3" parent="Decor" instance=ExtResource("4_qinif")]
 position = Vector2(454, 338)
 
-[node name="Table" parent="Decor" instance=ExtResource("3_o46ro")]
+[node name="Table1" parent="Decor" instance=ExtResource("3_o46ro")]
 position = Vector2(-285, 297)
 
 [node name="Table2" parent="Decor" instance=ExtResource("4_kicut")]
@@ -95,14 +95,14 @@ position = Vector2(287, -235)
 [node name="CuttingTable" parent="Decor" instance=ExtResource("6_rix42")]
 position = Vector2(-296, -198)
 
-[node name="MixingTable" parent="Decor" instance=ExtResource("7_nt2m7")]
+[node name="Mixer" parent="Decor" instance=ExtResource("7_nt2m7")]
 position = Vector2(1, 196)
 
-[node name="CarbonizerTable" parent="Decor" instance=ExtResource("9_0tcr4")]
+[node name="Carbonizer" parent="Decor" instance=ExtResource("9_0tcr4")]
 y_sort_enabled = true
 position = Vector2(-136, 315)
 
-[node name="BlenderTable" parent="Decor" instance=ExtResource("10_kexiw")]
+[node name="Blender" parent="Decor" instance=ExtResource("10_kexiw")]
 y_sort_enabled = true
 position = Vector2(-280, 207)
 

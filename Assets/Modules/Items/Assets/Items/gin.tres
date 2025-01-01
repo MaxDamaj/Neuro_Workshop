@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://drwalv7nyeiwb"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_prb0r"]
+[ext_resource type="Texture2D" uid="uid://cjsttq4cifq4g" path="res://Assets/Textures/Items/item_gin.png" id="2_5rn1x"]
+
+[resource]
+resource_name = "gin"
+script = ExtResource("1_prb0r")
+name = "Gin"
+recipe = ""
+texture = ExtResource("2_5rn1x")
+producingTime = 0.0
+mergeTo = {
+"ermge_juice": "raw_mix_gin_ermge_juice",
+"lava_lamp": "lava_lamp_with_gin",
+"mix_limed_vodka": "raw_mix_gin_limed_vodka",
+"tonic": "raw_mix_gin_tonic"
+}
+usedIn = {}

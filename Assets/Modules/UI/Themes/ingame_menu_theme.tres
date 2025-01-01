@@ -108,6 +108,7 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_1o1o3")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_tmybn")
 HSlider/styles/slider = SubResource("StyleBoxFlat_ocllp")
 Label/font_sizes/font_size = 43
+Label/fonts/font = ExtResource("3_mx4r6")
 Panel/styles/panel = SubResource("StyleBoxTexture_kqe8w")
 TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
 TooltipLabel/font_sizes/font_size = 24

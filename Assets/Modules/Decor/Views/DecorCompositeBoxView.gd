@@ -1,8 +1,6 @@
 extends Node
 class_name DecorCompositeBoxView
 
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
-
 @export var HoverButton : Button
 @export var InteractArea : Area2D
 @export var ItemsList : Array[String]
@@ -26,7 +24,7 @@ func _init_buttons():
 
 func _try_interact_with_item():
 	if (_player == null): return
-	_uiPanelsProvider.open_panel_with_args("inventory_ui", {"items" : ItemsList, "player" : _player})
+	UIPanelsProvider.open_panel_with_args("inventory_ui", {"items" : ItemsList, "player" : _player})
 
 
 func _on_area_2d_body_entered(body : Node2D):
@@ -42,4 +40,4 @@ func _on_area_2d_body_exited(body):
 	_player = null
 	HoverButton.visible = false
 	HoverButton.disabled = true
-	_uiPanelsProvider.close_panel("inventory_ui")
+	UIPanelsProvider.close_panel("inventory_ui")

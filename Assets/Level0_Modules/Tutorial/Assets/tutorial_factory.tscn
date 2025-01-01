@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqcvuxtnoe4ji"]
+
+[ext_resource type="Script" path="res://Assets/Level0_Modules/Tutorial/Factories/TutorialFactory.gd" id="1_5ge7a"]
+[ext_resource type="PackedScene" uid="uid://d4ashx10x4s76" path="res://Assets/Level0_Modules/Tutorial/Assets/tutorial_node_level_0.tscn" id="2_ik1rq"]
+
+[node name="TutorialFactory" type="Node"]
+script = ExtResource("1_5ge7a")
+tutorials = {
+0: ExtResource("2_ik1rq")
+}

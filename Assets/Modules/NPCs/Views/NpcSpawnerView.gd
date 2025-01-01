@@ -23,11 +23,10 @@ func start_task(task : TaskModel):
 	_npc.rotation_degrees = -90
 	_move_npc(0, 1, 5, _end_moving)
 	_npc.on_task_lose.connect(_task_failed)
+	_levelTasksStrategy.lastStartedTask = task
 	
-	BarTable.taskItem = task.item
+	BarTable.taskItem = _task.get_item().resource_name
 	_soundProvider.play_sound("door_bell")
-	
-	_dialogsProvider.try_start_dialog(task.entranceDialogId, func(): )
 
 func _item_recieved():
 	BarTable.remove_item()
@@ -35,8 +34,9 @@ func _item_recieved():
 	
 	if (_task.nextTask != null):
 		_task = _task.nextTask
-		BarTable.taskItem = _task.item
+		BarTable.taskItem = _task.get_item().resource_name
 		_npc.start_task(_task)
+		EventsProvider.call_event("customer wants another drink - %s" % ItemsProvider.get_item_name(_task.get_item().resource_name))
 	else:
 		_npc.end_task()
 		_move_npc(1, 0, 4, _complete_task)
@@ -46,11 +46,14 @@ func _task_failed():
 	BarTable.taskItem = ""
 	_levelTasksStrategy.lose_task(_task)
 	_move_npc(1, 0, 4, _complete_task)
+	EventsProvider.call_event("customer did not receive his drink on time")
 
 func _end_moving():
 	if (_npc == null): return
 	_npc.Animator.play("Idle")
 	_npc.start_task(_task)
+	_dialogsProvider.try_start_dialog(_task.entranceDialogId, func(): )
+	EventsProvider.call_event("customer has arrived. He wants %s" % ItemsProvider.get_item_name(_task.get_item().resource_name))
 
 func _complete_task():
 	if (_npc == null): return

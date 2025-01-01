@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dno4tl3w2r6xs"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_gd21y"]
+[ext_resource type="Texture2D" uid="uid://cyktyg0cwe3jy" path="res://Assets/Textures/Items/item_fox_in_the_beach.png" id="2_pbh4d"]
+
+[resource]
+resource_name = "fox_on_the_beach"
+script = ExtResource("1_gd21y")
+name = "Fox on the Beach"
+recipe = ""
+texture = ExtResource("2_pbh4d")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {}

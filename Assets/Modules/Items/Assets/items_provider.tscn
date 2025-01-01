@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkl47syet3u71"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Providers/ItemsProvider.gd" id="1_3ydmk"]
+
+[node name="ItemsProvider" type="Node"]
+script = ExtResource("1_3ydmk")

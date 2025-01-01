@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name PlayerView
 
-@onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 
 @export var root : Node2D
@@ -19,7 +18,7 @@ var state : PlayerView.State = PlayerView.State.IDLE
 
 var itemName : String:
 	set(value):
-		itemInfo.tooltip_text = value.replace("_", " ")
+		itemInfo.tooltip_text = ItemsProvider.get_item_name(value)
 		itemName = value
 	get:
 		return itemName
@@ -71,9 +70,10 @@ func try_place_item(table : DecorTableView) -> bool:
 	return true
 
 func add_item(newItemName : String):
-	var item : ItemModel = _itemsProvider.allItems[newItemName]
+	var item : ItemModel = ItemsProvider.get_item(newItemName)
 	itemName = item.resource_name
 	itemSprite.texture = item.texture
+	EventsProvider.call_event("%s picked up" % ItemsProvider.get_item_name(newItemName))
 
 func remove_item():
 	itemName = ""

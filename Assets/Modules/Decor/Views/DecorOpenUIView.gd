@@ -1,8 +1,6 @@
 extends Node
 class_name DecorOpenUIView
 
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
-
 @export var PanelId : String
 @export var HoverButton : Button
 @export var InteractArea : Area2D
@@ -20,10 +18,10 @@ func _input(event):
 
 func _open_panel():
 	if (_player == null): return
-	_uiPanelsProvider.open_panel(PanelId)
+	UIPanelsProvider.open_panel(PanelId)
 
 func _close_panel():
-	_uiPanelsProvider.close_panel(PanelId)
+	UIPanelsProvider.close_panel(PanelId)
 
 func _init_buttons():
 	InteractArea.body_entered.connect(_on_area_2d_body_entered)

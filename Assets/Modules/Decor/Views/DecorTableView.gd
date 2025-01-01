@@ -1,7 +1,6 @@
 extends Node
 class_name DecorTableView
 
-@onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 
 @export var ItemSprite : Sprite2D
@@ -11,7 +10,7 @@ class_name DecorTableView
 var ItemName : String:
 	set(value):
 		if (HoverButton != null):
-			HoverButton.tooltip_text = value.replace("_", " ")
+			HoverButton.tooltip_text = ItemsProvider.get_item_name(value)
 		ItemName = value
 	get:
 		return ItemName
@@ -21,7 +20,7 @@ var _player : PlayerView
 
 func _ready() -> void:
 	if (ItemName != ""):
-		ItemSprite.texture = _itemsProvider.allItems[ItemName].texture
+		ItemSprite.texture = ItemsProvider.get_item(ItemName).texture
 	
 	_init_buttons()
 
@@ -32,7 +31,8 @@ func _input(event):
 
 func try_add_item(itemName : String) -> bool:
 	ItemName = itemName
-	ItemSprite.texture = _itemsProvider.allItems[ItemName].texture
+	ItemSprite.texture = ItemsProvider.get_item(ItemName).texture
+	EventsProvider.call_event("%s placed at %s" % [ItemsProvider.get_item_name(itemName), name])
 	return true
 
 func remove_item():
@@ -58,7 +58,7 @@ func _try_interact_with_item():
 
 func _try_merge_items(itemToMerge : String) -> bool:
 	if (itemToMerge == ""): return false
-	var mergeItem : ItemModel = _itemsProvider.allItems[itemToMerge]
+	var mergeItem : ItemModel = ItemsProvider.get_item(itemToMerge)
 	
 	if (mergeItem.mergeTo.has(ItemName)):
 		if (try_add_item(mergeItem.mergeTo[ItemName])):

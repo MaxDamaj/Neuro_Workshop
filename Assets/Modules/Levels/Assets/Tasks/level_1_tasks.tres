@@ -12,6 +12,7 @@ item = "fannta"
 waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
+completedTasksCount = 0
 entranceDialogId = ""
 dialogId = ""
 
@@ -23,6 +24,7 @@ item = "banana_rum"
 waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
+completedTasksCount = 0
 entranceDialogId = ""
 dialogId = ""
 
@@ -34,6 +36,7 @@ item = "fannta"
 waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
+completedTasksCount = 0
 entranceDialogId = ""
 dialogId = ""
 
@@ -45,6 +48,7 @@ item = "tonic"
 waitingTime = 90.0
 chillingTime = 5.0
 rarity = 0
+completedTasksCount = 0
 entranceDialogId = ""
 dialogId = ""
 
@@ -56,6 +60,7 @@ item = "rising_star"
 waitingTime = 150.0
 chillingTime = 5.0
 rarity = 0
+completedTasksCount = 0
 entranceDialogId = ""
 dialogId = ""
 
@@ -68,6 +73,7 @@ waitingTime = 150.0
 chillingTime = 0.0
 rarity = 1
 nextTask = ExtResource("2_m2fol")
+completedTasksCount = 0
 entranceDialogId = "level_1_entrance"
 dialogId = "level_1_middle"
 

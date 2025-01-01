@@ -3,7 +3,6 @@ class_name UIWorkshopPanel
 
 @onready var _levelTasksStrategy : LevelTasksStrategy = get_node(LevelTasksStrategy.path)
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
 @export var SettingsButton : Button
 
@@ -20,7 +19,7 @@ func _ready() -> void:
 	_soundProvider.play_music("tony_theme")
 
 func _open_settings_panel():
-	_uiPanelsProvider.open_panel("settings_ui")
+	UIPanelsProvider.open_panel("settings_ui")
 
 func _update_completion_value(totalProgress : int, currentProgress : int):
 	CompletionLabel.text = "Drinks served: " + str(currentProgress) + "/" + str(totalProgress)

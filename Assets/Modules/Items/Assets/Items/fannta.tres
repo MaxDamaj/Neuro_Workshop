@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://c48qeumpper48"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_q1w33"]
+[ext_resource type="Texture2D" uid="uid://brarx427c8axv" path="res://Assets/Textures/Items/item_fannta.png" id="2_tpqdn"]
+
+[resource]
+resource_name = "fannta"
+script = ExtResource("1_q1w33")
+name = "Fannta"
+recipe = ""
+texture = ExtResource("2_tpqdn")
+producingTime = 5.0
+mergeTo = {}
+usedIn = {}

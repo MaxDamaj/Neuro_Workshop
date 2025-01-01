@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dl6blthrrn2yr"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_eoqss"]
+[ext_resource type="Texture2D" uid="uid://cu8y5apk6ym21" path="res://Assets/Textures/Items/item_banana_rum.png" id="2_c0eqf"]
+
+[resource]
+resource_name = "banana_rum"
+script = ExtResource("1_eoqss")
+name = "Banana Rum"
+recipe = ""
+texture = ExtResource("2_c0eqf")
+producingTime = 3.0
+mergeTo = {}
+usedIn = {}

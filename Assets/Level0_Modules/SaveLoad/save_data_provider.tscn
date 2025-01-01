@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://v884ekdweklf"]
+
+[ext_resource type="Script" path="res://Assets/Level0_Modules/SaveLoad/SaveDataProvider.gd" id="1_f8vtp"]
+
+[node name="SaveDataProvider" type="Node"]
+script = ExtResource("1_f8vtp")

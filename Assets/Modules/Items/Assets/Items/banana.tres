@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dh48kksquvr5j"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_48hap"]
+[ext_resource type="Texture2D" uid="uid://dsebxijasiue1" path="res://Assets/Textures/Items/item_banana.png" id="2_yc43y"]
+
+[resource]
+resource_name = "banana"
+script = ExtResource("1_48hap")
+name = "Banana"
+recipe = ""
+texture = ExtResource("2_yc43y")
+producingTime = 0.0
+mergeTo = {
+"rum": "raw_mix_banana_rum"
+}
+usedIn = {}

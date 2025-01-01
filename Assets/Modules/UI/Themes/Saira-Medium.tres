@@ -1,10 +1,13 @@
-[gd_resource type="FontVariation" format=3 uid="uid://da7ecfm2gk5xr"]
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://da7ecfm2gk5xr"]
+
+[ext_resource type="FontFile" uid="uid://cff5cj4carep4" path="res://Assets/Modules/UI/Themes/Saira-VariableFont_wdth,wght.ttf" id="1_iqryg"]
 
 [resource]
+base_font = ExtResource("1_iqryg")
 variation_opentype = {
 2003072104: 100,
 2003265652: 500
 }
 spacing_space = 2
 spacing_top = -7
-spacing_bottom = -7
+spacing_bottom = -14

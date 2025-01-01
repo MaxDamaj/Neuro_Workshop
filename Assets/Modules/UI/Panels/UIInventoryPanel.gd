@@ -1,9 +1,7 @@
 extends Node
 class_name UIInventoryPanel
 
-@onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
 @export var CellsContainer : Control
 @export var CellPrefab : PackedScene
@@ -25,7 +23,7 @@ func init_args(args : Dictionary):
 func _fill_inventory():
 	for itemName in _itemsList:
 		var tile : TileView = CellPrefab.instantiate()
-		var item : ItemModel = _itemsProvider.allItems[itemName]
+		var item : ItemModel = ItemsProvider.get_item(itemName)
 		CellsContainer.add_child(tile)
 		
 		tile.TileIcon.texture = item.texture
@@ -38,4 +36,4 @@ func _add_item(itemName : String):
 	else:
 		_player.add_item(itemName)
 		_soundProvider.play_sound("pick_up")
-		_uiPanelsProvider.close_panel("inventory_ui")
+		UIPanelsProvider.close_panel("inventory_ui")

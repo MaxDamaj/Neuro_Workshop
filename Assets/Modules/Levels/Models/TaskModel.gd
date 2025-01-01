@@ -11,3 +11,6 @@ class_name TaskModel
 @export var completedTasksCount : int
 @export var entranceDialogId : String
 @export var dialogId : String
+
+func get_item() -> ItemModel:
+	return ItemsProvider.get_item(item)

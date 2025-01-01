@@ -9,10 +9,13 @@ func try_add_item(itemName : String) -> bool:
 	if (ItemName != ""): return false
 	if (itemName == taskItem):
 		ItemName = itemName
-		ItemSprite.texture = _itemsProvider.allItems[ItemName].texture
+		ItemSprite.texture = ItemsProvider.get_item(ItemName).texture
 		on_item_recieved.emit()
 		_soundProvider.play_sound("serve")
+		EventsProvider.call_event("customer served")
 		return true
+	else:
+		EventsProvider.call_event("customer don't want that")
 	return false
 
 func remove_item():

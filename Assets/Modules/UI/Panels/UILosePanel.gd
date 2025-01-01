@@ -2,7 +2,6 @@ extends Node
 class_name UILosePanel
 
 @onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
 @export var ExitButton : Button
 @export var RestartButton : Button
@@ -11,7 +10,8 @@ class_name UILosePanel
 func _ready() -> void:
 	ExitButton.button_down.connect(_exit_level)
 	RestartButton.button_down.connect(_restart_level)
-	_uiPanelsProvider.close_panel("settings_ui")
+	UIPanelsProvider.close_panel("settings_ui")
+	UIPanelsProvider.close_panel("recipe_book_ui")
 	get_tree().paused = true
 
 

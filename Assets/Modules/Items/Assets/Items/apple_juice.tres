@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://r4staq44lsqg"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_uyqng"]
+[ext_resource type="Texture2D" uid="uid://dvskv76kltfco" path="res://Assets/Textures/Items/item_apple_juice.png" id="2_trrw6"]
+
+[resource]
+resource_name = "apple_juice"
+script = ExtResource("1_uyqng")
+name = "Apple Juice"
+recipe = ""
+texture = ExtResource("2_trrw6")
+producingTime = 0.0
+mergeTo = {
+"ermge_juice": "ermapple_juice",
+"rum": "raw_mix_rum_and_apple_juice"
+}
+usedIn = {}

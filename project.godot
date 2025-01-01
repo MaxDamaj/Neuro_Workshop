@@ -26,7 +26,7 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
-"res://Assets/Modules/Base/": "red",
+"res://Assets/Level0_Modules/Base/": "red",
 "res://Assets/Modules/UI/": "purple",
 "res://Assets/Scenes/": "gray",
 "res://Assets/Shaders/": "gray",

@@ -4,19 +4,27 @@ class_name UIMainPanel
 @onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 
+@export var MainContainer : Control
 @export var NewGameButton : Button
 @export var ChooseLevelButton : Button
+@export var ExtraButton : Button
+@export var SettingsButton : Button
+
 @export var BackButton : Button
 @export var LevelButtons : Array[Button]
-@export var SettingsButton : Button
 @export var EffectsVolumeSlider : HSlider
 @export var MusicVolumeSlider: HSlider
 
-var BUTTON_HIDDEN_X = -550
-var BUTTON_SHOWN_X = 100
-var SLIDER_HIDDEN_X = -700
-var SLIDER_SHOWN_X = 100
-var BACK_BUTTON_SHOWN_X = 50
+@export_group("Extra")
+@export var ExtraContainer : Control
+@export var FreeGameButton : Button
+@export var NeuroBartenderButton : Button
+
+const BUTTON_HIDDEN_X = -550
+const BUTTON_SHOWN_X = 100
+const SLIDER_HIDDEN_X = -700
+const SLIDER_SHOWN_X = 100
+const BACK_BUTTON_SHOWN_X = 50
 
 var currentMenu : String
 
@@ -44,60 +52,49 @@ func _ready() -> void:
 
 func _load_level(levelId : int):
 	_levelLoadStartegy.load_level(levelId)
-	
-func _move_button(ButtonElement:Button, x:int, y:int) -> void:
-	var disableState : bool = ButtonElement.disabled
-	
-	ButtonElement.disabled = true
+
+func _move_ui_element(element : Control, x : int, y : int) -> void:
+	element.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var tween = create_tween()
 	var target_pos = Vector2 (x,y)
-	tween.tween_property(ButtonElement, "position", target_pos,0.3)
+	
+	tween.tween_property(element, "position", target_pos,0.3)
 	tween.tween_callback(
 	func():
-		ButtonElement.position = target_pos
-		ButtonElement.disabled = disableState
-	)	
-	
-func _hide_button(ButtonElement:Button) -> void:
-	_move_button(ButtonElement, BUTTON_HIDDEN_X, ButtonElement.position.y)
-	ButtonElement.process_mode = Node.PROCESS_MODE_DISABLED
-	
-func _show_button(ButtonElement:Button) -> void:
-	_move_button(ButtonElement, BUTTON_SHOWN_X, ButtonElement.position.y)
-	ButtonElement.process_mode = Node.PROCESS_MODE_INHERIT
-	
-func _hide_back_button() -> void:
-	_move_button(BackButton, BUTTON_HIDDEN_X, BackButton.position.y)
-	BackButton.process_mode = Node.PROCESS_MODE_DISABLED
-	
-func _show_back_button() -> void:
-	_move_button(BackButton, BACK_BUTTON_SHOWN_X, BackButton.position.y)
-	BackButton.process_mode = Node.PROCESS_MODE_INHERIT
-	
-func _move_slider(SliderElement:HSlider, x:int, y:int) -> void:
-	var tween = create_tween()
-	var target_pos = Vector2 (x,y)
-	tween.tween_property(SliderElement, "position", target_pos,0.3)
-	tween.tween_callback(
-	func():
-		SliderElement.position = target_pos
+		element.position = target_pos
+		element.mouse_filter = Control.MOUSE_FILTER_STOP
 	)
-	
+
+func _hide_button(ButtonElement:Button) -> void:
+	_move_ui_element(ButtonElement, BUTTON_HIDDEN_X, ButtonElement.position.y)
+	ButtonElement.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func _show_button(ButtonElement:Button) -> void:
+	_move_ui_element(ButtonElement, BUTTON_SHOWN_X, ButtonElement.position.y)
+	ButtonElement.mouse_filter = Control.MOUSE_FILTER_STOP
+
+func _hide_back_button() -> void:
+	_move_ui_element(BackButton, BUTTON_HIDDEN_X, BackButton.position.y)
+	BackButton.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func _show_back_button() -> void:
+	_move_ui_element(BackButton, BACK_BUTTON_SHOWN_X, BackButton.position.y)
+	BackButton.mouse_filter = Control.MOUSE_FILTER_STOP
+
 func _hide_slider(SliderElement:HSlider) -> void:
-	_move_slider(SliderElement, SLIDER_HIDDEN_X, SliderElement.position.y)
-	
+	_move_ui_element(SliderElement, SLIDER_HIDDEN_X, SliderElement.position.y)
+	SliderElement.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 func _show_slider(SliderElement:HSlider) -> void:
-	_move_slider(SliderElement, SLIDER_SHOWN_X, SliderElement.position.y)
+	_move_ui_element(SliderElement, SLIDER_SHOWN_X, SliderElement.position.y)
+	SliderElement.mouse_filter = Control.MOUSE_FILTER_STOP
+
 
 func _hide_main_buttons() -> void:
-	_hide_button(ChooseLevelButton)
-	_hide_button(NewGameButton)
-	_hide_button(SettingsButton)
+	_move_ui_element(MainContainer, BUTTON_HIDDEN_X, MainContainer.position.y)
 	
 func _show_main_buttons() -> void:
-	_show_button(ChooseLevelButton)
-	_show_button(NewGameButton)
-	_show_button(SettingsButton)
+	_move_ui_element(MainContainer, BUTTON_SHOWN_X, MainContainer.position.y)
 	_hide_back_button()
 	if (currentMenu == 'levels'):
 		_hide_level_buttons()

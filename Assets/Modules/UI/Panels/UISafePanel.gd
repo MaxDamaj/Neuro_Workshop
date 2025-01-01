@@ -2,7 +2,6 @@ extends Node
 class_name UISafePanel
 
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 @onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 
 @export var NumberDisplay : Label
@@ -31,7 +30,7 @@ func _ready() -> void:
 	NumberDisplay.label_settings.font_color = WHITE_COLOR
 
 	TakeButton.button_down.connect(_submit)
-	ReturnButton.button_down.connect(func(): _uiPanelsProvider.close_panel("safe_ui"))
+	ReturnButton.button_down.connect(func(): UIPanelsProvider.close_panel("safe_ui"))
 	DeleteButton.button_down.connect(_delete_button)
 	ClearButton.button_down.connect(_clear_button)
 	for i in range(NumberButtons.size()):
@@ -88,7 +87,7 @@ func _take_item():
 	var player : PlayerView = get_tree().get_nodes_in_group("Player")[0]
 	player.add_item("lava_lamp")
 	_soundProvider.play_sound("open_safe")
-	_uiPanelsProvider.close_panel("safe_ui")
+	UIPanelsProvider.close_panel("safe_ui")
 
 func _process(delta)->void:
 	if (_isError):

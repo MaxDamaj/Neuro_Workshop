@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://5d7wd73lorx2"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_tvich"]
+[ext_resource type="Texture2D" uid="uid://b27om5s5bfwnh" path="res://Assets/Textures/Items/item_glass.png" id="2_8j1gx"]
+
+[resource]
+resource_name = "lemon_vodka"
+script = ExtResource("1_tvich")
+name = "Vodka with lemon"
+recipe = ""
+texture = ExtResource("2_8j1gx")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {
+"blender": "rising_star"
+}

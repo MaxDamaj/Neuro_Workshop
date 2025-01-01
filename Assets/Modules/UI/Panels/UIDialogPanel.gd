@@ -3,7 +3,6 @@ class_name UIDialogPanel
 
 @onready var _dialogsProvider : DialogsProvider = get_node(DialogsProvider.path)
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
 
 @export var Root : Control
 @export var SkipButton : Button
@@ -124,11 +123,11 @@ func _close_panel():
 		get_tree().paused = false
 		if (_dialog.endMusic != ""): _soundProvider.play_music(_dialog.endMusic)
 		if(_callback != null): _callback.call()
-		_uiPanelsProvider.close_panel("dialog_ui")
+		UIPanelsProvider.close_panel("dialog_ui")
 	)
 	
 func _open_settings_panel():
-	_uiPanelsProvider.open_panel("settings_ui")
+	UIPanelsProvider.open_panel("settings_ui")
 	
 func _hide_dialogue():
 	HideButton.visible = false

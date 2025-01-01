@@ -1,8 +1,6 @@
 extends CanvasLayer
 class_name UILoadingPanel
 
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
-
 @export var Bg : ColorRect
 
 var _waitingTimer : Timer
@@ -31,7 +29,7 @@ func _process(delta: float) -> void:
 				_waitingTimer.start(_timerMaxValue * 1.25)
 				_end_func.call()
 			else:
-				_uiPanelsProvider.close_panel("loading_ui")
+				UIPanelsProvider.close_panel("loading_ui")
 
 
 func init_args(args : Dictionary) -> void:

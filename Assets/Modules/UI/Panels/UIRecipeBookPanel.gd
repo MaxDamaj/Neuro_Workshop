@@ -2,8 +2,8 @@ extends Node
 class_name UIRecipeBookPanel
 
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
-@onready var _uiPanelsProvider : UIPanelsProvider = get_node(UIPanelsProvider.path)
-@onready var _levelLoadStartegy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
+@onready var _levelLoadStrategy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
+@onready var _levelTasksStrategy : LevelTasksStrategy = get_node(LevelTasksStrategy.path)
 
 @export var Pages : Array[Panel]
 @export var ReturnButton : Button
@@ -18,8 +18,8 @@ static var codePage : int = 4
 
 func _ready() -> void:
 	SafeCode.get_parent().visible = false
-	SafeCode.text = str(_levelLoadStartegy.safeCode).pad_zeros(4)
-		
+	SafeCode.text = str(_levelLoadStrategy.safeCode).pad_zeros(4)
+	
 	_show_page(currentPage)
 	
 	if (currentPage == Pages.size()):
@@ -38,9 +38,12 @@ func _ready() -> void:
 	ReturnButton.button_down.connect(_close_recipe_book)
 	NextButton.button_down.connect(_next_page)
 	PrevButton.button_down.connect(_prev_page)
+	
+	var item : ItemModel = _levelTasksStrategy.lastStartedTask.get_item()
+	EventsProvider.call_event("To create %s you need to %s" % [item.name, item.recipe])
 
 func _close_recipe_book() -> void:
-	_uiPanelsProvider.close_panel("recipe_book_ui")
+	UIPanelsProvider.close_panel("recipe_book_ui")
 
 func _next_page()->void:
 	PrevButton.disabled = false

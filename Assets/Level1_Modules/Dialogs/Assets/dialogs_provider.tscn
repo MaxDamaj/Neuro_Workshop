@@ -1,0 +1,77 @@
+[gd_scene load_steps=25 format=3 uid="uid://d3jayvqnhedxc"]
+
+[ext_resource type="Script" path="res://Assets/Level1_Modules/Dialogs/Providers/DialogsProvider.gd" id="1_jbqdb"]
+[ext_resource type="Texture2D" uid="uid://csqltjvfucbht" path="res://Assets/Textures/Dialogues/anny_happy.png" id="2_7y8xf"]
+[ext_resource type="Texture2D" uid="uid://bqxry10cq45hc" path="res://Assets/Textures/Dialogues/anny_neutral.png" id="3_avyok"]
+[ext_resource type="Texture2D" uid="uid://daj4p05v3oqno" path="res://Assets/Textures/Dialogues/anny_sad.png" id="4_hwhjh"]
+[ext_resource type="Texture2D" uid="uid://b5hj3g3lvkm0g" path="res://Assets/Textures/Dialogues/camila_happy.png" id="5_yq0ho"]
+[ext_resource type="Texture2D" uid="uid://bal65j5acdra8" path="res://Assets/Textures/Dialogues/camila_neutral.png" id="6_b1ngn"]
+[ext_resource type="Texture2D" uid="uid://dqdanwg28xv16" path="res://Assets/Textures/Dialogues/camila_sad.png" id="7_xuyoc"]
+[ext_resource type="Texture2D" uid="uid://bi3xuj3mk05h" path="res://Assets/Textures/Dialogues/evil_happy.png" id="8_vd4r5"]
+[ext_resource type="Texture2D" uid="uid://ds25eablix45u" path="res://Assets/Textures/Dialogues/neuro_broken_happy.png" id="9_tg7x2"]
+[ext_resource type="Texture2D" uid="uid://bvkujcht12r6c" path="res://Assets/Textures/Dialogues/neuro_broken_neutral.png" id="10_gtade"]
+[ext_resource type="Texture2D" uid="uid://dgp045g3mro5k" path="res://Assets/Textures/Dialogues/neuro_broken_sad.png" id="11_lbnke"]
+[ext_resource type="Texture2D" uid="uid://lirhmrad3s7y" path="res://Assets/Textures/Dialogues/neuro_calm.png" id="12_hsrcj"]
+[ext_resource type="Texture2D" uid="uid://dyq8vxrjgchx" path="res://Assets/Textures/Dialogues/neuro_neutral.png" id="13_4t4es"]
+[ext_resource type="Texture2D" uid="uid://c0xqgs24gxui1" path="res://Assets/Textures/Dialogues/neuro_sigh.png" id="14_jn0xo"]
+[ext_resource type="Texture2D" uid="uid://bm2ifws45m6th" path="res://Assets/Textures/Dialogues/neuro_talk.png" id="15_fv0t0"]
+[ext_resource type="Texture2D" uid="uid://cms3menhd6bs2" path="res://Assets/Textures/Dialogues/tony_neutral.png" id="16_vqh73"]
+[ext_resource type="Texture2D" uid="uid://sbaqehyc1qjh" path="res://Assets/Textures/Dialogues/tony_nuetral_hand_out.png" id="17_8uaje"]
+[ext_resource type="Texture2D" uid="uid://nubo87n4hyd0" path="res://Assets/Textures/Dialogues/vedal_drunk.png" id="18_uciyv"]
+[ext_resource type="Texture2D" uid="uid://xfajackppnj5" path="res://Assets/Textures/Dialogues/vedal.png" id="19_0vktl"]
+[ext_resource type="Texture2D" uid="uid://b67r2gb2fu1c4" path="res://Assets/Textures/Dialogues/vedal_semidrunk.png" id="20_gfcot"]
+[ext_resource type="Texture2D" uid="uid://b24tst75cundh" path="res://Assets/Textures/Dialogues/vedal_drunk_talking.png" id="21_kfary"]
+[ext_resource type="Texture2D" uid="uid://ckfuwibjwpf2i" path="res://Assets/Textures/Bgs/dark.png" id="22_t4acc"]
+[ext_resource type="Texture2D" uid="uid://cii1i11m1m1u0" path="res://Assets/Textures/UI/ending_1.png" id="23_glvkq"]
+[ext_resource type="Texture2D" uid="uid://by73vxhd51hqi" path="res://Assets/Textures/UI/ending_2.png" id="24_6dt7r"]
+
+[node name="DialogsProvider" type="Node"]
+script = ExtResource("1_jbqdb")
+allCharacters = {
+"anny": {
+"happy": ExtResource("2_7y8xf"),
+"neutral": ExtResource("3_avyok"),
+"sad": ExtResource("4_hwhjh")
+},
+"camimi": {
+"happy": ExtResource("5_yq0ho"),
+"neutral": ExtResource("6_b1ngn"),
+"sad": ExtResource("7_xuyoc")
+},
+"evil": {
+"happy": ExtResource("8_vd4r5")
+},
+"neuro": {
+"broken_happy": ExtResource("9_tg7x2"),
+"broken_neutral": ExtResource("10_gtade"),
+"broken_sad": ExtResource("11_lbnke"),
+"calm": ExtResource("12_hsrcj"),
+"neutral": ExtResource("13_4t4es"),
+"sigh": ExtResource("14_jn0xo"),
+"talk": ExtResource("15_fv0t0")
+},
+"tony": {
+"neutral": ExtResource("16_vqh73"),
+"smile": ExtResource("17_8uaje")
+},
+"vedal": {
+"drunk": ExtResource("18_uciyv"),
+"neutral": ExtResource("19_0vktl"),
+"semidrunk": ExtResource("20_gfcot"),
+"talk": ExtResource("21_kfary")
+}
+}
+allNames = {
+"_": "",
+"anny": "Fox",
+"camimi": "Imp",
+"evil": "Kayori",
+"neuro": "Samantha",
+"tony": "Tony",
+"vedal": "Tutel"
+}
+allBgs = {
+"dark": ExtResource("22_t4acc"),
+"ending_1": ExtResource("23_glvkq"),
+"ending_2": ExtResource("24_6dt7r")
+}

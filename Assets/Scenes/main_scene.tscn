@@ -1,10 +1,10 @@
-[gd_scene load_steps=81 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=39 format=3 uid="uid://dcajjydtc33bx"]
 
-[ext_resource type="Script" path="res://Assets/Modules/SaveLoad/SaveDataProvider.gd" id="1_ff4wv"]
-[ext_resource type="Script" path="res://Assets/Modules/UI/Providers/UIPanelsProvider.gd" id="1_yahvp"]
+[ext_resource type="PackedScene" uid="uid://ddpv4q4fscfuv" path="res://Assets/Modules/Events/Assets/events_provider.tscn" id="1_6xgfg"]
+[ext_resource type="Script" path="res://Assets/Level0_Modules/Base/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
 [ext_resource type="PackedScene" uid="uid://dh2atkaqxtvcv" path="res://Assets/Modules/UI/Assets/ui.tscn" id="2_632w6"]
-[ext_resource type="Script" path="res://Assets/Modules/Items/Providers/ItemsProvider.gd" id="2_c1f50"]
+[ext_resource type="PackedScene" uid="uid://v884ekdweklf" path="res://Assets/Level0_Modules/SaveLoad/save_data_provider.tscn" id="2_a3its"]
 [ext_resource type="PackedScene" uid="uid://b7r3rrga5w2bb" path="res://Assets/Modules/UI/Assets/ui_dialog_panel.tscn" id="2_nchc3"]
 [ext_resource type="PackedScene" uid="uid://cx3uplkeyulyg" path="res://Assets/Modules/Levels/Assets/Scenes/level_base.tscn" id="3_6aveg"]
 [ext_resource type="PackedScene" uid="uid://dm7th3b03hpn" path="res://Assets/Modules/UI/Assets/ui_workshop_panel.tscn" id="3_n0mek"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cp2kuqpqelcoo" path="res://Assets/Modules/NPCs/Assets/npc_vedal.tscn" id="9_vkmdw"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="11_m5u4n"]
 [ext_resource type="PackedScene" uid="uid://r5rgngruqomd" path="res://Assets/Modules/UI/Assets/ui_settings_panel.tscn" id="11_upqfx"]
+[ext_resource type="PackedScene" uid="uid://bkl47syet3u71" path="res://Assets/Modules/Items/Assets/items_provider.tscn" id="14_56mqf"]
 [ext_resource type="PackedScene" uid="uid://dx7cx75j8h066" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
 [ext_resource type="PackedScene" uid="uid://bk24hcasst3qs" path="res://Assets/Modules/NPCs/Assets/npc_random_2.tscn" id="15_qkonw"]
 [ext_resource type="PackedScene" uid="uid://cjgcx386rfmp1" path="res://Assets/Modules/NPCs/Assets/npc_random_3.tscn" id="16_ysyip"]
@@ -34,64 +35,17 @@
 [ext_resource type="PackedScene" uid="uid://cv6bex4m14tht" path="res://Assets/Modules/NPCs/Assets/npc_cami.tscn" id="28_w8kul"]
 [ext_resource type="PackedScene" uid="uid://dk2arvfbym25t" path="res://Assets/Modules/NPCs/Assets/npc_evil.tscn" id="29_brvg7"]
 [ext_resource type="PackedScene" uid="uid://dg2g2loxw31xa" path="res://Assets/Modules/NPCs/Assets/npc_tony.tscn" id="30_k6m5f"]
-[ext_resource type="Script" path="res://Assets/Modules/Dialogs/Providers/DialogsProvider.gd" id="30_usgox"]
-[ext_resource type="Texture2D" uid="uid://bvkujcht12r6c" path="res://Assets/Textures/Dialogues/neuro_broken_neutral.png" id="31_nr3s2"]
-[ext_resource type="Texture2D" uid="uid://dgp045g3mro5k" path="res://Assets/Textures/Dialogues/neuro_broken_sad.png" id="32_yfjd6"]
-[ext_resource type="Texture2D" uid="uid://ds25eablix45u" path="res://Assets/Textures/Dialogues/neuro_broken_happy.png" id="33_ywsn4"]
-[ext_resource type="Texture2D" uid="uid://lirhmrad3s7y" path="res://Assets/Textures/Dialogues/neuro_calm.png" id="34_cwocc"]
-[ext_resource type="Texture2D" uid="uid://cms3menhd6bs2" path="res://Assets/Textures/Dialogues/tony_neutral.png" id="34_fsrqe"]
-[ext_resource type="Texture2D" uid="uid://dyq8vxrjgchx" path="res://Assets/Textures/Dialogues/neuro_neutral.png" id="35_ofjuo"]
-[ext_resource type="Texture2D" uid="uid://sbaqehyc1qjh" path="res://Assets/Textures/Dialogues/tony_nuetral_hand_out.png" id="35_sgnxa"]
-[ext_resource type="Texture2D" uid="uid://c0xqgs24gxui1" path="res://Assets/Textures/Dialogues/neuro_sigh.png" id="36_8i1j8"]
-[ext_resource type="Texture2D" uid="uid://bm2ifws45m6th" path="res://Assets/Textures/Dialogues/neuro_talk.png" id="37_g8dse"]
-[ext_resource type="Texture2D" uid="uid://ckfuwibjwpf2i" path="res://Assets/Textures/Bgs/dark.png" id="40_u4rcu"]
-[ext_resource type="Texture2D" uid="uid://bal65j5acdra8" path="res://Assets/Textures/Dialogues/camila_neutral.png" id="41_uxmgl"]
-[ext_resource type="Texture2D" uid="uid://b5hj3g3lvkm0g" path="res://Assets/Textures/Dialogues/camila_happy.png" id="42_k2gxl"]
-[ext_resource type="Script" path="res://Assets/Modules/Base/SoundProvider.gd" id="42_s274o"]
-[ext_resource type="AudioStream" uid="uid://cwyeu2edhfs2i" path="res://Assets/Sounds/Music/main_theme.mp3" id="43_giiq8"]
-[ext_resource type="Texture2D" uid="uid://dqdanwg28xv16" path="res://Assets/Textures/Dialogues/camila_sad.png" id="43_y0qic"]
-[ext_resource type="Texture2D" uid="uid://bqxry10cq45hc" path="res://Assets/Textures/Dialogues/anny_neutral.png" id="44_ojaf7"]
-[ext_resource type="AudioStream" uid="uid://iek08lkytpt1" path="res://Assets/Sounds/Music/tony_theme.mp3" id="44_vpaao"]
-[ext_resource type="Texture2D" uid="uid://csqltjvfucbht" path="res://Assets/Textures/Dialogues/anny_happy.png" id="45_acaj6"]
-[ext_resource type="Script" path="res://Assets/Modules/Tutorial/Factories/TutorialFactory.gd" id="45_sa410"]
-[ext_resource type="AudioStream" uid="uid://co2gcymyj3ugo" path="res://Assets/Sounds/Music/faster_theme.mp3" id="45_w7fgq"]
-[ext_resource type="PackedScene" uid="uid://d4ashx10x4s76" path="res://Assets/Modules/Tutorial/Assets/tutorial_node_level_0.tscn" id="46_gdw71"]
-[ext_resource type="AudioStream" uid="uid://d1pbv6g220alv" path="res://Assets/Sounds/SFX/door_bell1.MP3" id="46_jpqjm"]
-[ext_resource type="Texture2D" uid="uid://daj4p05v3oqno" path="res://Assets/Textures/Dialogues/anny_sad.png" id="46_ywk6h"]
-[ext_resource type="Texture2D" uid="uid://xfajackppnj5" path="res://Assets/Textures/Dialogues/vedal.png" id="47_dwas2"]
-[ext_resource type="AudioStream" uid="uid://dr35bj4howcuu" path="res://Assets/Sounds/SFX/door_bell2.MP3" id="47_wvedh"]
-[ext_resource type="AudioStream" uid="uid://bqtu5woxfslcp" path="res://Assets/Sounds/SFX/door_bell3.MP3" id="48_h167j"]
-[ext_resource type="Texture2D" uid="uid://b24tst75cundh" path="res://Assets/Textures/Dialogues/vedal_drunk_talking.png" id="48_hva3b"]
-[ext_resource type="AudioStream" uid="uid://b5g1axscgns1s" path="res://Assets/Sounds/SFX/door_bell4.MP3" id="49_7ebd7"]
-[ext_resource type="Texture2D" uid="uid://nubo87n4hyd0" path="res://Assets/Textures/Dialogues/vedal_drunk.png" id="49_ywpk5"]
-[ext_resource type="AudioStream" uid="uid://dhvf4y3vfgjwi" path="res://Assets/Sounds/SFX/book_pages.mp3" id="50_qiyr8"]
-[ext_resource type="Texture2D" uid="uid://b67r2gb2fu1c4" path="res://Assets/Textures/Dialogues/vedal_semidrunk.png" id="50_yatf7"]
-[ext_resource type="AudioStream" uid="uid://b1rg56x8tkcw1" path="res://Assets/Sounds/SFX/drink_to_customer.mp3" id="51_dfjj5"]
-[ext_resource type="Texture2D" uid="uid://bi3xuj3mk05h" path="res://Assets/Textures/Dialogues/evil_happy.png" id="51_molpv"]
-[ext_resource type="AudioStream" uid="uid://1vty0si5cb7d" path="res://Assets/Sounds/SFX/safe_opens.wav" id="52_isdob"]
-[ext_resource type="Texture2D" uid="uid://by73vxhd51hqi" path="res://Assets/Textures/UI/ending_2.png" id="53_cghby"]
-[ext_resource type="AudioStream" uid="uid://o7dfmwx43fhh" path="res://Assets/Sounds/SFX/cant_interract.mp3" id="53_qgqw7"]
-[ext_resource type="AudioStream" uid="uid://cueyals6nrh3q" path="res://Assets/Sounds/SFX/pick_up.mp3" id="54_qoimn"]
-[ext_resource type="Texture2D" uid="uid://cii1i11m1m1u0" path="res://Assets/Textures/UI/ending_1.png" id="54_tokpp"]
-[ext_resource type="AudioStream" uid="uid://di27nxsij8qxe" path="res://Assets/Sounds/Music/anny_theme.mp3" id="57_fp15q"]
-[ext_resource type="AudioStream" uid="uid://cbrhnuvay85b0" path="res://Assets/Sounds/Music/camila_theme.mp3" id="58_kupi7"]
-[ext_resource type="AudioStream" uid="uid://c0m304pvo8imt" path="res://Assets/Sounds/Music/evil_theme.mp3" id="59_g3y7y"]
-[ext_resource type="AudioStream" uid="uid://c2qqqtosjtxvt" path="res://Assets/Sounds/Music/neuro_theme.mp3" id="60_uim8f"]
-[ext_resource type="AudioStream" uid="uid://bvatlkfuby4ws" path="res://Assets/Sounds/Music/vedal_theme.mp3" id="61_fq4c4"]
-[ext_resource type="AudioStream" uid="uid://sp5evb2u5hvr" path="res://Assets/Sounds/Music/so_thats_my_task.mp3" id="62_o06jx"]
-
-[sub_resource type="Curve" id="Curve_awebk"]
-min_value = -80.0
-max_value = 12.0
-_data = [Vector2(0, -80), 0.0, 303.42, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(1, 12), 0.0, 0.0, 0, 0]
-point_count = 3
+[ext_resource type="PackedScene" uid="uid://d3jayvqnhedxc" path="res://Assets/Level1_Modules/Dialogs/Assets/dialogs_provider.tscn" id="33_hi8tc"]
+[ext_resource type="PackedScene" uid="uid://bqcvuxtnoe4ji" path="res://Assets/Level0_Modules/Tutorial/Assets/tutorial_factory.tscn" id="38_rf5bs"]
+[ext_resource type="PackedScene" uid="uid://37ruv10rwlyg" path="res://Assets/Level1_Modules/Sounds/Assets/sound_provider.tscn" id="57_truwe"]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="_Providers" type="Node" parent="."]
 
-[node name="SaveDataProvider" type="Node" parent="_Providers"]
-script = ExtResource("1_ff4wv")
+[node name="EventsProvider" parent="_Providers" instance=ExtResource("1_6xgfg")]
+
+[node name="SaveDataProvider" parent="_Providers" instance=ExtResource("2_a3its")]
 
 [node name="UIPanelsProvider" type="Node" parent="_Providers"]
 script = ExtResource("1_yahvp")
@@ -108,8 +62,7 @@ allPanels = {
 "workshop_ui": ExtResource("3_n0mek")
 }
 
-[node name="ItemsProvider" type="Node" parent="_Providers"]
-script = ExtResource("2_c1f50")
+[node name="ItemsProvider" parent="_Providers" instance=ExtResource("14_56mqf")]
 
 [node name="NpcsProvider" type="Node" parent="_Providers"]
 script = ExtResource("8_x13n3")
@@ -133,86 +86,9 @@ allNpcs = {
 "vedal": ExtResource("9_vkmdw")
 }
 
-[node name="DialogsProvider" type="Node" parent="_Providers"]
-script = ExtResource("30_usgox")
-allCharacters = {
-"anny": {
-"happy": ExtResource("45_acaj6"),
-"neutral": ExtResource("44_ojaf7"),
-"sad": ExtResource("46_ywk6h")
-},
-"camimi": {
-"happy": ExtResource("42_k2gxl"),
-"neutral": ExtResource("41_uxmgl"),
-"sad": ExtResource("43_y0qic")
-},
-"evil": {
-"happy": ExtResource("51_molpv")
-},
-"neuro": {
-"broken_happy": ExtResource("33_ywsn4"),
-"broken_neutral": ExtResource("31_nr3s2"),
-"broken_sad": ExtResource("32_yfjd6"),
-"calm": ExtResource("34_cwocc"),
-"neutral": ExtResource("35_ofjuo"),
-"sigh": ExtResource("36_8i1j8"),
-"talk": ExtResource("37_g8dse")
-},
-"tony": {
-"neutral": ExtResource("34_fsrqe"),
-"smile": ExtResource("35_sgnxa")
-},
-"vedal": {
-"drunk": ExtResource("49_ywpk5"),
-"neutral": ExtResource("47_dwas2"),
-"semidrunk": ExtResource("50_yatf7"),
-"talk": ExtResource("48_hva3b")
-}
-}
-allNames = {
-"_": "",
-"anny": "Fox",
-"camimi": "Imp",
-"evil": "Kayori",
-"neuro": "Samantha",
-"tony": "Tony",
-"vedal": "Tutel"
-}
-allBgs = {
-"dark": ExtResource("40_u4rcu"),
-"ending_1": ExtResource("54_tokpp"),
-"ending_2": ExtResource("53_cghby")
-}
+[node name="DialogsProvider" parent="_Providers" instance=ExtResource("33_hi8tc")]
 
-[node name="SoundProvider" type="Node" parent="_Providers" node_paths=PackedStringArray("musicTrack", "soundTrack")]
-process_mode = 3
-script = ExtResource("42_s274o")
-dbCurve = SubResource("Curve_awebk")
-allMusics = {
-"anny_theme": ExtResource("57_fp15q"),
-"camila_theme": ExtResource("58_kupi7"),
-"default_theme": ExtResource("62_o06jx"),
-"evil_theme": ExtResource("59_g3y7y"),
-"faster_theme": ExtResource("45_w7fgq"),
-"main_theme": ExtResource("43_giiq8"),
-"neuro_theme": ExtResource("60_uim8f"),
-"tony_theme": ExtResource("44_vpaao"),
-"vedal_theme": ExtResource("61_fq4c4")
-}
-allSounds = {
-"book_pages": [ExtResource("50_qiyr8")],
-"door_bell": [ExtResource("46_jpqjm"), ExtResource("47_wvedh"), ExtResource("48_h167j"), ExtResource("49_7ebd7")],
-"open_safe": [ExtResource("52_isdob")],
-"pick_up": [ExtResource("54_qoimn")],
-"serve": [ExtResource("51_dfjj5")],
-"wrong": [ExtResource("53_qgqw7")]
-}
-musicTrack = NodePath("MusicStreamPlayer")
-soundTrack = NodePath("SoundStreamPlayer")
-
-[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="_Providers/SoundProvider"]
-
-[node name="SoundStreamPlayer" type="AudioStreamPlayer" parent="_Providers/SoundProvider"]
+[node name="SoundProvider" parent="_Providers" instance=ExtResource("57_truwe")]
 
 [node name="_Strategies" type="Node" parent="."]
 
@@ -225,8 +101,4 @@ script = ExtResource("11_m5u4n")
 
 [node name="_Factories" type="Node" parent="."]
 
-[node name="TutorialFactory" type="Node" parent="_Factories"]
-script = ExtResource("45_sa410")
-tutorials = {
-0: ExtResource("46_gdw71")
-}
+[node name="TutorialFactory" parent="_Factories" instance=ExtResource("38_rf5bs")]

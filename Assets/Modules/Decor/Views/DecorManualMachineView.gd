@@ -1,8 +1,6 @@
 extends Node
 class_name DecorManualMachineView
 
-@onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
-
 @export var ItemSprite : Sprite2D
 @export var HoverButton : Button
 @export var InteractArea : Area2D
@@ -14,7 +12,7 @@ var itemToProduce : String
 var itemName : String:
 	set(value):
 		if (HoverButton != null):
-			HoverButton.tooltip_text = value.replace("_", " ")
+			HoverButton.tooltip_text = ItemsProvider.get_item_name(value)
 		itemName = value
 	get:
 		return itemName
@@ -56,10 +54,10 @@ func _init_buttons():
 func _try_interact_with_item():
 	if (_player == null): return
 	if (itemName == "" && _player.itemName != ""):
-		var item : ItemModel = _itemsProvider.allItems[_player.itemName]
+		var item : ItemModel = ItemsProvider.get_item(_player.itemName)
 		if (!item.usedIn.has(MachineName)): return
 		
-		var newItem : ItemModel = _itemsProvider.allItems[item.usedIn[MachineName]]
+		var newItem : ItemModel = ItemsProvider.get_item(item.usedIn[MachineName])
 		_add_item(_player.itemName)
 		_player.remove_item()
 		ProgressSlider.visible = true
@@ -69,7 +67,8 @@ func _try_interact_with_item():
 
 func _add_item(newItemName : String):
 	itemName = newItemName
-	ItemSprite.texture = _itemsProvider.allItems[newItemName].texture
+	ItemSprite.texture = ItemsProvider.get_item(newItemName).texture
+	EventsProvider.call_event("manual creating %s at %s, please wait..." % [ItemsProvider.get_item_name(newItemName), name])
 
 func _remove_item():
 	itemName = ""
@@ -77,6 +76,7 @@ func _remove_item():
 	ItemSprite.texture = null
 
 func _processing_done():
+	EventsProvider.call_event("finish making %s" % ItemsProvider.get_item_name(itemToProduce))
 	_player.add_item(itemToProduce)
 	_remove_item()
 	ProgressSlider.visible = false

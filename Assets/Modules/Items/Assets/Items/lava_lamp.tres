@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dbrwa85q1v3fw"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_htvwd"]
+[ext_resource type="Texture2D" uid="uid://bg88hrvbotaep" path="res://Assets/Textures/Items/item_lava_lamp.png" id="2_u5fcu"]
+
+[resource]
+resource_name = "lava_lamp"
+script = ExtResource("1_htvwd")
+name = "Lava Lamp"
+recipe = ""
+texture = ExtResource("2_u5fcu")
+producingTime = 0.0
+mergeTo = {}
+usedIn = {}

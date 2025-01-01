@@ -1,8 +1,6 @@
 extends Node
 class_name DecorAutomaticMachineView
 
-@onready var _itemsProvider : ItemsProvider = get_node(ItemsProvider.path)
-
 @export var ItemSprite : Sprite2D
 @export var HoverButton : Button
 @export var InteractArea : Area2D
@@ -14,7 +12,7 @@ var itemToProduce : String
 var itemName : String:
 	set(value):
 		if (HoverButton != null):
-			HoverButton.tooltip_text = value.replace("_", " ")
+			HoverButton.tooltip_text = ItemsProvider.get_item_name(value)
 		itemName = value
 	get:
 		return itemName
@@ -35,7 +33,8 @@ func _process(delta: float) -> void:
 		ProgressSlider.value = ProgressSlider.max_value - _time
 		_time -= delta
 		if (_time <= 0):
-			ItemSprite.texture = _itemsProvider.allItems[itemToProduce].texture
+			ItemSprite.texture = ItemsProvider.get_item(itemToProduce).texture
+			EventsProvider.call_event("%s has finished making %s" % [name, ItemsProvider.get_item_name(itemToProduce)])
 
 
 func _init_buttons():
@@ -48,10 +47,10 @@ func _try_interact_with_item():
 	if (_player == null): return
 	
 	if (itemName == "" && _player.itemName != ""):
-		var item : ItemModel = _itemsProvider.allItems[_player.itemName]
+		var item : ItemModel = ItemsProvider.get_item(_player.itemName)
 		if (!item.usedIn.has(MachineName)): return
 		
-		var newItem : ItemModel = _itemsProvider.allItems[item.usedIn[MachineName]]
+		var newItem : ItemModel = ItemsProvider.get_item(item.usedIn[MachineName])
 		_add_item(_player.itemName)
 		_player.remove_item()
 		ProgressSlider.visible = true
@@ -65,7 +64,8 @@ func _try_interact_with_item():
 
 func _add_item(newItemName : String):
 	itemName = newItemName
-	ItemSprite.texture = _itemsProvider.allItems[newItemName].texture
+	ItemSprite.texture = ItemsProvider.get_item(newItemName).texture
+	EventsProvider.call_event("%s placed at %s" % [ItemsProvider.get_item_name(itemName), name])
 
 func _remove_item():
 	itemName = ""
