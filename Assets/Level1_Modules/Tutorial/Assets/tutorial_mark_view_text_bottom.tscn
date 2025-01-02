@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://w8su4574bdot"]
+[gd_scene load_steps=5 format=3 uid="uid://dw2rj8j1b6w5c"]
 
-[ext_resource type="Script" path="res://Assets/Level0_Modules/Tutorial/Views/TutorialMarkView.gd" id="1_xjydq"]
-[ext_resource type="Texture2D" uid="uid://cl61wowniv1ti" path="res://Assets/Textures/UI/tutorial_arrow.png" id="2_npg11"]
-[ext_resource type="Theme" uid="uid://dsklx8m7o8m0o" path="res://Assets/Modules/UI/Themes/title_screen_theme.tres" id="3_qfor1"]
+[ext_resource type="Script" path="res://Assets/Level1_Modules/Tutorial/Views/TutorialMarkView.gd" id="1_y40m0"]
+[ext_resource type="Texture2D" uid="uid://cl61wowniv1ti" path="res://Assets/Textures/UI/tutorial_arrow.png" id="2_poi8n"]
+[ext_resource type="Theme" uid="uid://dsklx8m7o8m0o" path="res://Assets/Modules/UI/Themes/title_screen_theme.tres" id="3_hxfe6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4nmus"]
 radius = 44.0
 
 [node name="TutorialMarkView" type="Node2D" node_paths=PackedStringArray("area", "label")]
 position = Vector2(213, 57)
-script = ExtResource("1_xjydq")
+script = ExtResource("1_y40m0")
 area = NodePath("Area2D")
 label = NodePath("Anchor/Label")
 
@@ -32,20 +32,20 @@ mouse_filter = 2
 [node name="TextureRect" type="TextureRect" parent="Anchor"]
 layout_mode = 0
 offset_left = -40.0
-offset_top = -154.0
+offset_top = -335.0
 offset_right = 82.0
-offset_bottom = 25.0
+offset_bottom = -156.0
 mouse_filter = 2
-texture = ExtResource("2_npg11")
+texture = ExtResource("2_poi8n")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Anchor"]
 layout_mode = 0
 offset_left = -216.0
-offset_top = -309.0
+offset_top = -153.0
 offset_right = 264.0
-offset_bottom = -165.0
-theme = ExtResource("3_qfor1")
+offset_bottom = -9.0
+theme = ExtResource("3_hxfe6")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1

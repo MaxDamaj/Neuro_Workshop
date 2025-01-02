@@ -15,7 +15,7 @@ var ItemName : String:
 	get:
 		return ItemName
 
-var _player : PlayerView
+var _player : CharacterView
 
 
 func _ready() -> void:
@@ -66,6 +66,7 @@ func _try_merge_items(itemToMerge : String) -> bool:
 		return true
 	
 	_soundProvider.play_sound("wrong")
+	EventsProvider.call_event(&"can't merge this items")
 	return false
 
 

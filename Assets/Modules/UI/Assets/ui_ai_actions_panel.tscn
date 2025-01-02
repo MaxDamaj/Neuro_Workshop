@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1wdm5vfrsnnc"]
+
+[ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIAIActionsPanel.gd" id="1_riglb"]
+[ext_resource type="PackedScene" uid="uid://ythgxmmygvw2" path="res://Assets/Modules/UI/Assets/tile_action_button.tscn" id="2_ebl2b"]
+[ext_resource type="Theme" uid="uid://b056w7mbmkbo2" path="res://Assets/Modules/UI/Themes/safe_panel_theme.tres" id="2_qnqj0"]
+[ext_resource type="FontFile" uid="uid://bxiub8u5ui7y4" path="res://Assets/Modules/UI/Themes/BeautifulPoliceOfficer-rvv8x.ttf" id="4_n1bmw"]
+[ext_resource type="Texture2D" uid="uid://crwslh0dmpica" path="res://Assets/Textures/UI/safe_screen.png" id="4_wa6k2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4gs5"]
+texture = ExtResource("4_wa6k2")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[node name="UIAIActionsPanel" type="CanvasLayer" node_paths=PackedStringArray("CallbacksLabel", "ActionsContainer")]
+layer = 2
+script = ExtResource("1_riglb")
+CallbacksLabel = NodePath("ColorRect/CallbackLabel")
+ActionsContainer = NodePath("Panel/ActionsContainer")
+ActionButton = ExtResource("2_ebl2b")
+
+[node name="Blocker" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 224.0
+offset_top = -532.0
+offset_right = 760.0
+offset_bottom = -308.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qnqj0")
+theme_override_styles/panel = SubResource("StyleBoxTexture_v4gs5")
+
+[node name="CallbackLabel" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = -8.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qnqj0")
+theme_override_fonts/font = ExtResource("4_n1bmw")
+theme_override_font_sizes/font_size = 20
+text = "> you already have something in your hands
+> you already have something in your hands
+> you already have something in your hands
+> you already have something in your hands
+> you already have something in your hands
+> you already have something in your hands
+> you already have something in your hands
+> you already have something in your hands
+> you already have something in your hands"
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_qnqj0")
+
+[node name="ActionsContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -412.0
+offset_right = 106.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2

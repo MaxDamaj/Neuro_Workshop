@@ -1,7 +1,6 @@
 extends Node
 class_name EventsProvider
 
-static var path : NodePath = "/root/MainScene/_Providers/EventsProvider"
 static var _instance : EventsProvider
 
 signal on_event_called(eventName : StringName)
@@ -25,3 +24,7 @@ static func subscribe(eventName : StringName, callback : Callable):
 		callback.call()
 	
 	_instance.on_event_called.connect(end_func)
+
+static func subscribe_for_all(callback : Callable):
+	if (_instance == null): return
+	_instance.on_event_called.connect(callback)

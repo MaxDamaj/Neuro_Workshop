@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4ashx10x4s76"]
 
-[ext_resource type="PackedScene" uid="uid://w8su4574bdot" path="res://Assets/Level0_Modules/Tutorial/Assets/tutorial_mark_view_text_up.tscn" id="1_dqvq8"]
-[ext_resource type="PackedScene" uid="uid://dw2rj8j1b6w5c" path="res://Assets/Level0_Modules/Tutorial/Assets/tutorial_mark_view_text_bottom.tscn" id="2_fdrnn"]
+[ext_resource type="PackedScene" uid="uid://w8su4574bdot" path="res://Assets/Level1_Modules/Tutorial/Assets/tutorial_mark_view_text_up.tscn" id="1_dqvq8"]
+[ext_resource type="PackedScene" uid="uid://dw2rj8j1b6w5c" path="res://Assets/Level1_Modules/Tutorial/Assets/tutorial_mark_view_text_bottom.tscn" id="2_fdrnn"]
 
 [node name="TutorialNode_Level_0" type="Node2D"]
 z_index = 1

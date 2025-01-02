@@ -5,7 +5,7 @@ class_name DecorOpenUIView
 @export var HoverButton : Button
 @export var InteractArea : Area2D
 
-var _player : PlayerView
+var _player : CharacterView
 
 
 func _ready() -> void:

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ythgxmmygvw2"]
+
+[ext_resource type="Theme" uid="uid://b056w7mbmkbo2" path="res://Assets/Modules/UI/Themes/safe_panel_theme.tres" id="1_ra4ux"]
+
+[node name="TileActionButton" type="Button"]
+custom_minimum_size = Vector2(0, 34)
+theme = ExtResource("1_ra4ux")
+theme_override_font_sizes/font_size = 14
+text = "interact with Cutting desk"

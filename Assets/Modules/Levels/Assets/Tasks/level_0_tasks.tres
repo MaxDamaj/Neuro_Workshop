@@ -13,6 +13,8 @@ waitingTime = 300.0
 chillingTime = 5.0
 rarity = 0
 nextTask = ExtResource("2_sjpc1")
+completedTasksCount = 0
+entranceDialogId = ""
 dialogId = "level_0_middle"
 
 [resource]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=39 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=41 format=3 uid="uid://dcajjydtc33bx"]
 
-[ext_resource type="PackedScene" uid="uid://ddpv4q4fscfuv" path="res://Assets/Modules/Events/Assets/events_provider.tscn" id="1_6xgfg"]
+[ext_resource type="PackedScene" uid="uid://ddpv4q4fscfuv" path="res://Assets/Level0_Modules/Events/Assets/events_provider.tscn" id="1_6xgfg"]
 [ext_resource type="Script" path="res://Assets/Level0_Modules/Base/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
 [ext_resource type="PackedScene" uid="uid://dh2atkaqxtvcv" path="res://Assets/Modules/UI/Assets/ui.tscn" id="2_632w6"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://r5rgngruqomd" path="res://Assets/Modules/UI/Assets/ui_settings_panel.tscn" id="11_upqfx"]
 [ext_resource type="PackedScene" uid="uid://bkl47syet3u71" path="res://Assets/Modules/Items/Assets/items_provider.tscn" id="14_56mqf"]
 [ext_resource type="PackedScene" uid="uid://dx7cx75j8h066" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
+[ext_resource type="PackedScene" uid="uid://c1wdm5vfrsnnc" path="res://Assets/Modules/UI/Assets/ui_ai_actions_panel.tscn" id="14_wgani"]
 [ext_resource type="PackedScene" uid="uid://bk24hcasst3qs" path="res://Assets/Modules/NPCs/Assets/npc_random_2.tscn" id="15_qkonw"]
 [ext_resource type="PackedScene" uid="uid://cjgcx386rfmp1" path="res://Assets/Modules/NPCs/Assets/npc_random_3.tscn" id="16_ysyip"]
 [ext_resource type="PackedScene" uid="uid://bd434568ntuls" path="res://Assets/Modules/NPCs/Assets/npc_random_4.tscn" id="17_3laa0"]
@@ -36,7 +37,8 @@
 [ext_resource type="PackedScene" uid="uid://dk2arvfbym25t" path="res://Assets/Modules/NPCs/Assets/npc_evil.tscn" id="29_brvg7"]
 [ext_resource type="PackedScene" uid="uid://dg2g2loxw31xa" path="res://Assets/Modules/NPCs/Assets/npc_tony.tscn" id="30_k6m5f"]
 [ext_resource type="PackedScene" uid="uid://d3jayvqnhedxc" path="res://Assets/Level1_Modules/Dialogs/Assets/dialogs_provider.tscn" id="33_hi8tc"]
-[ext_resource type="PackedScene" uid="uid://bqcvuxtnoe4ji" path="res://Assets/Level0_Modules/Tutorial/Assets/tutorial_factory.tscn" id="38_rf5bs"]
+[ext_resource type="PackedScene" uid="uid://bai2j3wtxcewg" path="res://Assets/Modules/Levels/Assets/Scenes/level_ai_bartender.tscn" id="38_5rbiv"]
+[ext_resource type="PackedScene" uid="uid://bqcvuxtnoe4ji" path="res://Assets/Level1_Modules/Tutorial/Assets/tutorial_factory.tscn" id="38_rf5bs"]
 [ext_resource type="PackedScene" uid="uid://37ruv10rwlyg" path="res://Assets/Level1_Modules/Sounds/Assets/sound_provider.tscn" id="57_truwe"]
 
 [node name="MainScene" type="Node2D"]
@@ -50,6 +52,7 @@
 [node name="UIPanelsProvider" type="Node" parent="_Providers"]
 script = ExtResource("1_yahvp")
 allPanels = {
+"ai_actions_ui": ExtResource("14_wgani"),
 "dialog_ui": ExtResource("2_nchc3"),
 "exit_level_ui": ExtResource("4_852d5"),
 "inventory_ui": ExtResource("6_lanqk"),
@@ -94,7 +97,16 @@ allNpcs = {
 
 [node name="LevelLoadStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("2_7afnu")
-levels = Array[PackedScene]([ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("3_6aveg"), ExtResource("3_6aveg")])
+levels = {
+-2: ExtResource("38_5rbiv"),
+0: ExtResource("3_6aveg"),
+1: ExtResource("3_6aveg"),
+2: ExtResource("3_6aveg"),
+3: ExtResource("3_6aveg"),
+4: ExtResource("3_6aveg"),
+5: ExtResource("3_6aveg"),
+6: ExtResource("3_6aveg")
+}
 
 [node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("11_m5u4n")

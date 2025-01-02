@@ -8,7 +8,8 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 @onready var _tutorialFactory : TutorialFactory = get_node(TutorialFactory.path)
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 
-@export var levels : Array[PackedScene]
+@export var levels : Dictionary
+@export var lastLevelId : int
 
 var safeCode : int
 var lastUnlockedLevel : int:
@@ -76,13 +77,13 @@ func _load_level_callback():
 	UIPanelsProvider.close_panel("main_ui")
 
 func _win_game():
-	if (_loadedLevelId + 1 >= levels.size()):
+	EventsProvider.call_event("you win!")
+	if (_loadedLevelId + 1 >= lastLevelId || _loadedLevelId + 1 <= 0):
 		unload_level()
 		return
 	
 	_loadedLevelId += 1
 	if (lastUnlockedLevel < _loadedLevelId): lastUnlockedLevel = _loadedLevelId
-	EventsProvider.call_event("you win!")
 	restart_level()
 
 func _lose_game():

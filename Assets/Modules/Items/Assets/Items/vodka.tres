@@ -6,6 +6,8 @@
 [resource]
 resource_name = "vodka"
 script = ExtResource("1_gswdn")
+name = "Vodka"
+recipe = "pick up vodka; serve customer"
 texture = ExtResource("2_xhisr")
 producingTime = 0.0
 mergeTo = {

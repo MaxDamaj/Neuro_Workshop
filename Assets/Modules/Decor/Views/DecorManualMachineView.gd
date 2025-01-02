@@ -8,6 +8,9 @@ class_name DecorManualMachineView
 @export var MachineName : String
 @export var ProgressSlider : Slider
 
+signal on_item_produced(machine : DecorManualMachineView)
+
+var aiProcessing : bool
 var itemToProduce : String
 var itemName : String:
 	set(value):
@@ -17,7 +20,7 @@ var itemName : String:
 	get:
 		return itemName
 
-var _player : PlayerView
+var _player : CharacterView
 var _time : float
 var _can_process : bool
 
@@ -27,7 +30,7 @@ func _ready() -> void:
 	_init_buttons()
 
 func _process(delta: float) -> void:
-	if (Input.is_action_pressed("action") || HoverButton.button_pressed):
+	if (Input.is_action_pressed("action") || HoverButton.button_pressed || aiProcessing):
 		if (_time > 0):
 			if (itemName != "" && _player.itemName == ""): _can_process = true
 		else:
@@ -51,11 +54,13 @@ func _init_buttons():
 	HoverButton.visible = false
 	HoverButton.disabled = true
 
-func _try_interact_with_item():
-	if (_player == null): return
+func _try_interact_with_item() -> bool:
+	if (_player == null): return false
 	if (itemName == "" && _player.itemName != ""):
 		var item : ItemModel = ItemsProvider.get_item(_player.itemName)
-		if (!item.usedIn.has(MachineName)): return
+		if (!item.usedIn.has(MachineName)):
+			EventsProvider.call_event("cannot use %s on %s" % [ItemsProvider.get_item_name(_player.itemName), name])
+			return false
 		
 		var newItem : ItemModel = ItemsProvider.get_item(item.usedIn[MachineName])
 		_add_item(_player.itemName)
@@ -64,6 +69,8 @@ func _try_interact_with_item():
 		ProgressSlider.max_value = newItem.producingTime
 		_time = newItem.producingTime
 		itemToProduce = newItem.resource_name
+		return true
+	return false
 
 func _add_item(newItemName : String):
 	itemName = newItemName
@@ -80,6 +87,7 @@ func _processing_done():
 	_player.add_item(itemToProduce)
 	_remove_item()
 	ProgressSlider.visible = false
+	on_item_produced.emit(self)
 
 
 func _on_area_2d_body_entered(body : Node2D):

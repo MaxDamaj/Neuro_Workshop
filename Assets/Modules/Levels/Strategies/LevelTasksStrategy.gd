@@ -35,7 +35,7 @@ func register_spawner(spawner : NpcSpawnerView):
 
 
 func start_tasks():
-	if (allTasks == null): return
+	if (allTasks == null || allTasks.size() == 0): return
 	
 	completedTasksCount = 0
 	_remainingLoses = 3
@@ -54,9 +54,10 @@ func complete_task(task : TaskModel):
 	
 	if (task.dialogId != ""):
 		_dialogsProvider.try_start_dialog(task.dialogId, func():
-			if (_taskPassedCount >= tasksCount):
-				on_all_tasks_completed.emit()
+			if (_taskPassedCount >= tasksCount): on_all_tasks_completed.emit()
 			)
+	else:
+		if (_taskPassedCount >= tasksCount): on_all_tasks_completed.emit()
 
 func lose_task(task : TaskModel):
 	_remainingLoses -= 1 if task.rarity == 0 else 3

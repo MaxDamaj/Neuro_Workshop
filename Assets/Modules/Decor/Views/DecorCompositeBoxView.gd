@@ -5,7 +5,7 @@ class_name DecorCompositeBoxView
 @export var InteractArea : Area2D
 @export var ItemsList : Array[String]
 
-var _player : PlayerView
+var _player : CharacterView
 
 func _ready() -> void:
 	_init_buttons()

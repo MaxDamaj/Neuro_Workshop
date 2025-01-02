@@ -17,7 +17,7 @@ var itemName : String:
 	get:
 		return itemName
 
-var _player : PlayerView
+var _player : CharacterView
 var _time : float
 
 
@@ -45,6 +45,10 @@ func _init_buttons():
 
 func _try_interact_with_item():
 	if (_player == null): return
+	
+	if (_time > 0):
+		EventsProvider.call_event("%s has not finished its task yet" % name)
+		return
 	
 	if (itemName == "" && _player.itemName != ""):
 		var item : ItemModel = ItemsProvider.get_item(_player.itemName)

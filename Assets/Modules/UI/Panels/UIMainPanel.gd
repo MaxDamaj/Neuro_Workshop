@@ -18,7 +18,8 @@ class_name UIMainPanel
 @export_group("Extra")
 @export var ExtraContainer : Control
 @export var FreeGameButton : Button
-@export var NeuroBartenderButton : Button
+@export var AIBartenderButton : Button
+@export var AICustomerButton : Button
 
 const BUTTON_HIDDEN_X = -550
 const BUTTON_SHOWN_X = 100
@@ -35,13 +36,19 @@ func _ready() -> void:
 	
 	NewGameButton.button_down.connect(func(): _load_level(0))
 	ChooseLevelButton.button_down.connect(_show_level_buttons)
-	BackButton.button_down.connect(_show_main_buttons)
+	ExtraButton.button_down.connect(_show_extra_buttons)
 	SettingsButton.button_down.connect(_show_settings_buttons)
+	BackButton.button_down.connect(_show_main_buttons)
 	
 	EffectsVolumeSlider.value = _soundProvider.soundVolume
 	MusicVolumeSlider.value = _soundProvider.musicVolume
 	EffectsVolumeSlider.value_changed.connect(func(value : float): _soundProvider.soundVolume = value)
 	MusicVolumeSlider.value_changed.connect(func(value : float): _soundProvider.musicVolume = value)
+	
+	#Extra
+	FreeGameButton.button_down.connect(func(): _load_level(-1))
+	AIBartenderButton.button_down.connect(func(): _load_level(-2))
+	AICustomerButton.button_down.connect(func(): _load_level(-3))
 	
 	currentMenu = 'main'
 	_hide_level_buttons()
@@ -96,11 +103,20 @@ func _hide_main_buttons() -> void:
 func _show_main_buttons() -> void:
 	_move_ui_element(MainContainer, BUTTON_SHOWN_X, MainContainer.position.y)
 	_hide_back_button()
-	if (currentMenu == 'levels'):
-		_hide_level_buttons()
-	if (currentMenu == 'settings'):
-		_hide_settings_buttons()
+	match currentMenu:
+		"extra": _hide_extra_buttons()
+		"levels": _hide_level_buttons()
+		"settings": _hide_settings_buttons()
 	currentMenu = 'main'
+
+func _hide_extra_buttons() -> void:
+	_move_ui_element(ExtraContainer, BUTTON_HIDDEN_X, ExtraContainer.position.y)
+
+func _show_extra_buttons() -> void:
+	_move_ui_element(ExtraContainer, BUTTON_SHOWN_X, ExtraContainer.position.y)
+	_show_back_button()
+	_hide_main_buttons()
+	currentMenu = 'extra'
 
 func _hide_level_buttons() -> void:
 	for i in range(LevelButtons.size()):

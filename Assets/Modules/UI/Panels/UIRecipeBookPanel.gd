@@ -3,7 +3,6 @@ class_name UIRecipeBookPanel
 
 @onready var _soundProvider : SoundProvider = get_node(SoundProvider.path)
 @onready var _levelLoadStrategy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
-@onready var _levelTasksStrategy : LevelTasksStrategy = get_node(LevelTasksStrategy.path)
 
 @export var Pages : Array[Panel]
 @export var ReturnButton : Button
@@ -38,9 +37,6 @@ func _ready() -> void:
 	ReturnButton.button_down.connect(_close_recipe_book)
 	NextButton.button_down.connect(_next_page)
 	PrevButton.button_down.connect(_prev_page)
-	
-	var item : ItemModel = _levelTasksStrategy.lastStartedTask.get_item()
-	EventsProvider.call_event("To create %s you need to %s" % [item.name, item.recipe])
 
 func _close_recipe_book() -> void:
 	UIPanelsProvider.close_panel("recipe_book_ui")

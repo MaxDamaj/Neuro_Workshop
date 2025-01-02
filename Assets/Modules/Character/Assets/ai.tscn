@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dj40ovayiw7gs"]
+[gd_scene load_steps=11 format=3 uid="uid://bcklpy1idlhem"]
 
-[ext_resource type="Script" path="res://Assets/Modules/Character/Views/PlayerView.gd" id="1_ji1ke"]
-[ext_resource type="Texture2D" uid="uid://d1k66o4g3dooe" path="res://Assets/Textures/Characters/shadow.png" id="1_xbik4"]
-[ext_resource type="Texture2D" uid="uid://ce2285hwqub7p" path="res://Assets/Textures/Characters/player_neuro.png" id="3_wx4xs"]
+[ext_resource type="Script" path="res://Assets/Modules/Character/Views/AICharacterView.gd" id="1_fn5lt"]
+[ext_resource type="Texture2D" uid="uid://d1k66o4g3dooe" path="res://Assets/Textures/Characters/shadow.png" id="2_gdbl8"]
+[ext_resource type="Texture2D" uid="uid://ce2285hwqub7p" path="res://Assets/Textures/Characters/player_neuro.png" id="3_kku58"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfdf1"]
-size = Vector2(96, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vlumk"]
+radius = 16.0
 
 [sub_resource type="Animation" id="Animation_hy04p"]
 resource_name = "Idle"
@@ -99,43 +99,49 @@ _data = {
 "RunBack": SubResource("Animation_rylj1")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animator", "root", "itemSprite", "itemInfo") groups=["Player"]]
+[node name="AIBartender" type="CharacterBody2D" node_paths=PackedStringArray("navAgent", "animator", "root", "itemSprite", "itemInfo") groups=["Player"]]
 z_index = 1
 y_sort_enabled = true
 collision_mask = 3
 motion_mode = 1
-script = ExtResource("1_ji1ke")
+script = ExtResource("1_fn5lt")
+navAgent = NodePath("NavigationAgent2D")
 animator = NodePath("Root/AnimationPlayer")
 root = NodePath("Root")
 itemSprite = NodePath("ItemSprite")
 itemInfo = NodePath("ItemInfo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
-shape = SubResource("RectangleShape2D_lfdf1")
+shape = SubResource("CircleShape2D_vlumk")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 8.0
+target_desired_distance = 16.0
+path_max_distance = 512.0
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(0, -240)
+position = Vector2(0, -224)
 
 [node name="ItemInfo" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -32.0
-offset_top = -120.0
+offset_top = -104.0
 offset_right = 32.0
-offset_bottom = -72.0
+offset_bottom = -56.0
 mouse_filter = 1
 
 [node name="Root" type="Node2D" parent="."]
+position = Vector2(0, 16)
 
 [node name="Shadow" type="Sprite2D" parent="Root"]
 position = Vector2(8, -8)
-texture = ExtResource("1_xbik4")
+texture = ExtResource("2_gdbl8")
 
 [node name="Body" type="Sprite2D" parent="Root"]
 position = Vector2(0, -48)
-texture = ExtResource("3_wx4xs")
+texture = ExtResource("3_kku58")
 offset = Vector2(0, -64)
 hframes = 4
 vframes = 3

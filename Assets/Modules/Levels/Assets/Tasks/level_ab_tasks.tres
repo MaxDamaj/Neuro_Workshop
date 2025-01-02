@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=8 format=3 uid="uid://set7jngsw738"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_pyvib"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="2_siaca"]
+
+[sub_resource type="Resource" id="Resource_iwob8"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 1.0
+item = "vodka"
+waitingTime = 600.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_sappd"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "apple_juice"
+waitingTime = 300.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_5pku4"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "fannta"
+waitingTime = 300.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_yautc"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "banana_rum"
+waitingTime = 300.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_8vn8u"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "apple_rum"
+waitingTime = 300.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[resource]
+resource_name = "level_-2"
+script = ExtResource("2_siaca")
+TasksCount = 5
+StartDialog = ""
+Tasks = Array[ExtResource("1_pyvib")]([SubResource("Resource_iwob8"), SubResource("Resource_sappd"), SubResource("Resource_5pku4"), SubResource("Resource_yautc"), SubResource("Resource_8vn8u")])

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddpv4q4fscfuv"]
 
-[ext_resource type="Script" path="res://Assets/Modules/Events/Providers/EventsProvider.gd" id="1_glrtu"]
+[ext_resource type="Script" path="res://Assets/Level0_Modules/Events/Providers/EventsProvider.gd" id="1_glrtu"]
 
 [node name="EventsProvider" type="Node"]
 script = ExtResource("1_glrtu")
