@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://bai2j3wtxcewg"]
+[gd_scene load_steps=29 format=3 uid="uid://bai2j3wtxcewg"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Character/Strategies/AIBartenderStrategy.gd" id="1_84r86"]
 [ext_resource type="Texture2D" uid="uid://bv1rqo5ynywwe" path="res://Assets/Textures/Stage/bar_bg.png" id="1_m2d7u"]
 [ext_resource type="PackedScene" uid="uid://dgj8cpgw84mot" path="res://Assets/Modules/Decor/Assets/bar_table_1.tscn" id="2_i6yrx"]
+[ext_resource type="Script" path="res://Assets/Modules/AIActions/Strategies/AIActionsStrategy.gd" id="2_kxqka"]
 [ext_resource type="PackedScene" uid="uid://rwykpbf5e0h1" path="res://Assets/Modules/Decor/Assets/bar_table_2.tscn" id="3_ekcxf"]
 [ext_resource type="PackedScene" uid="uid://d2cvdx2fgnnrh" path="res://Assets/Modules/Decor/Assets/bar_table_3.tscn" id="4_kkd0o"]
 [ext_resource type="PackedScene" uid="uid://vetm76i3gabb" path="res://Assets/Modules/Decor/Assets/table_2.tscn" id="5_sv27g"]
@@ -81,6 +82,9 @@ levelObjects = {
 "Table4": NodePath("../../Decor/Table4"),
 "Trash": NodePath("../../Decor/TrashBox")
 }
+
+[node name="AIActionsStrategy" type="Node" parent="_Strategies"]
+script = ExtResource("2_kxqka")
 
 [node name="Floor" type="Node2D" parent="."]
 position = Vector2(0, -13)
