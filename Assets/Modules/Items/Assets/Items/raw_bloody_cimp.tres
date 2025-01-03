@@ -6,9 +6,11 @@
 [resource]
 resource_name = "raw_bloody_cimp"
 script = ExtResource("1_vfwd1")
+name = ""
+recipe = ""
 texture = ExtResource("2_putvi")
 producingTime = 7.0
 mergeTo = {
-"lime_slices": "bloody_cimp"
+"lemon_slices": "bloody_cimp"
 }
 usedIn = {}

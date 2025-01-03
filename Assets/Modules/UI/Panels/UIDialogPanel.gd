@@ -58,7 +58,10 @@ func _ready() -> void:
 		Root.modulate = target_color
 	)
 	
+	NextStepButton.disabled = true
 	_proceed_dialog()
+	await get_tree().create_timer(1.25).timeout
+	NextStepButton.disabled = false
 
 func init_args(args : Dictionary):
 	if args.has("dialog_id"):

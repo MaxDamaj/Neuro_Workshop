@@ -10,7 +10,7 @@ signal on_life_lost(totalLifes : int, remainingLifes : int)
 signal on_all_tasks_completed
 signal on_all_lifes_losed
 
-var allTasks : Array[TaskModel]
+var levelTaskModel : LevelTasksModel
 var tasksCount : int
 var completedTasksCount : int
 var lastStartedTask : TaskModel
@@ -35,13 +35,13 @@ func register_spawner(spawner : NpcSpawnerView):
 
 
 func start_tasks():
-	if (allTasks == null || allTasks.size() == 0): return
+	if (levelTaskModel == null || levelTaskModel.Tasks.size() == 0): return
 	
 	completedTasksCount = 0
 	_remainingLoses = 3
 	_taskPassedCount = 0
 	_nextTaskIndex = 0
-	_timer.start(allTasks[_nextTaskIndex].delay)
+	_timer.start(levelTaskModel.Tasks[_nextTaskIndex].delay)
 
 func stop_tasks():
 	_freeSpawners.clear()
@@ -52,12 +52,9 @@ func complete_task(task : TaskModel):
 	_taskPassedCount += 1
 	on_task_completed.emit(tasksCount, completedTasksCount)
 	
-	if (task.dialogId != ""):
-		_dialogsProvider.try_start_dialog(task.dialogId, func():
-			if (_taskPassedCount >= tasksCount): on_all_tasks_completed.emit()
-			)
-	else:
-		if (_taskPassedCount >= tasksCount): on_all_tasks_completed.emit()
+	if (_dialogsProvider.try_start_dialog(task.dialogId, _end_game_check)):
+		return
+	_end_game_check()
 
 func lose_task(task : TaskModel):
 	_remainingLoses -= 1 if task.rarity == 0 else 3
@@ -75,22 +72,26 @@ func lose_task(task : TaskModel):
 func free_spawner(spawner : NpcSpawnerView):
 	_freeSpawners.append(spawner)
 
+func _end_game_check():
+	if (_taskPassedCount >= tasksCount):
+		_dialogsProvider.try_start_dialog(levelTaskModel.EndDialog, func(): on_all_tasks_completed.emit())
+
 func _end_task():
 	if (_remainingLoses == 0): return
 	if (_freeSpawners.size() == 0):
 		_timer.start(2)
 		return
 	
-	var task : TaskModel = allTasks[_nextTaskIndex]
+	var task : TaskModel = levelTaskModel.Tasks[_nextTaskIndex]
 	if (task.completedTasksCount > completedTasksCount):
 		_timer.start(2)
 		return
 	
-	var spawner : NpcSpawnerView = _freeSpawners.pick_random() if allTasks.size() > 1 else _freeSpawners[1]
+	var spawner : NpcSpawnerView = _freeSpawners.pick_random() if levelTaskModel.Tasks.size() > 1 else _freeSpawners[1]
 	_freeSpawners.erase(spawner)
 	spawner.start_task(task)
 	
 	_nextTaskIndex += 1
 	
-	if (_nextTaskIndex >= allTasks.size()): return
-	_timer.start(allTasks[_nextTaskIndex].delay)
+	if (_nextTaskIndex >= levelTaskModel.Tasks.size()): return
+	_timer.start(levelTaskModel.Tasks[_nextTaskIndex].delay)

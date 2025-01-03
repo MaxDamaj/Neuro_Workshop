@@ -67,7 +67,7 @@ func _load_level_callback():
 	get_node("/root/MainScene").add_child.call_deferred(_loadedLevel)
 	
 	var levelModel : LevelTasksModel = _allLevelTasks["level_" + str(_loadedLevelId)]
-	_levelTasksStrategy.allTasks = levelModel.Tasks
+	_levelTasksStrategy.levelTaskModel = levelModel
 	_levelTasksStrategy.tasksCount = levelModel.TasksCount
 	_dialogsProvider.try_start_dialog(levelModel.StartDialog, func(): pass)
 	_tutorialFactory.spawn_tutorial(_loadedLevelId)

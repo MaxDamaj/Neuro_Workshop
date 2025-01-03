@@ -7,7 +7,7 @@ func _ready() -> void:
 	ItemName = baseItem
 	_init_buttons()
 
-func try_add_item(itemName : String):
+func try_add_item(_itemName : String):
 	return true
 
 func remove_item():

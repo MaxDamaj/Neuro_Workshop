@@ -31,6 +31,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("action") || HoverButton.button_pressed || aiProcessing):
+		if (_player == null): return
 		if (_time > 0):
 			if (itemName != "" && _player.itemName == ""): _can_process = true
 		else:

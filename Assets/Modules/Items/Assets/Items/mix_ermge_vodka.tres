@@ -6,7 +6,11 @@
 [resource]
 resource_name = "mix_ermge_vodka"
 script = ExtResource("1_wvhhu")
+name = ""
+recipe = ""
 texture = ExtResource("2_w2yl5")
 producingTime = 4.0
-mergeTo = {}
+mergeTo = {
+"lemon_slices": "fox_on_the_beach"
+}
 usedIn = {}

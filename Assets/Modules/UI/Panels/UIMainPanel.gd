@@ -21,11 +21,11 @@ class_name UIMainPanel
 @export var AIBartenderButton : Button
 @export var AICustomerButton : Button
 
-const BUTTON_HIDDEN_X = -550
-const BUTTON_SHOWN_X = 100
-const SLIDER_HIDDEN_X = -700
-const SLIDER_SHOWN_X = 100
-const BACK_BUTTON_SHOWN_X = 50
+const BUTTON_HIDDEN_X : float = -550
+const BUTTON_SHOWN_X : float = 100
+const SLIDER_HIDDEN_X : float = -700
+const SLIDER_SHOWN_X : float = 100
+const BACK_BUTTON_SHOWN_X : float = 50
 
 var currentMenu : String
 
@@ -60,10 +60,10 @@ func _ready() -> void:
 func _load_level(levelId : int):
 	_levelLoadStartegy.load_level(levelId)
 
-func _move_ui_element(element : Control, x : int, y : int) -> void:
+func _move_ui_element(element : Control, x : float, y : float) -> void:
 	element.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var tween = create_tween()
-	var target_pos = Vector2 (x,y)
+	var target_pos = Vector2(x, y)
 	
 	tween.tween_property(element, "position", target_pos,0.3)
 	tween.tween_callback(

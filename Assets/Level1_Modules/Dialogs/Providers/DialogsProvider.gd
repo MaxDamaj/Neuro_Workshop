@@ -14,11 +14,13 @@ func _ready() -> void:
 	_init_dialogs()
 
 
-func try_start_dialog(dialogId : String, callback : Callable):
+func try_start_dialog(dialogId : String, callback : Callable) -> bool:
 	if (allDialogs.has(dialogId)):
 		UIPanelsProvider.open_panel_with_args("dialog_ui", {"dialog_id" : dialogId, "callback" : callback})
-	else:
-		callback.call()
+		return true
+	
+	callback.call()
+	return false
 
 
 func _init_dialogs():

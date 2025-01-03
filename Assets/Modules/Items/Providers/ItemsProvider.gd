@@ -18,6 +18,7 @@ static func get_item(itemId : String) -> ItemModel:
 	return _instance.allItems[itemId]
 
 static func get_item_name(itemId : String) -> String:
+	if (itemId == ""): return itemId
 	if (_instance == null): return itemId.replace('_', ' ')
 	
 	var item : ItemModel = get_item(itemId)

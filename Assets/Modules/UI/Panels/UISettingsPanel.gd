@@ -8,10 +8,10 @@ class_name UISettingsPanel
 @export var EffectsVolumeSlider : HSlider
 @export var MusicVolumeSlider: HSlider
 
-var _wasPaused : bool
+static var wasPaused : bool
 
 func _ready() -> void:
-	_wasPaused = get_tree().paused
+	wasPaused = get_tree().paused
 	get_tree().paused = true
 	CloseSettingsButton.button_down.connect(_close_panel)
 	MainMenuButton.button_down.connect(_try_close_level)
@@ -26,5 +26,5 @@ func _try_close_level():
 	UIPanelsProvider.close_panel("settings_ui")
 
 func _close_panel():
-	get_tree().paused = _wasPaused
+	get_tree().paused = wasPaused
 	UIPanelsProvider.close_panel("settings_ui")

@@ -89,7 +89,7 @@ func _take_item():
 	_soundProvider.play_sound("open_safe")
 	UIPanelsProvider.close_panel("safe_ui")
 
-func _process(delta)->void:
+func _process(_delta)->void:
 	if (_isError):
 		_timer+=1
 		if (_timer>60):

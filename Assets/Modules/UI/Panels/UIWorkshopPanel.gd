@@ -15,8 +15,18 @@ func _ready() -> void:
 	_levelTasksStrategy.on_task_completed.connect(_update_completion_value)
 	_levelTasksStrategy.on_life_lost.connect(_update_lose_value)
 	
-	_update_completion_value(_levelTasksStrategy.allTasks.size(), _levelTasksStrategy.completedTasksCount)
+	_update_completion_value(_levelTasksStrategy.levelTaskModel.Tasks.size(), _levelTasksStrategy.completedTasksCount)
 	_soundProvider.play_music("tony_theme")
+
+func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("ui_cancel")):
+		if (UIPanelsProvider.is_panel_open("exit_level_ui")): return
+		if (!UIPanelsProvider.is_panel_open("settings_ui")):
+			UIPanelsProvider.open_panel("settings_ui")
+		else:
+			get_tree().paused = UISettingsPanel.wasPaused
+			UIPanelsProvider.close_panel("settings_ui")
+
 
 func _open_settings_panel():
 	UIPanelsProvider.open_panel("settings_ui")

@@ -107,6 +107,7 @@ levels = {
 5: ExtResource("3_6aveg"),
 6: ExtResource("3_6aveg")
 }
+lastLevelId = 7
 
 [node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("11_m5u4n")

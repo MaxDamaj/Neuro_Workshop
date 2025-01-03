@@ -32,6 +32,7 @@ var _playedMusic : String
 func _ready() -> void:
 	musicVolume = SaveDataProvider.get_saved_value("music_volume", 0.3)
 	soundVolume = SaveDataProvider.get_saved_value("sound_volume", 0.6)
+	musicTrack.finished.connect(_play_track_again)
 
 
 func play_music(musicId : String):
@@ -47,3 +48,7 @@ func play_sound(soundId : String):
 	
 	soundTrack.stream = allSounds[soundId].pick_random()
 	soundTrack.play()
+
+func _play_track_again():
+	if (musicTrack.stream == null): return
+	musicTrack.play()
