@@ -7,11 +7,10 @@ class_name UIExitLevelPanel
 @export var ExitButton : Button
 @export var ReturnButton : Button
 
-
 func _ready() -> void:
 	ExitButton.button_down.connect(_exit_level)
 	ReturnButton.button_down.connect(_return_back)
-	CloseButton.button_down.connect(func(): UIPanelsProvider.close_panel("exit_level_ui"))
+	CloseButton.button_down.connect(_return_back)
 
 func _return_back():
 	get_tree().paused = false

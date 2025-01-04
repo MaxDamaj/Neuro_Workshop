@@ -11,7 +11,6 @@ class_name UISettingsPanel
 static var wasPaused : bool
 
 func _ready() -> void:
-	wasPaused = get_tree().paused
 	get_tree().paused = true
 	CloseSettingsButton.button_down.connect(_close_panel)
 	MainMenuButton.button_down.connect(_try_close_level)
@@ -26,5 +25,8 @@ func _try_close_level():
 	UIPanelsProvider.close_panel("settings_ui")
 
 func _close_panel():
-	get_tree().paused = wasPaused
+	if (UIPanelsProvider.is_panel_open("dialog_ui")):
+		get_tree().paused = true
+	else:
+		get_tree().paused = false
 	UIPanelsProvider.close_panel("settings_ui")

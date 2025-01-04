@@ -1,7 +1,7 @@
 class_name CommandHandler
 extends Node
 
-const INCOMING_MESSAGES_FOLDER := "res://addons/neuro-sdk/messages/incoming/"
+const INCOMING_MESSAGES_FOLDER := "res://Assets/Modules/NeuroSDK/messages/incoming/"
 var handlers: Array[IncomingMessage] = []
 
 func register_all() -> void:
