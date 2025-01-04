@@ -7,8 +7,8 @@
 resource_name = "forsen_drink"
 script = ExtResource("1_fnlfk")
 name = "Forsen Drink"
-recipe = ""
+recipe = "combine Lemon and Lime on the table; put the mix into the Blender; carbonate the mix; serve customer"
 texture = ExtResource("2_pggw3")
-producingTime = 10.0
+producingTime = 5.0
 mergeTo = {}
 usedIn = {}

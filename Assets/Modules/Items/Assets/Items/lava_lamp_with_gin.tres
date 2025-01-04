@@ -6,7 +6,7 @@
 [resource]
 resource_name = "lava_lamp_with_gin"
 script = ExtResource("1_ib3o2")
-name = "Lava lamp with gin"
+name = "Lava Lamp with Gin"
 recipe = ""
 texture = ExtResource("2_avr6e")
 producingTime = 0.0

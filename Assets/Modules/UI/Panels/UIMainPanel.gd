@@ -47,7 +47,7 @@ func _ready() -> void:
 	
 	#Extra
 	FreeGameButton.button_down.connect(func(): _load_level(-1))
-	AIBartenderButton.button_down.connect(func(): _load_level(-2))
+	AIBartenderButton.button_down.connect(func(): UIPanelsProvider.open_panel("connect_ui"))
 	AICustomerButton.button_down.connect(func(): _load_level(-3))
 	
 	currentMenu = 'main'

@@ -6,7 +6,7 @@
 [resource]
 resource_name = "lemon_vodka"
 script = ExtResource("1_tvich")
-name = "Vodka with lemon"
+name = "Vodka with Lemon"
 recipe = ""
 texture = ExtResource("2_8j1gx")
 producingTime = 0.0

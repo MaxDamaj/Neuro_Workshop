@@ -8,8 +8,12 @@ static var _instance : AIBartenderStrategy
 @export var actionPositions : Dictionary
 @export var levelObjects : Dictionary
 
+signal on_action_started
+signal on_action_finished
+
 var _currentAction : StringName
 var _player : AICharacterView
+
 
 func _ready() -> void:
 	_instance = self
@@ -25,39 +29,53 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	UIPanelsProvider.close_panel("ai_actions_ui")
 
+
 static func get_actions_list() -> Array:
 	return _instance.actionPositions.keys()
 
-static func try_execute_action(action : StringName):
+static func validate_action(action : StringName) -> String:
 	if (_instance._currentAction != &""):
-		EventsProvider.call_event(&"previous action is not completed. Please wait...")
-		return
+		return "previous action is not completed. Please wait..."
 	
 	match action:
-		&"pick up vodka": _instance._try_pick_up_item(action)
-		&"pick up gin": _instance._try_pick_up_item(action)
-		&"pick up tonic": _instance._try_pick_up_item(action)
-		&"pick up rum": _instance._try_pick_up_item(action)
-		&"pick up banana": _instance._try_pick_up_item(action)
-		&"pick up lemon": _instance._try_pick_up_item(action)
-		&"pick up lime": _instance._try_pick_up_item(action)
-		&"pick up tomato": _instance._try_pick_up_item(action)
-		&"pick up ermge juice": _instance._try_pick_up_item(action)
-		&"pick up apple juice": _instance._try_pick_up_item(action)
-		&"interact with Safe": _instance._try_pick_up_item(action)
+		&"pick up vodka": return _instance._validate_pick_up_item()
+		&"pick up gin": return _instance._validate_pick_up_item()
+		&"pick up tonic": return _instance._validate_pick_up_item()
+		&"pick up rum": return _instance._validate_pick_up_item()
+		&"pick up banana": return _instance._validate_pick_up_item()
+		&"pick up lemon": return _instance._validate_pick_up_item()
+		&"pick up lime": return _instance._validate_pick_up_item()
+		&"pick up tomato": return _instance._validate_pick_up_item()
+		&"pick up ermge juice": return _instance._validate_pick_up_item()
+		&"pick up apple juice": return _instance._validate_pick_up_item()
+		&"interact with Safe": return _instance._validate_pick_up_item()
 		
-		&"interact with Table1": _instance._try_interact_with_table(action, "Table1")
-		&"interact with Table2": _instance._try_interact_with_table(action, "Table2")
-		&"interact with Table3": _instance._try_interact_with_table(action, "Table3")
-		&"interact with Table4": _instance._try_interact_with_table(action, "Table4")
-		&"interact with Trash can": _instance._try_interact_with_table(action, "Trash")
-		&"interact with Recipe book": _instance._try_interact_with_book(action)
-		&"serve customer": _instance._try_interact_with_table(action, "Customer")
+		&"interact with Table1": return _instance._validate_interact_with_table("Table1")
+		&"interact with Table2": return _instance._validate_interact_with_table("Table2")
+		&"interact with Table3": return _instance._validate_interact_with_table("Table3")
+		&"interact with Table4": return _instance._validate_interact_with_table("Table4")
+		&"interact with Trash can": return _instance._validate_interact_with_table("Trash")
+		&"serve customer": return _instance._validate_interact_with_table("Customer")
 		
-		&"interact with Cutting desk": _instance._try_interact_with_manual_machine(action, "CuttingDesk")
-		&"interact with Mixer": _instance._try_interact_with_manual_machine(action, "CuttingDesk")
-		&"interact with Carbonizer": _instance._try_interact_with_automatic_machine(action, "Carbonizer")
-		&"interact with Blender": _instance._try_interact_with_automatic_machine(action, "Blender")
+		&"interact with Recipe book": return ""
+		
+		&"interact with Cutting desk": return _instance._validate_interact_with_manual_machine("CuttingDesk")
+		&"interact with Mixer": return _instance._validate_interact_with_manual_machine("CuttingDesk")
+		&"interact with Carbonizer": return _instance._validate_interact_with_automatic_machine("Carbonizer")
+		&"interact with Blender": return _instance._validate_interact_with_automatic_machine("Blender")
+	
+	return ""
+
+static func execute_action(action : StringName):
+	_instance._currentAction = action
+	_instance._move_to_action_point(action)
+	_instance.on_action_started.emit()
+
+static func connect_on_action_started(callback : Callable):
+	_instance.on_action_started.connect(callback)
+
+static func connect_on_action_finished(callback : Callable):
+	_instance.on_action_finished.connect(callback)
 
 
 func _on_player_reached_position():
@@ -88,8 +106,9 @@ func _on_player_reached_position():
 		&"interact with Blender": _interact_with_automatic_machine("Blender")
 
 
-static func finish_action():
-	_instance._currentAction = &""
+func _finish_action():
+	_currentAction = &""
+	on_action_finished.emit()
 
 func _move_to_action_point(actionName : StringName):
 	var node : Node2D = get_node(actionPositions[actionName])
@@ -98,86 +117,70 @@ func _move_to_action_point(actionName : StringName):
 
 func _on_manual_work_complete(machine : DecorManualMachineView):
 	machine.aiProcessing = false
-	finish_action()
-
+	_finish_action()
 
 #Items
-func _try_pick_up_item(actionName : StringName):
+func _validate_pick_up_item() -> String:
 	if (_player.itemName != ""):
-		EventsProvider.call_event(&"you already have something in your hands")
-		return
+		return "you already have something in your hands"
 	
-	_currentAction = actionName
-	_move_to_action_point(actionName)
+	return ""
 
 func _add_item(itemName : String):
 	_player.add_item(itemName)
-	finish_action()
+	_finish_action()
 
 
 #Tables
-func _try_interact_with_table(actionName : StringName, tableName : String):
+func _validate_interact_with_table(tableName : String) -> String:
 	var table : DecorTableView = get_node(levelObjects[tableName])
 	if (_player.itemName == "" && table.ItemName == ""):
-		EventsProvider.call_event(&"your hands is empty and the table is empty too")
-		return
+		return "your hands is empty and the table is empty too"
 	
-	_currentAction = actionName
-	_move_to_action_point(actionName)
+	return ""
 
 func _interact_with_table(tableName : String):
 	var table : DecorTableView = get_node(levelObjects[tableName])
 	table._try_interact_with_item()
-	finish_action()
+	_finish_action()
 
 
 #Manual machines
-func _try_interact_with_manual_machine(actionName : StringName, tableName : String):
+func _validate_interact_with_manual_machine(tableName : String) -> String:
 	var table : DecorManualMachineView = get_node(levelObjects[tableName])
 	if (_player.itemName == ""):
-		EventsProvider.call_event(&"your hands is empty")
-		return
+		return "your hands is empty"
 	if (_player.itemName != "" && table.itemName != ""):
-		EventsProvider.call_event(&"you already have something in your hands and table is occupied too")
-		return
+		return "you already have something in your hands and table is occupied too"
 	
-	_currentAction = actionName
-	_move_to_action_point(actionName)
-	
+	return ""
 
 func _interact_with_manual_machine(tableName : String):
 	var table : DecorManualMachineView = get_node(levelObjects[tableName])
 	if (table._try_interact_with_item()):
 		table.aiProcessing = true
 	else:
-		finish_action()
+		_finish_action()
 
 
 #Automatic machines
-func _try_interact_with_automatic_machine(actionName : StringName, tableName : String):
+func _validate_interact_with_automatic_machine(tableName : String) -> String:
 	var table : DecorAutomaticMachineView = get_node(levelObjects[tableName])
 	if (_player.itemName == "" && table.itemName == ""):
-		EventsProvider.call_event(&"your hands is empty and table is empty too")
-		return
+		return "your hands is empty and table is empty too"
 	if (_player.itemName != "" && table.itemName != ""):
-		EventsProvider.call_event(&"you already have something in your hands and table is occupied too")
-		return
+		return "you already have something in your hands and table is occupied too"
 	
-	_currentAction = actionName
-	_move_to_action_point(actionName)
+	return ""
 
 func _interact_with_automatic_machine(tableName : String):
 	var table : DecorAutomaticMachineView = get_node(levelObjects[tableName])
 	table._try_interact_with_item()
-	finish_action()
+	_finish_action()
 
 
 #Book
-func _try_interact_with_book(actionName : StringName):
-	_currentAction = actionName
-	_move_to_action_point(actionName)
-
 func _interact_with_book():
 	var item : ItemModel = _levelTasksStrategy.lastStartedTask.get_item()
 	EventsProvider.call_event("%s: %s" % [item.name, item.recipe])
-	finish_action()
+	_finish_action()

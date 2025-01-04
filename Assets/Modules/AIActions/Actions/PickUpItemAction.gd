@@ -6,20 +6,17 @@ var availableItemNames := ["vodka", "gin", "tonic", "rum",
 	"ermge juice", "apple juice"
 ]
 
-# This action will always be part of an action window, so we pass that as a parameter
-func _init(window: ActionWindow) -> void:
-	super(window)
 
 func _get_name() -> String:
 	return "pick up item"
 
 func _get_description() -> String:
-	return "Decide if the defendant is innocent or guilty."
+	return "You can try to pick up item from storage, if your hands are empty"
 
 func _get_schema() -> Dictionary:
 	return JsonUtils.wrap_schema({
 		"item": {
-			"enum": ["vodka", "guilty"]
+			"enum": ["vodka", "gin", "tonic", "rum", "banana", "lemon", "lime", "tomato", "ermge juice", "apple juice"]
 		}
 	})
 
@@ -28,11 +25,15 @@ func _validate_action(data: IncomingData, state: Dictionary) -> ExecutionResult:
 	if (item == ""):
 		return ExecutionResult.failure("Action failed. Missing required parameter 'item'.")
 
-	if (availableItemNames.has(item)):
-		state["itemName"] = item
-		return ExecutionResult.success()
-	else:
+	if (!availableItemNames.has(item)):
 		return ExecutionResult.failure("Action failed. Invalid parameter 'item'.")
+	
+	var validateResult : String = AIBartenderStrategy.validate_action("pick up %s" % item)
+	if (validateResult != ""):
+		return ExecutionResult.failure(validateResult)
+	
+	state["itemName"] = item
+	return ExecutionResult.success()
 
 func _execute_action(state: Dictionary) -> void:
-	AIBartenderStrategy.try_execute_action("pick up %s" % state["itemName"])
+	AIBartenderStrategy.execute_action("pick up %s" % state["itemName"])

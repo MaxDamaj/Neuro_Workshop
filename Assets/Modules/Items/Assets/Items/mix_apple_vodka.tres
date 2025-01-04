@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://c5xcwdfyi031s"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_7eiaj"]
+[ext_resource type="Texture2D" uid="uid://b27om5s5bfwnh" path="res://Assets/Textures/Items/item_glass.png" id="2_bk706"]
+
+[resource]
+resource_name = "mix_apple_vodka"
+script = ExtResource("1_7eiaj")
+name = "Mixed Apple juice and Vodka"
+recipe = ""
+texture = ExtResource("2_bk706")
+producingTime = 4.0
+mergeTo = {
+"ermge_juice": "raw_mix_backslash_problem"
+}
+usedIn = {}

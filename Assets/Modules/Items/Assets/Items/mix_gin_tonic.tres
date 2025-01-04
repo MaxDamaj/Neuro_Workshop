@@ -6,7 +6,7 @@
 [resource]
 resource_name = "mix_gin_tonic"
 script = ExtResource("1_tatgv")
-name = "Mixed gin and tonic"
+name = "Mixed Gin and Tonic"
 recipe = ""
 texture = ExtResource("2_yqpan")
 producingTime = 5.0

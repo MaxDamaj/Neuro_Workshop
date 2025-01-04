@@ -6,6 +6,8 @@
 [resource]
 resource_name = "limed_rum"
 script = ExtResource("1_vrcu3")
+name = "Rum with Lime"
+recipe = ""
 texture = ExtResource("2_ntn4n")
 producingTime = 0.0
 mergeTo = {}

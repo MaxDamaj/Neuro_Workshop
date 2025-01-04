@@ -6,6 +6,8 @@
 [resource]
 resource_name = "monkey_gland"
 script = ExtResource("1_xaqcm")
+name = "Monkey Gland"
+recipe = "combine Gin and Ermge juice on the table; put the mix into the Mixer; serve customer"
 texture = ExtResource("2_yi0d6")
 producingTime = 4.0
 mergeTo = {}

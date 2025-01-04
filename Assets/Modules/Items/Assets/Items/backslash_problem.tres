@@ -7,8 +7,8 @@
 resource_name = "backslash_problem"
 script = ExtResource("1_571xa")
 name = "Backslash Problem"
-recipe = ""
+recipe = "combine Apple juice and Ermge juice on the table; combine Ermapple juice and Vodka on the table; put the mix into the Mixer; serve customer"
 texture = ExtResource("2_553xo")
-producingTime = 8.0
+producingTime = 6.0
 mergeTo = {}
 usedIn = {}

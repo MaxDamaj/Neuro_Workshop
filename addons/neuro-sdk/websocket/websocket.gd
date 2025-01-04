@@ -1,20 +1,25 @@
 class_name Websocket
 extends Node
 
+signal on_connection_start
+signal on_connection_close
+
 const POLL_INTERVAL := 1.0 / 30.0
 static var _socket: WebSocketPeer
 static var _message_queue := MessageQueue.new()
 static var _command_handler: CommandHandler
+
 var _elapsed_time := 0.0
+var _url : String
+var _state : int
+
+
 
 func _init() -> void:
 	_command_handler = CommandHandler.new()
 	self.add_child(_command_handler)
 	_command_handler.name = "Command Handler"
 	_command_handler.register_all()
-
-func _ready() -> void:
-	_ws_start()
 
 func _process(delta) -> void:
 	if _socket == null:
@@ -30,36 +35,48 @@ func _process(delta) -> void:
 
 	match state:
 		WebSocketPeer.STATE_OPEN:
+			if (_state != state):
+				_state = state
+				on_connection_start.emit()
+			
 			_ws_read()
 			_ws_write()
 		WebSocketPeer.STATE_CLOSED:
+			if (_state != state):
+				_state = state
+				on_connection_close.emit()
+			
 			var code: int = _socket.get_close_code()
 			push_warning("Websocket closed with code: %d" % [code])
 			_ws_reconnect()
 
-func _ws_start() -> void:
+func ws_start(url : String) -> void:
 	push_warning("Initializing Websocket connection")
+	_url = url
 
 	if _socket != null:
 		var state: int = _socket.get_ready_state();
 		if state == WebSocketPeer.STATE_OPEN or state == WebSocketPeer.STATE_CONNECTING:
 			_socket.close()
 
-	var ws_url := OS.get_environment("NEURO_SDK_WS_URL")
-	if not ws_url:
+	if not _url:
 		push_error("NEURO_SDK_WS_URL environment variable is not set")
 		return
 
 	_socket = WebSocketPeer.new() # idk if i can reuse the same one
-	var err: int = _socket.connect_to_url(ws_url)
+	var err: int = _socket.connect_to_url(_url)
 	if err != OK:
 		push_warning("Could not connect to websocket, error code %d" % [err])
 		_ws_reconnect()
 
+func ws_close():
+	if (_socket == null): return
+	_socket.close(1000, "Player left AI game mode")
+
 func _ws_reconnect() -> void:
 	_socket = null
 	await get_tree().create_timer(3).timeout
-	_ws_start()
+	ws_start(_url)
 
 func _ws_read() -> void:
 	while _socket.get_available_packet_count():

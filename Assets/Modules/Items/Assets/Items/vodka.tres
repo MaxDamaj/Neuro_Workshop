@@ -11,6 +11,7 @@ recipe = "pick up vodka; serve customer"
 texture = ExtResource("2_xhisr")
 producingTime = 0.0
 mergeTo = {
+"apple_juice": "mix_apple_vodka",
 "ermapple_juice": "raw_mix_backslash_problem",
 "ermge_juice": "raw_mix_ermge_vodka",
 "lemon": "lemon_vodka",

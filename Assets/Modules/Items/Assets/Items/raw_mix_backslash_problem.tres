@@ -6,6 +6,8 @@
 [resource]
 resource_name = "raw_mix_backslash_problem"
 script = ExtResource("1_m471q")
+name = "Raw mix Backslash Problem"
+recipe = ""
 texture = ExtResource("2_diwiu")
 producingTime = 0.0
 mergeTo = {}

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=8 format=3 uid="uid://set7jngsw738"]
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=13 format=3 uid="uid://set7jngsw738"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_pyvib"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="2_siaca"]
@@ -63,9 +63,70 @@ completedTasksCount = 0
 entranceDialogId = ""
 dialogId = ""
 
+[sub_resource type="Resource" id="Resource_v53ov"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "rising_star"
+waitingTime = 300.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_87u88"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "monkey_gland"
+waitingTime = 300.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_8l7l0"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "chat_juice"
+waitingTime = 400.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_jpa5t"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "forsen_drink"
+waitingTime = 400.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
+[sub_resource type="Resource" id="Resource_sk2b1"]
+script = ExtResource("1_pyvib")
+npcName = "random"
+delay = 0.0
+item = "backslash_problem"
+waitingTime = 450.0
+chillingTime = 0.0
+rarity = 0
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = ""
+
 [resource]
 resource_name = "level_-2"
 script = ExtResource("2_siaca")
-TasksCount = 5
+TasksCount = 10
 StartDialog = ""
-Tasks = Array[ExtResource("1_pyvib")]([SubResource("Resource_iwob8"), SubResource("Resource_sappd"), SubResource("Resource_5pku4"), SubResource("Resource_yautc"), SubResource("Resource_8vn8u")])
+EndDialog = ""
+Tasks = Array[ExtResource("1_pyvib")]([SubResource("Resource_iwob8"), SubResource("Resource_sappd"), SubResource("Resource_5pku4"), SubResource("Resource_yautc"), SubResource("Resource_8vn8u"), SubResource("Resource_v53ov"), SubResource("Resource_87u88"), SubResource("Resource_8l7l0"), SubResource("Resource_jpa5t"), SubResource("Resource_sk2b1")])

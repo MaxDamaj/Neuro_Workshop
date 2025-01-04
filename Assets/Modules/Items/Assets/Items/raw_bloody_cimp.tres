@@ -6,7 +6,7 @@
 [resource]
 resource_name = "raw_bloody_cimp"
 script = ExtResource("1_vfwd1")
-name = ""
+name = "Raw Bloody Cimp"
 recipe = ""
 texture = ExtResource("2_putvi")
 producingTime = 7.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=44 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="PackedScene" uid="uid://ddpv4q4fscfuv" path="res://Assets/Level0_Modules/Events/Assets/events_provider.tscn" id="1_6xgfg"]
 [ext_resource type="Script" path="res://Assets/Level0_Modules/Base/UIPanelsProvider.gd" id="1_yahvp"]
@@ -40,6 +40,8 @@
 [ext_resource type="PackedScene" uid="uid://d3jayvqnhedxc" path="res://Assets/Level1_Modules/Dialogs/Assets/dialogs_provider.tscn" id="33_hi8tc"]
 [ext_resource type="PackedScene" uid="uid://bai2j3wtxcewg" path="res://Assets/Modules/Levels/Assets/Scenes/level_ai_bartender.tscn" id="38_5rbiv"]
 [ext_resource type="PackedScene" uid="uid://bqcvuxtnoe4ji" path="res://Assets/Level1_Modules/Tutorial/Assets/tutorial_factory.tscn" id="38_rf5bs"]
+[ext_resource type="Script" path="res://Assets/Modules/AIActions/Strategies/AIConnectionStrategy.gd" id="41_fa7ic"]
+[ext_resource type="PackedScene" uid="uid://dsw16ystn7jp3" path="res://addons/neuro-sdk/neuro_sdk.tscn" id="42_fophl"]
 [ext_resource type="PackedScene" uid="uid://37ruv10rwlyg" path="res://Assets/Level1_Modules/Sounds/Assets/sound_provider.tscn" id="57_truwe"]
 
 [node name="MainScene" type="Node2D"]
@@ -113,6 +115,10 @@ lastLevelId = 7
 
 [node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("11_m5u4n")
+
+[node name="AIConnectionStrategy" type="Node" parent="_Strategies"]
+script = ExtResource("41_fa7ic")
+sdkScene = ExtResource("42_fophl")
 
 [node name="_Factories" type="Node" parent="."]
 

@@ -17,12 +17,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6qao"]
 
-[node name="UIConnectPanel" type="CanvasLayer" node_paths=PackedStringArray("ConnectButton", "OfflineButton")]
+[node name="UIConnectPanel" type="CanvasLayer" node_paths=PackedStringArray("EnterUrlContainer", "CloseButton", "ConnectButton", "OfflineButton", "HostLineEdit", "WaitConnectionContainer", "CloseWaitButton")]
 process_mode = 3
 layer = 12
 script = ExtResource("1_if378")
-ConnectButton = NodePath("ExitMenuContainer/ConnectButton")
-OfflineButton = NodePath("ExitMenuContainer/OfflineButton")
+EnterUrlContainer = NodePath("ExitMenuContainer/EnterUrlContainer")
+CloseButton = NodePath("ExitMenuContainer/EnterUrlContainer/CloseButton")
+ConnectButton = NodePath("ExitMenuContainer/EnterUrlContainer/ConnectButton")
+OfflineButton = NodePath("ExitMenuContainer/EnterUrlContainer/OfflineButton")
+HostLineEdit = NodePath("ExitMenuContainer/EnterUrlContainer/HostLineEdit")
+WaitConnectionContainer = NodePath("ExitMenuContainer/WaitConnectionContainer")
+CloseWaitButton = NodePath("ExitMenuContainer/WaitConnectionContainer/CancelButton")
 
 [node name="Blur" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -46,7 +51,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_frwlb")
 
-[node name="Title" type="Label" parent="ExitMenuContainer"]
+[node name="EnterUrlContainer" type="Control" parent="ExitMenuContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UrlTitle" type="Label" parent="ExitMenuContainer/EnterUrlContainer"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -60,7 +73,7 @@ theme = ExtResource("2_frwlb")
 text = "Enter host url:"
 horizontal_alignment = 1
 
-[node name="ConnectButton" type="Button" parent="ExitMenuContainer"]
+[node name="ConnectButton" type="Button" parent="ExitMenuContainer/EnterUrlContainer"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -76,7 +89,7 @@ grow_vertical = 0
 theme = ExtResource("2_frwlb")
 text = "Connect"
 
-[node name="OfflineButton" type="Button" parent="ExitMenuContainer"]
+[node name="OfflineButton" type="Button" parent="ExitMenuContainer/EnterUrlContainer"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -92,7 +105,7 @@ grow_vertical = 0
 theme = ExtResource("2_frwlb")
 text = "Run Offline"
 
-[node name="CloseButton" type="Button" parent="ExitMenuContainer"]
+[node name="CloseButton" type="Button" parent="ExitMenuContainer/EnterUrlContainer"]
 layout_mode = 0
 offset_left = 856.0
 offset_top = 24.0
@@ -107,7 +120,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_x6qao")
 icon = ExtResource("3_s84lx")
 icon_alignment = 1
 
-[node name="HostLineEdit" type="LineEdit" parent="ExitMenuContainer"]
+[node name="HostLineEdit" type="LineEdit" parent="ExitMenuContainer/EnterUrlContainer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -123,3 +136,44 @@ grow_vertical = 2
 theme = ExtResource("3_l7t8h")
 placeholder_text = "ws://localhost:8000"
 alignment = 1
+
+[node name="WaitConnectionContainer" type="Control" parent="ExitMenuContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConnectingTitle" type="Label" parent="ExitMenuContainer/WaitConnectionContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -36.0
+offset_right = 368.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_frwlb")
+text = "Connecting..."
+horizontal_alignment = 1
+
+[node name="CancelButton" type="Button" parent="ExitMenuContainer/WaitConnectionContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -104.0
+offset_right = 140.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_frwlb")
+text = "Cancel"

@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ItemModel" load_steps=3 format=3 uid="uid://dlix46lcb61ws"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Items/Models/ItemModel.gd" id="1_wvhhu"]
-[ext_resource type="Texture2D" uid="uid://e0ljlelfma23" path="res://Assets/Textures/Items/blank_item.png" id="2_w2yl5"]
+[ext_resource type="Texture2D" uid="uid://b27om5s5bfwnh" path="res://Assets/Textures/Items/item_glass.png" id="2_lm8md"]
 
 [resource]
 resource_name = "mix_ermge_vodka"
 script = ExtResource("1_wvhhu")
-name = ""
+name = "Mixed Ermge juice and Vodka"
 recipe = ""
-texture = ExtResource("2_w2yl5")
+texture = ExtResource("2_lm8md")
 producingTime = 4.0
 mergeTo = {
 "lemon_slices": "fox_on_the_beach"
