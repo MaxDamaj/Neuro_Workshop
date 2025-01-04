@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Assets/Level0_Modules/Base/UIPanelsProvider.gd" id="1_yahvp"]
 [ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelLoadStrategy.gd" id="2_7afnu"]
 [ext_resource type="PackedScene" uid="uid://dh2atkaqxtvcv" path="res://Assets/Modules/UI/Assets/ui.tscn" id="2_632w6"]
-[ext_resource type="PackedScene" uid="uid://v884ekdweklf" path="res://Assets/Level0_Modules/SaveLoad/save_data_provider.tscn" id="2_a3its"]
+[ext_resource type="PackedScene" uid="uid://v884ekdweklf" path="res://Assets/Modules/SaveLoad/save_data_provider.tscn" id="2_a3its"]
 [ext_resource type="PackedScene" uid="uid://b7r3rrga5w2bb" path="res://Assets/Modules/UI/Assets/ui_dialog_panel.tscn" id="2_nchc3"]
 [ext_resource type="PackedScene" uid="uid://cx3uplkeyulyg" path="res://Assets/Modules/Levels/Assets/Scenes/level_base.tscn" id="3_6aveg"]
 [ext_resource type="PackedScene" uid="uid://dm7th3b03hpn" path="res://Assets/Modules/UI/Assets/ui_workshop_panel.tscn" id="3_n0mek"]
