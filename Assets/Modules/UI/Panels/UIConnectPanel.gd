@@ -18,9 +18,13 @@ func _ready() -> void:
 	CloseWaitButton.button_down.connect(_cancel_connection)
 	HostLineEdit.text_changed.connect(_host_line_text_changed)
 	
+	HostLineEdit.text = SaveDataProvider.get_saved_value("ws_url", "")
 	EnterUrlContainer.visible = true
 	WaitConnectionContainer.visible = false
-	ConnectButton.disabled = true
+	ConnectButton.disabled = HostLineEdit.text == ""
+
+func _exit_tree() -> void:
+	SaveDataProvider.set_saved_value("ws_url", HostLineEdit.text)
 
 
 func _try_connect():
