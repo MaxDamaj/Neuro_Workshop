@@ -154,7 +154,6 @@ offset_right = 400.0
 offset_bottom = 108.0
 grow_vertical = 2
 theme = ExtResource("3_7k0jo")
-disabled = true
 text = "Free Game"
 alignment = 0
 script = ExtResource("4_n8r61")

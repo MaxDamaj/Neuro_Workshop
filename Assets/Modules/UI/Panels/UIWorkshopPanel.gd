@@ -12,10 +12,10 @@ class_name UIWorkshopPanel
 func _ready() -> void:
 	SettingsButton.button_down.connect(_open_settings_panel)
 
-	_levelTasksStrategy.on_task_completed.connect(_update_completion_value)
+	_levelTasksStrategy.on_task_status_updated.connect(_update_completion_value)
 	_levelTasksStrategy.on_life_lost.connect(_update_lose_value)
 	
-	_update_completion_value(_levelTasksStrategy.levelTaskModel.Tasks.size(), _levelTasksStrategy.completedTasksCount)
+	_update_completion_value(_levelTasksStrategy.get_tasks_text())
 	_soundProvider.play_music("tony_theme")
 
 func _input(event: InputEvent) -> void:
@@ -31,8 +31,8 @@ func _input(event: InputEvent) -> void:
 func _open_settings_panel():
 	UIPanelsProvider.open_panel("settings_ui")
 
-func _update_completion_value(totalProgress : int, currentProgress : int):
-	CompletionLabel.text = "Drinks served: " + str(currentProgress) + "/" + str(totalProgress)
+func _update_completion_value(text : String):
+	CompletionLabel.text = text
 
 func _update_lose_value(totalLifes : int, currentLifes : int):
 	for i in range(Lifes.size()):

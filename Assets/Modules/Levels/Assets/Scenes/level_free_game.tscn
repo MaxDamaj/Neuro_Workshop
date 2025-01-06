@@ -1,0 +1,224 @@
+[gd_scene load_steps=29 format=3 uid="uid://bhb1y6cc0iw2x"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/FreeGameTasksStrategy.gd" id="1_mjhg1"]
+[ext_resource type="Texture2D" uid="uid://bv1rqo5ynywwe" path="res://Assets/Textures/Stage/bar_bg.png" id="2_qoba5"]
+[ext_resource type="PackedScene" uid="uid://dgj8cpgw84mot" path="res://Assets/Modules/Decor/Assets/bar_table_1.tscn" id="3_qyy84"]
+[ext_resource type="PackedScene" uid="uid://rwykpbf5e0h1" path="res://Assets/Modules/Decor/Assets/bar_table_2.tscn" id="4_36un1"]
+[ext_resource type="PackedScene" uid="uid://d2cvdx2fgnnrh" path="res://Assets/Modules/Decor/Assets/bar_table_3.tscn" id="5_xpbn8"]
+[ext_resource type="PackedScene" uid="uid://vetm76i3gabb" path="res://Assets/Modules/Decor/Assets/table_2.tscn" id="6_os3ph"]
+[ext_resource type="PackedScene" uid="uid://1s5lb214um8w" path="res://Assets/Modules/Decor/Assets/table_4.tscn" id="7_3movu"]
+[ext_resource type="PackedScene" uid="uid://b1k6aawlgctpw" path="res://Assets/Modules/Decor/Assets/table_3.tscn" id="8_3ygi4"]
+[ext_resource type="PackedScene" uid="uid://sc7a05fqml2v" path="res://Assets/Modules/Decor/Assets/table.tscn" id="9_v0yt4"]
+[ext_resource type="PackedScene" uid="uid://jbr3yj0i2niu" path="res://Assets/Modules/Decor/Assets/cutting_table.tscn" id="10_1hhkr"]
+[ext_resource type="PackedScene" uid="uid://b1bm8tdi3cpvr" path="res://Assets/Modules/Decor/Assets/mixing_table.tscn" id="11_lf8hw"]
+[ext_resource type="PackedScene" uid="uid://niy2pgrlk6au" path="res://Assets/Modules/Decor/Assets/carbonizer_table.tscn" id="12_ad5x5"]
+[ext_resource type="PackedScene" uid="uid://b23lgswlw3pf6" path="res://Assets/Modules/Decor/Assets/blender_table.tscn" id="13_83xnf"]
+[ext_resource type="PackedScene" uid="uid://dwkyhtlm1fk6v" path="res://Assets/Modules/Decor/Assets/ermge_fridge.tscn" id="14_glnpn"]
+[ext_resource type="PackedScene" uid="uid://okuxx8tg844m" path="res://Assets/Modules/Decor/Assets/apple_fridge.tscn" id="15_5a80u"]
+[ext_resource type="PackedScene" uid="uid://hc8xmft6lcol" path="res://Assets/Modules/Decor/Assets/fruits_basket.tscn" id="16_xpio6"]
+[ext_resource type="PackedScene" uid="uid://c166u1ttsx4ie" path="res://Assets/Modules/Decor/Assets/drink_bar.tscn" id="17_ah1jf"]
+[ext_resource type="PackedScene" uid="uid://cuixbpasw8noj" path="res://Assets/Modules/Decor/Assets/recipe_book.tscn" id="18_mf8j4"]
+[ext_resource type="PackedScene" uid="uid://dvx65gj4snp7s" path="res://Assets/Modules/Decor/Assets/safe_table.tscn" id="19_atvnj"]
+[ext_resource type="PackedScene" uid="uid://d35ycjrkrpbr1" path="res://Assets/Modules/Decor/Assets/trash_box.tscn" id="20_483i3"]
+[ext_resource type="Texture2D" uid="uid://ckq3g2dbrvxf2" path="res://Assets/Textures/Stage/big_table.png" id="21_24e3c"]
+[ext_resource type="Texture2D" uid="uid://bogarw5h1vo7s" path="res://Assets/Textures/Stage/small_table.png" id="22_eakkc"]
+[ext_resource type="Texture2D" uid="uid://bb5aewsmwvnnt" path="res://Assets/Textures/Stage/decor_closet.png" id="23_bneqy"]
+[ext_resource type="Script" path="res://Assets/Modules/NPCs/Views/NpcSpawnerView.gd" id="24_wp3jt"]
+[ext_resource type="PackedScene" uid="uid://dj40ovayiw7gs" path="res://Assets/Modules/Character/Assets/player.tscn" id="25_fbqsh"]
+
+[sub_resource type="Curve2D" id="Curve2D_2vud6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 656, 56.0005, 0, 0, 0, 0, 112, 40.0005)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_y5f8w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 656, 120.001, 0, 0, 0, 0, 120, 200.001)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_eo28r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 656, 184.001, 0, 0, 0, 0, 360, 280.001, 0, 0, 0, 0, 216, 336.001, 0, 0, 0, 0, 120, 360.001)
+}
+point_count = 4
+
+[node name="WorkshopScene" type="Node2D"]
+y_sort_enabled = true
+
+[node name="_Strategies" type="Node" parent="."]
+
+[node name="FreeGameTasksStrategy" type="Node" parent="_Strategies"]
+script = ExtResource("1_mjhg1")
+taskItems = {
+"apple_rum": 1.5,
+"backslash_problem": 2.0,
+"banana_rum": 1.5,
+"bloody_cimp": 3.0,
+"chat_juice": 2.0,
+"donowall_drink": 3.0,
+"ermge_juice": 0.5,
+"fannta": 1.0,
+"forsen_drink": 2.0,
+"fox_on_the_beach": 3.0,
+"gin": 0.5,
+"lava_lamp_cocktail": 2.5,
+"monkey_gland": 1.5,
+"rising_star": 1.5,
+"the_universal_mind": 3.0,
+"three_underscores_and_backslash": 3.0,
+"tony_tonic": 3.0,
+"vodka": 0.5
+}
+
+[node name="Floor" type="Node2D" parent="."]
+position = Vector2(0, -13)
+
+[node name="Bg" type="Sprite2D" parent="Floor"]
+position = Vector2(-0.159996, 0.0900097)
+texture = ExtResource("2_qoba5")
+
+[node name="Colliders" type="Node2D" parent="."]
+
+[node name="Borders" type="StaticBody2D" parent="Colliders"]
+position = Vector2(-1, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders/Borders"]
+polygon = PackedVector2Array(-960, -104, 376, -104, 377, 392, 513, 392, 520, -168, 960, -168, 960, 528, 513, 528, 513, 400, 217, 400, 216, 528, -824, 528, -823, 416, -639, 416, -639, 168, -807, 168, -808, 24, -960, 24, -960, -88, -1088, -384, -1088, 576, 1024, 576, 1024, -640, -1088, -640, -1088, -408)
+
+[node name="InnerTable" type="StaticBody2D" parent="Colliders"]
+position = Vector2(-1, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders/InnerTable"]
+polygon = PackedVector2Array(-367, 168, -367, 424, -63, 424, -63, 296, 89, 296, 89, 168)
+
+[node name="Decor" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="BarTable1" parent="Decor" instance=ExtResource("3_qyy84")]
+position = Vector2(453, 30)
+
+[node name="BarTable2" parent="Decor" instance=ExtResource("4_36un1")]
+position = Vector2(452, 185)
+
+[node name="BarTable3" parent="Decor" instance=ExtResource("5_xpbn8")]
+position = Vector2(454, 338)
+
+[node name="Table1" parent="Decor" instance=ExtResource("6_os3ph")]
+position = Vector2(-285, 297)
+
+[node name="Table2" parent="Decor" instance=ExtResource("7_3movu")]
+position = Vector2(318, 524)
+
+[node name="Table3" parent="Decor" instance=ExtResource("8_3ygi4")]
+position = Vector2(-428, -234)
+
+[node name="Table4" parent="Decor" instance=ExtResource("9_v0yt4")]
+position = Vector2(287, -235)
+
+[node name="CuttingTable" parent="Decor" instance=ExtResource("10_1hhkr")]
+position = Vector2(-296, -198)
+
+[node name="Mixer" parent="Decor" instance=ExtResource("11_lf8hw")]
+position = Vector2(1, 196)
+
+[node name="Carbonizer" parent="Decor" instance=ExtResource("12_ad5x5")]
+y_sort_enabled = true
+position = Vector2(-136, 315)
+
+[node name="Blender" parent="Decor" instance=ExtResource("13_83xnf")]
+y_sort_enabled = true
+position = Vector2(-280, 207)
+
+[node name="ErmgeFridge" parent="Decor" instance=ExtResource("14_glnpn")]
+position = Vector2(150, -228)
+
+[node name="AppleFridge" parent="Decor" instance=ExtResource("15_5a80u")]
+position = Vector2(15, -226)
+
+[node name="FruitsBasket" parent="Decor" instance=ExtResource("16_xpio6")]
+position = Vector2(-142, -223)
+
+[node name="DrinkBar" parent="Decor" instance=ExtResource("17_ah1jf")]
+position = Vector2(-662, -142)
+
+[node name="RecipeBook" parent="Decor" instance=ExtResource("18_mf8j4")]
+y_sort_enabled = true
+position = Vector2(-136, 196)
+
+[node name="SafeTable" parent="Decor" instance=ExtResource("19_atvnj")]
+position = Vector2(-871, 89)
+
+[node name="TrashBox" parent="Decor" instance=ExtResource("20_483i3")]
+position = Vector2(-869, 482)
+
+[node name="BigTable" type="Sprite2D" parent="Decor"]
+position = Vector2(-140, 194.61)
+texture = ExtResource("21_24e3c")
+offset = Vector2(0, 80)
+
+[node name="SmallTable" type="Sprite2D" parent="Decor"]
+position = Vector2(374, 449)
+texture = ExtResource("22_eakkc")
+offset = Vector2(0, -24)
+
+[node name="DecorCloset" type="Sprite2D" parent="Decor"]
+position = Vector2(-787, 336)
+texture = ExtResource("23_bneqy")
+offset = Vector2(0, -48)
+
+[node name="Pathes" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(608, -80)
+rotation = 1.5708
+
+[node name="Path1" type="Path2D" parent="Pathes"]
+position = Vector2(88, 144)
+rotation = -1.5708
+curve = SubResource("Curve2D_2vud6")
+
+[node name="PathFollow1" type="PathFollow2D" parent="Pathes/Path1" node_paths=PackedStringArray("BarTable")]
+position = Vector2(528.057, 52.2375)
+rotation = 1.5708
+progress = 128.0
+rotates = false
+loop = false
+script = ExtResource("24_wp3jt")
+BarTable = NodePath("../../../Decor/BarTable1")
+
+[node name="Path2" type="Path2D" parent="Pathes"]
+position = Vector2(88, 144)
+rotation = -1.5708
+curve = SubResource("Curve2D_y5f8w")
+
+[node name="PathFollow2" type="PathFollow2D" parent="Pathes/Path2" node_paths=PackedStringArray("BarTable")]
+position = Vector2(529.404, 138.896)
+rotation = 1.5708
+progress = 128.0
+rotates = false
+loop = false
+script = ExtResource("24_wp3jt")
+BarTable = NodePath("../../../Decor/BarTable2")
+
+[node name="Path3" type="Path2D" parent="Pathes"]
+position = Vector2(88, 144)
+rotation = -1.5708
+curve = SubResource("Curve2D_eo28r")
+
+[node name="PathFollow3" type="PathFollow2D" parent="Pathes/Path3" node_paths=PackedStringArray("BarTable")]
+position = Vector2(534.245, 223.489)
+rotation = 1.5708
+progress = 128.0
+rotates = false
+loop = false
+script = ExtResource("24_wp3jt")
+BarTable = NodePath("../../../Decor/BarTable3")
+
+[node name="Player" parent="." instance=ExtResource("25_fbqsh")]
+position = Vector2(-217, 497)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -14)
+offset = Vector2(0, 1)

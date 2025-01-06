@@ -16,7 +16,6 @@
 [ext_resource type="Script" path="res://Assets/Modules/NPCs/Providers/NpcsProvider.gd" id="8_x13n3"]
 [ext_resource type="PackedScene" uid="uid://bqqp7epoca200" path="res://Assets/Modules/UI/Assets/ui_safe_panel.tscn" id="9_usnlb"]
 [ext_resource type="PackedScene" uid="uid://cp2kuqpqelcoo" path="res://Assets/Modules/NPCs/Assets/npc_vedal.tscn" id="9_vkmdw"]
-[ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="11_m5u4n"]
 [ext_resource type="PackedScene" uid="uid://r5rgngruqomd" path="res://Assets/Modules/UI/Assets/ui_settings_panel.tscn" id="11_upqfx"]
 [ext_resource type="PackedScene" uid="uid://bkl47syet3u71" path="res://Assets/Modules/Items/Assets/items_provider.tscn" id="14_56mqf"]
 [ext_resource type="PackedScene" uid="uid://dx7cx75j8h066" path="res://Assets/Modules/NPCs/Assets/npc_random_1.tscn" id="14_gsjwi"]
@@ -40,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://d3jayvqnhedxc" path="res://Assets/Level1_Modules/Dialogs/Assets/dialogs_provider.tscn" id="33_hi8tc"]
 [ext_resource type="PackedScene" uid="uid://bai2j3wtxcewg" path="res://Assets/Modules/Levels/Assets/Scenes/level_ai_bartender.tscn" id="38_5rbiv"]
 [ext_resource type="PackedScene" uid="uid://bqcvuxtnoe4ji" path="res://Assets/Level1_Modules/Tutorial/Assets/tutorial_factory.tscn" id="38_rf5bs"]
+[ext_resource type="PackedScene" uid="uid://bhb1y6cc0iw2x" path="res://Assets/Modules/Levels/Assets/Scenes/level_free_game.tscn" id="40_g18ti"]
 [ext_resource type="Script" path="res://Assets/Modules/AIActions/Strategies/AIConnectionStrategy.gd" id="41_fa7ic"]
 [ext_resource type="PackedScene" uid="uid://dsw16ystn7jp3" path="res://Assets/Modules/NeuroSDK/neuro_sdk.tscn" id="42_fophl"]
 [ext_resource type="PackedScene" uid="uid://37ruv10rwlyg" path="res://Assets/Level1_Modules/Sounds/Assets/sound_provider.tscn" id="57_truwe"]
@@ -103,6 +103,7 @@ allNpcs = {
 script = ExtResource("2_7afnu")
 levels = {
 -2: ExtResource("38_5rbiv"),
+-1: ExtResource("40_g18ti"),
 0: ExtResource("3_6aveg"),
 1: ExtResource("3_6aveg"),
 2: ExtResource("3_6aveg"),
@@ -112,9 +113,6 @@ levels = {
 6: ExtResource("3_6aveg")
 }
 lastLevelId = 7
-
-[node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
-script = ExtResource("11_m5u4n")
 
 [node name="AIConnectionStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("41_fa7ic")

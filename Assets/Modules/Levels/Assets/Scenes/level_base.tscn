@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://cx3uplkeyulyg"]
+[gd_scene load_steps=29 format=3 uid="uid://cx3uplkeyulyg"]
 
 [ext_resource type="Texture2D" uid="uid://bv1rqo5ynywwe" path="res://Assets/Textures/Stage/bar_bg.png" id="1_lbfl7"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="1_pkrtg"]
 [ext_resource type="PackedScene" uid="uid://sc7a05fqml2v" path="res://Assets/Modules/Decor/Assets/table.tscn" id="2_2arif"]
 [ext_resource type="PackedScene" uid="uid://dgj8cpgw84mot" path="res://Assets/Modules/Decor/Assets/bar_table_1.tscn" id="2_o6xgc"]
 [ext_resource type="PackedScene" uid="uid://dj40ovayiw7gs" path="res://Assets/Modules/Character/Assets/player.tscn" id="2_t2qoh"]
@@ -45,6 +46,11 @@ point_count = 4
 
 [node name="WorkshopScene" type="Node2D"]
 y_sort_enabled = true
+
+[node name="_Strategies" type="Node" parent="."]
+
+[node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
+script = ExtResource("1_pkrtg")
 
 [node name="Floor" type="Node2D" parent="."]
 position = Vector2(0, -13)

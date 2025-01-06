@@ -30,7 +30,7 @@ func start_task(task : TaskModel):
 
 func _item_recieved():
 	BarTable.remove_item()
-	_levelTasksStrategy.complete_task(_task)
+	_levelTasksStrategy.complete_task(_task, _npc.Bubble.ProgressSlider.value)
 	
 	if (_task.nextTask != null):
 		_task = _task.nextTask

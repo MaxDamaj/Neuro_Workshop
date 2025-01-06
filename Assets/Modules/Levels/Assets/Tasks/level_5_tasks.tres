@@ -60,7 +60,7 @@ waitingTime = 120.0
 chillingTime = 5.0
 rarity = 0
 completedTasksCount = 0
-entranceDialogId = ""
+entranceDialogId = "level_5_middle_1"
 dialogId = ""
 
 [sub_resource type="Resource" id="Resource_0h3ry"]
@@ -80,18 +80,6 @@ script = ExtResource("1_u56c7")
 npcName = "random"
 delay = 10.0
 item = "rising_star"
-waitingTime = 150.0
-chillingTime = 0.0
-rarity = 0
-completedTasksCount = 0
-entranceDialogId = ""
-dialogId = ""
-
-[sub_resource type="Resource" id="Resource_781t6"]
-script = ExtResource("1_u56c7")
-npcName = "random"
-delay = 10.0
-item = "lava_lamp_cocktail"
 waitingTime = 150.0
 chillingTime = 0.0
 rarity = 0
@@ -122,6 +110,18 @@ rarity = 0
 completedTasksCount = 0
 entranceDialogId = ""
 dialogId = ""
+
+[sub_resource type="Resource" id="Resource_781t6"]
+script = ExtResource("1_u56c7")
+npcName = "evil"
+delay = 10.0
+item = "lava_lamp_cocktail"
+waitingTime = 150.0
+chillingTime = 0.0
+rarity = 1
+completedTasksCount = 0
+entranceDialogId = ""
+dialogId = "level_5_middle_2"
 
 [sub_resource type="Resource" id="Resource_0lhti"]
 script = ExtResource("1_u56c7")
@@ -189,4 +189,4 @@ script = ExtResource("5_moymk")
 TasksCount = 15
 StartDialog = "level_5_start"
 EndDialog = "level_5_end"
-Tasks = Array[ExtResource("1_u56c7")]([SubResource("Resource_xu04w"), SubResource("Resource_t0r2l"), SubResource("Resource_6b3j7"), SubResource("Resource_6txxb"), SubResource("Resource_omcoy"), SubResource("Resource_0h3ry"), SubResource("Resource_2uj6b"), SubResource("Resource_781t6"), SubResource("Resource_miial"), SubResource("Resource_vcwkn"), SubResource("Resource_0lhti"), SubResource("Resource_cloy2"), SubResource("Resource_c6h65"), SubResource("Resource_fqfuw"), SubResource("Resource_4isef")])
+Tasks = Array[ExtResource("1_u56c7")]([SubResource("Resource_xu04w"), SubResource("Resource_t0r2l"), SubResource("Resource_6b3j7"), SubResource("Resource_6txxb"), SubResource("Resource_omcoy"), SubResource("Resource_0h3ry"), SubResource("Resource_2uj6b"), SubResource("Resource_miial"), SubResource("Resource_vcwkn"), SubResource("Resource_781t6"), SubResource("Resource_0lhti"), SubResource("Resource_cloy2"), SubResource("Resource_c6h65"), SubResource("Resource_fqfuw"), SubResource("Resource_4isef")])

@@ -1,4 +1,4 @@
-﻿class_name WsAction
+class_name WsAction
 
 var name: String
 var description: String

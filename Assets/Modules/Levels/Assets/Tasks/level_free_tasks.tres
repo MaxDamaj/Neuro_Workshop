@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelTasksModel" load_steps=3 format=3 uid="uid://c6crmul5selqe"]
+
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/TaskModel.gd" id="1_j85rs"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Models/LevelTasksModel.gd" id="2_aomhd"]
+
+[resource]
+resource_name = "level_-1"
+script = ExtResource("2_aomhd")
+TasksCount = 0
+StartDialog = ""
+EndDialog = ""
+Tasks = Array[ExtResource("1_j85rs")]([])

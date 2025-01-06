@@ -1,14 +1,13 @@
 extends Node
 class_name LevelTasksStrategy
 
-static var path : NodePath = "/root/MainScene/_Strategies/LevelTasksStrategy"
+static var path : NodePath
 
 @onready var _dialogsProvider : DialogsProvider = get_node(DialogsProvider.path)
+@onready var _levelLoadStrategy : LevelLoadStrategy = get_node(LevelLoadStrategy.path)
 
-signal on_task_completed(totalProgress : int, currentProgress : int)
+signal on_task_status_updated(text : String)
 signal on_life_lost(totalLifes : int, remainingLifes : int)
-signal on_all_tasks_completed
-signal on_all_lifes_losed
 
 var levelTaskModel : LevelTasksModel
 var tasksCount : int
@@ -23,10 +22,17 @@ var _taskPassedCount : int
 var _remainingLoses : int
 
 func _ready() -> void:
+	path = get_path()
+	
 	_timer = Timer.new()
 	add_child(_timer)
 	_timer.one_shot = true
 	_timer.timeout.connect(_end_task)
+	
+	var levelModel : LevelTasksModel = _levelLoadStrategy.allLevelTasks["level_" + str(_levelLoadStrategy.loadedLevelId)]
+	levelTaskModel = levelModel
+	tasksCount = levelModel.TasksCount
+	start_tasks()
 
 
 func register_spawner(spawner : NpcSpawnerView):
@@ -47,10 +53,10 @@ func stop_tasks():
 	_freeSpawners.clear()
 	_timer.stop()
 
-func complete_task(task : TaskModel):
+func complete_task(task : TaskModel, _remainingTime : float):
 	completedTasksCount += 1
 	_taskPassedCount += 1
-	on_task_completed.emit(tasksCount, completedTasksCount)
+	on_task_status_updated.emit(get_tasks_text())
 	
 	if (_dialogsProvider.try_start_dialog(task.dialogId, _end_game_check)):
 		return
@@ -62,19 +68,22 @@ func lose_task(task : TaskModel):
 	on_life_lost.emit(3, _remainingLoses)
 	
 	if (_remainingLoses <= 0):
-		on_all_lifes_losed.emit()
+		_levelLoadStrategy.lose_game()
 		stop_tasks()
 		return
 	
 	if (_taskPassedCount >= tasksCount):
-		on_all_tasks_completed.emit()
+		_levelLoadStrategy.win_game()
 
 func free_spawner(spawner : NpcSpawnerView):
 	_freeSpawners.append(spawner)
 
+func get_tasks_text() -> String:
+	return "Drinks served: " + str(completedTasksCount) + "/" + str(tasksCount)
+
 func _end_game_check():
 	if (_taskPassedCount >= tasksCount):
-		_dialogsProvider.try_start_dialog(levelTaskModel.EndDialog, func(): on_all_tasks_completed.emit())
+		_dialogsProvider.try_start_dialog(levelTaskModel.EndDialog, func(): _levelLoadStrategy.win_game())
 
 func _end_task():
 	if (_remainingLoses == 0): return

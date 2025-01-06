@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://bai2j3wtxcewg"]
+[gd_scene load_steps=30 format=3 uid="uid://bai2j3wtxcewg"]
 
 [ext_resource type="Script" path="res://Assets/Modules/Character/Strategies/AIBartenderStrategy.gd" id="1_84r86"]
+[ext_resource type="Script" path="res://Assets/Modules/Levels/Strategies/LevelTasksStrategy.gd" id="1_f8pad"]
 [ext_resource type="Texture2D" uid="uid://bv1rqo5ynywwe" path="res://Assets/Textures/Stage/bar_bg.png" id="1_m2d7u"]
 [ext_resource type="PackedScene" uid="uid://dgj8cpgw84mot" path="res://Assets/Modules/Decor/Assets/bar_table_1.tscn" id="2_i6yrx"]
 [ext_resource type="Script" path="res://Assets/Modules/AIActions/Strategies/AIActionsStrategy.gd" id="2_kxqka"]
@@ -43,6 +44,9 @@ point_count = 2
 y_sort_enabled = true
 
 [node name="_Strategies" type="Node" parent="."]
+
+[node name="LevelTasksStrategy" type="Node" parent="_Strategies"]
+script = ExtResource("1_f8pad")
 
 [node name="AIBartenderStrategy" type="Node" parent="_Strategies"]
 script = ExtResource("1_84r86")
