@@ -16,6 +16,8 @@ class_name UIDialogPanel
 @export var DialogLabel : Label
 @export var DialogueLine : Panel
 
+@export var Options : OptionsView 
+
 var SPEAKER_LEFT_HIDDEN_X = -1064
 var SPEAKER_LEFT_SHOWN_X = -64
 var SPEAKER_RIGHT_HIDDEN_X = 3000
@@ -40,13 +42,15 @@ func _ready() -> void:
 	SettingsButton.button_down.connect(_open_settings_panel)
 	HideButton.button_down.connect(_hide_dialogue)
 	ShowButton.button_down.connect(_show_dialogue)
+	Options.on_option_selected.connect(_switch_to_dialog)
+	UIPanelsProvider.connect_on_panel_closed(_proceed_check)
 	_dialog = _dialogsProvider.allDialogs[_dialogId]
 	
 	for i in range(_dialog.speakers.size()):
 		_speakersTextures[_dialog.speakers[i]] = Speakers[i]
 		_loadedTextures[_dialog.speakers[i]] = ""
 		_speakersID[_dialog.speakers[i]] = i
-		
+	
 	#Speakers[0].position = Vector2(SPEAKER_LEFT_HIDDEN_X, Speakers[0].position.y)
 	#Speakers[1].position = Vector2(SPEAKER_RIGHT_HIDDEN_X, Speakers[1].position.y)
 	
@@ -69,6 +73,11 @@ func init_args(args : Dictionary):
 	if args.has("callback"):
 		_callback = args["callback"]
 
+func _switch_to_dialog(dialogId : String):
+	_dialogId = dialogId
+	_dialog = _dialogsProvider.allDialogs[_dialogId]
+	_currentStep = -1
+	_proceed_dialog()
 
 func _show_sprite(index:int)->void:
 	var tween = create_tween()
@@ -86,6 +95,7 @@ func _show_sprite(index:int)->void:
 	)	
 
 func _proceed_dialog():
+	if (Options.isBusy): return
 	_currentStep += 1
 	
 	if (_currentStep >= _dialog.phrases.size()):
@@ -93,6 +103,14 @@ func _proceed_dialog():
 		return
 	
 	var phrase : DialogPhraseModel = _dialog.phrases[_currentStep]
+	
+	if (phrase.options.size() > 0):
+		Options.show_phrase(phrase)
+		return
+	if (phrase.actions.size() > 0):
+		_proceed_actions(phrase)
+		return
+	
 	SpeakerNameLabel.get_parent().visible = phrase.speaker != "_"
 	SpeakerNameLabel.text = "???" if phrase.isNameHidden else _dialogsProvider.allNames[phrase.speaker]
 	
@@ -118,6 +136,25 @@ func _proceed_dialog():
 	DialogPicture.texture = null if phrase.bgImage == "_" else _dialogsProvider.allBgs[phrase.bgImage]
 	DialogLabel.text = phrase.text
 
+func _proceed_actions(phrase : DialogPhraseModel):
+	for action in phrase.actions:
+		var split = action.split("|")
+		match split[0]:
+			"open_panel":
+				UIPanelsProvider.open_panel(split[1])
+			"open_panel_with_args":
+				var argsSplit = split[1].split(',')
+				var args := Dictionary()
+				for argPack : String in argsSplit:
+					var fields = argPack.split("=")
+					if (fields.size() > 1):
+						args[fields[0]] = fields[1]
+				UIPanelsProvider.open_panel_with_args(argsSplit[0], args)
+
+func _proceed_check(panelName : String):
+	if (panelName == "picture_ui"):
+		_proceed_dialog()
+
 func _close_panel():
 	var tween = create_tween()
 	var target_color = Color(1, 1, 1, 0)
@@ -128,16 +165,16 @@ func _close_panel():
 		if(_callback != null): _callback.call()
 		UIPanelsProvider.close_panel("dialog_ui")
 	)
-	
+
 func _open_settings_panel():
 	UIPanelsProvider.open_panel("settings_ui")
-	
+
 func _hide_dialogue():
 	HideButton.visible = false
 	ShowButton.visible = true
 	DialogueLine.visible = false
 	NextStepButton.disabled = true
-	
+
 func _show_dialogue():
 	ShowButton.visible = false
 	HideButton.visible = true

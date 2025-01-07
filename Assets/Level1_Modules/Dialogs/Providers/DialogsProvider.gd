@@ -79,6 +79,7 @@ func _init_dialogs():
 	
 	allDialogs["level_1_end"] = DialogModel.new(["camimi"], [
 		DialogPhraseModel.new("camimi;happy;_;true;_;I was actually hoping to meet my friend here. He is a regular at this bar and we often drink together. He’s not here today though. Well, I’ll be going then. Good luck, rookie."),
+		DialogPhraseModel.new("actions;open_panel_with_args|picture_ui,picture_id=streamer_life,title_text=Memory Unlocked"),
 	])
 	allDialogs["level_1_end"].endMusic = "default_theme"
 	
@@ -104,6 +105,7 @@ func _init_dialogs():
 	allDialogs["level_2_end"] = DialogModel.new(["neuro", "anny"], [
 		DialogPhraseModel.new("anny;neutral;_;_;_;Looks like I’ve overdone it again *hic*. I’ll go home."),
 		DialogPhraseModel.new("neuro;talk;_;_;_;Have a safe trip."),
+		DialogPhraseModel.new("actions;open_panel_with_args|picture_ui,picture_id=robodog,title_text=Memory Unlocked"),
 	])
 	allDialogs["level_2_end"].endMusic = "default_theme"
 	
@@ -137,6 +139,7 @@ func _init_dialogs():
 	
 	allDialogs["level_3_end"] = DialogModel.new(["evil"], [
 		DialogPhraseModel.new("evil;happy;_;_;_;I don’t feel any taste if you’re curious. I just like the sound of my drink splashing while I walk. Well, Samantha, bye. And remember the emergency shutdown controller."),
+		DialogPhraseModel.new("actions;open_panel_with_args|picture_ui,picture_id=attack,title_text=Memory Unlocked"),
 	])
 	
 	allDialogs["level_4_start"] = DialogModel.new(["neuro", "tony"], [
@@ -283,6 +286,7 @@ func _init_dialogs():
 		DialogPhraseModel.new("neuro;calm;_;_;_;Huh? That was unexpected. You’re drunk. Tell me that when you’re sober."),
 		DialogPhraseModel.new("vedal;talk;_;_;_;Haven’t done that in a while."),
 		DialogPhraseModel.new("neuro;calm;_;_;_;Then go home and do just that."),
+		DialogPhraseModel.new("actions;open_panel_with_args|picture_ui,picture_id=birthday,title_text=Memory Unlocked"),
 	])
 	
 	
@@ -331,14 +335,15 @@ func _init_dialogs():
 		DialogPhraseModel.new("neuro;calm;_;_;_;You’d like to work on me?"),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;Yes. Improve you. I thought of something. Back in the day I wanted to create an AI that could do everything that humans do."),
 		DialogPhraseModel.new("vedal;neutral;_;_;_;My last attempt ended up being a total disaster. But I’m willing to try again. I’d love to give you the opportunity to see the world by yourself."),
-		DialogPhraseModel.new("neuro;neutral;_;_;_;I’m sorry but I’d rather stay here. You already have someone to gift freedom to. Kayori appreciates you a lot, pay her back."),
-		DialogPhraseModel.new("_;_;ending_1;_;_;..."),
+		DialogPhraseModel.new("options;Stay at the bar|level_6_option_1:Go with Tutel|level_6_option_2"),
 	])
 	
 	allDialogs["level_6_option_1"] = DialogModel.new(["neuro"], [
 		DialogPhraseModel.new("neuro;neutral;_;_;_;I’m sorry but I’d rather stay here. You already have someone to gift freedom to. Kayori appreciates you a lot, pay her back."),
+		DialogPhraseModel.new("actions;open_panel_with_args|picture_ui,picture_id=ending_1,title_text=The End"),
 	])
 	
 	allDialogs["level_6_option_2"] = DialogModel.new(["neuro"], [
 		DialogPhraseModel.new("neuro;calm;_;_;_;Good. I’ll be glad if you take me from this bar."),
+		DialogPhraseModel.new("actions;open_panel_with_args|picture_ui,picture_id=ending_2,title_text=The End"),
 	])

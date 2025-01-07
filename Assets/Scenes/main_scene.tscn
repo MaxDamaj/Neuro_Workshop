@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dcajjydtc33bx"]
+[gd_scene load_steps=45 format=3 uid="uid://dcajjydtc33bx"]
 
 [ext_resource type="PackedScene" uid="uid://ddpv4q4fscfuv" path="res://Assets/Level0_Modules/Events/Assets/events_provider.tscn" id="1_6xgfg"]
 [ext_resource type="Script" path="res://Assets/Level0_Modules/Base/UIPanelsProvider.gd" id="1_yahvp"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c1wdm5vfrsnnc" path="res://Assets/Modules/UI/Assets/ui_ai_actions_panel.tscn" id="14_wgani"]
 [ext_resource type="PackedScene" uid="uid://c3y717dw0qjcl" path="res://Assets/Modules/UI/Assets/ui_connect_panel.tscn" id="15_5erl5"]
 [ext_resource type="PackedScene" uid="uid://bk24hcasst3qs" path="res://Assets/Modules/NPCs/Assets/npc_random_2.tscn" id="15_qkonw"]
+[ext_resource type="PackedScene" uid="uid://pah1r4h8ms72" path="res://Assets/Modules/UI/Assets/ui_picture_panel.tscn" id="16_lgidf"]
 [ext_resource type="PackedScene" uid="uid://cjgcx386rfmp1" path="res://Assets/Modules/NPCs/Assets/npc_random_3.tscn" id="16_ysyip"]
 [ext_resource type="PackedScene" uid="uid://bd434568ntuls" path="res://Assets/Modules/NPCs/Assets/npc_random_4.tscn" id="17_3laa0"]
 [ext_resource type="PackedScene" uid="uid://baf42jqcecalo" path="res://Assets/Modules/NPCs/Assets/npc_random_5.tscn" id="18_52p0n"]
@@ -63,6 +64,7 @@ allPanels = {
 "loading_ui": ExtResource("5_wgl24"),
 "lose_ui": ExtResource("7_p4fru"),
 "main_ui": ExtResource("2_632w6"),
+"picture_ui": ExtResource("16_lgidf"),
 "recipe_book_ui": ExtResource("8_u7v06"),
 "safe_ui": ExtResource("9_usnlb"),
 "settings_ui": ExtResource("11_upqfx"),

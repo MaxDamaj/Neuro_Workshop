@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://pah1r4h8ms72"]
+
+[ext_resource type="Script" path="res://Assets/Modules/UI/Panels/UIPicturePanel.gd" id="1_v35pt"]
+[ext_resource type="Theme" uid="uid://dsklx8m7o8m0o" path="res://Assets/Modules/UI/Themes/title_screen_theme.tres" id="2_gtd8a"]
+
+[node name="UIPicturePanel" type="CanvasLayer" node_paths=PackedStringArray("Root", "TitleLabel", "Picture", "NextButton")]
+process_mode = 3
+layer = 10
+script = ExtResource("1_v35pt")
+Root = NodePath("Root")
+TitleLabel = NodePath("Root/TitleLabel")
+Picture = NodePath("Root/Picture")
+NextButton = NodePath("Root/NextButton")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Picture" type="TextureRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Root"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme = ExtResource("2_gtd8a")
+text = "Title"
+horizontal_alignment = 1
+
+[node name="NextButton" type="Button" parent="Root"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

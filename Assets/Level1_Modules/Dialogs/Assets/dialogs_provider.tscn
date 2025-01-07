@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3jayvqnhedxc"]
+[gd_scene load_steps=29 format=3 uid="uid://d3jayvqnhedxc"]
 
 [ext_resource type="Script" path="res://Assets/Level1_Modules/Dialogs/Providers/DialogsProvider.gd" id="1_jbqdb"]
 [ext_resource type="Texture2D" uid="uid://csqltjvfucbht" path="res://Assets/Textures/Dialogues/anny_happy.png" id="2_7y8xf"]
@@ -22,8 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://b67r2gb2fu1c4" path="res://Assets/Textures/Dialogues/vedal_semidrunk.png" id="20_gfcot"]
 [ext_resource type="Texture2D" uid="uid://b24tst75cundh" path="res://Assets/Textures/Dialogues/vedal_drunk_talking.png" id="21_kfary"]
 [ext_resource type="Texture2D" uid="uid://ckfuwibjwpf2i" path="res://Assets/Textures/Bgs/dark.png" id="22_t4acc"]
-[ext_resource type="Texture2D" uid="uid://cii1i11m1m1u0" path="res://Assets/Textures/UI/ending_1.png" id="23_glvkq"]
-[ext_resource type="Texture2D" uid="uid://by73vxhd51hqi" path="res://Assets/Textures/UI/ending_2.png" id="24_6dt7r"]
+[ext_resource type="Texture2D" uid="uid://cii1i11m1m1u0" path="res://Assets/Textures/Bgs/ending_1.png" id="23_glvkq"]
+[ext_resource type="Texture2D" uid="uid://by73vxhd51hqi" path="res://Assets/Textures/Bgs/ending_2.png" id="24_6dt7r"]
+[ext_resource type="Texture2D" uid="uid://cb6h2skw4ghqj" path="res://Assets/Textures/Bgs/streamer_life.png" id="25_i6kll"]
+[ext_resource type="Texture2D" uid="uid://dvolffhm31dah" path="res://Assets/Textures/Bgs/attack.png" id="26_b15mo"]
+[ext_resource type="Texture2D" uid="uid://8687u742edxw" path="res://Assets/Textures/Bgs/birthday.png" id="27_gly3o"]
+[ext_resource type="Texture2D" uid="uid://bl3mtqjbc6vk1" path="res://Assets/Textures/Bgs/robodog.png" id="28_23a02"]
 
 [node name="DialogsProvider" type="Node"]
 script = ExtResource("1_jbqdb")
@@ -71,7 +75,11 @@ allNames = {
 "vedal": "Tutel"
 }
 allBgs = {
+"attack": ExtResource("26_b15mo"),
+"birthday": ExtResource("27_gly3o"),
 "dark": ExtResource("22_t4acc"),
 "ending_1": ExtResource("23_glvkq"),
-"ending_2": ExtResource("24_6dt7r")
+"ending_2": ExtResource("24_6dt7r"),
+"robodog": ExtResource("28_23a02"),
+"streamer_life": ExtResource("25_i6kll")
 }

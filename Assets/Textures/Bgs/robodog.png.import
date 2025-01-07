@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cii1i11m1m1u0"
-path="res://.godot/imported/ending_1.png-682d15d4a328cfc46490568a4c9534eb.ctex"
+uid="uid://bl3mtqjbc6vk1"
+path="res://.godot/imported/robodog.png-f3511f47a24cfa07b9e5c349f36f9fa9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/UI/ending_1.png"
-dest_files=["res://.godot/imported/ending_1.png-682d15d4a328cfc46490568a4c9534eb.ctex"]
+source_file="res://Assets/Textures/Bgs/robodog.png"
+dest_files=["res://.godot/imported/robodog.png-f3511f47a24cfa07b9e5c349f36f9fa9.ctex"]
 
 [params]
 

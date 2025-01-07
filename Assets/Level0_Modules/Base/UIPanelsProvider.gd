@@ -5,6 +5,8 @@ static var _instance : UIPanelsProvider
 
 @export var allPanels : Dictionary
 
+signal on_panel_closed(panelName : String)
+
 var _openedPanels : Dictionary
 
 
@@ -37,11 +39,14 @@ static func close_panel(panelName : String):
 	
 	_instance._openedPanels[panelName].queue_free()
 	_instance._openedPanels.erase(panelName)
+	_instance.on_panel_closed.emit(panelName)
 
 static func is_panel_open(panelName : String) -> bool:
 	if (_instance == null): return false
 	return _instance._openedPanels.has(panelName)
 
+static func connect_on_panel_closed(callback : Callable):
+	_instance.on_panel_closed.connect(callback)
 
 static func show_message(message : String, color : Color):
 	close_panel("message_ui")
