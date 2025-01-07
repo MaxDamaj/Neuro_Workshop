@@ -24,6 +24,7 @@ func _init_buttons():
 
 func _try_interact_with_item():
 	if (_player == null): return
+	EventsProvider.call_event("%s opened" % name)
 	UIPanelsProvider.open_panel_with_args("inventory_ui", {"items" : ItemsList, "player" : _player})
 
 

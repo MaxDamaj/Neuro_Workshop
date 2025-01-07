@@ -6,7 +6,7 @@
 [resource]
 resource_name = "raw_mix_ermge_vodka"
 script = ExtResource("1_ec43h")
-name = ""
+name = "Raw mix Vodka with Ermge juice"
 recipe = ""
 texture = ExtResource("2_5qfn7")
 producingTime = 0.0

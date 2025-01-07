@@ -37,6 +37,7 @@ func _ready() -> void:
 	ReturnButton.button_down.connect(_close_recipe_book)
 	NextButton.button_down.connect(_next_page)
 	PrevButton.button_down.connect(_prev_page)
+	EventsProvider.call_event(&"recipe book opened")
 
 func _close_recipe_book() -> void:
 	UIPanelsProvider.close_panel("recipe_book_ui")

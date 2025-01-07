@@ -6,6 +6,8 @@
 [resource]
 resource_name = "three_underscores_and_backslash"
 script = ExtResource("1_swrd5")
+name = "___ \\"
+recipe = "combine Rum and Lime on the table; put the mix into the Blender; combine the mix and Ermge Juice on the table; put the combination into the Mixer; serve customer"
 texture = ExtResource("2_n041c")
 producingTime = 7.0
 mergeTo = {}

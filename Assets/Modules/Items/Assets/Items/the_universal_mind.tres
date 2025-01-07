@@ -6,6 +6,8 @@
 [resource]
 resource_name = "the_universal_mind"
 script = ExtResource("1_p21bl")
+name = "The Universal Mind"
+recipe = "combine Vodka and Lime on the table; put the combination into the Blender; combine the mix and Gin on the table; put the combination into the Mixer; serve customer"
 texture = ExtResource("2_bd34u")
 producingTime = 5.0
 mergeTo = {}

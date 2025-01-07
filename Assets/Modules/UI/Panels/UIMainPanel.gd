@@ -51,6 +51,7 @@ func _ready() -> void:
 	AICustomerButton.button_down.connect(func(): _load_level(-3))
 	
 	currentMenu = 'main'
+	FreeGameButton.tooltip_text = "best score: %s" % SaveDataProvider.get_saved_value("free_game_score", 0)
 	_hide_level_buttons()
 	_show_main_buttons()
 	

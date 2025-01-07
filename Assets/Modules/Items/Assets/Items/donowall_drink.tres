@@ -7,7 +7,7 @@
 resource_name = "donowall_drink"
 script = ExtResource("1_o60w5")
 name = "Donowall Drink"
-recipe = ""
+recipe = "combine Gin and Tonic on the table; put the combination into the Mixer; cut Lemon; combine the mixed drink and the Cut Lemon; serve customer"
 texture = ExtResource("2_sb0im")
 producingTime = 0.0
 mergeTo = {}

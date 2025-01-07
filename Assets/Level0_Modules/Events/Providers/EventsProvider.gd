@@ -13,13 +13,15 @@ func _ready() -> void:
 static func call_event(eventName):
 	if (_instance == null): return
 	_instance.on_event_called.emit(eventName)
+	print(eventName)
 
 static func subscribe(eventName : StringName, callback : Callable):
 	if (_instance == null): return
 	
 	var end_func : Callable = func(event : StringName):
 		if (event != eventName): return
-		callback.call()
+		if (callback.is_valid()):
+			callback.call()
 	
 	_instance.on_event_called.connect(end_func)
 

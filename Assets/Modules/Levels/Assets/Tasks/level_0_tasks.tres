@@ -8,7 +8,7 @@
 script = ExtResource("1_g7b2r")
 npcName = "tony"
 delay = 0.0
-item = "banana_rum"
+item = "apple_rum"
 waitingTime = 300.0
 chillingTime = 5.0
 rarity = 0
@@ -22,4 +22,5 @@ resource_name = "level_0"
 script = ExtResource("2_lr6u4")
 TasksCount = 2
 StartDialog = "level_0_start"
+EndDialog = ""
 Tasks = Array[ExtResource("1_g7b2r")]([SubResource("Resource_xu04w")])

@@ -7,7 +7,7 @@
 resource_name = "bloody_cimp"
 script = ExtResource("1_4f7tm")
 name = "Bloody Cimp"
-recipe = ""
+recipe = "combine Vodka and Tomato on the table; put the combination into the Blender; cut Lemon; combine the mix and cut Lemon; serve customer"
 texture = ExtResource("2_drbuq")
 producingTime = 0.0
 mergeTo = {}

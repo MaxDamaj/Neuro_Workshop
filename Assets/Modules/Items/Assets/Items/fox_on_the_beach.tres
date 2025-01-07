@@ -7,7 +7,7 @@
 resource_name = "fox_on_the_beach"
 script = ExtResource("1_gd21y")
 name = "Fox on the Beach"
-recipe = ""
+recipe = "combine Ermge Juice and Vodka on the table; cut Lemon; combine lemon slices and the mix on the table; serve customer"
 texture = ExtResource("2_pbh4d")
 producingTime = 0.0
 mergeTo = {}
