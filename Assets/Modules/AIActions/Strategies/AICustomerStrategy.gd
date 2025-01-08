@@ -9,9 +9,13 @@ static var _instance : AICustomerStrategy
 func _ready() -> void:
 	_instance = self
 	
-	if (AIConnectionStrategy.isOffline): return
-	AiSpawner.on_order_finished.connect(_register_actions)
-	_register_actions("Welcome to Abandoned bar! You play as Kayori and the task is to order the most complex drinks possible for the bartender.")
+	if (AIConnectionStrategy.isOffline):
+		var availableItemNames : Array = ItemsProvider.get_all_items_names()
+		AiSpawner.on_order_finished.connect(func(context): generate_order(availableItemNames.pick_random(), randi_range(50, 200)))
+		generate_order(availableItemNames.pick_random(), randi_range(50, 200))
+	else:
+		AiSpawner.on_order_finished.connect(_register_actions)
+		_register_actions("Welcome to Abandoned bar! You play as Kayori and the task is to order the most complex drinks possible for the bartender.")
 
 func _exit_tree() -> void:
 	if (AIConnectionStrategy.isOffline): return
@@ -25,6 +29,7 @@ static func generate_order(item : String, time : float):
 	task.waitingTime = time
 	task.rarity = 1
 	
+	await _instance.get_tree().create_timer(0.55).timeout
 	_instance.AiSpawner.start_task(task)
 
 func _register_actions(context : String):

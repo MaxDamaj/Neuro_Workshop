@@ -21,6 +21,7 @@ func start_task(task : TaskModel):
 	_show_bubble()
 	_start_waiting_time(task.waitingTime)
 	var item : ItemModel = ItemsProvider.get_item(task.item)
+	Bubble.itemName = item.resource_name
 	Bubble.OrderIcon.texture = item.texture
 	Bubble.CrownIcon.visible = task.rarity > 0
 	Bubble.OrderIcon.tooltip_text = ItemsProvider.get_item_name(task.item)

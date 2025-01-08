@@ -58,9 +58,7 @@ func complete_task(task : TaskModel, _remainingTime : float):
 	_taskPassedCount += 1
 	on_task_status_updated.emit(get_tasks_text())
 	
-	if (_dialogsProvider.try_start_dialog(task.dialogId, _end_game_check)):
-		return
-	_end_game_check()
+	_dialogsProvider.try_start_dialog(task.dialogId, _end_game_check)
 
 func lose_task(task : TaskModel):
 	_remainingLoses -= 1 if task.rarity == 0 else 3

@@ -12,7 +12,7 @@ static var path : NodePath = "/root/MainScene/_Strategies/LevelLoadStrategy"
 
 var safeCode : int
 var allLevelTasks : Dictionary
-var loadedLevelId : int = -1
+var loadedLevelId : int = -99
 var lastUnlockedLevel : int:
 	set(value):
 		SaveDataProvider.set_saved_value("last_Unlocked_Level", value)
@@ -35,7 +35,7 @@ func load_level(levelId : int) -> void:
 
 func unload_level():
 	UIPanelsProvider.open_panel_with_args("loading_ui", {"end_func" : _unload_level_callback})
-	loadedLevelId = -1
+	loadedLevelId = -99
 
 func restart_level():
 	var end_func : Callable = func():

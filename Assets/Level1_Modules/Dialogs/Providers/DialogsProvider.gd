@@ -91,7 +91,7 @@ func _init_dialogs():
 	allDialogs["level_2_middle"] = DialogModel.new(["neuro", "anny"], [
 		DialogPhraseModel.new("anny;neutral;_;_;_;So what's your name, bartender? Mine’s The Fox."),
 		DialogPhraseModel.new("neuro;calm;_;_;_;Samantha."),
-		DialogPhraseModel.new("anny;happy;_;_;_;Samantha? UAn untypical name for a robot. Who named you that?"),
+		DialogPhraseModel.new("anny;happy;_;_;_;Samantha? An untypical name for a robot. Who named you that?"),
 		DialogPhraseModel.new("neuro;talk;_;_;_;Boss wanted to name me ‘Cyber-Barman’ or something so I had to come up with the name myself."),
 		DialogPhraseModel.new("anny;happy;_;_;_;Haha, sounds just like him. He’s always had this… straightforward way of thinking. He named his bar ‘Abandoned Pub’ because he found this forsaken place and made it his own."),
 		DialogPhraseModel.new("neuro;calm;_;_;_;People say this town is not the best place to run a business."),

@@ -10,5 +10,7 @@ name = "Lava Lamp"
 recipe = ""
 texture = ExtResource("2_u5fcu")
 producingTime = 0.0
-mergeTo = {}
+mergeTo = {
+"gin": "lava_lamp_with_gin"
+}
 usedIn = {}

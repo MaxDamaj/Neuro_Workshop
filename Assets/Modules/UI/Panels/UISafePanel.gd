@@ -17,7 +17,7 @@ var WHITE_COLOR = "#ffffff"
 
 static var currentPosition = 0
 static var displayText  = "_ _ _ _"
-var _timer : int
+var _timer : float
 var _isError : bool
 var _isSuccess : bool
 
@@ -89,18 +89,18 @@ func _take_item():
 	_soundProvider.play_sound("open_safe")
 	UIPanelsProvider.close_panel("safe_ui")
 
-func _process(_delta)->void:
+func _process(delta)->void:
 	if (_isError):
-		_timer+=1
-		if (_timer>60):
+		_timer += delta
+		if (_timer >= 0.5):
 			_isError = false
 			NumberDisplay.label_settings.font_color = WHITE_COLOR
 			_toggle_buttons(true)
 			_clear_button()
 			_timer = 0
 	if (_isSuccess):
-		_timer+=1
-		if (_timer>60):
+		_timer += delta
+		if (_timer >= 0.5):
 			_isSuccess = false
 			NumberDisplay.label_settings.font_color = WHITE_COLOR
 			_toggle_buttons(true)
