@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://mleg04ee1xa1"]
+[gd_scene load_steps=8 format=3 uid="uid://mleg04ee1xa1"]
 
 [ext_resource type="Texture2D" uid="uid://ibtkd62g7msi" path="res://Assets/Textures/UI/bubble.png" id="1_1bw64"]
 [ext_resource type="Script" path="res://Assets/Modules/UI/Views/TileBubble.gd" id="1_hxe7s"]
 [ext_resource type="Texture2D" uid="uid://bnd11dh1jhlvu" path="res://Assets/Shaders/gradient_texture_1d.tres" id="2_5w7y7"]
 [ext_resource type="Texture2D" uid="uid://mku0xlg6bchi" path="res://Assets/Textures/Items/item_vodka.png" id="3_adxyq"]
+[ext_resource type="Theme" uid="uid://jr4yev2noaj3" path="res://Assets/Modules/UI/Themes/tutorial_theme.tres" id="3_j3ull"]
 [ext_resource type="Texture2D" uid="uid://p3gn0qt6tc1b" path="res://Assets/Textures/UI/bubble_progress.png" id="4_4kr5s"]
 [ext_resource type="Texture2D" uid="uid://dowtgrm52pyj7" path="res://Assets/Textures/UI/unique_customer.png" id="6_df8jc"]
 
-[node name="UIBubble" type="Control" node_paths=PackedStringArray("OrderIcon", "ProgressSlider", "CrownIcon")]
+[node name="UIBubble" type="Control" node_paths=PackedStringArray("OrderIcon", "ProgressSlider", "CrownIcon", "ItemNameLabel")]
 z_index = 2
 layout_mode = 3
 anchors_preset = 0
@@ -20,7 +21,31 @@ script = ExtResource("1_hxe7s")
 OrderIcon = NodePath("OrderIcon")
 ProgressSlider = NodePath("TextureProgressBar")
 CrownIcon = NodePath("CrownIcon")
+ItemNameLabel = NodePath("Panel/ItemNameLabel")
 ColorGrad = ExtResource("2_5w7y7")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 135.0
+offset_top = 36.0
+offset_right = 348.0
+offset_bottom = 147.0
+theme = ExtResource("3_j3ull")
+
+[node name="ItemNameLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 47.0
+offset_top = -49.5
+offset_right = 205.0
+offset_bottom = 42.5
+grow_vertical = 2
+theme = ExtResource("3_j3ull")
+theme_override_font_sizes/font_size = 22
+text = "Raw mix Rum with Lime and Ermge juice"
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="BubbleTexture" type="TextureRect" parent="."]
 layout_mode = 1

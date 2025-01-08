@@ -44,6 +44,7 @@ static func unregister_actions(actions: Array[NeuroAction]):
 	Websocket.send(ActionsUnregister.new(array))
 
 	await _instance.get_tree().create_timer(10).timeout
+	if (_instance == null): return
 	_instance._dying_actions = _instance._dying_actions.filter(func(action: NeuroAction) -> bool: return actions_to_remove.has(action))
 
 static func resend_registered_actions():

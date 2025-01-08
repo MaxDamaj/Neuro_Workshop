@@ -35,9 +35,9 @@ func _ready() -> void:
 	start_tasks()
 
 
-func register_spawner(spawner : NpcSpawnerView):
+func register_spawner(spawner : NpcSpawnerView, isBusy : bool = false):
 	_allSpawners.append(spawner)
-	_freeSpawners.append(spawner)
+	if (!isBusy): _freeSpawners.append(spawner)
 
 
 func start_tasks():

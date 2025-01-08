@@ -1,6 +1,9 @@
 extends LevelTasksStrategy
 class_name FreeGameTasksStrategy
 
+@export var baseTime : float = 150
+@export var delayTime : float = 0.25
+@export var saveScoreKey : String = "free_game_score"
 @export var taskItems : Dictionary
 
 var _totalScore : int
@@ -19,19 +22,20 @@ func start_tasks():
 	completedTasksCount = 0
 	_remainingLoses = 3
 	_taskPassedCount = 0
-	_timer.start(0.1)
+	_timer.start(delayTime)
 
 func stop_tasks():
 	_freeSpawners.clear()
 	_timer.stop()
 	
-	var score = SaveDataProvider.get_saved_value("free_game_score", 0)
+	var score = SaveDataProvider.get_saved_value(saveScoreKey, 0)
 	if (_totalScore > score):
-		SaveDataProvider.set_saved_value("free_game_score", _totalScore)
+		SaveDataProvider.set_saved_value(saveScoreKey, _totalScore)
 
 func complete_task(task : TaskModel, remainingTime : float):
 	_difficultyMultiplier += 0.1
-	_totalScore += remainingTime * _difficultyMultiplier * taskItems[task.item]
+	var itemDifficulty : float = 1 if !taskItems.has(task.item) else taskItems[task.item]
+	_totalScore += remainingTime * _difficultyMultiplier * itemDifficulty
 	super.complete_task(task, remainingTime)
 
 func get_tasks_text() -> String:
@@ -52,7 +56,8 @@ func _end_task():
 
 func _generate_random_task() -> TaskModel:
 	var task : TaskModel = TaskModel.new()
+	task.delay = delayTime
 	task.npcName = "random"
 	task.item = taskItems.keys().pick_random()
-	task.waitingTime = 150 / _difficultyMultiplier
+	task.waitingTime = baseTime / _difficultyMultiplier
 	return task

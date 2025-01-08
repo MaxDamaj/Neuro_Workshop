@@ -47,11 +47,10 @@ func _ready() -> void:
 	
 	#Extra
 	FreeGameButton.button_down.connect(func(): _load_level(-1))
-	AIBartenderButton.button_down.connect(func(): UIPanelsProvider.open_panel("connect_ui"))
-	AICustomerButton.button_down.connect(func(): _load_level(-3))
+	AIBartenderButton.button_down.connect(func(): UIPanelsProvider.open_panel_with_args("connect_ui", {"level_id" : -2}))
+	AICustomerButton.button_down.connect(func(): UIPanelsProvider.open_panel_with_args("connect_ui", {"level_id" : -3}))
 	
 	currentMenu = 'main'
-	FreeGameButton.tooltip_text = "best score: %s" % SaveDataProvider.get_saved_value("free_game_score", 0)
 	_hide_level_buttons()
 	_show_main_buttons()
 	
@@ -117,6 +116,8 @@ func _show_extra_buttons() -> void:
 	_move_ui_element(ExtraContainer, BUTTON_SHOWN_X, ExtraContainer.position.y)
 	_show_back_button()
 	_hide_main_buttons()
+	FreeGameButton.tooltip_text = "best score: %s" % SaveDataProvider.get_saved_value("free_game_score", 0)
+	AICustomerButton.tooltip_text = "best score: %s" % SaveDataProvider.get_saved_value("ai_customer_score", 0)
 	currentMenu = 'extra'
 
 func _hide_level_buttons() -> void:

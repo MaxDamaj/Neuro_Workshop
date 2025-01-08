@@ -138,6 +138,7 @@ placeholder_text = "ws://localhost:8000"
 alignment = 1
 
 [node name="WaitConnectionContainer" type="Control" parent="ExitMenuContainer"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

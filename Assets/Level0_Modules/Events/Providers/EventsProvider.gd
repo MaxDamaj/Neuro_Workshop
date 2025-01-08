@@ -13,7 +13,6 @@ func _ready() -> void:
 static func call_event(eventName):
 	if (_instance == null): return
 	_instance.on_event_called.emit(eventName)
-	print(eventName)
 
 static func subscribe(eventName : StringName, callback : Callable):
 	if (_instance == null): return

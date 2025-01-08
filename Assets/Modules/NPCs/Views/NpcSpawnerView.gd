@@ -46,7 +46,7 @@ func _task_failed():
 	BarTable.taskItem = ""
 	_levelTasksStrategy.lose_task(_task)
 	_move_npc(1, 0, 4, _complete_task)
-	EventsProvider.call_event("customer did not receive his drink on time")
+	EventsProvider.call_event("customer did not received his drink on time")
 
 func _end_moving():
 	if (_npc == null): return

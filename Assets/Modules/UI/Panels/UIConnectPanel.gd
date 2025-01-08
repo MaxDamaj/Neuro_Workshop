@@ -10,11 +10,12 @@ class_name UIConnectPanel
 @export var WaitConnectionContainer : Control
 @export var CloseWaitButton : Button
 
+var _level_id : int
 
 func _ready() -> void:
 	CloseButton.button_down.connect(func(): UIPanelsProvider.close_panel("connect_ui"))
 	ConnectButton.button_down.connect(_try_connect)
-	OfflineButton.button_down.connect(AIConnectionStrategy.play_offline)
+	OfflineButton.button_down.connect(func(): AIConnectionStrategy.play_offline(_level_id))
 	CloseWaitButton.button_down.connect(_cancel_connection)
 	HostLineEdit.text_changed.connect(_host_line_text_changed)
 	
@@ -26,9 +27,13 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	SaveDataProvider.set_saved_value("ws_url", HostLineEdit.text)
 
+func init_args(args : Dictionary):
+	if args.has("level_id"):
+		_level_id = args["level_id"]
+
 
 func _try_connect():
-	AIConnectionStrategy.try_connect(HostLineEdit.text)
+	AIConnectionStrategy.try_connect(HostLineEdit.text, _level_id)
 	EnterUrlContainer.visible = false
 	WaitConnectionContainer.visible = true
 

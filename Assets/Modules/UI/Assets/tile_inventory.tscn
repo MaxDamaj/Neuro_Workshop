@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bhr6uus4pfba5"]
 
-[ext_resource type="Script" path="res://Assets/Modules/UI/Tiles/TileView.gd" id="1_b0lxs"]
+[ext_resource type="Script" path="res://Assets/Modules/UI/Views/TileView.gd" id="1_b0lxs"]
 [ext_resource type="Texture2D" uid="uid://c3y2mtgw5c0x7" path="res://Assets/Textures/UI/inventory_slot.png" id="2_aes8v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jb8uq"]

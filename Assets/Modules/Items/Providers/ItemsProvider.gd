@@ -11,6 +11,9 @@ func _ready() -> void:
 	_add_to_dictionary("res://Assets/Modules/Items/Assets/Items", allItems)
 
 
+static func get_all_items_names() -> PackedStringArray:
+	return PackedStringArray(_instance.allItems.keys())
+
 static func get_item(itemId : String) -> ItemModel:
 	if (_instance == null): return null
 	

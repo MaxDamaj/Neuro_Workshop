@@ -182,7 +182,6 @@ offset_right = 400.0
 offset_bottom = 316.0
 grow_vertical = 2
 theme = ExtResource("3_7k0jo")
-disabled = true
 text = "AI Customer"
 alignment = 0
 script = ExtResource("4_n8r61")
